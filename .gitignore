@@ -1,0 +1,15 @@
+# Rust
+/target/
+
+# Generated output (regenerate with `just run`)
+/data.json
+/raw-dump/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.idea/
+.vscode/
+*.swp

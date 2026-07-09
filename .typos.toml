@@ -1,0 +1,12 @@
+# typos spell-checker config.
+# https://github.com/crate-ci/typos
+
+[files]
+# The PDF/mhtml sources and any raw extracted-text fixtures are verbatim
+# copies of an external document — never spell-check content we don't own.
+extend-exclude = [
+  "*.pdf",
+  "*.mhtml",
+  "raw-dump/**",
+  "tests/fixtures/**",
+]

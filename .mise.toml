@@ -1,0 +1,8 @@
+# Dev tool versions. `mise install` sets them all up.
+# https://mise.jdx.dev/
+
+[tools]
+just = "latest"
+lefthook = "latest"
+typos = "latest"
+# The Rust toolchain itself is pinned by rust-toolchain.toml.

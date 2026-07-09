@@ -1,0 +1,6 @@
+# Pins the Rust toolchain — single source of truth (mirrors .mise.toml for the other tools).
+# rustup auto-installs this on the first `cargo` invocation in the workspace.
+[toolchain]
+channel = "1.96.0"
+components = ["rustfmt", "clippy"]
+profile = "minimal"

@@ -1,0 +1,21 @@
+# lefthook Git hooks manager. Enable with `just install-hooks`.
+# https://github.com/evilmartians/lefthook
+#
+# Hooks mirror CI so failures surface locally, not in Actions.
+
+pre-commit:
+  parallel: true
+  commands:
+    rustfmt:
+      glob: "*.rs"
+      run: cargo fmt --check
+      fail_text: "rustfmt violations; fix with `just fmt`"
+    typos:
+      run: typos
+
+pre-push:
+  parallel: false
+  commands:
+    rust:
+      run: cargo clippy --locked --all-targets -- -D warnings && cargo test --locked
+      fail_text: "Rust checks failed (clippy/test); see `just check`"
