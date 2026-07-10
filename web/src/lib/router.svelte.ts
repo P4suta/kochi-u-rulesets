@@ -1,15 +1,14 @@
 // A dependency-free hash router. Permalinks are keyed by the stable ruleset
 // `code` (never the display name), so a rule rename never breaks a link:
-//   #/            → the ruleset list (home)
-//   #/210001      → a document
-//   #/210001/第5条 → a document scrolled to an article (the anchor is the 条 label)
-//   #/search?q=…  → full-text search
-//   #/graph       → the reference graph
-//   #/timeline    → the site-wide amendment timeline
-//   #/parser      → the drag-and-drop live PDF parser
+//   #/            → the hub (browse + search), the default tab
+//   #/?q=…        → the hub with a full-text query active
+//   #/timeline    → the amendment timeline tab
+//   #/graph       → the reference graph tab
+//   #/210001      → a document (drill-in)
+//   #/210001/第5条 → a document scrolled to an article (anchor = the 条 label)
 // Numeric codes never collide with the reserved view keywords below.
 
-export type RouteName = 'list' | 'doc' | 'search' | 'graph' | 'timeline' | 'parser'
+export type RouteName = 'home' | 'doc' | 'timeline' | 'graph'
 
 export interface Route {
 	name: RouteName
@@ -17,44 +16,36 @@ export interface Route {
 	code?: string
 	/** Article label anchor (e.g. "第5条"), for `doc`. */
 	article?: string
-	/** Query string, for `search`. */
+	/** Query string, for `home`. */
 	query?: string
 }
 
-const KEYWORDS = new Set<RouteName>(['search', 'graph', 'timeline', 'parser'])
-
-/** Parse `location.hash` into a `Route`. Unknown shapes fall back to the list. */
+/** Parse `location.hash` into a `Route`. Unknown shapes fall back to the hub. */
 export function parseHash(hash: string): Route {
 	const raw = hash.replace(/^#\/?/, '')
-	if (raw === '') return { name: 'list' }
-
 	const [pathPart, queryPart] = raw.split('?')
+	const query = new URLSearchParams(queryPart ?? '').get('q') ?? undefined
 	const segments = pathPart.split('/').filter(Boolean).map(decodeURIComponent)
 	const head = segments[0]
 
-	if (head && KEYWORDS.has(head as RouteName)) {
-		const params = new URLSearchParams(queryPart ?? '')
-		return { name: head as RouteName, query: params.get('q') ?? undefined }
-	}
-	if (head) {
-		return { name: 'doc', code: head, article: segments[1] }
-	}
-	return { name: 'list' }
+	if (head === 'timeline' || head === 'graph') return { name: head }
+	if (head) return { name: 'doc', code: head, article: segments[1] }
+	return { name: 'home', query }
 }
 
 /** Build a hash for programmatic navigation (mirrors `parseHash`). */
 export function href(route: Route): string {
 	switch (route.name) {
-		case 'list':
-			return '#/'
+		case 'home':
+			return route.query ? `#/?q=${encodeURIComponent(route.query)}` : '#/'
 		case 'doc':
 			return route.article
 				? `#/${route.code}/${encodeURIComponent(route.article)}`
 				: `#/${route.code}`
-		case 'search':
-			return route.query ? `#/search?q=${encodeURIComponent(route.query)}` : '#/search'
-		default:
-			return `#/${route.name}`
+		case 'timeline':
+			return '#/timeline'
+		case 'graph':
+			return '#/graph'
 	}
 }
 
