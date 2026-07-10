@@ -1,0 +1,346 @@
+---
+source: tests/corpus.rs
+expression: doc
+input_file: sources/高知大学保健管理センター規則.pdf
+---
+{
+  "title": "高知大学保健管理センター規則",
+  "enacted": "平成16年４月１日 規則第 307 号",
+  "last_amended": "最終改正  令和８年２月13日規則第74号",
+  "body": [
+    {
+      "type": "article",
+      "number": {
+        "article": 1,
+        "branch": null
+      },
+      "title": "趣旨",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "この規則は、学生の保健管理に関する専門的業務を行う厚生補導施設としての国立大学法人高知大学組織規則第26条第３項の規定に基づき、高知大学保健管理センター（以下「保健管理センター」という。）及び医学部分室（以下「分室」という。）に関し必要な事項を定める。",
+          "items": []
+        }
+      ]
+    },
+    {
+      "type": "article",
+      "number": {
+        "article": 2,
+        "branch": null
+      },
+      "title": "業務",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "保健管理センター及び分室は、次に掲げる業務を行う。",
+          "items": [
+            {
+              "number": 1,
+              "text": "保健管理計画の企画、立案に関すること。"
+            },
+            {
+              "number": 2,
+              "text": "学生の健康診断及び事後措置に関すること。"
+            },
+            {
+              "number": 3,
+              "text": "学生の精神的、身体的及び就学上の相談に関すること。"
+            },
+            {
+              "number": 4,
+              "text": "環境衛生及び伝染病の予防についての指導援助に関すること。"
+            },
+            {
+              "number": 5,
+              "text": "応急処置に関すること。"
+            },
+            {
+              "number": 6,
+              "text": "保健管理の充実向上のための調査、研究に関すること。"
+            },
+            {
+              "number": 7,
+              "text": "その他学生の健康の保持増進についての必要な専門的業務に関すること。"
+            },
+            {
+              "number": 8,
+              "text": "本学職員の保健管理業務に関すること。"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "article",
+      "number": {
+        "article": 3,
+        "branch": null
+      },
+      "title": "職員",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "保健管理センターに、次の職員を置く。",
+          "items": [
+            {
+              "number": 1,
+              "text": "所長"
+            },
+            {
+              "number": 2,
+              "text": "基幹教員"
+            },
+            {
+              "number": 3,
+              "text": "医療職員"
+            },
+            {
+              "number": 4,
+              "text": "その他必要な職員"
+            }
+          ]
+        },
+        {
+          "number": 2,
+          "text": "分室に、分室長を置く。",
+          "items": []
+        },
+        {
+          "number": 3,
+          "text": "前２項に掲げる者のほか、保健管理に関する専門事項を担当する者を置くことができる。",
+          "items": []
+        },
+        {
+          "number": 4,
+          "text": "保健管理センターの教員人事については、所長は、欠員補充の可否を学長に協議した上で、発議を行うものとする。",
+          "items": []
+        }
+      ]
+    },
+    {
+      "type": "article",
+      "number": {
+        "article": 4,
+        "branch": null
+      },
+      "title": "所長",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "所長は、保健管理センターの業務を掌理する。",
+          "items": []
+        },
+        {
+          "number": 2,
+          "text": "所長は、学長が指名する。",
+          "items": []
+        },
+        {
+          "number": 3,
+          "text": "所長の任期は、当分の間、学長が定める。",
+          "items": []
+        }
+      ]
+    },
+    {
+      "type": "article",
+      "number": {
+        "article": 4,
+        "branch": 2
+      },
+      "title": "分室長",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "分室長は、所長の下に分室の業務を掌理する。",
+          "items": []
+        },
+        {
+          "number": 2,
+          "text": "分室長は、所長の推薦により、学長が任命する。",
+          "items": []
+        }
+      ]
+    },
+    {
+      "type": "article",
+      "number": {
+        "article": 5,
+        "branch": null
+      },
+      "title": "運営委員会",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "保健管理センターの適正な運営を図り、保健管理の充実を期するため、保健管理センター運営委員会（以下「委員会」という。）を置く。",
+          "items": []
+        },
+        {
+          "number": 2,
+          "text": "委員会は、所長の諮問に応じ、保健管理センターの運営に関し必要な事項を審議する。",
+          "items": []
+        }
+      ]
+    },
+    {
+      "type": "article",
+      "number": {
+        "article": 6,
+        "branch": null
+      },
+      "title": "委員会の組織",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "委員会は、次に掲げる委員をもって組織する。",
+          "items": [
+            {
+              "number": 1,
+              "text": "保健管理センター所長"
+            },
+            {
+              "number": 2,
+              "text": "分室長"
+            },
+            {
+              "number": 3,
+              "text": "各学部から選出された教員  各１人"
+            },
+            {
+              "number": 4,
+              "text": "保健管理センターの基幹教員"
+            },
+            {
+              "number": 5,
+              "text": "学務部長"
+            },
+            {
+              "number": 6,
+              "text": "その他保健管理センター所長が必要と認めた者"
+            }
+          ]
+        },
+        {
+          "number": 2,
+          "text": "第１項第３号の委員の任期は、２年とし、再任を妨げない。ただし、委員に欠員が生じた場合の補欠委員の任期は、前任者の残任期間とする。",
+          "items": []
+        },
+        {
+          "number": 3,
+          "text": "委員会に委員長を置き、保健管理センター所長をもって充てる。",
+          "items": []
+        }
+      ]
+    },
+    {
+      "type": "article",
+      "number": {
+        "article": 7,
+        "branch": null
+      },
+      "title": "委員会の運営",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "委員長は、委員会を招集し、その議長となる。",
+          "items": []
+        },
+        {
+          "number": 2,
+          "text": "委員会は、委員の３分の２以上の出席をもって成立する。",
+          "items": []
+        },
+        {
+          "number": 3,
+          "text": "議事は、出席した委員の過半数をもって決し、可否同数の場合は、議長が決する。",
+          "items": []
+        }
+      ]
+    },
+    {
+      "type": "article",
+      "number": {
+        "article": 8,
+        "branch": null
+      },
+      "title": null,
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "削除",
+          "items": []
+        }
+      ]
+    },
+    {
+      "type": "article",
+      "number": {
+        "article": 9,
+        "branch": null
+      },
+      "title": "事務処理",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "保健管理センターの事務は、学務部学生支援課が処理する。",
+          "items": []
+        }
+      ]
+    },
+    {
+      "type": "article",
+      "number": {
+        "article": 10,
+        "branch": null
+      },
+      "title": "雑則",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "この規則に定めるもののほか、保健管理センターの運営に関し必要な事項は、別に定める。",
+          "items": []
+        }
+      ]
+    }
+  ],
+  "supplementary_provisions": [
+    {
+      "ordinal": 1,
+      "heading_raw": "附  則",
+      "raw_text": "この規則は、平成16年４月１日から施行する。",
+      "references_tables": []
+    },
+    {
+      "ordinal": 2,
+      "heading_raw": "附  則（平成17年７月１日規則第545号）",
+      "raw_text": "この規則は、平成17年７月１日から施行する。",
+      "references_tables": []
+    },
+    {
+      "ordinal": 3,
+      "heading_raw": "附  則（平成20年３月26日規則第127号）",
+      "raw_text": "この規則は、平成20年４月１日から施行する。",
+      "references_tables": []
+    },
+    {
+      "ordinal": 4,
+      "heading_raw": "附  則（平成30年３月28日規則第84号）",
+      "raw_text": "この規則は、平成30年４月１日から施行する。",
+      "references_tables": []
+    },
+    {
+      "ordinal": 5,
+      "heading_raw": "附  則（令和７年３月15日規則第82号）",
+      "raw_text": "この規則は、令和７年４月１日から施行する。",
+      "references_tables": []
+    },
+    {
+      "ordinal": 6,
+      "heading_raw": "附  則（令和８年２月13日規則第74号）",
+      "raw_text": "この規則は、令和８年４月１日から施行する。",
+      "references_tables": []
+    }
+  ],
+  "appended_tables": []
+}

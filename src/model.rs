@@ -7,45 +7,83 @@ pub struct Document {
     pub title: String,
     /// Raw "平成20年3月26日 規則第74号"-shaped text; era-date parsing is out of scope for v1.
     pub enacted: String,
+    /// The "最終改正 …" line, verbatim; empty when the source carries no such line.
     pub last_amended: String,
-    pub chapters: Vec<Chapter>,
+    /// The main provision (本則), as a uniform tree of structural nodes. A document
+    /// with 章 holds `Chapter` nodes at the root; a chapter-less document holds
+    /// `Article` nodes directly at the root — there is no special case, only a
+    /// different shape of the same tree.
+    pub body: Vec<BodyNode>,
     /// 附則, in document order.
     pub supplementary_provisions: Vec<SupplementaryBlock>,
     /// 別表, in document order.
     pub appended_tables: Vec<AppendedTable>,
 }
 
-impl Document {
-    /// Every article number appearing in the body, used to cross-check against
-    /// `structure::toc::expected_article_numbers` in tests.
-    pub fn article_numbers(&self) -> BTreeSet<ArticleNumber> {
-        self.chapters
-            .iter()
-            .flat_map(|c| {
-                c.articles
-                    .iter()
-                    .chain(c.sections.iter().flat_map(|s| s.articles.iter()))
-            })
-            .map(|a| a.number)
-            .collect()
+/// A node of the main provision tree: either a structural division (章/節) or a
+/// leaf 条. Serialized with an internal `"type"` tag so each node is
+/// self-describing, following the hierarchy of the Japanese government's
+/// 法令標準XMLスキーマ (e-Gov): 章 Chapter → 節 Section → 条 Article.
+///
+/// Only 章 and 節 are modeled because only they appear in this corpus. The deeper
+/// standard levels (編/款/目) would be additional variants here if a future
+/// document needed them — they are intentionally omitted rather than added as
+/// untested, never-emitted variants.
+#[derive(Debug, Serialize)]
+#[serde(tag = "type", rename_all = "snake_case")]
+pub enum BodyNode {
+    /// 章
+    Chapter {
+        number: u32,
+        title: String,
+        children: Vec<BodyNode>,
+    },
+    /// 節
+    Section {
+        number: u32,
+        title: String,
+        children: Vec<BodyNode>,
+    },
+    /// 条
+    Article(Article),
+}
+
+impl BodyNode {
+    /// Recursively visits every `Article` in this subtree, in document order.
+    pub fn walk_articles<'a>(&'a self, out: &mut Vec<&'a Article>) {
+        match self {
+            BodyNode::Chapter { children, .. } | BodyNode::Section { children, .. } => {
+                for child in children {
+                    child.walk_articles(out);
+                }
+            }
+            BodyNode::Article(article) => out.push(article),
+        }
     }
 }
 
-#[derive(Debug, Serialize)]
-pub struct Chapter {
-    pub number: u32,
-    pub title: String,
-    /// Empty when the chapter holds articles directly (chapters 5-8 have no 節).
-    pub sections: Vec<Section>,
-    /// Articles directly under the chapter; empty when `sections` is non-empty.
-    pub articles: Vec<Article>,
-}
+impl Document {
+    /// Every article, in document order, regardless of how deeply it is nested.
+    pub fn all_articles(&self) -> Vec<&Article> {
+        let mut out = Vec::new();
+        for node in &self.body {
+            node.walk_articles(&mut out);
+        }
+        out
+    }
 
-#[derive(Debug, Serialize)]
-pub struct Section {
-    pub number: u32,
-    pub title: String,
-    pub articles: Vec<Article>,
+    /// Every article number appearing in the body, used to cross-check against
+    /// `structure::toc::expected_article_numbers` in tests.
+    pub fn article_numbers(&self) -> BTreeSet<ArticleNumber> {
+        self.all_articles().iter().map(|a| a.number).collect()
+    }
+
+    /// The top-level 章 nodes, for tests that assert on chapter structure.
+    pub fn chapters(&self) -> impl Iterator<Item = &BodyNode> {
+        self.body
+            .iter()
+            .filter(|n| matches!(n, BodyNode::Chapter { .. }))
+    }
 }
 
 /// A 条 number, with an optional 号 (の２, の３...) branch suffix.

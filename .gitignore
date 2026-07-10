@@ -1,8 +1,10 @@
 # Rust
 /target/
 
-# Generated output (regenerate with `just run`)
+# Generated output (regenerate with `just run` / `just run-all`)
+/out/
 /data.json
+/gakusoku.md
 /raw-dump/
 
 # OS

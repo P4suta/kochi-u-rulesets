@@ -20,6 +20,40 @@ pub fn normalize_title(raw: &str) -> String {
     raw.chars().filter(|c| !c.is_whitespace()).collect()
 }
 
+/// True for hiragana, katakana, and CJK ideographs — the scripts of Japanese
+/// legal prose, which never separates two such characters with a space.
+fn is_cjk(c: char) -> bool {
+    matches!(c,
+        '\u{3040}'..='\u{30FF}'   // hiragana + katakana
+        | '\u{3400}'..='\u{9FFF}' // CJK unified (incl. ext-A)
+        | '\u{F900}'..='\u{FAFF}' // CJK compatibility ideographs
+    )
+}
+
+/// Removes a lone ASCII space sitting between two CJK characters — a residual
+/// per-glyph extraction artifact that survives when a line is only lightly
+/// letter-spaced. Because Japanese prose never spaces two kanji/kana, this only
+/// deletes contamination; a run of two or more spaces (a table/column
+/// separator) and any space touching a non-CJK character (dates, ＧＰＡ, law
+/// citations) are left untouched.
+pub fn normalize_prose(text: &str) -> String {
+    let chars: Vec<char> = text.chars().collect();
+    let mut out = String::with_capacity(text.len());
+    for (i, &c) in chars.iter().enumerate() {
+        let drop = c == ' '
+            && i > 0
+            && i + 1 < chars.len()
+            && chars[i - 1] != ' '
+            && chars[i + 1] != ' '
+            && is_cjk(chars[i - 1])
+            && is_cjk(chars[i + 1]);
+        if !drop {
+            out.push(c);
+        }
+    }
+    out
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -42,5 +76,18 @@ mod tests {
     #[test]
     fn strips_marker_separator_only() {
         assert_eq!(normalize_title("収容定員等"), "収容定員等");
+    }
+
+    #[test]
+    fn prose_drops_lone_space_between_cjk() {
+        assert_eq!(normalize_prose("退学 させられた場合"), "退学させられた場合");
+    }
+
+    #[test]
+    fn prose_keeps_spaces_around_non_cjk_and_runs() {
+        // A space touching a digit/latin glyph is a real separator; a 2-space
+        // run is a column separator — both survive.
+        assert_eq!(normalize_prose("第 178 号"), "第 178 号");
+        assert_eq!(normalize_prose("医学部  660"), "医学部  660");
     }
 }

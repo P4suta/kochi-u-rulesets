@@ -9,4 +9,6 @@ extend-exclude = [
   "*.mhtml",
   "raw-dump/**",
   "tests/fixtures/**",
+  # insta snapshots are verbatim parses of the source documents.
+  "tests/snapshots/**",
 ]

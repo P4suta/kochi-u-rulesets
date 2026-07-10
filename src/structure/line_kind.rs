@@ -42,10 +42,15 @@ pub enum LineKind<'a> {
     Continuation(&'a str),
 }
 
+// Spaces are tolerated inside the 第N章/第N節/第N条 markers themselves because
+// pdf-extract renders some documents' double-digit markers spread as "第 10 条".
+// The load-bearing trailing `\s+` on ARTICLE (below) still guards against
+// citations, so this only widens what counts as the marker token, not the
+// heading-vs-citation decision.
 static CHAPTER: LazyLock<Regex> =
-    LazyLock::new(|| Regex::new(r"^第([0-9０-９]+)章\s*(.*)$").unwrap());
+    LazyLock::new(|| Regex::new(r"^第\s*([0-9０-９]+)\s*章\s*(.*)$").unwrap());
 static SECTION: LazyLock<Regex> =
-    LazyLock::new(|| Regex::new(r"^第([0-9０-９]+)節\s*(.*)$").unwrap());
+    LazyLock::new(|| Regex::new(r"^第\s*([0-9０-９]+)\s*節\s*(.*)$").unwrap());
 static SUPPLEMENTARY: LazyLock<Regex> =
     LazyLock::new(|| Regex::new(r"^附\s*則(（.*）)?$").unwrap());
 static APPENDED_TABLE: LazyLock<Regex> =
@@ -55,8 +60,9 @@ static TITLE_ANNOTATION: LazyLock<Regex> = LazyLock::new(|| Regex::new(r"^（(.+
 // always followed by a separating space before body text, whereas a mid-sentence
 // citation like "第49条の２の規定により" has no space and must fall through to
 // Continuation instead of being misread as a new Article heading.
-static ARTICLE: LazyLock<Regex> =
-    LazyLock::new(|| Regex::new(r"^第([0-9０-９]+)条(の([0-9０-９]+))?\s+(.*)$").unwrap());
+static ARTICLE: LazyLock<Regex> = LazyLock::new(|| {
+    Regex::new(r"^第\s*([0-9０-９]+)\s*条(\s*の\s*([0-9０-９]+))?\s+(.*)$").unwrap()
+});
 static PARAGRAPH: LazyLock<Regex> =
     LazyLock::new(|| Regex::new(r"^([0-9０-９]+)\s+(.*)$").unwrap());
 static ITEM: LazyLock<Regex> = LazyLock::new(|| Regex::new(r"^\(([0-9]+)\)\s*(.*)$").unwrap());

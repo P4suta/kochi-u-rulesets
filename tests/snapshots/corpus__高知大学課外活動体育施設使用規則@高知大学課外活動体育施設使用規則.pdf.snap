@@ -1,0 +1,248 @@
+---
+source: tests/corpus.rs
+expression: doc
+input_file: sources/高知大学課外活動体育施設使用規則.pdf
+---
+{
+  "title": "高知大学課外活動体育施設使用規則",
+  "enacted": "平成16年４月１日 規則第157号",
+  "last_amended": "最終改正 令和３年９月10日規則第20号",
+  "body": [
+    {
+      "type": "article",
+      "number": {
+        "article": 1,
+        "branch": null
+      },
+      "title": "趣旨",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "この規則は、高知大学課外活動施設管理運営規則第４条の規定に基づき、高知大学課外活動体育施設（以下「施設」という。）の使用に関し必要な事項を定める。",
+          "items": []
+        }
+      ]
+    },
+    {
+      "type": "article",
+      "number": {
+        "article": 2,
+        "branch": null
+      },
+      "title": "使用目的",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "施設は、本学の授業及び行事に使用するほか、次に掲げる目的に使用することができる。",
+          "items": [
+            {
+              "number": 1,
+              "text": "学生の課外活動"
+            },
+            {
+              "number": 2,
+              "text": "その他学長が認めたもの"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "article",
+      "number": {
+        "article": 3,
+        "branch": null
+      },
+      "title": "使用者の範囲",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "施設を使用できる者は、次の各号に掲げる者とする。",
+          "items": [
+            {
+              "number": 1,
+              "text": "本学学生"
+            },
+            {
+              "number": 2,
+              "text": "その他学長が許可した者"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "article",
+      "number": {
+        "article": 4,
+        "branch": null
+      },
+      "title": "使用日時",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "施設の使用日時は、次の各号に掲げるとおりとする。ただし、学長が必要があると認めたときは、年末年始を除き、使用を許可することがある。",
+          "items": [
+            {
+              "number": 1,
+              "text": "使用できる日日曜日、国民の祝日に関する法律（昭和23年法律第178号）に規定する休日及び年末年始（12月28日から翌年１月４日まで）を除く日"
+            },
+            {
+              "number": 2,
+              "text": "使用できる時間午前８時30分から午後９時まで"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "article",
+      "number": {
+        "article": 5,
+        "branch": null
+      },
+      "title": "使用手続",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "施設を第２条各号の目的に使用する場合は、原則として使用開始日の７日前までに所定の様式による施設使用願を学務部学生支援課に提出し、学長の許可を受けなければならない。",
+          "items": []
+        },
+        {
+          "number": 2,
+          "text": "高知大学学生準則第14条の規定により認められた学生の団体が課外活動として施設を使用する場合は、学期の始めに所定の様式による施設使用計画書を学務部学生支援課に提出し、学長の許可を受けなければならない。",
+          "items": []
+        }
+      ]
+    },
+    {
+      "type": "article",
+      "number": {
+        "article": 6,
+        "branch": null
+      },
+      "title": "遵守事項",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "施設を使用する者は、次の事項を遵守しなければならない。",
+          "items": [
+            {
+              "number": 1,
+              "text": "使用目的以外の用途に使用しないこと。"
+            },
+            {
+              "number": 2,
+              "text": "使用時間を守ること。"
+            },
+            {
+              "number": 3,
+              "text": "火災及び盗難防止に留意すること。"
+            },
+            {
+              "number": 4,
+              "text": "体育施設内においては、喫煙をしないこと。"
+            },
+            {
+              "number": 5,
+              "text": "施設、設備、備品等を無断で改廃、新設、移動しないこと。"
+            },
+            {
+              "number": 6,
+              "text": "使用中止のときは、速やかに届け出ること。"
+            },
+            {
+              "number": 7,
+              "text": "使用後は清掃のうえ原状に復し、施錠すべき箇所は施錠し、鍵を学務部学生支援課に返還すること。"
+            },
+            {
+              "number": 8,
+              "text": "その他管理事務担当者の指示に従うこと。"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "article",
+      "number": {
+        "article": 7,
+        "branch": null
+      },
+      "title": "許可の取消し",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "次の各号に該当する場合は、使用許可を取り消し、又は以後の使用を許可しないことがある。",
+          "items": [
+            {
+              "number": 1,
+              "text": "本学の行事等のため、施設を使用する必要が生じた場合"
+            },
+            {
+              "number": 2,
+              "text": "この規則及びこの規則に基づき定められた事項に違反した場合"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "article",
+      "number": {
+        "article": 8,
+        "branch": null
+      },
+      "title": "損害賠償",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "使用した者が、故意又は過失により施設、設備、備品等を破損し、又は滅失した場合は、その損害を賠償しなければならない。",
+          "items": []
+        }
+      ]
+    },
+    {
+      "type": "article",
+      "number": {
+        "article": 9,
+        "branch": null
+      },
+      "title": "その他",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "この規則に定めるもののほか、施設使用に関し必要な事項は、学長が定める。",
+          "items": []
+        }
+      ]
+    }
+  ],
+  "supplementary_provisions": [
+    {
+      "ordinal": 1,
+      "heading_raw": "附   則",
+      "raw_text": "この規則は、平成16年４月１日から施行する。",
+      "references_tables": []
+    },
+    {
+      "ordinal": 2,
+      "heading_raw": "附 則（平成17年７月１日規則第545号）",
+      "raw_text": "この規則は、平成17年７月１日から施行する。",
+      "references_tables": []
+    },
+    {
+      "ordinal": 3,
+      "heading_raw": "附 則（平成31年４月26日規則第15号）",
+      "raw_text": "この規則は、令和元年５月１日から施行する。",
+      "references_tables": []
+    },
+    {
+      "ordinal": 4,
+      "heading_raw": "附 則（令和３年９月10日規則第20号）",
+      "raw_text": "この規則は、令和３年10月１日から施行する。",
+      "references_tables": []
+    }
+  ],
+  "appended_tables": []
+}

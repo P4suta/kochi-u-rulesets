@@ -21,3 +21,4 @@ serde_json = "1.0.150"
 
 [dev-dependencies]
 serde_json = "1.0.150"
+insta = { version = "1.43.2", features = ["json", "glob"] }

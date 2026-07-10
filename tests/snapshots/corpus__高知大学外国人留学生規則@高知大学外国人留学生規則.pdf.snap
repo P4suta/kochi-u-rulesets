@@ -1,0 +1,239 @@
+---
+source: tests/corpus.rs
+expression: doc
+input_file: sources/高知大学外国人留学生規則.pdf
+---
+{
+  "title": "高知大学外国人留学生規則",
+  "enacted": "平成16年４月１日 規則第141号",
+  "last_amended": "最終改正  平成22年３月31日規則第124号",
+  "body": [
+    {
+      "type": "article",
+      "number": {
+        "article": 1,
+        "branch": null
+      },
+      "title": "趣旨",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "この規則は、高知大学学則（以下「学則」という。）第25条第３項の規定に基づき、高知大学の外国人留学生に関し他の規則又はこれに基づく特別の定めのあるもののほか、必要な事項を定める。",
+          "items": []
+        }
+      ]
+    },
+    {
+      "type": "article",
+      "number": {
+        "article": 2,
+        "branch": null
+      },
+      "title": "区分",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "外国人留学生の区分は、次の各号のとおりとする。",
+          "items": [
+            {
+              "number": 1,
+              "text": "学部学生"
+            },
+            {
+              "number": 2,
+              "text": "科目等履修生"
+            },
+            {
+              "number": 3,
+              "text": "特別聴講学生（大学間交流協定に基づく外国人留学生（以下「協定留学生」という。））"
+            },
+            {
+              "number": 4,
+              "text": "研究生"
+            },
+            {
+              "number": 5,
+              "text": "大学院学生"
+            },
+            {
+              "number": 6,
+              "text": "特別研究学生（協定留学生）"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "article",
+      "number": {
+        "article": 3,
+        "branch": null
+      },
+      "title": "入学の時期",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "外国人留学生の入学の時期は、原則として学年の始めとする。",
+          "items": []
+        }
+      ]
+    },
+    {
+      "type": "article",
+      "number": {
+        "article": 4,
+        "branch": null
+      },
+      "title": "入学の出願",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "外国人留学生として入学を志願する者は、入学願書に検定料及び所定の書類を添えて、学長に願い出なければならない。",
+          "items": []
+        }
+      ]
+    },
+    {
+      "type": "article",
+      "number": {
+        "article": 5,
+        "branch": null
+      },
+      "title": "入学者の選考",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "前条の入学志願者については、別に定めるところにより、特別選考を行う。",
+          "items": []
+        },
+        {
+          "number": 2,
+          "text": "国費外国人留学生（国費外国人留学生制度実施要項（昭和29年文部大臣裁定）に定める者をいう。以下同じ。）については、高知大学留学生委員会（以下「留学生委員会」という。）の議を経て、学長が文部科学大臣に推薦する。",
+          "items": []
+        },
+        {
+          "number": 3,
+          "text": "外国政府派遣留学生については、留学生委員会の議を経て、学長が文部科学大臣と協議する。",
+          "items": []
+        },
+        {
+          "number": 4,
+          "text": "協定留学生については、留学生委員会の議を経て、学長が財団法人日本国際教育協会に推薦する。",
+          "items": []
+        }
+      ]
+    },
+    {
+      "type": "article",
+      "number": {
+        "article": 6,
+        "branch": null
+      },
+      "title": "入学の許可",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "前条の選考に合格した者は、所定の期日までに入学料を納付し、所定の書類を提出しなければならない。",
+          "items": []
+        },
+        {
+          "number": 2,
+          "text": "学長は、前項の入学手続を終えた者に入学を許可する。",
+          "items": []
+        }
+      ]
+    },
+    {
+      "type": "article",
+      "number": {
+        "article": 7,
+        "branch": null
+      },
+      "title": "検定料、入学料、授業料及び寄宿料",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "学部及び大学院の学生に係る検定料、入学料、授業料及び寄宿料の額及び徴収方法は、国立大学法人高知大学における授業料等費用に関する規則の定めるところによる。",
+          "items": []
+        },
+        {
+          "number": 2,
+          "text": "研究生及び学部の科目等履修生の検定料、入学料及び授業料の額は、国立大学法人高知大学における授業料等費用に関する規則に定める額とする。",
+          "items": []
+        },
+        {
+          "number": 3,
+          "text": "国費外国人留学生については、検定料、入学料及び授業料を徴収しないものとする。",
+          "items": []
+        },
+        {
+          "number": 4,
+          "text": "協定留学生については、大学間交流協定に基づく外国人留学生に対する授業料等の不徴収実施要項（平成３年学術国際局長裁定）の定めるところによる。",
+          "items": []
+        },
+        {
+          "number": 5,
+          "text": "外国の大学との間の協定において、学長が相当と認める事由がある場合は、検定料、入学料及び授業料を徴収しないことができる。",
+          "items": []
+        }
+      ]
+    },
+    {
+      "type": "article",
+      "number": {
+        "article": 8,
+        "branch": null
+      },
+      "title": "既納の授業料等",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "納付した検定料、入学料、授業料及び寄宿料は、返還しない。",
+          "items": []
+        }
+      ]
+    },
+    {
+      "type": "article",
+      "number": {
+        "article": 9,
+        "branch": null
+      },
+      "title": "規則の準用",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "この規則に定めるもののほか、外国人留学生については、学則その他学生等に関する諸規則を準用する。",
+          "items": []
+        }
+      ]
+    }
+  ],
+  "supplementary_provisions": [
+    {
+      "ordinal": 1,
+      "heading_raw": "附  則",
+      "raw_text": "この規則は、平成16年４月１日から施行する。",
+      "references_tables": []
+    },
+    {
+      "ordinal": 2,
+      "heading_raw": "附  則",
+      "raw_text": "この規則は、平成18年６月28日から施行する。",
+      "references_tables": []
+    },
+    {
+      "ordinal": 3,
+      "heading_raw": "附  則（平成 18 年７月 12 日規則第 17 号）",
+      "raw_text": "この規則は、平成18年７月12日から施行し、平成18年４月１日から適用する。",
+      "references_tables": []
+    },
+    {
+      "ordinal": 4,
+      "heading_raw": "附  則（平成 22 年３月 31 日規則第 124 号）",
+      "raw_text": "この規則は、平成22年４月１日から施行する。",
+      "references_tables": []
+    }
+  ],
+  "appended_tables": []
+}

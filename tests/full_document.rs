@@ -1,10 +1,21 @@
 use std::collections::BTreeSet;
 
-use kochi_u_rulesets::model::ArticleNumber;
+use kochi_u_rulesets::model::{ArticleNumber, BodyNode};
 use kochi_u_rulesets::{extract, structure};
 
 fn pdf_path() -> std::path::PathBuf {
-    std::path::Path::new(env!("CARGO_MANIFEST_DIR")).join("高知大学学則.pdf")
+    std::path::Path::new(env!("CARGO_MANIFEST_DIR")).join("sources/高知大学学則.pdf")
+}
+
+/// Counts the 節 directly under a chapter node.
+fn section_count(node: &BodyNode) -> usize {
+    match node {
+        BodyNode::Chapter { children, .. } => children
+            .iter()
+            .filter(|c| matches!(c, BodyNode::Section { .. }))
+            .count(),
+        _ => panic!("expected a Chapter node"),
+    }
 }
 
 #[test]
@@ -44,12 +55,11 @@ fn known_facts_about_the_real_document() {
     let doc = structure::parse(&pages).unwrap();
 
     assert_eq!(doc.title, "高知大学学則");
-    assert_eq!(doc.chapters.len(), 8);
+    let chapters: Vec<&BodyNode> = doc.chapters().collect();
+    assert_eq!(chapters.len(), 8);
 
     // 第1条 (目的) — title from the preceding annotation, 3 items in paragraph 1.
-    let ch1 = &doc.chapters[0];
-    assert_eq!(ch1.number, 1);
-    let art1 = &ch1.articles[0];
+    let art1 = doc.all_articles()[0];
     assert_eq!(
         art1.number,
         ArticleNumber {
@@ -61,9 +71,9 @@ fn known_facts_about_the_real_document() {
     assert_eq!(art1.paragraphs[0].items.len(), 3);
 
     // Section counts per chapter, from the 目次.
-    assert_eq!(doc.chapters[1].sections.len(), 9); // 第2章 通則
-    assert_eq!(doc.chapters[2].sections.len(), 5); // 第3章 学部
-    assert_eq!(doc.chapters[3].sections.len(), 5); // 第4章 大学院
+    assert_eq!(section_count(chapters[1]), 9); // 第2章 通則
+    assert_eq!(section_count(chapters[2]), 5); // 第3章 学部
+    assert_eq!(section_count(chapters[3]), 5); // 第4章 大学院
 
     // The seven "の" branch articles found during manual verification.
     let branches: BTreeSet<ArticleNumber> = doc

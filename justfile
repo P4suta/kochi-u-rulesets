@@ -6,13 +6,17 @@ default:
 
 # === Build / run ===
 
-# 高知大学学則.pdf → data.json
+# sources/高知大学学則.pdf → out/高知大学学則.{json,md}
 run:
-    cargo run --release -q -- 高知大学学則.pdf -o data.json
+    cargo run --release -q -- --out-dir out sources/高知大学学則.pdf
+
+# Every ruleset PDF in sources/ → out/<name>.{json,md}
+run-all:
+    cargo run --release -q -- --out-dir out sources
 
 # Dump raw per-page extracted text (debugging / regenerating test fixtures).
-dump-raw DIR="raw-dump":
-    cargo run -q -- 高知大学学則.pdf --dump-raw {{DIR}}
+dump-raw PDF="sources/高知大学学則.pdf" DIR="raw-dump":
+    cargo run -q -- {{PDF}} --dump-raw {{DIR}}
 
 # === Test ===
 
