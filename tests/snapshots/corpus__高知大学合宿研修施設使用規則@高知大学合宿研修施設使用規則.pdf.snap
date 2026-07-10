@@ -5,13 +5,42 @@ input_file: sources/高知大学合宿研修施設使用規則.pdf
 ---
 {
   "title": "高知大学合宿研修施設使用規則",
-  "enacted": "平成16年４月１日 規則第156号",
-  "last_amended": "最終改正  令和３年９月10日規則第20号",
+  "enacted": {
+    "date": {
+      "era": "heisei",
+      "year": 16,
+      "month": 4,
+      "day": 1,
+      "iso": "2004-04-01"
+    },
+    "rule_number": {
+      "number": 156,
+      "year": null,
+      "raw": "規則第156号"
+    },
+    "raw": "平成16年４月１日 規則第156号"
+  },
+  "last_amended": {
+    "date": {
+      "era": "reiwa",
+      "year": 3,
+      "month": 9,
+      "day": 10,
+      "iso": "2021-09-10"
+    },
+    "rule_number": {
+      "number": 20,
+      "year": null,
+      "raw": "規則第20号"
+    },
+    "raw": "最終改正  令和３年９月10日規則第20号"
+  },
+  "full_amendment_note": null,
   "body": [
     {
       "type": "article",
       "number": {
-        "article": 1,
+        "main": 1,
         "branch": null
       },
       "title": "趣旨",
@@ -26,7 +55,7 @@ input_file: sources/高知大学合宿研修施設使用規則.pdf
     {
       "type": "article",
       "number": {
-        "article": 2,
+        "main": 2,
         "branch": null
       },
       "title": "使用・範囲",
@@ -37,15 +66,18 @@ input_file: sources/高知大学合宿研修施設使用規則.pdf
           "items": [
             {
               "number": 1,
-              "text": "本学の企画する行事に関連して行う合宿"
+              "text": "本学の企画する行事に関連して行う合宿",
+              "subitems": []
             },
             {
               "number": 2,
-              "text": "本学の学生の課外活動のために行う合宿"
+              "text": "本学の学生の課外活動のために行う合宿",
+              "subitems": []
             },
             {
               "number": 3,
-              "text": "その他特に理事（教育担当）が必要と認めた場合"
+              "text": "その他特に理事（教育担当）が必要と認めた場合",
+              "subitems": []
             }
           ]
         }
@@ -54,7 +86,7 @@ input_file: sources/高知大学合宿研修施設使用規則.pdf
     {
       "type": "article",
       "number": {
-        "article": 3,
+        "main": 3,
         "branch": null
       },
       "title": "使用手続",
@@ -74,7 +106,7 @@ input_file: sources/高知大学合宿研修施設使用規則.pdf
     {
       "type": "article",
       "number": {
-        "article": 4,
+        "main": 4,
         "branch": null
       },
       "title": "使用期間及び鍵の授受",
@@ -94,7 +126,7 @@ input_file: sources/高知大学合宿研修施設使用規則.pdf
     {
       "type": "article",
       "number": {
-        "article": 5,
+        "main": 5,
         "branch": null
       },
       "title": "使用心得",
@@ -105,31 +137,38 @@ input_file: sources/高知大学合宿研修施設使用規則.pdf
           "items": [
             {
               "number": 1,
-              "text": "使用目的以外の用途に使用しないこと。"
+              "text": "使用目的以外の用途に使用しないこと。",
+              "subitems": []
             },
             {
               "number": 2,
-              "text": "使用時間を厳守すること。"
+              "text": "使用時間を厳守すること。",
+              "subitems": []
             },
             {
               "number": 3,
-              "text": "建物及び備付物品を損傷しないこと。"
+              "text": "建物及び備付物品を損傷しないこと。",
+              "subitems": []
             },
             {
               "number": 4,
-              "text": "火気に特に注意し、所定の場所以外の熱器具等の使用及び喫煙をしないこと。"
+              "text": "火気に特に注意し、所定の場所以外の熱器具等の使用及び喫煙をしないこと。",
+              "subitems": []
             },
             {
               "number": 5,
-              "text": "整理整頓に心掛け、朝夕必ず清掃すること。"
+              "text": "整理整頓に心掛け、朝夕必ず清掃すること。",
+              "subitems": []
             },
             {
               "number": 6,
-              "text": "盗難に留意し、全員不在となるときは、戸締りを厳重にすること。"
+              "text": "盗難に留意し、全員不在となるときは、戸締りを厳重にすること。",
+              "subitems": []
             },
             {
               "number": 7,
-              "text": "その他係員の指示事項を厳守すること。"
+              "text": "その他係員の指示事項を厳守すること。",
+              "subitems": []
             }
           ]
         }
@@ -138,7 +177,7 @@ input_file: sources/高知大学合宿研修施設使用規則.pdf
     {
       "type": "article",
       "number": {
-        "article": 6,
+        "main": 6,
         "branch": null
       },
       "title": null,
@@ -153,7 +192,7 @@ input_file: sources/高知大学合宿研修施設使用規則.pdf
     {
       "type": "article",
       "number": {
-        "article": 7,
+        "main": 7,
         "branch": null
       },
       "title": null,
@@ -168,7 +207,7 @@ input_file: sources/高知大学合宿研修施設使用規則.pdf
     {
       "type": "article",
       "number": {
-        "article": 8,
+        "main": 8,
         "branch": null
       },
       "title": null,
@@ -183,7 +222,7 @@ input_file: sources/高知大学合宿研修施設使用規則.pdf
     {
       "type": "article",
       "number": {
-        "article": 9,
+        "main": 9,
         "branch": null
       },
       "title": "損害賠償",
@@ -198,7 +237,7 @@ input_file: sources/高知大学合宿研修施設使用規則.pdf
     {
       "type": "article",
       "number": {
-        "article": 10,
+        "main": 10,
         "branch": null
       },
       "title": "事務",
@@ -213,7 +252,7 @@ input_file: sources/高知大学合宿研修施設使用規則.pdf
     {
       "type": "article",
       "number": {
-        "article": 11,
+        "main": 11,
         "branch": null
       },
       "title": "雑則",
@@ -230,45 +269,175 @@ input_file: sources/高知大学合宿研修施設使用規則.pdf
     {
       "ordinal": 1,
       "heading_raw": "附  則",
-      "raw_text": "この規則は、平成16年４月１日から施行する。",
+      "amendment": null,
+      "promulgated": null,
+      "effective": {
+        "kind": "date",
+        "era": "heisei",
+        "year": 16,
+        "month": 4,
+        "day": 1,
+        "iso": "2004-04-01"
+      },
+      "text": "この規則は、平成16年４月１日から施行する。",
       "references_tables": []
     },
     {
       "ordinal": 2,
       "heading_raw": "附  則（平成17年７月１日規則第545号）",
-      "raw_text": "この規則は、平成17年７月１日から施行する。",
+      "amendment": {
+        "number": 545,
+        "year": null,
+        "raw": "規則第545号"
+      },
+      "promulgated": {
+        "era": "heisei",
+        "year": 17,
+        "month": 7,
+        "day": 1,
+        "iso": "2005-07-01"
+      },
+      "effective": {
+        "kind": "date",
+        "era": "heisei",
+        "year": 17,
+        "month": 7,
+        "day": 1,
+        "iso": "2005-07-01"
+      },
+      "text": "この規則は、平成17年７月１日から施行する。",
       "references_tables": []
     },
     {
       "ordinal": 3,
       "heading_raw": "附  則（平成28年３月23日規則第118号）",
-      "raw_text": "この規則は、平成28年４月１日から施行する。",
+      "amendment": {
+        "number": 118,
+        "year": null,
+        "raw": "規則第118号"
+      },
+      "promulgated": {
+        "era": "heisei",
+        "year": 28,
+        "month": 3,
+        "day": 23,
+        "iso": "2016-03-23"
+      },
+      "effective": {
+        "kind": "date",
+        "era": "heisei",
+        "year": 28,
+        "month": 4,
+        "day": 1,
+        "iso": "2016-04-01"
+      },
+      "text": "この規則は、平成28年４月１日から施行する。",
       "references_tables": []
     },
     {
       "ordinal": 4,
       "heading_raw": "附  則（平成30年３月28日規則第86号）",
-      "raw_text": "この規則は、平成30年４月１日から施行する。",
+      "amendment": {
+        "number": 86,
+        "year": null,
+        "raw": "規則第86号"
+      },
+      "promulgated": {
+        "era": "heisei",
+        "year": 30,
+        "month": 3,
+        "day": 28,
+        "iso": "2018-03-28"
+      },
+      "effective": {
+        "kind": "date",
+        "era": "heisei",
+        "year": 30,
+        "month": 4,
+        "day": 1,
+        "iso": "2018-04-01"
+      },
+      "text": "この規則は、平成30年４月１日から施行する。",
       "references_tables": []
     },
     {
       "ordinal": 5,
       "heading_raw": "附  則（平成31年３月27日規則第100号）",
-      "raw_text": "この規則は、平成31年４月１日から施行する。",
+      "amendment": {
+        "number": 100,
+        "year": null,
+        "raw": "規則第100号"
+      },
+      "promulgated": {
+        "era": "heisei",
+        "year": 31,
+        "month": 3,
+        "day": 27,
+        "iso": "2019-03-27"
+      },
+      "effective": {
+        "kind": "date",
+        "era": "heisei",
+        "year": 31,
+        "month": 4,
+        "day": 1,
+        "iso": "2019-04-01"
+      },
+      "text": "この規則は、平成31年４月１日から施行する。",
       "references_tables": []
     },
     {
       "ordinal": 6,
       "heading_raw": "附  則（平成31年４月26日規則第15号）",
-      "raw_text": "この規則は、令和元年５月１日から施行する。",
+      "amendment": {
+        "number": 15,
+        "year": null,
+        "raw": "規則第15号"
+      },
+      "promulgated": {
+        "era": "heisei",
+        "year": 31,
+        "month": 4,
+        "day": 26,
+        "iso": "2019-04-26"
+      },
+      "effective": {
+        "kind": "date",
+        "era": "reiwa",
+        "year": 1,
+        "month": 5,
+        "day": 1,
+        "iso": "2019-05-01"
+      },
+      "text": "この規則は、令和元年５月１日から施行する。",
       "references_tables": []
     },
     {
       "ordinal": 7,
       "heading_raw": "附  則（令和３年９月10日規則第20号）",
-      "raw_text": "この規則は、令和３年 10 月１日から施行する。",
+      "amendment": {
+        "number": 20,
+        "year": null,
+        "raw": "規則第20号"
+      },
+      "promulgated": {
+        "era": "reiwa",
+        "year": 3,
+        "month": 9,
+        "day": 10,
+        "iso": "2021-09-10"
+      },
+      "effective": {
+        "kind": "date",
+        "era": "reiwa",
+        "year": 3,
+        "month": 10,
+        "day": 1,
+        "iso": "2021-10-01"
+      },
+      "text": "この規則は、令和３年 10 月１日から施行する。",
       "references_tables": []
     }
   ],
-  "appended_tables": []
+  "appendices": []
 }

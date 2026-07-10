@@ -5,13 +5,42 @@ input_file: sources/高知大学における授業科目の履修登録単位の
 ---
 {
   "title": "高知大学における授業科目の履修登録単位の上限に関する規則",
-  "enacted": "平成16年４月１日 規則第134号",
-  "last_amended": "最終改正  令和７年５月９日規則第13号",
+  "enacted": {
+    "date": {
+      "era": "heisei",
+      "year": 16,
+      "month": 4,
+      "day": 1,
+      "iso": "2004-04-01"
+    },
+    "rule_number": {
+      "number": 134,
+      "year": null,
+      "raw": "規則第134号"
+    },
+    "raw": "平成16年４月１日 規則第134号"
+  },
+  "last_amended": {
+    "date": {
+      "era": "reiwa",
+      "year": 7,
+      "month": 5,
+      "day": 9,
+      "iso": "2025-05-09"
+    },
+    "rule_number": {
+      "number": 13,
+      "year": null,
+      "raw": "規則第13号"
+    },
+    "raw": "最終改正  令和７年５月９日規則第13号"
+  },
+  "full_amendment_note": null,
   "body": [
     {
       "type": "article",
       "number": {
-        "article": 1,
+        "main": 1,
         "branch": null
       },
       "title": "趣旨",
@@ -26,7 +55,7 @@ input_file: sources/高知大学における授業科目の履修登録単位の
     {
       "type": "article",
       "number": {
-        "article": 2,
+        "main": 2,
         "branch": null
       },
       "title": "対象科目",
@@ -41,14 +70,14 @@ input_file: sources/高知大学における授業科目の履修登録単位の
     {
       "type": "article",
       "number": {
-        "article": 3,
+        "main": 3,
         "branch": null
       },
       "title": "履修登録上限単位数",
       "paragraphs": [
         {
           "number": 1,
-          "text": "学生の対象科目の履修登録は、１年次から３年次までにおいて１学期間に 22単位を上限とする。ただし、複数学期にわたって開講される授業科目の単位数の取扱いは、当該科目の単位数を開講される学期数で除した数とする。",
+          "text": "学生の対象科目の履修登録は、１年次から３年次までにおいて１学期間に22単位を上限とする。ただし、複数学期にわたって開講される授業科目の単位数の取扱いは、当該科目の単位数を開講される学期数で除した数とする。",
           "items": []
         }
       ]
@@ -56,7 +85,7 @@ input_file: sources/高知大学における授業科目の履修登録単位の
     {
       "type": "article",
       "number": {
-        "article": 4,
+        "main": 4,
         "branch": null
       },
       "title": "履修登録単位数の特例",
@@ -76,7 +105,7 @@ input_file: sources/高知大学における授業科目の履修登録単位の
     {
       "type": "article",
       "number": {
-        "article": 5,
+        "main": 5,
         "branch": null
       },
       "title": "成績優秀者",
@@ -87,11 +116,13 @@ input_file: sources/高知大学における授業科目の履修登録単位の
           "items": [
             {
               "number": 1,
-              "text": "過去１年間において、第２条に定める対象科目を32単位以上修得していること。ただし、当該学期が本学に入学して最初の学期であった者については当該学期終了時に対象科目を16単位以上修得していることとし、過去１年間に休学、留学その他のやむを得ない事由によって通常の履修を行うことができない期間があったと学部教授会が認める者については過去１年間において対象科目を16単位以上修得していることとする。"
+              "text": "過去１年間において、第２条に定める対象科目を32単位以上修得していること。ただし、当該学期が本学に入学して最初の学期であった者については当該学期終了時に対象科目を16単位以上修得していることとし、過去１年間に休学、留学その他のやむを得ない事由によって通常の履修を行うことができない期間があったと学部教授会が認める者については過去１年間において対象科目を16単位以上修得していることとする。",
+              "subitems": []
             },
             {
               "number": 2,
-              "text": "過去１年間において成績評価された対象科目のＧＰＡが、3.0以上であること。"
+              "text": "過去１年間において成績評価された対象科目のＧＰＡが、3.0以上であること。",
+              "subitems": []
             }
           ]
         },
@@ -105,7 +136,7 @@ input_file: sources/高知大学における授業科目の履修登録単位の
     {
       "type": "article",
       "number": {
-        "article": 6,
+        "main": 6,
         "branch": null
       },
       "title": "履修指導",
@@ -120,7 +151,7 @@ input_file: sources/高知大学における授業科目の履修登録単位の
     {
       "type": "article",
       "number": {
-        "article": 7,
+        "main": 7,
         "branch": null
       },
       "title": "雑則",
@@ -137,45 +168,175 @@ input_file: sources/高知大学における授業科目の履修登録単位の
     {
       "ordinal": 1,
       "heading_raw": "附  則",
-      "raw_text": "この規則は、平成16年４月１日から施行する。ただし、医学部の学生を除く。",
+      "amendment": null,
+      "promulgated": null,
+      "effective": {
+        "kind": "date",
+        "era": "heisei",
+        "year": 16,
+        "month": 4,
+        "day": 1,
+        "iso": "2004-04-01"
+      },
+      "text": "この規則は、平成16年４月１日から施行する。ただし、医学部の学生を除く。",
       "references_tables": []
     },
     {
       "ordinal": 2,
       "heading_raw": "附  則（平成17年10月11日規則第537号）",
-      "raw_text": "この規則は､平成18年４月１日から施行する。",
+      "amendment": {
+        "number": 537,
+        "year": null,
+        "raw": "規則第537号"
+      },
+      "promulgated": {
+        "era": "heisei",
+        "year": 17,
+        "month": 10,
+        "day": 11,
+        "iso": "2005-10-11"
+      },
+      "effective": {
+        "kind": "date",
+        "era": "heisei",
+        "year": 18,
+        "month": 4,
+        "day": 1,
+        "iso": "2006-04-01"
+      },
+      "text": "この規則は､平成18年４月１日から施行する。",
       "references_tables": []
     },
     {
       "ordinal": 3,
       "heading_raw": "附  則（平成20年３月26日規則第127号）",
-      "raw_text": "この規則は、平成20年４月１日から施行する。",
+      "amendment": {
+        "number": 127,
+        "year": null,
+        "raw": "規則第127号"
+      },
+      "promulgated": {
+        "era": "heisei",
+        "year": 20,
+        "month": 3,
+        "day": 26,
+        "iso": "2008-03-26"
+      },
+      "effective": {
+        "kind": "date",
+        "era": "heisei",
+        "year": 20,
+        "month": 4,
+        "day": 1,
+        "iso": "2008-04-01"
+      },
+      "text": "この規則は、平成20年４月１日から施行する。",
       "references_tables": []
     },
     {
       "ordinal": 4,
       "heading_raw": "附  則（平成25年１月23日規則第60号）",
-      "raw_text": "この規則は、平成25年１月23日から施行する。",
+      "amendment": {
+        "number": 60,
+        "year": null,
+        "raw": "規則第60号"
+      },
+      "promulgated": {
+        "era": "heisei",
+        "year": 25,
+        "month": 1,
+        "day": 23,
+        "iso": "2013-01-23"
+      },
+      "effective": {
+        "kind": "date",
+        "era": "heisei",
+        "year": 25,
+        "month": 1,
+        "day": 23,
+        "iso": "2013-01-23"
+      },
+      "text": "この規則は、平成25年１月23日から施行する。",
       "references_tables": []
     },
     {
       "ordinal": 5,
       "heading_raw": "附  則（平成27年３月25日規則第156号）",
-      "raw_text": "１  この規則は、平成27年４月１日から施行する。\n２  この規則の施行日以前に在学し、引き続きこの規則の施行日に在学する者については、\n改正後の高知大学における授業科目の履修登録単位の上限に関する規則にかかわらず、\nなお従前の例による。",
+      "amendment": {
+        "number": 156,
+        "year": null,
+        "raw": "規則第156号"
+      },
+      "promulgated": {
+        "era": "heisei",
+        "year": 27,
+        "month": 3,
+        "day": 25,
+        "iso": "2015-03-25"
+      },
+      "effective": {
+        "kind": "date",
+        "era": "heisei",
+        "year": 27,
+        "month": 4,
+        "day": 1,
+        "iso": "2015-04-01"
+      },
+      "text": "１  この規則は、平成27年４月１日から施行する。\n２  この規則の施行日以前に在学し、引き続きこの規則の施行日に在学する者については、\n改正後の高知大学における授業科目の履修登録単位の上限に関する規則にかかわらず、\nなお従前の例による。",
       "references_tables": []
     },
     {
       "ordinal": 6,
       "heading_raw": "附  則（平成29年５月22日規則第７号）",
-      "raw_text": "この規則は、平成29年５月22日から施行する。",
+      "amendment": {
+        "number": 7,
+        "year": null,
+        "raw": "規則第７号"
+      },
+      "promulgated": {
+        "era": "heisei",
+        "year": 29,
+        "month": 5,
+        "day": 22,
+        "iso": "2017-05-22"
+      },
+      "effective": {
+        "kind": "date",
+        "era": "heisei",
+        "year": 29,
+        "month": 5,
+        "day": 22,
+        "iso": "2017-05-22"
+      },
+      "text": "この規則は、平成29年５月22日から施行する。",
       "references_tables": []
     },
     {
       "ordinal": 7,
       "heading_raw": "附  則（令和７年５月９日規則第13号）",
-      "raw_text": "この規則は、令和７年５月９日から施行する。",
+      "amendment": {
+        "number": 13,
+        "year": null,
+        "raw": "規則第13号"
+      },
+      "promulgated": {
+        "era": "reiwa",
+        "year": 7,
+        "month": 5,
+        "day": 9,
+        "iso": "2025-05-09"
+      },
+      "effective": {
+        "kind": "date",
+        "era": "reiwa",
+        "year": 7,
+        "month": 5,
+        "day": 9,
+        "iso": "2025-05-09"
+      },
+      "text": "この規則は、令和７年５月９日から施行する。",
       "references_tables": []
     }
   ],
-  "appended_tables": []
+  "appendices": []
 }

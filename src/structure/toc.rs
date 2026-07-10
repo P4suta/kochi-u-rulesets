@@ -31,15 +31,12 @@ pub fn expected_article_numbers(toc_lines: &[String]) -> BTreeSet<ArticleNumber>
         let branch = c.get(2).and_then(|m| parse_digits(m.as_str()));
         if let Some(end_m) = c.get(3) {
             let end = parse_digits(end_m.as_str()).unwrap();
-            for article in start..=end {
-                out.insert(ArticleNumber {
-                    article,
-                    branch: None,
-                });
+            for main in start..=end {
+                out.insert(ArticleNumber { main, branch: None });
             }
         } else {
             out.insert(ArticleNumber {
-                article: start,
+                main: start,
                 branch,
             });
         }
@@ -61,10 +58,7 @@ mod tests {
         let got = expected_article_numbers(&toc);
         let want: BTreeSet<_> = [2, 3, 4]
             .into_iter()
-            .map(|article| ArticleNumber {
-                article,
-                branch: None,
-            })
+            .map(|main| ArticleNumber { main, branch: None })
             .collect();
         assert_eq!(got, want);
     }
@@ -75,10 +69,7 @@ mod tests {
         let got = expected_article_numbers(&toc);
         let want: BTreeSet<_> = [19, 20]
             .into_iter()
-            .map(|article| ArticleNumber {
-                article,
-                branch: None,
-            })
+            .map(|main| ArticleNumber { main, branch: None })
             .collect();
         assert_eq!(got, want);
     }
@@ -90,7 +81,7 @@ mod tests {
         assert_eq!(
             got,
             BTreeSet::from([ArticleNumber {
-                article: 84,
+                main: 84,
                 branch: Some(2)
             }])
         );
@@ -103,7 +94,7 @@ mod tests {
         assert_eq!(
             got,
             BTreeSet::from([ArticleNumber {
-                article: 1,
+                main: 1,
                 branch: None
             }])
         );

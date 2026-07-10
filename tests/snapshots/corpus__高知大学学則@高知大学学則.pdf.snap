@@ -5,37 +5,72 @@ input_file: sources/高知大学学則.pdf
 ---
 {
   "title": "高知大学学則",
-  "enacted": "平成20年３月26日 規  則  第  74  号",
-  "last_amended": "最終改正  令和８年１月 28 日規則第 58 号",
+  "enacted": {
+    "date": {
+      "era": "heisei",
+      "year": 20,
+      "month": 3,
+      "day": 26,
+      "iso": "2008-03-26"
+    },
+    "rule_number": {
+      "number": 74,
+      "year": null,
+      "raw": "規  則  第  74  号"
+    },
+    "raw": "平成20年３月26日 規  則  第  74  号"
+  },
+  "last_amended": {
+    "date": {
+      "era": "reiwa",
+      "year": 8,
+      "month": 1,
+      "day": 28,
+      "iso": "2026-01-28"
+    },
+    "rule_number": {
+      "number": 58,
+      "year": null,
+      "raw": "規則第 58 号"
+    },
+    "raw": "最終改正  令和８年１月 28 日規則第 58 号"
+  },
+  "full_amendment_note": null,
   "body": [
     {
       "type": "chapter",
-      "number": 1,
+      "number": {
+        "main": 1,
+        "branch": null
+      },
       "title": "総則",
       "children": [
         {
           "type": "article",
           "number": {
-            "article": 1,
+            "main": 1,
             "branch": null
           },
           "title": "目的",
           "paragraphs": [
             {
               "number": 1,
-              "text": "高知大学（以下「本学」という。）の学部においては、教育基本法（平成 18 年法律第 120 号）及び学校教育法（昭和 22 年法律第 26 号）の趣旨に則り、学術の中心として広く知識を授けるとともに深く学芸を教授研究し、知的、道徳的及び応用的能力を展開させることを目的とし、次の理念を掲げる。",
+              "text": "高知大学（以下「本学」という。）の学部においては、教育基本法（平成18年法律第120号）及び学校教育法（昭和22年法律第26号）の趣旨に則り、学術の中心として広く知識を授けるとともに深く学芸を教授研究し、知的、道徳的及び応用的能力を展開させることを目的とし、次の理念を掲げる。",
               "items": [
                 {
                   "number": 1,
-                  "text": "広範な教養と高度な専門知識・技術に裏づけられた創造的探究心と豊かな人間性を培い、人類の健全な発展に積極的に貢献する人材を育成する。"
+                  "text": "広範な教養と高度な専門知識・技術に裏づけられた創造的探究心と豊かな人間性を培い、人類の健全な発展に積極的に貢献する人材を育成する。",
+                  "subitems": []
                 },
                 {
                   "number": 2,
-                  "text": "諸科学の基礎と応用について学際協力と国際協力の下に、創造的独創的研究を行い、学術文化の進展に寄与する。"
+                  "text": "諸科学の基礎と応用について学際協力と国際協力の下に、創造的独創的研究を行い、学術文化の進展に寄与する。",
+                  "subitems": []
                 },
                 {
                   "number": 3,
-                  "text": "教育研究の成果を通して、世界の文化と人類福祉の向上に貢献する。また、地域社会の振興、教育と文化の向上及び福祉の増進に努める。"
+                  "text": "教育研究の成果を通して、世界の文化と人類福祉の向上に貢献する。また、地域社会の振興、教育と文化の向上及び福祉の増進に努める。",
+                  "subitems": []
                 }
               ]
             },
@@ -50,18 +85,24 @@ input_file: sources/高知大学学則.pdf
     },
     {
       "type": "chapter",
-      "number": 2,
+      "number": {
+        "main": 2,
+        "branch": null
+      },
       "title": "通則",
       "children": [
         {
           "type": "section",
-          "number": 1,
+          "number": {
+            "main": 1,
+            "branch": null
+          },
           "title": "学年、学期及び休業日",
           "children": [
             {
               "type": "article",
               "number": {
-                "article": 2,
+                "main": 2,
                 "branch": null
               },
               "title": "学年",
@@ -76,7 +117,7 @@ input_file: sources/高知大学学則.pdf
             {
               "type": "article",
               "number": {
-                "article": 3,
+                "main": 3,
                 "branch": null
               },
               "title": "学期",
@@ -91,7 +132,7 @@ input_file: sources/高知大学学則.pdf
             {
               "type": "article",
               "number": {
-                "article": 4,
+                "main": 4,
                 "branch": null
               },
               "title": "休業日",
@@ -102,27 +143,33 @@ input_file: sources/高知大学学則.pdf
                   "items": [
                     {
                       "number": 1,
-                      "text": "日曜日及び土曜日"
+                      "text": "日曜日及び土曜日",
+                      "subitems": []
                     },
                     {
                       "number": 2,
-                      "text": "国民の祝日に関する法律（昭和23年法律第178号）に規定する休日"
+                      "text": "国民の祝日に関する法律（昭和23年法律第178号）に規定する休日",
+                      "subitems": []
                     },
                     {
                       "number": 3,
-                      "text": "創立記念日  10月１日"
+                      "text": "創立記念日  10月１日",
+                      "subitems": []
                     },
                     {
                       "number": 4,
-                      "text": "夏季休業日"
+                      "text": "夏季休業日",
+                      "subitems": []
                     },
                     {
                       "number": 5,
-                      "text": "冬季休業日"
+                      "text": "冬季休業日",
+                      "subitems": []
                     },
                     {
                       "number": 6,
-                      "text": "学年末休業日"
+                      "text": "学年末休業日",
+                      "subitems": []
                     }
                   ]
                 },
@@ -142,13 +189,16 @@ input_file: sources/高知大学学則.pdf
         },
         {
           "type": "section",
-          "number": 2,
+          "number": {
+            "main": 2,
+            "branch": null
+          },
           "title": "収容定員等",
           "children": [
             {
               "type": "article",
               "number": {
-                "article": 5,
+                "main": 5,
                 "branch": null
               },
               "title": "収容定員等",
@@ -169,13 +219,16 @@ input_file: sources/高知大学学則.pdf
         },
         {
           "type": "section",
-          "number": 3,
+          "number": {
+            "main": 3,
+            "branch": null
+          },
           "title": "入学及び入学手続等",
           "children": [
             {
               "type": "article",
               "number": {
-                "article": 6,
+                "main": 6,
                 "branch": null
               },
               "title": "入学の時期",
@@ -190,7 +243,7 @@ input_file: sources/高知大学学則.pdf
             {
               "type": "article",
               "number": {
-                "article": 7,
+                "main": 7,
                 "branch": null
               },
               "title": "入学志願の手続",
@@ -205,7 +258,7 @@ input_file: sources/高知大学学則.pdf
             {
               "type": "article",
               "number": {
-                "article": 8,
+                "main": 8,
                 "branch": null
               },
               "title": "入学者選抜",
@@ -225,7 +278,7 @@ input_file: sources/高知大学学則.pdf
             {
               "type": "article",
               "number": {
-                "article": 9,
+                "main": 9,
                 "branch": null
               },
               "title": "入学の許可",
@@ -246,13 +299,16 @@ input_file: sources/高知大学学則.pdf
         },
         {
           "type": "section",
-          "number": 4,
+          "number": {
+            "main": 4,
+            "branch": null
+          },
           "title": "休学、復学、退学、転学、留学、除籍及び再入学",
           "children": [
             {
               "type": "article",
               "number": {
-                "article": 10,
+                "main": 10,
                 "branch": null
               },
               "title": "休学",
@@ -282,7 +338,7 @@ input_file: sources/高知大学学則.pdf
             {
               "type": "article",
               "number": {
-                "article": 11,
+                "main": 11,
                 "branch": null
               },
               "title": "休学期間",
@@ -293,11 +349,13 @@ input_file: sources/高知大学学則.pdf
                   "items": [
                     {
                       "number": 1,
-                      "text": "学部  ４年ただし、医学部においては、通算して３年を超えることができない。"
+                      "text": "学部  ４年ただし、医学部においては、通算して３年を超えることができない。",
+                      "subitems": []
                     },
                     {
                       "number": 2,
-                      "text": "大学院修士課程  ２年専門職学位課程 ２年博士課程（医学専攻を除く。）  ３年博士課程医学専攻  ４年ただし、第 56 条第２項に規定する場合においては、休学期間の年限を、当該標準修業年限と同じ年限とする。"
+                      "text": "大学院修士課程  ２年専門職学位課程２年博士課程（医学専攻を除く。）  ３年博士課程医学専攻  ４年ただし、第56条第２項に規定する場合においては、休学期間の年限を、当該標準修業年限と同じ年限とする。",
+                      "subitems": []
                     }
                   ]
                 },
@@ -311,7 +369,7 @@ input_file: sources/高知大学学則.pdf
             {
               "type": "article",
               "number": {
-                "article": 12,
+                "main": 12,
                 "branch": null
               },
               "title": "復学",
@@ -331,7 +389,7 @@ input_file: sources/高知大学学則.pdf
             {
               "type": "article",
               "number": {
-                "article": 13,
+                "main": 13,
                 "branch": null
               },
               "title": "退学",
@@ -351,7 +409,7 @@ input_file: sources/高知大学学則.pdf
             {
               "type": "article",
               "number": {
-                "article": 14,
+                "main": 14,
                 "branch": null
               },
               "title": "転学",
@@ -371,7 +429,7 @@ input_file: sources/高知大学学則.pdf
             {
               "type": "article",
               "number": {
-                "article": 15,
+                "main": 15,
                 "branch": null
               },
               "title": "留学",
@@ -388,7 +446,7 @@ input_file: sources/高知大学学則.pdf
                 },
                 {
                   "number": 3,
-                  "text": "留学により修得した単位の取扱いについては、第 49 条又は第 65 条の規定を適用する。",
+                  "text": "留学により修得した単位の取扱いについては、第49条又は第65条の規定を適用する。",
                   "items": []
                 }
               ]
@@ -396,7 +454,7 @@ input_file: sources/高知大学学則.pdf
             {
               "type": "article",
               "number": {
-                "article": 16,
+                "main": 16,
                 "branch": null
               },
               "title": "除籍",
@@ -407,23 +465,28 @@ input_file: sources/高知大学学則.pdf
                   "items": [
                     {
                       "number": 1,
-                      "text": "病気その他の理由により成業の見込みがないと認められる者"
+                      "text": "病気その他の理由により成業の見込みがないと認められる者",
+                      "subitems": []
                     },
                     {
                       "number": 2,
-                      "text": "入学料の免除若しくは徴収猶予を不許可とした者又は一部免除若しくは徴収猶予を許可した者であって、納付すべき入学料を納付しないもの"
+                      "text": "入学料の免除若しくは徴収猶予を不許可とした者又は一部免除若しくは徴収猶予を許可した者であって、納付すべき入学料を納付しないもの",
+                      "subitems": []
                     },
                     {
                       "number": 3,
-                      "text": "授業料又は寄宿料の納付を怠ったもの"
+                      "text": "授業料又は寄宿料の納付を怠ったもの",
+                      "subitems": []
                     },
                     {
                       "number": 4,
-                      "text": "所定の在学期間を超えたもの"
+                      "text": "所定の在学期間を超えたもの",
+                      "subitems": []
                     },
                     {
                       "number": 5,
-                      "text": "休学期間を満了し、復学手続をしないもの"
+                      "text": "休学期間を満了し、復学手続をしないもの",
+                      "subitems": []
                     }
                   ]
                 },
@@ -434,7 +497,7 @@ input_file: sources/高知大学学則.pdf
                 },
                 {
                   "number": 3,
-                  "text": "学長は、第 54 条及び第 76 条の規定により学位の授与を受けた者が、不正の方法により学位の授与を受けた事実が判明したとき、又はその名誉を汚辱する行為があったときは、学部教授会等の議を経て、卒業又は修了（以下この項において「卒業等」という。）を取り消し、卒業等の日をもって除籍する。",
+                  "text": "学長は、第54条及び第76条の規定により学位の授与を受けた者が、不正の方法により学位の授与を受けた事実が判明したとき、又はその名誉を汚辱する行為があったときは、学部教授会等の議を経て、卒業又は修了（以下この項において「卒業等」という。）を取り消し、卒業等の日をもって除籍する。",
                   "items": []
                 }
               ]
@@ -442,7 +505,7 @@ input_file: sources/高知大学学則.pdf
             {
               "type": "article",
               "number": {
-                "article": 17,
+                "main": 17,
                 "branch": null
               },
               "title": "再入学",
@@ -463,13 +526,16 @@ input_file: sources/高知大学学則.pdf
         },
         {
           "type": "section",
-          "number": 5,
+          "number": {
+            "main": 5,
+            "branch": null
+          },
           "title": "教育職員免許状",
           "children": [
             {
               "type": "article",
               "number": {
-                "article": 18,
+                "main": 18,
                 "branch": null
               },
               "title": "教育職員免許状",
@@ -490,13 +556,16 @@ input_file: sources/高知大学学則.pdf
         },
         {
           "type": "section",
-          "number": 6,
+          "number": {
+            "main": 6,
+            "branch": null
+          },
           "title": "賞罰",
           "children": [
             {
               "type": "article",
               "number": {
-                "article": 19,
+                "main": 19,
                 "branch": null
               },
               "title": "表彰",
@@ -516,7 +585,7 @@ input_file: sources/高知大学学則.pdf
             {
               "type": "article",
               "number": {
-                "article": 20,
+                "main": 20,
                 "branch": null
               },
               "title": "懲戒",
@@ -547,13 +616,16 @@ input_file: sources/高知大学学則.pdf
         },
         {
           "type": "section",
-          "number": 7,
+          "number": {
+            "main": 7,
+            "branch": null
+          },
           "title": "研究生、特別研究学生、科目等履修生及び特別聴講学生",
           "children": [
             {
               "type": "article",
               "number": {
-                "article": 21,
+                "main": 21,
                 "branch": null
               },
               "title": "研究生",
@@ -573,7 +645,7 @@ input_file: sources/高知大学学則.pdf
             {
               "type": "article",
               "number": {
-                "article": 22,
+                "main": 22,
                 "branch": null
               },
               "title": "特別研究学生",
@@ -593,7 +665,7 @@ input_file: sources/高知大学学則.pdf
             {
               "type": "article",
               "number": {
-                "article": 23,
+                "main": 23,
                 "branch": null
               },
               "title": "科目等履修生",
@@ -613,7 +685,7 @@ input_file: sources/高知大学学則.pdf
             {
               "type": "article",
               "number": {
-                "article": 24,
+                "main": 24,
                 "branch": null
               },
               "title": "特別聴講学生",
@@ -634,13 +706,16 @@ input_file: sources/高知大学学則.pdf
         },
         {
           "type": "section",
-          "number": 8,
+          "number": {
+            "main": 8,
+            "branch": null
+          },
           "title": "外国人留学生",
           "children": [
             {
               "type": "article",
               "number": {
-                "article": 25,
+                "main": 25,
                 "branch": null
               },
               "title": "外国人留学生",
@@ -666,13 +741,16 @@ input_file: sources/高知大学学則.pdf
         },
         {
           "type": "section",
-          "number": 9,
+          "number": {
+            "main": 9,
+            "branch": null
+          },
           "title": "長期履修学生",
           "children": [
             {
               "type": "article",
               "number": {
-                "article": 26,
+                "main": 26,
                 "branch": null
               },
               "title": "長期履修学生",
@@ -700,18 +778,24 @@ input_file: sources/高知大学学則.pdf
     },
     {
       "type": "chapter",
-      "number": 3,
+      "number": {
+        "main": 3,
+        "branch": null
+      },
       "title": "学部",
       "children": [
         {
           "type": "section",
-          "number": 1,
+          "number": {
+            "main": 1,
+            "branch": null
+          },
           "title": "目的の公表",
           "children": [
             {
               "type": "article",
               "number": {
-                "article": 27,
+                "main": 27,
                 "branch": null
               },
               "title": "目的の公表",
@@ -727,13 +811,16 @@ input_file: sources/高知大学学則.pdf
         },
         {
           "type": "section",
-          "number": 2,
+          "number": {
+            "main": 2,
+            "branch": null
+          },
           "title": "修業年限及び在学期間",
           "children": [
             {
               "type": "article",
               "number": {
-                "article": 28,
+                "main": 28,
                 "branch": null
               },
               "title": "修業年限",
@@ -753,7 +840,7 @@ input_file: sources/高知大学学則.pdf
             {
               "type": "article",
               "number": {
-                "article": 29,
+                "main": 29,
                 "branch": null
               },
               "title": "修業年限の通算",
@@ -773,7 +860,7 @@ input_file: sources/高知大学学則.pdf
             {
               "type": "article",
               "number": {
-                "article": 30,
+                "main": 30,
                 "branch": null
               },
               "title": "在学期間",
@@ -804,13 +891,16 @@ input_file: sources/高知大学学則.pdf
         },
         {
           "type": "section",
-          "number": 3,
+          "number": {
+            "main": 3,
+            "branch": null
+          },
           "title": "入学及び編入学等",
           "children": [
             {
               "type": "article",
               "number": {
-                "article": 31,
+                "main": 31,
                 "branch": null
               },
               "title": "入学資格",
@@ -821,35 +911,43 @@ input_file: sources/高知大学学則.pdf
                   "items": [
                     {
                       "number": 1,
-                      "text": "高等学校又は中等教育学校を卒業した者"
+                      "text": "高等学校又は中等教育学校を卒業した者",
+                      "subitems": []
                     },
                     {
                       "number": 2,
-                      "text": "通常の課程による12年の学校教育を修了した者又は通常の課程以外の課程によりこれに相当する学校教育を修了した者"
+                      "text": "通常の課程による12年の学校教育を修了した者又は通常の課程以外の課程によりこれに相当する学校教育を修了した者",
+                      "subitems": []
                     },
                     {
                       "number": 3,
-                      "text": "外国において学校教育における12年の課程を修了した者又はこれに準ずる者で文部科学大臣の指定したもの"
+                      "text": "外国において学校教育における12年の課程を修了した者又はこれに準ずる者で文部科学大臣の指定したもの",
+                      "subitems": []
                     },
                     {
                       "number": 4,
-                      "text": "文部科学大臣が高等学校の課程と同等の課程を有するものとして認定した在外教育施設の当該課程を修了した者"
+                      "text": "文部科学大臣が高等学校の課程と同等の課程を有するものとして認定した在外教育施設の当該課程を修了した者",
+                      "subitems": []
                     },
                     {
                       "number": 5,
-                      "text": "専修学校の高等課程（修業年限が３年以上であることその他の文部科学大臣が定める基準を満たすものに限る。）で文部科学大臣が別に指定するものを文部科学大臣が定める日以後に修了した者"
+                      "text": "専修学校の高等課程（修業年限が３年以上であることその他の文部科学大臣が定める基準を満たすものに限る。）で文部科学大臣が別に指定するものを文部科学大臣が定める日以後に修了した者",
+                      "subitems": []
                     },
                     {
                       "number": 6,
-                      "text": "文部科学大臣の指定した者"
+                      "text": "文部科学大臣の指定した者",
+                      "subitems": []
                     },
                     {
                       "number": 7,
-                      "text": "高等学校卒業程度認定試験規則（平成17年文部科学省令第１号）により文部科学大臣が行う高等学校卒業程度認定試験に合格した者（同令附則第２条の規定による廃止前の大学入学資格検定規程（昭和26年文部省令第13号）による大学入学資格検定に合格した者を含む。）"
+                      "text": "高等学校卒業程度認定試験規則（平成17年文部科学省令第１号）により文部科学大臣が行う高等学校卒業程度認定試験に合格した者（同令附則第２条の規定による廃止前の大学入学資格検定規程（昭和26年文部省令第13号）による大学入学資格検定に合格した者を含む。）",
+                      "subitems": []
                     },
                     {
                       "number": 8,
-                      "text": "本学において、個別の入学資格審査により、高等学校を卒業した者と同等以上の学力があると認めた者で、18 歳に達したもの"
+                      "text": "本学において、個別の入学資格審査により、高等学校を卒業した者と同等以上の学力があると認めた者で、18歳に達したもの",
+                      "subitems": []
                     }
                   ]
                 }
@@ -858,7 +956,7 @@ input_file: sources/高知大学学則.pdf
             {
               "type": "article",
               "number": {
-                "article": 32,
+                "main": 32,
                 "branch": null
               },
               "title": "編入学及び転入学",
@@ -869,39 +967,48 @@ input_file: sources/高知大学学則.pdf
                   "items": [
                     {
                       "number": 1,
-                      "text": "大学を卒業した者"
+                      "text": "大学を卒業した者",
+                      "subitems": []
                     },
                     {
                       "number": 2,
-                      "text": "学校教育法第104条第７項の規定により学士の学位を授与された者"
+                      "text": "学校教育法第104条第７項の規定により学士の学位を授与された者",
+                      "subitems": []
                     },
                     {
                       "number": 3,
-                      "text": "短期大学又は高等専門学校を卒業した者"
+                      "text": "短期大学又は高等専門学校を卒業した者",
+                      "subitems": []
                     },
                     {
                       "number": 4,
-                      "text": "学校教育法第90条第１項に規定する大学入学資格を有する者で、高等学校の専攻科の課程（修業年限が２年以上であることその他の文部科学大臣の定める基準を満たすものに限る。）を修了した者"
+                      "text": "学校教育法第90条第１項に規定する大学入学資格を有する者で、高等学校の専攻科の課程（修業年限が２年以上であることその他の文部科学大臣の定める基準を満たすものに限る。）を修了した者",
+                      "subitems": []
                     },
                     {
                       "number": 5,
-                      "text": "学校教育法第90条第１項に規定する大学入学資格を有する者で、専修学校の専門課程（修業年限が２年以上であることその他の文部科学大臣の定める基準を満たすものに限る。）を修了した者"
+                      "text": "学校教育法第90条第１項に規定する大学入学資格を有する者で、専修学校の専門課程（修業年限が２年以上であることその他の文部科学大臣の定める基準を満たすものに限る。）を修了した者",
+                      "subitems": []
                     },
                     {
                       "number": 6,
-                      "text": "外国において、学校教育における14年以上の課程を修了した者"
+                      "text": "外国において、学校教育における14年以上の課程を修了した者",
+                      "subitems": []
                     },
                     {
                       "number": 7,
-                      "text": "大学を退学した者"
+                      "text": "大学を退学した者",
+                      "subitems": []
                     },
                     {
                       "number": 8,
-                      "text": "他の大学に在学中の者"
+                      "text": "他の大学に在学中の者",
+                      "subitems": []
                     },
                     {
                       "number": 9,
-                      "text": "その他前各号と同等以上の学力があると認められる者"
+                      "text": "その他前各号と同等以上の学力があると認められる者",
+                      "subitems": []
                     }
                   ]
                 },
@@ -915,7 +1022,7 @@ input_file: sources/高知大学学則.pdf
             {
               "type": "article",
               "number": {
-                "article": 33,
+                "main": 33,
                 "branch": null
               },
               "title": "第３年次編入学",
@@ -926,35 +1033,43 @@ input_file: sources/高知大学学則.pdf
                   "items": [
                     {
                       "number": 1,
-                      "text": "大学を卒業した者"
+                      "text": "大学を卒業した者",
+                      "subitems": []
                     },
                     {
                       "number": 2,
-                      "text": "学校教育法第104条第７項の規定により学士の学位を授与された者"
+                      "text": "学校教育法第104条第７項の規定により学士の学位を授与された者",
+                      "subitems": []
                     },
                     {
                       "number": 3,
-                      "text": "短期大学又は高等専門学校を卒業した者"
+                      "text": "短期大学又は高等専門学校を卒業した者",
+                      "subitems": []
                     },
                     {
                       "number": 4,
-                      "text": "他の大学に２年以上在学し62単位以上修得した者"
+                      "text": "他の大学に２年以上在学し62単位以上修得した者",
+                      "subitems": []
                     },
                     {
                       "number": 5,
-                      "text": "学校教育法第90条第１項に規定する大学入学資格を有する者で、高等学校の専攻科の課程（修業年限が２年以上であることその他の文部科学大臣の定める基準を満たすものに限る。）を修了した者"
+                      "text": "学校教育法第90条第１項に規定する大学入学資格を有する者で、高等学校の専攻科の課程（修業年限が２年以上であることその他の文部科学大臣の定める基準を満たすものに限る。）を修了した者",
+                      "subitems": []
                     },
                     {
                       "number": 6,
-                      "text": "学校教育法第90条第１項に規定する大学入学資格を有する者で、専修学校の専門課程（修業年限が２年以上であることその他の文部科学大臣の定める基準を満たすものに限る。）を修了した者"
+                      "text": "学校教育法第90条第１項に規定する大学入学資格を有する者で、専修学校の専門課程（修業年限が２年以上であることその他の文部科学大臣の定める基準を満たすものに限る。）を修了した者",
+                      "subitems": []
                     },
                     {
                       "number": 7,
-                      "text": "外国において、学校教育における14年以上の課程を修了した者"
+                      "text": "外国において、学校教育における14年以上の課程を修了した者",
+                      "subitems": []
                     },
                     {
                       "number": 8,
-                      "text": "その他前各号と同等以上の学力があると認められる者"
+                      "text": "その他前各号と同等以上の学力があると認められる者",
+                      "subitems": []
                     }
                   ]
                 },
@@ -964,23 +1079,28 @@ input_file: sources/高知大学学則.pdf
                   "items": [
                     {
                       "number": 1,
-                      "text": "短期大学の看護学科を卒業した者"
+                      "text": "短期大学の看護学科を卒業した者",
+                      "subitems": []
                     },
                     {
                       "number": 2,
-                      "text": "前項第１号から第６号までに該当する者で、看護系の専修学校の専門課程を修了した者"
+                      "text": "前項第１号から第６号までに該当する者で、看護系の専修学校の専門課程を修了した者",
+                      "subitems": []
                     },
                     {
                       "number": 3,
-                      "text": "学校教育法第90条第１項に規定する大学入学資格を有する者で、高等学校の専攻科の課程（修業年限が２年以上であることその他の文部科学大臣の定める基準を満たすもので看護系の専攻科に限る。）を修了した者"
+                      "text": "学校教育法第90条第１項に規定する大学入学資格を有する者で、高等学校の専攻科の課程（修業年限が２年以上であることその他の文部科学大臣の定める基準を満たすもので看護系の専攻科に限る。）を修了した者",
+                      "subitems": []
                     },
                     {
                       "number": 4,
-                      "text": "学校教育法第90条第１項に規定する大学入学資格を有する者で、専修学校の専門課程（修業年限が２年以上であることその他の文部科学大臣の定める基準を満たすもので看護系の学科に限る。）を修了した者"
+                      "text": "学校教育法第90条第１項に規定する大学入学資格を有する者で、専修学校の専門課程（修業年限が２年以上であることその他の文部科学大臣の定める基準を満たすもので看護系の学科に限る。）を修了した者",
+                      "subitems": []
                     },
                     {
                       "number": 5,
-                      "text": "その他前各号と同等以上の学力があると認められる者"
+                      "text": "その他前各号と同等以上の学力があると認められる者",
+                      "subitems": []
                     }
                   ]
                 },
@@ -994,7 +1114,7 @@ input_file: sources/高知大学学則.pdf
             {
               "type": "article",
               "number": {
-                "article": 33,
+                "main": 33,
                 "branch": 2
               },
               "title": "第２年次編入学",
@@ -1005,35 +1125,43 @@ input_file: sources/高知大学学則.pdf
                   "items": [
                     {
                       "number": 1,
-                      "text": "大学を卒業した者（医学部医学科を卒業した者を除く。）"
+                      "text": "大学を卒業した者（医学部医学科を卒業した者を除く。）",
+                      "subitems": []
                     },
                     {
                       "number": 2,
-                      "text": "学校教育法第104条第７項の規定により学士の学位を授与された者"
+                      "text": "学校教育法第104条第７項の規定により学士の学位を授与された者",
+                      "subitems": []
                     },
                     {
                       "number": 3,
-                      "text": "短期大学又は高等専門学校を卒業した者"
+                      "text": "短期大学又は高等専門学校を卒業した者",
+                      "subitems": []
                     },
                     {
                       "number": 4,
-                      "text": "他の大学に２年以上在学し62単位以上修得した者"
+                      "text": "他の大学に２年以上在学し62単位以上修得した者",
+                      "subitems": []
                     },
                     {
                       "number": 5,
-                      "text": "学校教育法第90条第１項に規定する大学入学資格を有する者で、高等学校の専攻科の課程のうち文部科学大臣の定める基準を満たすものを修了した者"
+                      "text": "学校教育法第90条第１項に規定する大学入学資格を有する者で、高等学校の専攻科の課程のうち文部科学大臣の定める基準を満たすものを修了した者",
+                      "subitems": []
                     },
                     {
                       "number": 6,
-                      "text": "学校教育法第90条第１項に規定する大学入学資格を有する者で、専修学校の専門課程（修業年限が２年以上であることその他の文部科学大臣の定める基準を満たすものに限る。）を修了した者"
+                      "text": "学校教育法第90条第１項に規定する大学入学資格を有する者で、専修学校の専門課程（修業年限が２年以上であることその他の文部科学大臣の定める基準を満たすものに限る。）を修了した者",
+                      "subitems": []
                     },
                     {
                       "number": 7,
-                      "text": "外国において、学校教育における14年以上の課程を修了した者"
+                      "text": "外国において、学校教育における14年以上の課程を修了した者",
+                      "subitems": []
                     },
                     {
                       "number": 8,
-                      "text": "その他前各号と同等以上の学力があると認められる者"
+                      "text": "その他前各号と同等以上の学力があると認められる者",
+                      "subitems": []
                     }
                   ]
                 },
@@ -1047,7 +1175,7 @@ input_file: sources/高知大学学則.pdf
             {
               "type": "article",
               "number": {
-                "article": 34,
+                "main": 34,
                 "branch": null
               },
               "title": "転学部及び転学科等",
@@ -1068,13 +1196,16 @@ input_file: sources/高知大学学則.pdf
         },
         {
           "type": "section",
-          "number": 4,
+          "number": {
+            "main": 4,
+            "branch": null
+          },
           "title": "教育課程及び履修方法",
           "children": [
             {
               "type": "article",
               "number": {
-                "article": 35,
+                "main": 35,
                 "branch": null
               },
               "title": "教育課程の編成方針",
@@ -1099,7 +1230,7 @@ input_file: sources/高知大学学則.pdf
             {
               "type": "article",
               "number": {
-                "article": 36,
+                "main": 36,
                 "branch": null
               },
               "title": "教育課程の編成方法",
@@ -1114,7 +1245,7 @@ input_file: sources/高知大学学則.pdf
             {
               "type": "article",
               "number": {
-                "article": 37,
+                "main": 37,
                 "branch": null
               },
               "title": "授業科目",
@@ -1144,7 +1275,7 @@ input_file: sources/高知大学学則.pdf
             {
               "type": "article",
               "number": {
-                "article": 38,
+                "main": 38,
                 "branch": null
               },
               "title": "開設主体",
@@ -1159,7 +1290,7 @@ input_file: sources/高知大学学則.pdf
             {
               "type": "article",
               "number": {
-                "article": 39,
+                "main": 39,
                 "branch": null
               },
               "title": "共通教育の実施",
@@ -1174,7 +1305,7 @@ input_file: sources/高知大学学則.pdf
             {
               "type": "article",
               "number": {
-                "article": 40,
+                "main": 40,
                 "branch": null
               },
               "title": null,
@@ -1189,7 +1320,7 @@ input_file: sources/高知大学学則.pdf
             {
               "type": "article",
               "number": {
-                "article": 41,
+                "main": 41,
                 "branch": null
               },
               "title": "単位の計算方法",
@@ -1200,15 +1331,18 @@ input_file: sources/高知大学学則.pdf
                   "items": [
                     {
                       "number": 1,
-                      "text": "講義及び演習については、15時間から30時間までの範囲で各学部が定める時間の授業をもって１単位とする。"
+                      "text": "講義及び演習については、15時間から30時間までの範囲で各学部が定める時間の授業をもって１単位とする。",
+                      "subitems": []
                     },
                     {
                       "number": 2,
-                      "text": "実験、実習及び実技については、30時間から45時間までの範囲で各学部が定める時間の授業をもって１単位とする。ただし、芸術等の分野における個人指導による実技の授業については、別に定める時間の授業をもって１単位とする。"
+                      "text": "実験、実習及び実技については、30時間から45時間までの範囲で各学部が定める時間の授業をもって１単位とする。ただし、芸術等の分野における個人指導による実技の授業については、別に定める時間の授業をもって１単位とする。",
+                      "subitems": []
                     },
                     {
                       "number": 3,
-                      "text": "一の授業科目について、講義、演習、実験、実習又は実技のうち２以上の方法の併用により行う場合については、その組み合わせに応じ、前２号に規定する時間の授業をもって１単位とする。"
+                      "text": "一の授業科目について、講義、演習、実験、実習又は実技のうち２以上の方法の併用により行う場合については、その組み合わせに応じ、前２号に規定する時間の授業をもって１単位とする。",
+                      "subitems": []
                     }
                   ]
                 },
@@ -1222,7 +1356,7 @@ input_file: sources/高知大学学則.pdf
             {
               "type": "article",
               "number": {
-                "article": 42,
+                "main": 42,
                 "branch": null
               },
               "title": "授業の方法",
@@ -1242,7 +1376,7 @@ input_file: sources/高知大学学則.pdf
             {
               "type": "article",
               "number": {
-                "article": 43,
+                "main": 43,
                 "branch": null
               },
               "title": "成績評価基準の明示等",
@@ -1262,7 +1396,7 @@ input_file: sources/高知大学学則.pdf
             {
               "type": "article",
               "number": {
-                "article": 44,
+                "main": 44,
                 "branch": null
               },
               "title": "組織的な研修",
@@ -1282,7 +1416,7 @@ input_file: sources/高知大学学則.pdf
             {
               "type": "article",
               "number": {
-                "article": 45,
+                "main": 45,
                 "branch": null
               },
               "title": "履修方法等",
@@ -1297,7 +1431,7 @@ input_file: sources/高知大学学則.pdf
             {
               "type": "article",
               "number": {
-                "article": 46,
+                "main": 46,
                 "branch": null
               },
               "title": "単位の授与及び成績の評価",
@@ -1317,7 +1451,7 @@ input_file: sources/高知大学学則.pdf
             {
               "type": "article",
               "number": {
-                "article": 47,
+                "main": 47,
                 "branch": null
               },
               "title": "履修科目の登録の上限",
@@ -1347,7 +1481,7 @@ input_file: sources/高知大学学則.pdf
             {
               "type": "article",
               "number": {
-                "article": 48,
+                "main": 48,
                 "branch": null
               },
               "title": "他の学部の授業科目の履修",
@@ -1362,7 +1496,7 @@ input_file: sources/高知大学学則.pdf
             {
               "type": "article",
               "number": {
-                "article": 49,
+                "main": 49,
                 "branch": null
               },
               "title": "他の大学又は短期大学における授業科目の履修等",
@@ -1397,7 +1531,7 @@ input_file: sources/高知大学学則.pdf
             {
               "type": "article",
               "number": {
-                "article": 49,
+                "main": 49,
                 "branch": 2
               },
               "title": "連携開設科目に係る単位の認定",
@@ -1412,7 +1546,7 @@ input_file: sources/高知大学学則.pdf
             {
               "type": "article",
               "number": {
-                "article": 50,
+                "main": 50,
                 "branch": null
               },
               "title": "大学以外の教育施設等における学修",
@@ -1437,7 +1571,7 @@ input_file: sources/高知大学学則.pdf
             {
               "type": "article",
               "number": {
-                "article": 51,
+                "main": 51,
                 "branch": null
               },
               "title": "入学前の既修得単位の認定",
@@ -1468,13 +1602,16 @@ input_file: sources/高知大学学則.pdf
         },
         {
           "type": "section",
-          "number": 5,
+          "number": {
+            "main": 5,
+            "branch": null
+          },
           "title": "卒業及び学位の授与",
           "children": [
             {
               "type": "article",
               "number": {
-                "article": 52,
+                "main": 52,
                 "branch": null
               },
               "title": "卒業",
@@ -1489,7 +1626,7 @@ input_file: sources/高知大学学則.pdf
             {
               "type": "article",
               "number": {
-                "article": 53,
+                "main": 53,
                 "branch": null
               },
               "title": "早期卒業",
@@ -1514,7 +1651,7 @@ input_file: sources/高知大学学則.pdf
             {
               "type": "article",
               "number": {
-                "article": 54,
+                "main": 54,
                 "branch": null
               },
               "title": "学位の授与",
@@ -1537,18 +1674,24 @@ input_file: sources/高知大学学則.pdf
     },
     {
       "type": "chapter",
-      "number": 4,
+      "number": {
+        "main": 4,
+        "branch": null
+      },
       "title": "大学院",
       "children": [
         {
           "type": "section",
-          "number": 1,
+          "number": {
+            "main": 1,
+            "branch": null
+          },
           "title": "目的の公表",
           "children": [
             {
               "type": "article",
               "number": {
-                "article": 55,
+                "main": 55,
                 "branch": null
               },
               "title": "目的の公表",
@@ -1564,13 +1707,16 @@ input_file: sources/高知大学学則.pdf
         },
         {
           "type": "section",
-          "number": 2,
+          "number": {
+            "main": 2,
+            "branch": null
+          },
           "title": "標準修業年限及び在学期間",
           "children": [
             {
               "type": "article",
               "number": {
-                "article": 56,
+                "main": 56,
                 "branch": null
               },
               "title": "標準修業年限",
@@ -1581,19 +1727,23 @@ input_file: sources/高知大学学則.pdf
                   "items": [
                     {
                       "number": 1,
-                      "text": "修士課程  ２年"
+                      "text": "修士課程  ２年",
+                      "subitems": []
                     },
                     {
                       "number": 2,
-                      "text": "専門職学位課程 ２年"
+                      "text": "専門職学位課程２年",
+                      "subitems": []
                     },
                     {
                       "number": 3,
-                      "text": "博士課程（医学専攻を除く。）  ３年"
+                      "text": "博士課程（医学専攻を除く。）  ３年",
+                      "subitems": []
                     },
                     {
                       "number": 4,
-                      "text": "博士課程医学専攻  ４年"
+                      "text": "博士課程医学専攻  ４年",
+                      "subitems": []
                     }
                   ]
                 },
@@ -1607,7 +1757,7 @@ input_file: sources/高知大学学則.pdf
             {
               "type": "article",
               "number": {
-                "article": 57,
+                "main": 57,
                 "branch": null
               },
               "title": "在学期間",
@@ -1623,13 +1773,16 @@ input_file: sources/高知大学学則.pdf
         },
         {
           "type": "section",
-          "number": 3,
+          "number": {
+            "main": 3,
+            "branch": null
+          },
           "title": "入学及び編入学等",
           "children": [
             {
               "type": "article",
               "number": {
-                "article": 58,
+                "main": 58,
                 "branch": null
               },
               "title": "修士課程の入学資格",
@@ -1640,47 +1793,58 @@ input_file: sources/高知大学学則.pdf
                   "items": [
                     {
                       "number": 1,
-                      "text": "大学を卒業した者"
+                      "text": "大学を卒業した者",
+                      "subitems": []
                     },
                     {
                       "number": 2,
-                      "text": "学校教育法第104条第７項の規定により学士の学位を授与された者"
+                      "text": "学校教育法第104条第７項の規定により学士の学位を授与された者",
+                      "subitems": []
                     },
                     {
                       "number": 3,
-                      "text": "外国において、学校教育における16年の課程を修了した者"
+                      "text": "外国において、学校教育における16年の課程を修了した者",
+                      "subitems": []
                     },
                     {
                       "number": 4,
-                      "text": "外国の学校が行う通信教育における授業科目を我が国において履修することにより、当該外国の学校教育における16年の課程を修了した者"
+                      "text": "外国の学校が行う通信教育における授業科目を我が国において履修することにより、当該外国の学校教育における16年の課程を修了した者",
+                      "subitems": []
                     },
                     {
                       "number": 5,
-                      "text": "我が国において、外国の大学の課程（その修了者が当該外国の学校教育における16年の課程を修了したとされるものに限る。）を有するものとして当該外国の学校教育制度において位置付けられた教育施設であって、文部科学大臣が別に指定するものの当該課程を修了した者"
+                      "text": "我が国において、外国の大学の課程（その修了者が当該外国の学校教育における16年の課程を修了したとされるものに限る。）を有するものとして当該外国の学校教育制度において位置付けられた教育施設であって、文部科学大臣が別に指定するものの当該課程を修了した者",
+                      "subitems": []
                     },
                     {
                       "number": 6,
-                      "text": "外国の大学その他の外国の学校（その教育研究活動等の総合的な状況について、当該外国の政府又は関係機関の認証を受けた者による評価を受けたもの又はこれに準ずるものとして文部科学大臣が別に指定するものに限る。）において、修業年限が３年以上である課程を修了すること（当該外国の学校が行う通信教育における授業科目を我が国において履修することにより当該課程を修了すること及び当該外国の学校教育制度において位置付けられた教育施設であって前号の指定を受けたものにおいて課程を修了することを含む。）により、学士の学位に相当する学位を授与された者"
+                      "text": "外国の大学その他の外国の学校（その教育研究活動等の総合的な状況について、当該外国の政府又は関係機関の認証を受けた者による評価を受けたもの又はこれに準ずるものとして文部科学大臣が別に指定するものに限る。）において、修業年限が３年以上である課程を修了すること（当該外国の学校が行う通信教育における授業科目を我が国において履修することにより当該課程を修了すること及び当該外国の学校教育制度において位置付けられた教育施設であって前号の指定を受けたものにおいて課程を修了することを含む。）により、学士の学位に相当する学位を授与された者",
+                      "subitems": []
                     },
                     {
                       "number": 7,
-                      "text": "専修学校の専門課程（修業年限が４年以上であることその他の文部科学大臣が定める基準を満たすものに限る。）で文部科学大臣が別に指定するものを文部科学大臣が定める日以後に修了した者"
+                      "text": "専修学校の専門課程（修業年限が４年以上であることその他の文部科学大臣が定める基準を満たすものに限る。）で文部科学大臣が別に指定するものを文部科学大臣が定める日以後に修了した者",
+                      "subitems": []
                     },
                     {
                       "number": 8,
-                      "text": "文部科学大臣の指定した者"
+                      "text": "文部科学大臣の指定した者",
+                      "subitems": []
                     },
                     {
                       "number": 9,
-                      "text": "学校教育法第102条第２項の規定により他の大学院に入学した者であって、本学大学院において、大学院における教育を受けるにふさわしい学力があると認めたもの"
+                      "text": "学校教育法第102条第２項の規定により他の大学院に入学した者であって、本学大学院において、大学院における教育を受けるにふさわしい学力があると認めたもの",
+                      "subitems": []
                     },
                     {
                       "number": 10,
-                      "text": "本学大学院において、個別の入学資格審査により、大学を卒業した者と同等以上の学力があると認めた者で、22歳に達したもの"
+                      "text": "本学大学院において、個別の入学資格審査により、大学を卒業した者と同等以上の学力があると認めた者で、22歳に達したもの",
+                      "subitems": []
                     },
                     {
                       "number": 11,
-                      "text": "本学大学院が、文部科学大臣の定めるところにより、大学に文部科学大臣の定める年数以上在学した者（これに準ずる者として文部科学大臣が定める者を含む。）であって、本学が定める単位を優秀な成績で修得したと認めるもの"
+                      "text": "本学大学院が、文部科学大臣の定めるところにより、大学に文部科学大臣の定める年数以上在学した者（これに準ずる者として文部科学大臣が定める者を含む。）であって、本学が定める単位を優秀な成績で修得したと認めるもの",
+                      "subitems": []
                     }
                   ]
                 },
@@ -1694,7 +1858,7 @@ input_file: sources/高知大学学則.pdf
             {
               "type": "article",
               "number": {
-                "article": 58,
+                "main": 58,
                 "branch": 2
               },
               "title": "専門職学位課程の入学資格",
@@ -1709,7 +1873,7 @@ input_file: sources/高知大学学則.pdf
             {
               "type": "article",
               "number": {
-                "article": 59,
+                "main": 59,
                 "branch": null
               },
               "title": "博士課程の入学資格",
@@ -1720,35 +1884,43 @@ input_file: sources/高知大学学則.pdf
                   "items": [
                     {
                       "number": 1,
-                      "text": "修士の学位又は専門職学位（学位規則（昭和28年文部省令第９号）第５条の２に規定する専門職学位をいう。以下この条において同じ。）を有する者"
+                      "text": "修士の学位又は専門職学位（学位規則（昭和28年文部省令第９号）第５条の２に規定する専門職学位をいう。以下この条において同じ。）を有する者",
+                      "subitems": []
                     },
                     {
                       "number": 2,
-                      "text": "外国において、修士の学位又は専門職学位に相当する学位を授与された者"
+                      "text": "外国において、修士の学位又は専門職学位に相当する学位を授与された者",
+                      "subitems": []
                     },
                     {
                       "number": 3,
-                      "text": "外国の学校が行う通信教育における授業科目を我が国において履修し、修士の学位又は専門職学位に相当する学位を授与された者"
+                      "text": "外国の学校が行う通信教育における授業科目を我が国において履修し、修士の学位又は専門職学位に相当する学位を授与された者",
+                      "subitems": []
                     },
                     {
                       "number": 4,
-                      "text": "我が国において、外国の大学院の課程を有するものとして当該外国の学校教育制度において位置付けられた教育施設であって、文部科学大臣が別に指定するものの当該課程を修了し、修士の学位又は専門職学位に相当する学位を授与された者"
+                      "text": "我が国において、外国の大学院の課程を有するものとして当該外国の学校教育制度において位置付けられた教育施設であって、文部科学大臣が別に指定するものの当該課程を修了し、修士の学位又は専門職学位に相当する学位を授与された者",
+                      "subitems": []
                     },
                     {
                       "number": 5,
-                      "text": "国際連合大学の課程を修了し、修士の学位に相当する学位を授与された者"
+                      "text": "国際連合大学の課程を修了し、修士の学位に相当する学位を授与された者",
+                      "subitems": []
                     },
                     {
                       "number": 6,
-                      "text": "外国の学校、第４号の指定を受けた教育施設又は国際連合大学の教育課程を履修し、大学院設置基準第16条の２に規定する試験及び審査に相当するものに合格し、修士の学位を有する者と同等以上の学力があると認められた者"
+                      "text": "外国の学校、第４号の指定を受けた教育施設又は国際連合大学の教育課程を履修し、大学院設置基準第16条の２に規定する試験及び審査に相当するものに合格し、修士の学位を有する者と同等以上の学力があると認められた者",
+                      "subitems": []
                     },
                     {
                       "number": 7,
-                      "text": "文部科学大臣の指定した者"
+                      "text": "文部科学大臣の指定した者",
+                      "subitems": []
                     },
                     {
                       "number": 8,
-                      "text": "本学大学院において、個別の入学資格審査により、修士の学位又は専門職学位を有する者と同等以上の学力があると認めた者で、24歳に達したもの"
+                      "text": "本学大学院において、個別の入学資格審査により、修士の学位又は専門職学位を有する者と同等以上の学力があると認めた者で、24歳に達したもの",
+                      "subitems": []
                     }
                   ]
                 },
@@ -1758,43 +1930,53 @@ input_file: sources/高知大学学則.pdf
                   "items": [
                     {
                       "number": 1,
-                      "text": "大学の医学、歯学又は修業年限６年の薬学若しくは獣医学を履修する課程を卒業した者"
+                      "text": "大学の医学、歯学又は修業年限６年の薬学若しくは獣医学を履修する課程を卒業した者",
+                      "subitems": []
                     },
                     {
                       "number": 2,
-                      "text": "学校教育法第104条第７項の規定により学士の学位（専攻分野は、医学、歯学、薬学又は獣医学）を授与された者"
+                      "text": "学校教育法第104条第７項の規定により学士の学位（専攻分野は、医学、歯学、薬学又は獣医学）を授与された者",
+                      "subitems": []
                     },
                     {
                       "number": 3,
-                      "text": "外国において、学校教育における18年の課程（最終の課程は医学、歯学、薬学又は獣医学）を修了した者"
+                      "text": "外国において、学校教育における18年の課程（最終の課程は医学、歯学、薬学又は獣医学）を修了した者",
+                      "subitems": []
                     },
                     {
                       "number": 4,
-                      "text": "外国の学校が行う通信教育における授業科目を我が国において履修することにより当該外国の学校教育における18年の課程（最終の課程は医学、歯学、薬学又は獣医学）を修了した者"
+                      "text": "外国の学校が行う通信教育における授業科目を我が国において履修することにより当該外国の学校教育における18年の課程（最終の課程は医学、歯学、薬学又は獣医学）を修了した者",
+                      "subitems": []
                     },
                     {
                       "number": 5,
-                      "text": "我が国において、外国の大学の課程（その修了者が当該外国の学校教育における18年の課程（最終の課程は、医学、歯学、薬学又は獣医学）を修了したとされるものに限る。）を有するものとして当該外国の学校教育制度において位置付けられた教育施設であって、文部科学大臣が別に指定するものの当該課程を修了した者"
+                      "text": "我が国において、外国の大学の課程（その修了者が当該外国の学校教育における18年の課程（最終の課程は、医学、歯学、薬学又は獣医学）を修了したとされるものに限る。）を有するものとして当該外国の学校教育制度において位置付けられた教育施設であって、文部科学大臣が別に指定するものの当該課程を修了した者",
+                      "subitems": []
                     },
                     {
                       "number": 6,
-                      "text": "外国の大学その他の外国の学校（その教育研究活動等の総合的な状況について、当該外国の政府又は関係機関の認証を受けた者による評価を受けたもの又はこれに準ずるものとして文部科学大臣が別に指定するものに限る。）において、修業年限が５年以上である課程（最終の課程は、医学、歯学、薬学又は獣医学）を修了すること（当該外国の学校が行う通信教育における授業科目を我が国において履修することにより当該課程を修了すること及び当該外国の学校教育制度において位置付けられた教育施設であって前号の指定を受けたものにおいて課程を修了することを含む。）により、学士の学位に相当する学位を授与された者"
+                      "text": "外国の大学その他の外国の学校（その教育研究活動等の総合的な状況について、当該外国の政府又は関係機関の認証を受けた者による評価を受けたもの又はこれに準ずるものとして文部科学大臣が別に指定するものに限る。）において、修業年限が５年以上である課程（最終の課程は、医学、歯学、薬学又は獣医学）を修了すること（当該外国の学校が行う通信教育における授業科目を我が国において履修することにより当該課程を修了すること及び当該外国の学校教育制度において位置付けられた教育施設であって前号の指定を受けたものにおいて課程を修了することを含む。）により、学士の学位に相当する学位を授与された者",
+                      "subitems": []
                     },
                     {
                       "number": 7,
-                      "text": "文部科学大臣の指定した者"
+                      "text": "文部科学大臣の指定した者",
+                      "subitems": []
                     },
                     {
                       "number": 8,
-                      "text": "学校教育法第102条第２項の規定により他の大学院に入学した者であって、本学大学院において、大学院における教育を受けるにふさわしい学力があると認めたもの"
+                      "text": "学校教育法第102条第２項の規定により他の大学院に入学した者であって、本学大学院において、大学院における教育を受けるにふさわしい学力があると認めたもの",
+                      "subitems": []
                     },
                     {
                       "number": 9,
-                      "text": "大学の医学、歯学、薬学又は獣医学を履修する課程に４年以上在学し、又は外国において学校教育における医学、歯学、薬学又は獣医学を履修する課程を含む16年の課程を修了し、本学大学院において、所定の単位を優れた成績をもって修得したものと認めた者"
+                      "text": "大学の医学、歯学、薬学又は獣医学を履修する課程に４年以上在学し、又は外国において学校教育における医学、歯学、薬学又は獣医学を履修する課程を含む16年の課程を修了し、本学大学院において、所定の単位を優れた成績をもって修得したものと認めた者",
+                      "subitems": []
                     },
                     {
                       "number": 10,
-                      "text": "本学大学院において、個別の入学資格審査により、大学の医学、歯学又は修業年限６年の薬学若しくは獣医学を履修する課程を卒業した者と同等以上の学力があると認めた者で、24歳に達したもの"
+                      "text": "本学大学院において、個別の入学資格審査により、大学の医学、歯学又は修業年限６年の薬学若しくは獣医学を履修する課程を卒業した者と同等以上の学力があると認めた者で、24歳に達したもの",
+                      "subitems": []
                     }
                   ]
                 }
@@ -1803,7 +1985,7 @@ input_file: sources/高知大学学則.pdf
             {
               "type": "article",
               "number": {
-                "article": 60,
+                "main": 60,
                 "branch": null
               },
               "title": "編入学及び転入学",
@@ -1818,7 +2000,7 @@ input_file: sources/高知大学学則.pdf
             {
               "type": "article",
               "number": {
-                "article": 61,
+                "main": 61,
                 "branch": null
               },
               "title": "進学",
@@ -1834,13 +2016,16 @@ input_file: sources/高知大学学則.pdf
         },
         {
           "type": "section",
-          "number": 4,
+          "number": {
+            "main": 4,
+            "branch": null
+          },
           "title": "教育課程",
           "children": [
             {
               "type": "article",
               "number": {
-                "article": 62,
+                "main": 62,
                 "branch": null
               },
               "title": "教育課程の編成方針",
@@ -1860,7 +2045,7 @@ input_file: sources/高知大学学則.pdf
             {
               "type": "article",
               "number": {
-                "article": 63,
+                "main": 63,
                 "branch": null
               },
               "title": "準専攻及び副専攻",
@@ -1880,7 +2065,7 @@ input_file: sources/高知大学学則.pdf
             {
               "type": "article",
               "number": {
-                "article": 64,
+                "main": 64,
                 "branch": null
               },
               "title": "授業及び研究指導",
@@ -1905,7 +2090,7 @@ input_file: sources/高知大学学則.pdf
             {
               "type": "article",
               "number": {
-                "article": 64,
+                "main": 64,
                 "branch": 2
               },
               "title": "授業の方法",
@@ -1920,7 +2105,7 @@ input_file: sources/高知大学学則.pdf
             {
               "type": "article",
               "number": {
-                "article": 64,
+                "main": 64,
                 "branch": 3
               },
               "title": "履修科目の登録の上限",
@@ -1940,7 +2125,7 @@ input_file: sources/高知大学学則.pdf
             {
               "type": "article",
               "number": {
-                "article": 65,
+                "main": 65,
                 "branch": null
               },
               "title": "他の大学院又は外国の大学院若しくは国際連合大学における授業科目の履修等",
@@ -1975,7 +2160,7 @@ input_file: sources/高知大学学則.pdf
             {
               "type": "article",
               "number": {
-                "article": 66,
+                "main": 66,
                 "branch": null
               },
               "title": "他の大学院等又は外国の大学院等若しくは国際連合大学における研究指導",
@@ -2000,7 +2185,7 @@ input_file: sources/高知大学学則.pdf
             {
               "type": "article",
               "number": {
-                "article": 67,
+                "main": 67,
                 "branch": null
               },
               "title": "単位の計算方法",
@@ -2015,7 +2200,7 @@ input_file: sources/高知大学学則.pdf
             {
               "type": "article",
               "number": {
-                "article": 68,
+                "main": 68,
                 "branch": null
               },
               "title": "単位の授与及び成績の評価",
@@ -2035,7 +2220,7 @@ input_file: sources/高知大学学則.pdf
             {
               "type": "article",
               "number": {
-                "article": 69,
+                "main": 69,
                 "branch": null
               },
               "title": "教育方法の特例",
@@ -2050,7 +2235,7 @@ input_file: sources/高知大学学則.pdf
             {
               "type": "article",
               "number": {
-                "article": 70,
+                "main": 70,
                 "branch": null
               },
               "title": "授業科目、履修方法等及び成績評価基準等の明示",
@@ -2075,7 +2260,7 @@ input_file: sources/高知大学学則.pdf
             {
               "type": "article",
               "number": {
-                "article": 71,
+                "main": 71,
                 "branch": null
               },
               "title": "組織的な研修等",
@@ -2095,7 +2280,7 @@ input_file: sources/高知大学学則.pdf
             {
               "type": "article",
               "number": {
-                "article": 72,
+                "main": 72,
                 "branch": null
               },
               "title": "入学前の既修得単位の認定",
@@ -2116,13 +2301,16 @@ input_file: sources/高知大学学則.pdf
         },
         {
           "type": "section",
-          "number": 5,
+          "number": {
+            "main": 5,
+            "branch": null
+          },
           "title": "課程の修了及び学位の授与",
           "children": [
             {
               "type": "article",
               "number": {
-                "article": 73,
+                "main": 73,
                 "branch": null
               },
               "title": "課程の修了要件",
@@ -2157,7 +2345,7 @@ input_file: sources/高知大学学則.pdf
             {
               "type": "article",
               "number": {
-                "article": 74,
+                "main": 74,
                 "branch": null
               },
               "title": null,
@@ -2172,7 +2360,7 @@ input_file: sources/高知大学学則.pdf
             {
               "type": "article",
               "number": {
-                "article": 75,
+                "main": 75,
                 "branch": null
               },
               "title": null,
@@ -2187,7 +2375,7 @@ input_file: sources/高知大学学則.pdf
             {
               "type": "article",
               "number": {
-                "article": 76,
+                "main": 76,
                 "branch": null
               },
               "title": "学位の授与",
@@ -2210,13 +2398,16 @@ input_file: sources/高知大学学則.pdf
     },
     {
       "type": "chapter",
-      "number": 5,
+      "number": {
+        "main": 5,
+        "branch": null
+      },
       "title": "検定料、入学料及び授業料",
       "children": [
         {
           "type": "article",
           "number": {
-            "article": 77,
+            "main": 77,
             "branch": null
           },
           "title": "検定料、入学料及び授業料",
@@ -2231,7 +2422,7 @@ input_file: sources/高知大学学則.pdf
         {
           "type": "article",
           "number": {
-            "article": 77,
+            "main": 77,
             "branch": 2
           },
           "title": "検定料及び入学料の不徴収",
@@ -2256,7 +2447,7 @@ input_file: sources/高知大学学則.pdf
         {
           "type": "article",
           "number": {
-            "article": 78,
+            "main": 78,
             "branch": null
           },
           "title": "休学及び復学の場合における授業料",
@@ -2276,7 +2467,7 @@ input_file: sources/高知大学学則.pdf
         {
           "type": "article",
           "number": {
-            "article": 79,
+            "main": 79,
             "branch": null
           },
           "title": "退学者、除籍者及び停学者の授業料",
@@ -2291,7 +2482,7 @@ input_file: sources/高知大学学則.pdf
         {
           "type": "article",
           "number": {
-            "article": 80,
+            "main": 80,
             "branch": null
           },
           "title": "入学料等の免除及び徴収猶予",
@@ -2316,7 +2507,7 @@ input_file: sources/高知大学学則.pdf
         {
           "type": "article",
           "number": {
-            "article": 81,
+            "main": 81,
             "branch": null
           },
           "title": "既納の検定料等の取扱い",
@@ -2332,13 +2523,16 @@ input_file: sources/高知大学学則.pdf
     },
     {
       "type": "chapter",
-      "number": 6,
+      "number": {
+        "main": 6,
+        "branch": null
+      },
       "title": "寄宿舎、学生会館及び国際交流会館",
       "children": [
         {
           "type": "article",
           "number": {
-            "article": 82,
+            "main": 82,
             "branch": null
           },
           "title": "寄宿舎",
@@ -2363,7 +2557,7 @@ input_file: sources/高知大学学則.pdf
         {
           "type": "article",
           "number": {
-            "article": 83,
+            "main": 83,
             "branch": null
           },
           "title": "学生会館",
@@ -2383,7 +2577,7 @@ input_file: sources/高知大学学則.pdf
         {
           "type": "article",
           "number": {
-            "article": 84,
+            "main": 84,
             "branch": null
           },
           "title": "国際交流会館",
@@ -2404,13 +2598,16 @@ input_file: sources/高知大学学則.pdf
     },
     {
       "type": "chapter",
-      "number": 7,
+      "number": {
+        "main": 7,
+        "branch": null
+      },
       "title": "特別の課程",
       "children": [
         {
           "type": "article",
           "number": {
-            "article": 84,
+            "main": 84,
             "branch": 2
           },
           "title": "特別の課程",
@@ -2431,13 +2628,16 @@ input_file: sources/高知大学学則.pdf
     },
     {
       "type": "chapter",
-      "number": 8,
+      "number": {
+        "main": 8,
+        "branch": null
+      },
       "title": "雑則",
       "children": [
         {
           "type": "article",
           "number": {
-            "article": 85,
+            "main": 85,
             "branch": null
           },
           "title": "その他",
@@ -2461,7 +2661,17 @@ input_file: sources/高知大学学則.pdf
     {
       "ordinal": 1,
       "heading_raw": "附  則",
-      "raw_text": "１  この学則は、平成20年４月１日から施行する。\n２  高知大学学則（平成16年規則第133号）及び高知大学大学院学則（平成16年規則第310\n号）（この項において「学則等」という。）は、廃止する。ただし、平成19年度以前の\n入学生が在学する間は、学則等は存続するものとする。\n３  第５条第２項に定める収容定員は、同条の規定にかかわらず、平成20年度から平成22\n年度までは、次のとおりとする。\n研  究  科    課程    専      攻  平成20年度  平成21年度  平成22年度\n総合人間\n自然科学\n研究科\n修士課程\n人文社会科学  10  20  20\n教育学  30  60  60\n理学  75  150  150\n医科学  15  30  30\n看護学  12  24  24\n農学  59  118  118\n計  201  402  402\n博士課程\n応用自然科学  ６  12  18\n医学  30  60  90\n黒潮圏総合科学  ６  12  18\n計  42  84  126\n総  計  243  486  528\n４  人文社会科学研究科、教育学研究科、理学研究科、医学系研究科、農学研究科及び黒\n潮圏海洋科学研究科は、第５条第２項の規定にかかわらず、平成20年３月31日に当該\n研究科に在学する者が当該研究科に在学しなくなる日までの間、存続するものとする。\n５  前項の規定により存続する研究科において、当該研究科に在学する者が取得できる教\n育職員免許状の種類及び教科は、この規則による改正後の別表第４の規定にかかわら\nず、なお従前の例による。",
+      "amendment": null,
+      "promulgated": null,
+      "effective": {
+        "kind": "date",
+        "era": "heisei",
+        "year": 20,
+        "month": 4,
+        "day": 1,
+        "iso": "2008-04-01"
+      },
+      "text": "１  この学則は、平成20年４月１日から施行する。\n２  高知大学学則（平成16年規則第133号）及び高知大学大学院学則（平成16年規則第310\n号）（この項において「学則等」という。）は、廃止する。ただし、平成19年度以前の\n入学生が在学する間は、学則等は存続するものとする。\n３  第５条第２項に定める収容定員は、同条の規定にかかわらず、平成20年度から平成22\n年度までは、次のとおりとする。\n研  究  科    課程    専      攻  平成20年度  平成21年度  平成22年度\n総合人間\n自然科学\n研究科\n修士課程\n人文社会科学  10  20  20\n教育学  30  60  60\n理学  75  150  150\n医科学  15  30  30\n看護学  12  24  24\n農学  59  118  118\n計  201  402  402\n博士課程\n応用自然科学  ６  12  18\n医学  30  60  90\n黒潮圏総合科学  ６  12  18\n計  42  84  126\n総  計  243  486  528\n４  人文社会科学研究科、教育学研究科、理学研究科、医学系研究科、農学研究科及び黒\n潮圏海洋科学研究科は、第５条第２項の規定にかかわらず、平成20年３月31日に当該\n研究科に在学する者が当該研究科に在学しなくなる日までの間、存続するものとする。\n５  前項の規定により存続する研究科において、当該研究科に在学する者が取得できる教\n育職員免許状の種類及び教科は、この規則による改正後の別表第４の規定にかかわら\nず、なお従前の例による。",
       "references_tables": [
         "別表第４"
       ]
@@ -2469,13 +2679,53 @@ input_file: sources/高知大学学則.pdf
     {
       "ordinal": 2,
       "heading_raw": "附  則（平成20年12月10日規則第51号）",
-      "raw_text": "この学則は、平成21年４月１日から施行する。",
+      "amendment": {
+        "number": 51,
+        "year": null,
+        "raw": "規則第51号"
+      },
+      "promulgated": {
+        "era": "heisei",
+        "year": 20,
+        "month": 12,
+        "day": 10,
+        "iso": "2008-12-10"
+      },
+      "effective": {
+        "kind": "date",
+        "era": "heisei",
+        "year": 21,
+        "month": 4,
+        "day": 1,
+        "iso": "2009-04-01"
+      },
+      "text": "この学則は、平成21年４月１日から施行する。",
       "references_tables": []
     },
     {
       "ordinal": 3,
       "heading_raw": "附  則（平成 21 年２月 24 日規則第 56 号）",
-      "raw_text": "１  この規則は、平成 21 年４月１日から施行する。ただし、第 33 条の改正規定は、平成\n22 年４月１日から施行する。\n２  別表第１に定める医学部及び合計の項の入学定員に、平成21年度から平成29年度まで、\n次に定める定員を加えるものとする。\n３  別表第１に定める医学部及び合計の項の入学定員に、平成 22 年度から平成 31 年度ま\nで、次に定める定員を加えるものとする。\n４  別表第１に定める医学部及び合計の項の入学定員に、平成 23 年度から平成 31 年度ま\nで、次に定める定員を加えるものとする。\n５  別表第１に定める医学部及び合計の項の編入学定員に、平成21年度は第３年次編入学\n定員として、次に定める定員を加えるものとする。\n６  別表第１に定める医学部及び合計の収容定員は、同表の規定にかかわらず、平成21年\n度から平成36年度までは、次のとおりとする。\n学  部  学 科・課 程  収   容   定   員\n平成 21 年\n度  平成 22 年\n度  平成 23 年\n度  平成 24 年\n度\n学   部  学科・課程  入学定員\n医学部  医学科  5\n看護学科\n計  5\n合          計  5\n学   部  学科・課程  入学定員\n医学部  医学科  7\n看護学科\n計  7\n合          計  7\n学   部  学科・課程  入学定員\n医学部  医学科  3\n看護学科\n計  3\n合          計  3\n学   部  学   科  定   員\n医学部  医学科  5\n看護学科\n計  5\n合          計  5\n医学 部\n医学科\n第２年次編入学\n第３年次編入学\n550\n5\n20\n567\n10\n15\n587\n15\n10\n607\n20\n5\n小計  575  592  612  632\n看護学科\n第３年次編入学  240\n20  240\n20  240\n20  240\n20\n小計  260  260  260  260\n計  835  852  872  892\n合  計  4,495  4,512  4,532  4,552\n学  部  学 科・課 程  収   容   定   員\n平成 25 年\n度  平成 26 年\n度  平成 27 年\n度  平成 28 年\n度\n医学 部\n医学科\n第２年次編入学  627\n25  647\n25  657\n25  660\n25\n小計  652  672  682  685\n看護学科\n第３年次編入学  240\n20  240\n20  240\n20  240\n20\n小計  260  260  260  260\n計  912  932  942  945\n合  計  4,572  4,592  4,602  4,605\n学  部  学 科・課 程  収   容   定   員\n平成 29 年\n度  平成 30 年\n度  平成 31 年\n度  平成 32 年\n度\n医学 部\n医学科\n第２年次編入学  660\n25  655\n25\n650\n25  635\n25\n小計  685  680  675  660\n看護学科\n第３年次編入学  240\n20  240\n20\n240\n20  240\n20\n小計  260  260  260  260\n計  945  940  935  920\n合  計  4,605  4,600  4,595  4,580\n学  部  学 科・課 程  収    容    定    員\n平成 33 年\n度  平成 34 年\n度  平成 35 年\n度  平成 36 年\n度\n医学 部\n医学科\n第２年次編入学  620\n25  605\n25  590\n25  580\n25\n小計  645  630  615  605\n看護学科\n第３年次編入学  240\n20  240\n20  240\n20  240\n20\n小計  260  260  260  260\n計  905  890  875  865\n合  計  4,565  4,550  4,535  4,525\n７  改正後の別表第３（第 18 条関係）の規定にかかわらず、平成 20 年度以前の入学生は、\nなお従前の例による。",
+      "amendment": {
+        "number": 56,
+        "year": null,
+        "raw": "規則第 56 号"
+      },
+      "promulgated": {
+        "era": "heisei",
+        "year": 21,
+        "month": 2,
+        "day": 24,
+        "iso": "2009-02-24"
+      },
+      "effective": {
+        "kind": "date",
+        "era": "heisei",
+        "year": 21,
+        "month": 4,
+        "day": 1,
+        "iso": "2009-04-01"
+      },
+      "text": "１  この規則は、平成 21 年４月１日から施行する。ただし、第 33 条の改正規定は、平成\n22 年４月１日から施行する。\n２  別表第１に定める医学部及び合計の項の入学定員に、平成21年度から平成29年度まで、\n次に定める定員を加えるものとする。\n３  別表第１に定める医学部及び合計の項の入学定員に、平成 22 年度から平成 31 年度ま\nで、次に定める定員を加えるものとする。\n４  別表第１に定める医学部及び合計の項の入学定員に、平成 23 年度から平成 31 年度ま\nで、次に定める定員を加えるものとする。\n５  別表第１に定める医学部及び合計の項の編入学定員に、平成21年度は第３年次編入学\n定員として、次に定める定員を加えるものとする。\n６  別表第１に定める医学部及び合計の収容定員は、同表の規定にかかわらず、平成21年\n度から平成36年度までは、次のとおりとする。\n学  部  学 科・課 程  収   容   定   員\n平成 21 年\n度  平成 22 年\n度  平成 23 年\n度  平成 24 年\n度\n学   部  学科・課程  入学定員\n医学部  医学科  5\n看護学科\n計  5\n合          計  5\n学   部  学科・課程  入学定員\n医学部  医学科  7\n看護学科\n計  7\n合          計  7\n学   部  学科・課程  入学定員\n医学部  医学科  3\n看護学科\n計  3\n合          計  3\n学   部  学   科  定   員\n医学部  医学科  5\n看護学科\n計  5\n合          計  5\n医学 部\n医学科\n第２年次編入学\n第３年次編入学\n550\n5\n20\n567\n10\n15\n587\n15\n10\n607\n20\n5\n小計  575  592  612  632\n看護学科\n第３年次編入学  240\n20  240\n20  240\n20  240\n20\n小計  260  260  260  260\n計  835  852  872  892\n合  計  4,495  4,512  4,532  4,552\n学  部  学 科・課 程  収   容   定   員\n平成 25 年\n度  平成 26 年\n度  平成 27 年\n度  平成 28 年\n度\n医学 部\n医学科\n第２年次編入学  627\n25  647\n25  657\n25  660\n25\n小計  652  672  682  685\n看護学科\n第３年次編入学  240\n20  240\n20  240\n20  240\n20\n小計  260  260  260  260\n計  912  932  942  945\n合  計  4,572  4,592  4,602  4,605\n学  部  学 科・課 程  収   容   定   員\n平成 29 年\n度  平成 30 年\n度  平成 31 年\n度  平成 32 年\n度\n医学 部\n医学科\n第２年次編入学  660\n25  655\n25\n650\n25  635\n25\n小計  685  680  675  660\n看護学科\n第３年次編入学  240\n20  240\n20\n240\n20  240\n20\n小計  260  260  260  260\n計  945  940  935  920\n合  計  4,605  4,600  4,595  4,580\n学  部  学 科・課 程  収    容    定    員\n平成 33 年\n度  平成 34 年\n度  平成 35 年\n度  平成 36 年\n度\n医学 部\n医学科\n第２年次編入学  620\n25  605\n25  590\n25  580\n25\n小計  645  630  615  605\n看護学科\n第３年次編入学  240\n20  240\n20  240\n20  240\n20\n小計  260  260  260  260\n計  905  890  875  865\n合  計  4,565  4,550  4,535  4,525\n７  改正後の別表第３（第 18 条関係）の規定にかかわらず、平成 20 年度以前の入学生は、\nなお従前の例による。",
       "references_tables": [
         "別表第１",
         "別表第３"
@@ -2484,19 +2734,79 @@ input_file: sources/高知大学学則.pdf
     {
       "ordinal": 4,
       "heading_raw": "附  則（平成22年１月27日規則第47号）",
-      "raw_text": "この学則は、平成22年４月１日から施行する。",
+      "amendment": {
+        "number": 47,
+        "year": null,
+        "raw": "規則第47号"
+      },
+      "promulgated": {
+        "era": "heisei",
+        "year": 22,
+        "month": 1,
+        "day": 27,
+        "iso": "2010-01-27"
+      },
+      "effective": {
+        "kind": "date",
+        "era": "heisei",
+        "year": 22,
+        "month": 4,
+        "day": 1,
+        "iso": "2010-04-01"
+      },
+      "text": "この学則は、平成22年４月１日から施行する。",
       "references_tables": []
     },
     {
       "ordinal": 5,
       "heading_raw": "附  則（平成22年６月25日規則第22号）",
-      "raw_text": "１  この学則は、平成22年６月25日から施行する。\n２  第77条の２の規定は、平成16年４月１日から適用する。同条の適用日における本学大\n学院の博士前期課程は、同条に定める本学大学院の修士課程とみなす。",
+      "amendment": {
+        "number": 22,
+        "year": null,
+        "raw": "規則第22号"
+      },
+      "promulgated": {
+        "era": "heisei",
+        "year": 22,
+        "month": 6,
+        "day": 25,
+        "iso": "2010-06-25"
+      },
+      "effective": {
+        "kind": "date",
+        "era": "heisei",
+        "year": 22,
+        "month": 6,
+        "day": 25,
+        "iso": "2010-06-25"
+      },
+      "text": "１  この学則は、平成22年６月25日から施行する。\n２  第77条の２の規定は、平成16年４月１日から適用する。同条の適用日における本学大\n学院の博士前期課程は、同条に定める本学大学院の修士課程とみなす。",
       "references_tables": []
     },
     {
       "ordinal": 6,
       "heading_raw": "附  則（平成23年１月26日規則第60号）",
-      "raw_text": "この学則は、平成23年４月１日から施行する。ただし、第68条、別表第３（第18条関\n係）及び別表第４（第18条関係）については、改正後の規定にかかわらず、平成22年度以\n前の入学生は、なお従前の例による。",
+      "amendment": {
+        "number": 60,
+        "year": null,
+        "raw": "規則第60号"
+      },
+      "promulgated": {
+        "era": "heisei",
+        "year": 23,
+        "month": 1,
+        "day": 26,
+        "iso": "2011-01-26"
+      },
+      "effective": {
+        "kind": "date",
+        "era": "heisei",
+        "year": 23,
+        "month": 4,
+        "day": 1,
+        "iso": "2011-04-01"
+      },
+      "text": "この学則は、平成23年４月１日から施行する。ただし、第68条、別表第３（第18条関\n係）及び別表第４（第18条関係）については、改正後の規定にかかわらず、平成22年度以\n前の入学生は、なお従前の例による。",
       "references_tables": [
         "別表第３",
         "別表第４"
@@ -2505,37 +2815,157 @@ input_file: sources/高知大学学則.pdf
     {
       "ordinal": 7,
       "heading_raw": "附  則（平成23年１月26日規則第61号）",
-      "raw_text": "この学則は、平成23年４月１日から施行する。",
+      "amendment": {
+        "number": 61,
+        "year": null,
+        "raw": "規則第61号"
+      },
+      "promulgated": {
+        "era": "heisei",
+        "year": 23,
+        "month": 1,
+        "day": 26,
+        "iso": "2011-01-26"
+      },
+      "effective": {
+        "kind": "date",
+        "era": "heisei",
+        "year": 23,
+        "month": 4,
+        "day": 1,
+        "iso": "2011-04-01"
+      },
+      "text": "この学則は、平成23年４月１日から施行する。",
       "references_tables": []
     },
     {
       "ordinal": 8,
       "heading_raw": "附  則（平成24年３月28日規則第102号）",
-      "raw_text": "この規則は、平成24年４月１日から施行する。ただし、平成23年度以前の入学生につ\nいては、改正後の第35条の２、第37条及び第62条の２の規定は適用しない。",
+      "amendment": {
+        "number": 102,
+        "year": null,
+        "raw": "規則第102号"
+      },
+      "promulgated": {
+        "era": "heisei",
+        "year": 24,
+        "month": 3,
+        "day": 28,
+        "iso": "2012-03-28"
+      },
+      "effective": {
+        "kind": "date",
+        "era": "heisei",
+        "year": 24,
+        "month": 4,
+        "day": 1,
+        "iso": "2012-04-01"
+      },
+      "text": "この規則は、平成24年４月１日から施行する。ただし、平成23年度以前の入学生につ\nいては、改正後の第35条の２、第37条及び第62条の２の規定は適用しない。",
       "references_tables": []
     },
     {
       "ordinal": 9,
       "heading_raw": "附  則（平成24年５月23日規則第12号）",
-      "raw_text": "この規則は、平成24年５月23日から施行する。",
+      "amendment": {
+        "number": 12,
+        "year": null,
+        "raw": "規則第12号"
+      },
+      "promulgated": {
+        "era": "heisei",
+        "year": 24,
+        "month": 5,
+        "day": 23,
+        "iso": "2012-05-23"
+      },
+      "effective": {
+        "kind": "date",
+        "era": "heisei",
+        "year": 24,
+        "month": 5,
+        "day": 23,
+        "iso": "2012-05-23"
+      },
+      "text": "この規則は、平成24年５月23日から施行する。",
       "references_tables": []
     },
     {
       "ordinal": 10,
       "heading_raw": "附  則（平成25年１月23日規則第60号）",
-      "raw_text": "この規則は、平成25年１月23日から施行する。",
+      "amendment": {
+        "number": 60,
+        "year": null,
+        "raw": "規則第60号"
+      },
+      "promulgated": {
+        "era": "heisei",
+        "year": 25,
+        "month": 1,
+        "day": 23,
+        "iso": "2013-01-23"
+      },
+      "effective": {
+        "kind": "date",
+        "era": "heisei",
+        "year": 25,
+        "month": 1,
+        "day": 23,
+        "iso": "2013-01-23"
+      },
+      "text": "この規則は、平成25年１月23日から施行する。",
       "references_tables": []
     },
     {
       "ordinal": 11,
       "heading_raw": "附  則（平成26年３月26日規則第108号）",
-      "raw_text": "この規則は、平成26年４月１日から施行する。ただし、この規則施行日前にした行為\nに対する停学期間の取扱いについては、改正後の第20条の規定にかかわらず、なお従前の\n例による。",
+      "amendment": {
+        "number": 108,
+        "year": null,
+        "raw": "規則第108号"
+      },
+      "promulgated": {
+        "era": "heisei",
+        "year": 26,
+        "month": 3,
+        "day": 26,
+        "iso": "2014-03-26"
+      },
+      "effective": {
+        "kind": "date",
+        "era": "heisei",
+        "year": 26,
+        "month": 4,
+        "day": 1,
+        "iso": "2014-04-01"
+      },
+      "text": "この規則は、平成26年４月１日から施行する。ただし、この規則施行日前にした行為\nに対する停学期間の取扱いについては、改正後の第20条の規定にかかわらず、なお従前の\n例による。",
       "references_tables": []
     },
     {
       "ordinal": 12,
       "heading_raw": "附  則（平成27年３月25日規則第154号）",
-      "raw_text": "１  この規則は、平成27年４月１日から施行する。\n２  改正後の高知大学学則の規定にかかわらず、第16条、第34条、第46条、第47条、第68\n条及び別表第３の適用について、平成26年度以前の入学生は、なお従前の例による。\n３  別表第１に定める人文学部、教育学部及び地域協働学部の平成27年度から平成29年度\nまでの収容定員は、改正後の同表の規定にかかわらず、次のとおりとする。\n学部  学科・課程  収容定員\n平成27年度  平成28年度  平成29年度\n人文学部  人間文化学科  376  376  376\n国際社会コミュ\nニケーション学\n科\n332  332  332\n社会経済学科  452  432  412\n第３年次編入学\n（学科共通）  20  20  20\n計  1,180  1,160  1,140\n教育学部  学校教育教員養\n成課程  430  460  490\n生涯教育課程  210  140  70\n計  640  600  560\n地域協働学部  地域協働学科  60  120  180\n計  60  120  180",
+      "amendment": {
+        "number": 154,
+        "year": null,
+        "raw": "規則第154号"
+      },
+      "promulgated": {
+        "era": "heisei",
+        "year": 27,
+        "month": 3,
+        "day": 25,
+        "iso": "2015-03-25"
+      },
+      "effective": {
+        "kind": "date",
+        "era": "heisei",
+        "year": 27,
+        "month": 4,
+        "day": 1,
+        "iso": "2015-04-01"
+      },
+      "text": "１  この規則は、平成27年４月１日から施行する。\n２  改正後の高知大学学則の規定にかかわらず、第16条、第34条、第46条、第47条、第68\n条及び別表第３の適用について、平成26年度以前の入学生は、なお従前の例による。\n３  別表第１に定める人文学部、教育学部及び地域協働学部の平成27年度から平成29年度\nまでの収容定員は、改正後の同表の規定にかかわらず、次のとおりとする。\n学部  学科・課程  収容定員\n平成27年度  平成28年度  平成29年度\n人文学部  人間文化学科  376  376  376\n国際社会コミュ\nニケーション学\n科\n332  332  332\n社会経済学科  452  432  412\n第３年次編入学\n（学科共通）  20  20  20\n計  1,180  1,160  1,140\n教育学部  学校教育教員養\n成課程  430  460  490\n生涯教育課程  210  140  70\n計  640  600  560\n地域協働学部  地域協働学科  60  120  180\n計  60  120  180",
       "references_tables": [
         "別表第３",
         "別表第１"
@@ -2544,7 +2974,27 @@ input_file: sources/高知大学学則.pdf
     {
       "ordinal": 13,
       "heading_raw": "附  則（平成28年１月13日規則第53号）",
-      "raw_text": "１  この規則は、平成28年４月１日から施行する。\n２  平成27年度以前の入学生及び編入学等によって同学生と同じ学年に入学等を許可され\nた者については、改正後の第37条及び別表第３の適用について、なお従前の例による。\n３  改正後の別表第１及び高知大学学則等の一部を改正する規則（平成27年３月25日規則\n第154号）附則第３項の規定にかかわらず、人文学部、人文社会科学部、理学部、農学\n部及び農林海洋科学部の平成28年度から平成30年度までの収容定員は、次のとおりと\nする。\n学部  学科・課程  収容定員\n平成28年度  平成29年度  平成30年度\n人文学部  人間文化学科  282  188  94\n国際社会コミュ\nニケーション学\n科\n249  166  83\n社会経済学科  334  216  98\n第３年次編入学\n（学科共通）  20  20  10\n計  885  590  285\n人文社会科学\n部  人文社会科学科  275  550  825\n第３年次編入学  0  0  10\n計  275  550  835\n理学部  理学科  525  510  495\n応用理学科  525  510  495\n第３年次編入学\n（学科共通）  20  20  20\n計  1,070  1,040  1,010\n農学部  農学科  510  340  170\n計  510  340  170\n農林海洋科学\n部  農林資源環境科\n学科  90  180  270\n農芸化学科  45  90  135\n海洋資源科学科  65  130  195\n計  200  400  600",
+      "amendment": {
+        "number": 53,
+        "year": null,
+        "raw": "規則第53号"
+      },
+      "promulgated": {
+        "era": "heisei",
+        "year": 28,
+        "month": 1,
+        "day": 13,
+        "iso": "2016-01-13"
+      },
+      "effective": {
+        "kind": "date",
+        "era": "heisei",
+        "year": 28,
+        "month": 4,
+        "day": 1,
+        "iso": "2016-04-01"
+      },
+      "text": "１  この規則は、平成28年４月１日から施行する。\n２  平成27年度以前の入学生及び編入学等によって同学生と同じ学年に入学等を許可され\nた者については、改正後の第37条及び別表第３の適用について、なお従前の例による。\n３  改正後の別表第１及び高知大学学則等の一部を改正する規則（平成27年３月25日規則\n第154号）附則第３項の規定にかかわらず、人文学部、人文社会科学部、理学部、農学\n部及び農林海洋科学部の平成28年度から平成30年度までの収容定員は、次のとおりと\nする。\n学部  学科・課程  収容定員\n平成28年度  平成29年度  平成30年度\n人文学部  人間文化学科  282  188  94\n国際社会コミュ\nニケーション学\n科\n249  166  83\n社会経済学科  334  216  98\n第３年次編入学\n（学科共通）  20  20  10\n計  885  590  285\n人文社会科学\n部  人文社会科学科  275  550  825\n第３年次編入学  0  0  10\n計  275  550  835\n理学部  理学科  525  510  495\n応用理学科  525  510  495\n第３年次編入学\n（学科共通）  20  20  20\n計  1,070  1,040  1,010\n農学部  農学科  510  340  170\n計  510  340  170\n農林海洋科学\n部  農林資源環境科\n学科  90  180  270\n農芸化学科  45  90  135\n海洋資源科学科  65  130  195\n計  200  400  600",
       "references_tables": [
         "別表第３",
         "別表第１"
@@ -2553,13 +3003,53 @@ input_file: sources/高知大学学則.pdf
     {
       "ordinal": 14,
       "heading_raw": "附  則（平成28年６月10日規則第12号）",
-      "raw_text": "この規則は、平成28年６月10日から施行する。",
+      "amendment": {
+        "number": 12,
+        "year": null,
+        "raw": "規則第12号"
+      },
+      "promulgated": {
+        "era": "heisei",
+        "year": 28,
+        "month": 6,
+        "day": 10,
+        "iso": "2016-06-10"
+      },
+      "effective": {
+        "kind": "date",
+        "era": "heisei",
+        "year": 28,
+        "month": 6,
+        "day": 10,
+        "iso": "2016-06-10"
+      },
+      "text": "この規則は、平成28年６月10日から施行する。",
       "references_tables": []
     },
     {
       "ordinal": 15,
       "heading_raw": "附  則（平成29年２月27日規則第58号）",
-      "raw_text": "１  この規則は、平成29年４月１日から施行する。\n２  改正後の第33条の規定は、平成30年度以降の入学を志願する者に適用し、平成29年度\nの入学を志願する者については、なお従前の例による。\n３  平成28年度以前の入学生及び編入学等によって同学生と同じ学年に入学等を許可され\nた者については、改正後の第53条及び別表第３の適用について、なお従前の例による。\n４  改正後の別表第１及び高知大学学則の一部を改正する規則（平成28年１月13日規則第\n53号）附則第３項の規定にかかわらず、理学部及び理工学部の平成29年度から平成31\n年度までの収容定員は、次のとおりとする。\n学部  学科・課程  収容定員\n平成29年度  平成30年度  平成31年度\n理学部  理学科  390  255  120\n応用理学科  390  255  120\n第３年次編入学\n（学科共通）  20  20  10\n計  800  530  250\n理工学部  数学物理学科\n第３年次編入学  55  110  165\n2\n情報科学科\n第３年次編入学  30  60  90\n2\n生物科学科\n第３年次編入学  45  90  135\n2\n化学生命理工\n学科\n第３年次編入学\n70  140  210\n2\n地球環境防災 40  80  120\n学科\n第３年次編入学\n2\n計  240  480  730",
+      "amendment": {
+        "number": 58,
+        "year": null,
+        "raw": "規則第58号"
+      },
+      "promulgated": {
+        "era": "heisei",
+        "year": 29,
+        "month": 2,
+        "day": 27,
+        "iso": "2017-02-27"
+      },
+      "effective": {
+        "kind": "date",
+        "era": "heisei",
+        "year": 29,
+        "month": 4,
+        "day": 1,
+        "iso": "2017-04-01"
+      },
+      "text": "１  この規則は、平成29年４月１日から施行する。\n２  改正後の第33条の規定は、平成30年度以降の入学を志願する者に適用し、平成29年度\nの入学を志願する者については、なお従前の例による。\n３  平成28年度以前の入学生及び編入学等によって同学生と同じ学年に入学等を許可され\nた者については、改正後の第53条及び別表第３の適用について、なお従前の例による。\n４  改正後の別表第１及び高知大学学則の一部を改正する規則（平成28年１月13日規則第\n53号）附則第３項の規定にかかわらず、理学部及び理工学部の平成29年度から平成31\n年度までの収容定員は、次のとおりとする。\n学部  学科・課程  収容定員\n平成29年度  平成30年度  平成31年度\n理学部  理学科  390  255  120\n応用理学科  390  255  120\n第３年次編入学\n（学科共通）  20  20  10\n計  800  530  250\n理工学部  数学物理学科\n第３年次編入学  55  110  165\n2\n情報科学科\n第３年次編入学  30  60  90\n2\n生物科学科\n第３年次編入学  45  90  135\n2\n化学生命理工\n学科\n第３年次編入学\n70  140  210\n2\n地球環境防災 40  80  120\n学科\n第３年次編入学\n2\n計  240  480  730",
       "references_tables": [
         "別表第３",
         "別表第１"
@@ -2568,7 +3058,27 @@ input_file: sources/高知大学学則.pdf
     {
       "ordinal": 16,
       "heading_raw": "附  則（平成30年１月18日規則第35号）",
-      "raw_text": "１  この規則は、平成30年４月１日から施行する。\n２  改正後の第33条の規定は、平成31年度以降の入学を志願する者に適用し、平成30年度\nの入学を志願する者については、なお従前の例による。\n３  別表第１に定める医学部及び合計の項の入学定員に、平成30年度から平成31年度まで、\n次に定める定員を加えるものとする。\n学部  学科・課程  入学定員\n医学部  医学科  5\n小計  5\n計  5\n合計  5\n４  改正後の別表第１及び高知大学学則の一部を改正する規則（平成21年２月24日規則第\n56号）附則第６項の規定にかかわらず、医学部及び合計の平成30年度から平成36年度\nまでの収容定員は、次のとおりとする。\n学部  学科・課程  収容定員\n平成30年度  平成31年度  平成32年度  平成33年度\n医学部\n医学科\n第２年次編入学  660\n25  660\n25  645\n25  630\n25\n小計  685  685  670  655\n看護学科\n第３年次編入学  240\n20  240\n20  240\n20  240\n20\n小計  260  260  260  260\n計  945  945  930  915\n合計  4,605  4,605  4,590  4,575\n学部  学科・課程  収容定員\n平成34年度  平成35年度  平成36年度\n医学部\n医学科\n第２年次編入学  615\n25  600\n25  585\n25\n小計  640  625  610\n看護学科\n第３年次編入学  240\n20  240\n20  240\n20\n小計  260  260  260\n計  900  885  870\n合計  4,560  4,545  4,530\n５  改正後の別表第２の規定にかかわらず、修士課程、専門職学位課程及び合計の平成30\n年度の収容定員は、次のとおりとする。\n課程  専攻  収容定員\n平成30年度\n修士課程\n人文社会科学専攻  20\n教育学専攻  42\n理学専攻  150\n医科学専攻  30\n看護学専攻  24\n農学専攻  118\n計  384\n専門職学位課程  教職実践高度化専攻  15\n計  15\n合計  555\n６  平成29年度以前の入学生及び編入学等によって同学生と同じ学年に入学等を許可され\nた者については、改正後の別表第４の適用について、なお従前の例による。",
+      "amendment": {
+        "number": 35,
+        "year": null,
+        "raw": "規則第35号"
+      },
+      "promulgated": {
+        "era": "heisei",
+        "year": 30,
+        "month": 1,
+        "day": 18,
+        "iso": "2018-01-18"
+      },
+      "effective": {
+        "kind": "date",
+        "era": "heisei",
+        "year": 30,
+        "month": 4,
+        "day": 1,
+        "iso": "2018-04-01"
+      },
+      "text": "１  この規則は、平成30年４月１日から施行する。\n２  改正後の第33条の規定は、平成31年度以降の入学を志願する者に適用し、平成30年度\nの入学を志願する者については、なお従前の例による。\n３  別表第１に定める医学部及び合計の項の入学定員に、平成30年度から平成31年度まで、\n次に定める定員を加えるものとする。\n学部  学科・課程  入学定員\n医学部  医学科  5\n小計  5\n計  5\n合計  5\n４  改正後の別表第１及び高知大学学則の一部を改正する規則（平成21年２月24日規則第\n56号）附則第６項の規定にかかわらず、医学部及び合計の平成30年度から平成36年度\nまでの収容定員は、次のとおりとする。\n学部  学科・課程  収容定員\n平成30年度  平成31年度  平成32年度  平成33年度\n医学部\n医学科\n第２年次編入学  660\n25  660\n25  645\n25  630\n25\n小計  685  685  670  655\n看護学科\n第３年次編入学  240\n20  240\n20  240\n20  240\n20\n小計  260  260  260  260\n計  945  945  930  915\n合計  4,605  4,605  4,590  4,575\n学部  学科・課程  収容定員\n平成34年度  平成35年度  平成36年度\n医学部\n医学科\n第２年次編入学  615\n25  600\n25  585\n25\n小計  640  625  610\n看護学科\n第３年次編入学  240\n20  240\n20  240\n20\n小計  260  260  260\n計  900  885  870\n合計  4,560  4,545  4,530\n５  改正後の別表第２の規定にかかわらず、修士課程、専門職学位課程及び合計の平成30\n年度の収容定員は、次のとおりとする。\n課程  専攻  収容定員\n平成30年度\n修士課程\n人文社会科学専攻  20\n教育学専攻  42\n理学専攻  150\n医科学専攻  30\n看護学専攻  24\n農学専攻  118\n計  384\n専門職学位課程  教職実践高度化専攻  15\n計  15\n合計  555\n６  平成29年度以前の入学生及び編入学等によって同学生と同じ学年に入学等を許可され\nた者については、改正後の別表第４の適用について、なお従前の例による。",
       "references_tables": [
         "別表第１",
         "別表第２",
@@ -2578,13 +3088,53 @@ input_file: sources/高知大学学則.pdf
     {
       "ordinal": 17,
       "heading_raw": "附  則（平成31年１月16日規則第55号）",
-      "raw_text": "１  この規則は、平成31年４月１日から施行する。\n２  平成30年度以前に入学した地域協働学部の学生及び編入学等によって同学生と同じ学\n年に入学等を許可された地域協働学部の学生に係る授業科目の科目区分については、\nなお従前の例による。\n３  教育公務員特例法等の一部を改正する法律（平成28年法律第87号）及び教育職員免許\n法施行規則及び免許状更新講習規則の一部を改正する省令（平成29年文部科学省令第\n41号）の規定により、これらの規定による改正前の教育職員免許法（昭和24年法律第\n147号）及び教育職員免許法施行規則（昭和29年文部省令第26号）の規定により教育職\n員免許状授与の所要資格を得ることができるとされる者に係る本学において取得でき\nる教育職員免許状の種類及び教科等については、なお従前の例による。",
+      "amendment": {
+        "number": 55,
+        "year": null,
+        "raw": "規則第55号"
+      },
+      "promulgated": {
+        "era": "heisei",
+        "year": 31,
+        "month": 1,
+        "day": 16,
+        "iso": "2019-01-16"
+      },
+      "effective": {
+        "kind": "date",
+        "era": "heisei",
+        "year": 31,
+        "month": 4,
+        "day": 1,
+        "iso": "2019-04-01"
+      },
+      "text": "１  この規則は、平成31年４月１日から施行する。\n２  平成30年度以前に入学した地域協働学部の学生及び編入学等によって同学生と同じ学\n年に入学等を許可された地域協働学部の学生に係る授業科目の科目区分については、\nなお従前の例による。\n３  教育公務員特例法等の一部を改正する法律（平成28年法律第87号）及び教育職員免許\n法施行規則及び免許状更新講習規則の一部を改正する省令（平成29年文部科学省令第\n41号）の規定により、これらの規定による改正前の教育職員免許法（昭和24年法律第\n147号）及び教育職員免許法施行規則（昭和29年文部省令第26号）の規定により教育職\n員免許状授与の所要資格を得ることができるとされる者に係る本学において取得でき\nる教育職員免許状の種類及び教科等については、なお従前の例による。",
       "references_tables": []
     },
     {
       "ordinal": 18,
       "heading_raw": "附  則（令和２年１月27日規則第52号）",
-      "raw_text": "１  この規則は、令和２年４月１日から施行する。\n２  別表第１に定める医学部及び合計の項の入学定員に、令和２年度から令和３年度まで、\n次に定める定員を加えるものとする。\n学部  学科・課程  入学定員\n医学部  医学科  15\n小計  15\n計  15\n合計  15\n３  改正後の別表第１及び高知大学学則の一部を改正する規則（平成30年１月18日規則第\n35号）附則第４項の規定にかかわらず、医学部及び合計の令和２年度から令和８年度\nまでの収容定員は、次のとおりとする。\n学部  学科・課程  収容定員\n令和２年度  令和３年度  令和４年度  令和５年度\n医学部\n医学科\n第２年次編入学  660\n25  660\n25  645\n25  630\n25\n小計  685  685  670  655\n看護学科\n第３年次編入学  240\n20  240\n20  240\n20  240\n20\n小計  260  260  260  260\n計  945  945  930  915\n合計  4,605  4,605  4,590  4,575\n学部  学科・課程  収容定員\n令和６年度  令和７年度  令和８年度\n医学部\n医学科\n第２年次編入学  615\n25  600\n25  585\n25\n小計  640  625  610\n看護学科\n第３年次編入学  240\n20  240\n20  240\n20\n小計  260  260  260\n計  900  885  870\n合計  4,560  4,545  4,530\n４  改正後の別表第２の規定にかかわらず、修士課程及び合計の令和２年度の収容定員は、\n次のとおりとする。\n課程  専攻  収容定員\n令和２年度\n修士課程\n人文社会科学専攻  18\n教育学専攻  24\n理学専攻  75\n理工学専攻  55\n医科学専攻  30\n看護学専攻  24\n農学専攻  59\n農林海洋科学専攻  55\n地域協働学専攻  3\n計  343\n合計  529\n５  令和元年度以前の入学生及び編入学等によって同学生と同じ学年に入学等を許可され\nた者については、改正後の別表第４の適用について、なお従前の例による。",
+      "amendment": {
+        "number": 52,
+        "year": null,
+        "raw": "規則第52号"
+      },
+      "promulgated": {
+        "era": "reiwa",
+        "year": 2,
+        "month": 1,
+        "day": 27,
+        "iso": "2020-01-27"
+      },
+      "effective": {
+        "kind": "date",
+        "era": "reiwa",
+        "year": 2,
+        "month": 4,
+        "day": 1,
+        "iso": "2020-04-01"
+      },
+      "text": "１  この規則は、令和２年４月１日から施行する。\n２  別表第１に定める医学部及び合計の項の入学定員に、令和２年度から令和３年度まで、\n次に定める定員を加えるものとする。\n学部  学科・課程  入学定員\n医学部  医学科  15\n小計  15\n計  15\n合計  15\n３  改正後の別表第１及び高知大学学則の一部を改正する規則（平成30年１月18日規則第\n35号）附則第４項の規定にかかわらず、医学部及び合計の令和２年度から令和８年度\nまでの収容定員は、次のとおりとする。\n学部  学科・課程  収容定員\n令和２年度  令和３年度  令和４年度  令和５年度\n医学部\n医学科\n第２年次編入学  660\n25  660\n25  645\n25  630\n25\n小計  685  685  670  655\n看護学科\n第３年次編入学  240\n20  240\n20  240\n20  240\n20\n小計  260  260  260  260\n計  945  945  930  915\n合計  4,605  4,605  4,590  4,575\n学部  学科・課程  収容定員\n令和６年度  令和７年度  令和８年度\n医学部\n医学科\n第２年次編入学  615\n25  600\n25  585\n25\n小計  640  625  610\n看護学科\n第３年次編入学  240\n20  240\n20  240\n20\n小計  260  260  260\n計  900  885  870\n合計  4,560  4,545  4,530\n４  改正後の別表第２の規定にかかわらず、修士課程及び合計の令和２年度の収容定員は、\n次のとおりとする。\n課程  専攻  収容定員\n令和２年度\n修士課程\n人文社会科学専攻  18\n教育学専攻  24\n理学専攻  75\n理工学専攻  55\n医科学専攻  30\n看護学専攻  24\n農学専攻  59\n農林海洋科学専攻  55\n地域協働学専攻  3\n計  343\n合計  529\n５  令和元年度以前の入学生及び編入学等によって同学生と同じ学年に入学等を許可され\nた者については、改正後の別表第４の適用について、なお従前の例による。",
       "references_tables": [
         "別表第１",
         "別表第２",
@@ -2594,7 +3144,27 @@ input_file: sources/高知大学学則.pdf
     {
       "ordinal": 19,
       "heading_raw": "附  則（令和３年１月22日規則第27号）",
-      "raw_text": "１  この規則は、令和３年４月１日から施行する。\n２  令和２年度以前の入学生及び編入学等によって同学年と同じ学年に入学等を許可され\nた者については、改正後の別表第３の適用について、なお従前の例による。",
+      "amendment": {
+        "number": 27,
+        "year": null,
+        "raw": "規則第27号"
+      },
+      "promulgated": {
+        "era": "reiwa",
+        "year": 3,
+        "month": 1,
+        "day": 22,
+        "iso": "2021-01-22"
+      },
+      "effective": {
+        "kind": "date",
+        "era": "reiwa",
+        "year": 3,
+        "month": 4,
+        "day": 1,
+        "iso": "2021-04-01"
+      },
+      "text": "１  この規則は、令和３年４月１日から施行する。\n２  令和２年度以前の入学生及び編入学等によって同学年と同じ学年に入学等を許可され\nた者については、改正後の別表第３の適用について、なお従前の例による。",
       "references_tables": [
         "別表第３"
       ]
@@ -2602,7 +3172,27 @@ input_file: sources/高知大学学則.pdf
     {
       "ordinal": 20,
       "heading_raw": "附  則（令和４年２月９日規則第55号）",
-      "raw_text": "１  この規則は、令和４年４月１日から施行する。\n２  令和３年度以前の入学生及び編入学等によって同学生と同じ学年に入学等を許可され\nた者については、改正後の別表第４の適用について、なお従前の例による。\n３  別表第１に定める医学部及び合計の項の入学定員に、令和４年度は次に定める定員を\n加えるものとする。\n学部  学科・課程  入学定員\n医学部  医学科  15\n小計  15\n計  15\n合計  15\n４  改正後の別表第１及び高知大学学則の一部を改正する規則（令和２年１月27日規則第\n52号）附則第３項の規定にかかわらず、医学部及び合計の令和４年度から令和９年度\nまでの収容定員は、次のとおりとする。\n学部  学科・課程  収容定員\n令和４年度  令和５年度  令和６年度  令和７年度\n医学部\n医学科\n第２年次編入学  660\n25  645\n25  630\n25  615\n25\n小計  685  670  655  640\n看護学科\n第３年次編入学  240\n20  240\n20  240\n20  240\n20\n小計  260  260  260  260\n計  945  930  915  900\n合計  4,605  4,590  4,575  4,560\n学部  学科・課程  収容定員\n令和８年度  令和９年度\n医学部\n医学科\n第２年次編入学  600\n25  585\n25\n小計  625  610\n看護学科\n第３年次編入学  240\n20  240\n20\n小計  260  260\n計  885  870\n合計  4,545  4,530\n５  改正後の別表第２の規定にかかわらず、修士課程、専門職学位課程、博士課程及び合\n計の令和４年度から令和５年度までの収容定員は、次のとおりとする。\n課程  専攻  収容定員\n令和４年度  令和５年度\n修士課程\n人文社会科学専攻  16  16\n教育学専攻  12  0\n理工学専攻  110  110\n医科学専攻  30  30\n看護学専攻  24  24\n農林海洋科学専攻  110  110\n地域協働学専攻  6  6\n計  308  296\n専門職学位課程\n教職実践高度化専攻  15  0\n教職実践高度化専攻  15  30\n計  30  30\n博士課程\n応用自然科学専攻  12  6\n応用自然科学専攻  6  12\n医学専攻  120  120\n黒潮圏総合科学専攻  18  18\n計  156  156\n合計  494  482",
+      "amendment": {
+        "number": 55,
+        "year": null,
+        "raw": "規則第55号"
+      },
+      "promulgated": {
+        "era": "reiwa",
+        "year": 4,
+        "month": 2,
+        "day": 9,
+        "iso": "2022-02-09"
+      },
+      "effective": {
+        "kind": "date",
+        "era": "reiwa",
+        "year": 4,
+        "month": 4,
+        "day": 1,
+        "iso": "2022-04-01"
+      },
+      "text": "１  この規則は、令和４年４月１日から施行する。\n２  令和３年度以前の入学生及び編入学等によって同学生と同じ学年に入学等を許可され\nた者については、改正後の別表第４の適用について、なお従前の例による。\n３  別表第１に定める医学部及び合計の項の入学定員に、令和４年度は次に定める定員を\n加えるものとする。\n学部  学科・課程  入学定員\n医学部  医学科  15\n小計  15\n計  15\n合計  15\n４  改正後の別表第１及び高知大学学則の一部を改正する規則（令和２年１月27日規則第\n52号）附則第３項の規定にかかわらず、医学部及び合計の令和４年度から令和９年度\nまでの収容定員は、次のとおりとする。\n学部  学科・課程  収容定員\n令和４年度  令和５年度  令和６年度  令和７年度\n医学部\n医学科\n第２年次編入学  660\n25  645\n25  630\n25  615\n25\n小計  685  670  655  640\n看護学科\n第３年次編入学  240\n20  240\n20  240\n20  240\n20\n小計  260  260  260  260\n計  945  930  915  900\n合計  4,605  4,590  4,575  4,560\n学部  学科・課程  収容定員\n令和８年度  令和９年度\n医学部\n医学科\n第２年次編入学  600\n25  585\n25\n小計  625  610\n看護学科\n第３年次編入学  240\n20  240\n20\n小計  260  260\n計  885  870\n合計  4,545  4,530\n５  改正後の別表第２の規定にかかわらず、修士課程、専門職学位課程、博士課程及び合\n計の令和４年度から令和５年度までの収容定員は、次のとおりとする。\n課程  専攻  収容定員\n令和４年度  令和５年度\n修士課程\n人文社会科学専攻  16  16\n教育学専攻  12  0\n理工学専攻  110  110\n医科学専攻  30  30\n看護学専攻  24  24\n農林海洋科学専攻  110  110\n地域協働学専攻  6  6\n計  308  296\n専門職学位課程\n教職実践高度化専攻  15  0\n教職実践高度化専攻  15  30\n計  30  30\n博士課程\n応用自然科学専攻  12  6\n応用自然科学専攻  6  12\n医学専攻  120  120\n黒潮圏総合科学専攻  18  18\n計  156  156\n合計  494  482",
       "references_tables": [
         "別表第４",
         "別表第１",
@@ -2612,13 +3202,53 @@ input_file: sources/高知大学学則.pdf
     {
       "ordinal": 21,
       "heading_raw": "附  則（令和４年９月29日規則第40号）",
-      "raw_text": "この規則は、令和４年９月29日から施行する。",
+      "amendment": {
+        "number": 40,
+        "year": null,
+        "raw": "規則第40号"
+      },
+      "promulgated": {
+        "era": "reiwa",
+        "year": 4,
+        "month": 9,
+        "day": 29,
+        "iso": "2022-09-29"
+      },
+      "effective": {
+        "kind": "date",
+        "era": "reiwa",
+        "year": 4,
+        "month": 9,
+        "day": 29,
+        "iso": "2022-09-29"
+      },
+      "text": "この規則は、令和４年９月29日から施行する。",
       "references_tables": []
     },
     {
       "ordinal": 22,
       "heading_raw": "附  則（令和５年１月31日規則第71号）",
-      "raw_text": "１  この規則は、令和５年４月１日から施行する。\n２  令和４年度以前の入学生及び編入学等によって同学年と同じ学年に入学等を許可され\nた者については、改正後の別表第３の適用について、なお従前の例による。\n３  改正後の別表第１の規定にかかわらず、人文社会科学部、改組前の農林海洋科学部及\nび改組後の農林海洋科学部の令和５年度から令和７年度までの収容定員は、次のとお\nりとする。\n学部  学科・課程  収容定員\n令和５年度  令和６年度  令和７年度\n人文社会\n科学部\n人文社会科学科\n第３年次編入学  1,100\n18  1,100\n16  1,100\n16\n計  1,118  1,116  1,116\n農林海洋\n科学部  農林資源環境科学科  270  180  90\n農芸化学科  135  90  45\n海洋資源科学科  195  130  65\n計  600  400  200\n農林海洋\n科学部\n農林資源科学科\n第３年次編入学\n135\n2  270\n4  405\n4\n小計  137  274  409\n海洋資源科学科  65  130  195\n計  332  404  604\n４  別表第１に定める医学部及び合計の項の入学定員に、令和５年度は次に定める定員を\n加えるものとする。\n学部  学科・課程  入学定員\n医学部  医学科  15\n小計  15\n計  15\n合計  15\n５  改正後の別表第１及び高知大学学則の一部を改正する規則（令和４年２月９日規則第\n55号）附則第４項の規定にかかわらず、医学部及び合計の令和５年度から令和10年度\nまでの収容定員は、次のとおりとする。\n学部  学科・課程  収容定員\n令和５年度  令和６年度  令和７年度  令和８年度\n医学部\n医学科\n第２年次編入学  660\n25  645\n25  630\n25  615\n25\n小計  685  670  655  640\n看護学科\n第３年次編入学  240\n20  240\n20  240\n20  240\n20\n小計  260  260  260  260\n計  945  930  915  900\n合計  4,605  4,590  4,575  4,560\n学部  学科・課程  収容定員\n令和９年度  令和10年度\n医学部\n医学科\n第２年次編入学  600\n25  585\n25\n小計  625  610\n看護学科\n第３年次編入学  240\n20  240\n20\n小計  260  260\n計  885  870\n合計  4,545  4,530",
+      "amendment": {
+        "number": 71,
+        "year": null,
+        "raw": "規則第71号"
+      },
+      "promulgated": {
+        "era": "reiwa",
+        "year": 5,
+        "month": 1,
+        "day": 31,
+        "iso": "2023-01-31"
+      },
+      "effective": {
+        "kind": "date",
+        "era": "reiwa",
+        "year": 5,
+        "month": 4,
+        "day": 1,
+        "iso": "2023-04-01"
+      },
+      "text": "１  この規則は、令和５年４月１日から施行する。\n２  令和４年度以前の入学生及び編入学等によって同学年と同じ学年に入学等を許可され\nた者については、改正後の別表第３の適用について、なお従前の例による。\n３  改正後の別表第１の規定にかかわらず、人文社会科学部、改組前の農林海洋科学部及\nび改組後の農林海洋科学部の令和５年度から令和７年度までの収容定員は、次のとお\nりとする。\n学部  学科・課程  収容定員\n令和５年度  令和６年度  令和７年度\n人文社会\n科学部\n人文社会科学科\n第３年次編入学  1,100\n18  1,100\n16  1,100\n16\n計  1,118  1,116  1,116\n農林海洋\n科学部  農林資源環境科学科  270  180  90\n農芸化学科  135  90  45\n海洋資源科学科  195  130  65\n計  600  400  200\n農林海洋\n科学部\n農林資源科学科\n第３年次編入学\n135\n2  270\n4  405\n4\n小計  137  274  409\n海洋資源科学科  65  130  195\n計  332  404  604\n４  別表第１に定める医学部及び合計の項の入学定員に、令和５年度は次に定める定員を\n加えるものとする。\n学部  学科・課程  入学定員\n医学部  医学科  15\n小計  15\n計  15\n合計  15\n５  改正後の別表第１及び高知大学学則の一部を改正する規則（令和４年２月９日規則第\n55号）附則第４項の規定にかかわらず、医学部及び合計の令和５年度から令和10年度\nまでの収容定員は、次のとおりとする。\n学部  学科・課程  収容定員\n令和５年度  令和６年度  令和７年度  令和８年度\n医学部\n医学科\n第２年次編入学  660\n25  645\n25  630\n25  615\n25\n小計  685  670  655  640\n看護学科\n第３年次編入学  240\n20  240\n20  240\n20  240\n20\n小計  260  260  260  260\n計  945  930  915  900\n合計  4,605  4,590  4,575  4,560\n学部  学科・課程  収容定員\n令和９年度  令和10年度\n医学部\n医学科\n第２年次編入学  600\n25  585\n25\n小計  625  610\n看護学科\n第３年次編入学  240\n20  240\n20\n小計  260  260\n計  885  870\n合計  4,545  4,530",
       "references_tables": [
         "別表第３",
         "別表第１"
@@ -2627,7 +3257,27 @@ input_file: sources/高知大学学則.pdf
     {
       "ordinal": 23,
       "heading_raw": "附  則（令和６年１月29日規則第45号）",
-      "raw_text": "１  この規則は、令和６年４月１日から施行する。\n２  令和５年度以前の入学生及び編入学等によって同学生と同じ学年に入学等を許可され\nた者については、第37条第４項及び第64条に係る改正を除き、なお従前の例による。\n３  改正後の別表第２の規定にかかわらず、修士課程及び合計の令和６年度の収容定員は、\n次のとおりとする。\n課程  専攻  収容定員\n令和６年度\n修士課程\n人文社会科学専攻  16\n理工学専攻  110\n医科学専攻  30\n看護学専攻  24\n農林海洋科学専攻  110\n地域協働学専攻  6\nスポーツ・芸術文 化\n共創専攻  6\n計  302\n合計  488\n４  別表第１に定める医学部及び合計の項の入学定員に、令和６年度は次に定める定員を\n加えるものとする。\n学部  学科・課程  入学定員\n医学部  医学科  15\n小計  15\n計  15\n合計  15\n５  改正後の別表第１及び高知大学学則の一部を改正する規則（令和５年１月31日規則第\n71号）附則第５項の規定にかかわらず、医学部及び合計の令和６年度から令和11年度\nまでの収容定員は、次のとおりとする。\n学部  学科・課程  収容定員\n令和６年度  令和７年度  令和８年度  令和９年度\n医学部\n医学科\n第２年次編入学  660\n25  645\n25  630\n25  615\n25\n小計  685  670  655  640\n看護学科\n第３年次編入学  240\n20  240\n20  240\n20  240\n20\n小計  260  260  260  260\n計  945  930  915  900\n合計  4,605  4,590  4,575  4,560\n学部  学科・課程  収容定員\n令和10年度  令和11年度\n医学部\n医学科\n第２年次編入学  600\n25  585\n25\n小計  625  610\n看護学科\n第３年次編入学  240\n20  240\n20\n小計  260  260\n計  885  870\n合計  4,545  4,530",
+      "amendment": {
+        "number": 45,
+        "year": null,
+        "raw": "規則第45号"
+      },
+      "promulgated": {
+        "era": "reiwa",
+        "year": 6,
+        "month": 1,
+        "day": 29,
+        "iso": "2024-01-29"
+      },
+      "effective": {
+        "kind": "date",
+        "era": "reiwa",
+        "year": 6,
+        "month": 4,
+        "day": 1,
+        "iso": "2024-04-01"
+      },
+      "text": "１  この規則は、令和６年４月１日から施行する。\n２  令和５年度以前の入学生及び編入学等によって同学生と同じ学年に入学等を許可され\nた者については、第37条第４項及び第64条に係る改正を除き、なお従前の例による。\n３  改正後の別表第２の規定にかかわらず、修士課程及び合計の令和６年度の収容定員は、\n次のとおりとする。\n課程  専攻  収容定員\n令和６年度\n修士課程\n人文社会科学専攻  16\n理工学専攻  110\n医科学専攻  30\n看護学専攻  24\n農林海洋科学専攻  110\n地域協働学専攻  6\nスポーツ・芸術文 化\n共創専攻  6\n計  302\n合計  488\n４  別表第１に定める医学部及び合計の項の入学定員に、令和６年度は次に定める定員を\n加えるものとする。\n学部  学科・課程  入学定員\n医学部  医学科  15\n小計  15\n計  15\n合計  15\n５  改正後の別表第１及び高知大学学則の一部を改正する規則（令和５年１月31日規則第\n71号）附則第５項の規定にかかわらず、医学部及び合計の令和６年度から令和11年度\nまでの収容定員は、次のとおりとする。\n学部  学科・課程  収容定員\n令和６年度  令和７年度  令和８年度  令和９年度\n医学部\n医学科\n第２年次編入学  660\n25  645\n25  630\n25  615\n25\n小計  685  670  655  640\n看護学科\n第３年次編入学  240\n20  240\n20  240\n20  240\n20\n小計  260  260  260  260\n計  945  930  915  900\n合計  4,605  4,590  4,575  4,560\n学部  学科・課程  収容定員\n令和10年度  令和11年度\n医学部\n医学科\n第２年次編入学  600\n25  585\n25\n小計  625  610\n看護学科\n第３年次編入学  240\n20  240\n20\n小計  260  260\n計  885  870\n合計  4,545  4,530",
       "references_tables": [
         "別表第２",
         "別表第１"
@@ -2636,7 +3286,27 @@ input_file: sources/高知大学学則.pdf
     {
       "ordinal": 24,
       "heading_raw": "附  則（令和７年１月23日規則第58号）",
-      "raw_text": "１  この規則は、令和７年４月１日から施行する。\n２  別表第１に定める医学部及び合計の項の入学定員に、令和７年度は次に定める定員を\n加えるものとする。\n学部  学科・課程  入学定員\n医学部  医学科  14\n小計  14\n計  14\n合計  14\n３  改正後の別表第１並びに高知大学学則の一部を改正する規則（令和５年１月31日規則\n第71号）附則第３項及び高知大学学則の一部を改正する規則（令和６年１月29日規則\n第45号）附則第５項の規定にかかわらず、学部及び合計の令和７年度から令和12年度\nまでの収容定員は、次のとおりとする。\n学部  学科・課程  収容定員\n令和７年度  令和８年度  令和９年度  令和 10 年度\n人文社会\n科学部  人文社会科学科\n第３年次編入学  1,100\n10  1,100\n4  1,100\n4  1,100\n4\n計  1,110  1,104  1,104  1,104\n教育学部  学校教育教員養成課\n程  520  520  520  520\n計  520  520  520  520\n理工学部  数学物理学科\n第３年次編入学  220\n4  220\n4  220\n4  220\n4\n情報科学科\n第３年次編入学  120\n14  120\n24  120\n24  120\n24\n生物科学科\n第３年次編入学  180\n4  180\n4  180\n4  180\n4\n化学生命理工学科\n第３年次編入学  280\n4  280\n4  280\n4  280\n4\n地球環境防災学科\n第３年次編入学  160\n4  160\n4  160\n4  160\n4\n計  990  1,000  1,000  1,000\n医学部  医学科\n第２年次編入学  659\n25  644\n25  629\n25  614\n25\n小計  684  669  654  639\n看護学科\n第３年次編入学  240\n12  240\n4  240\n4  240\n4\n小計  252  244  244  244\n計  936  913  898  883\n農林海洋\n科学部  農林資源環境科学科  90\n農芸化学科  45\n海洋資源科学科  65\n計  200\n農林海洋\n科学部  農林資源科学科\n第３年次編入学  410\n4  550\n4  555\n4  560\n4\n小計  414  554  559  564\n海洋資源科学科  195  260  260  260\n計  609  814  819  824\n地域協働\n学部  地域協働学科  240  240  240  240\n計  240  240  240  240\n合計  4,605  4,591  4,581  4,571\n学部  学科・課程  収容定員\n令和11年度 令和12年度\n人文社会科学部  人文社会科学科\n第３年次編入学  1,100\n4  1,100\n4\n計  1,104  1,104\n教育学部  学校教育教員養成課程  520  520\n計  520  520\n理工学部  数学物理学科\n第３年次編入学  220\n4  220\n4\n情報科学科\n第３年次編入学  120\n24  120\n24\n生物科学科\n第３年次編入学  180\n4  180\n4\n化学生命理工学科\n第３年次編入学  280\n4  280\n4\n地球環境防災学科\n第３年次編入学  160\n4  160\n4\n計  1,000  1,000\n医学部  医学科\n第２年次編入学  599\n25  584\n25\n小計  624  609\n看護学科\n第３年次編入学  240\n4  240\n4\n小計  244  244\n計  868  853\n農林海洋科学部  農林資源環境科学科\n農芸化学科\n海洋資源科学科\n計\n農林海洋科学部  農林資源科学科\n第３年次編入学  560\n4  560\n4\n小計  564  564\n海洋資源科学科  260  260\n計  824  824\n地域協働学部  地域協働学科  240  240\n計  240  240\n合計  4,556  4,541\n４  改正後の別表第２の規定にかかわらず、修士課程及び合計の令和７年度の収容定員は、\n次のとおりとする。\n課程  専攻  収容定員\n令和７年度\n修士課程\n人文社会科学専攻  16\n理工学専攻  115\n医科学専攻  30\n看護学専攻  24\n農林海洋科学専攻  110\n地域協働学専攻  6\nスポーツ・芸術文化\n共創専攻  12\n計  313\n合計  499",
+      "amendment": {
+        "number": 58,
+        "year": null,
+        "raw": "規則第58号"
+      },
+      "promulgated": {
+        "era": "reiwa",
+        "year": 7,
+        "month": 1,
+        "day": 23,
+        "iso": "2025-01-23"
+      },
+      "effective": {
+        "kind": "date",
+        "era": "reiwa",
+        "year": 7,
+        "month": 4,
+        "day": 1,
+        "iso": "2025-04-01"
+      },
+      "text": "１  この規則は、令和７年４月１日から施行する。\n２  別表第１に定める医学部及び合計の項の入学定員に、令和７年度は次に定める定員を\n加えるものとする。\n学部  学科・課程  入学定員\n医学部  医学科  14\n小計  14\n計  14\n合計  14\n３  改正後の別表第１並びに高知大学学則の一部を改正する規則（令和５年１月31日規則\n第71号）附則第３項及び高知大学学則の一部を改正する規則（令和６年１月29日規則\n第45号）附則第５項の規定にかかわらず、学部及び合計の令和７年度から令和12年度\nまでの収容定員は、次のとおりとする。\n学部  学科・課程  収容定員\n令和７年度  令和８年度  令和９年度  令和 10 年度\n人文社会\n科学部  人文社会科学科\n第３年次編入学  1,100\n10  1,100\n4  1,100\n4  1,100\n4\n計  1,110  1,104  1,104  1,104\n教育学部  学校教育教員養成課\n程  520  520  520  520\n計  520  520  520  520\n理工学部  数学物理学科\n第３年次編入学  220\n4  220\n4  220\n4  220\n4\n情報科学科\n第３年次編入学  120\n14  120\n24  120\n24  120\n24\n生物科学科\n第３年次編入学  180\n4  180\n4  180\n4  180\n4\n化学生命理工学科\n第３年次編入学  280\n4  280\n4  280\n4  280\n4\n地球環境防災学科\n第３年次編入学  160\n4  160\n4  160\n4  160\n4\n計  990  1,000  1,000  1,000\n医学部  医学科\n第２年次編入学  659\n25  644\n25  629\n25  614\n25\n小計  684  669  654  639\n看護学科\n第３年次編入学  240\n12  240\n4  240\n4  240\n4\n小計  252  244  244  244\n計  936  913  898  883\n農林海洋\n科学部  農林資源環境科学科  90\n農芸化学科  45\n海洋資源科学科  65\n計  200\n農林海洋\n科学部  農林資源科学科\n第３年次編入学  410\n4  550\n4  555\n4  560\n4\n小計  414  554  559  564\n海洋資源科学科  195  260  260  260\n計  609  814  819  824\n地域協働\n学部  地域協働学科  240  240  240  240\n計  240  240  240  240\n合計  4,605  4,591  4,581  4,571\n学部  学科・課程  収容定員\n令和11年度 令和12年度\n人文社会科学部  人文社会科学科\n第３年次編入学  1,100\n4  1,100\n4\n計  1,104  1,104\n教育学部  学校教育教員養成課程  520  520\n計  520  520\n理工学部  数学物理学科\n第３年次編入学  220\n4  220\n4\n情報科学科\n第３年次編入学  120\n24  120\n24\n生物科学科\n第３年次編入学  180\n4  180\n4\n化学生命理工学科\n第３年次編入学  280\n4  280\n4\n地球環境防災学科\n第３年次編入学  160\n4  160\n4\n計  1,000  1,000\n医学部  医学科\n第２年次編入学  599\n25  584\n25\n小計  624  609\n看護学科\n第３年次編入学  240\n4  240\n4\n小計  244  244\n計  868  853\n農林海洋科学部  農林資源環境科学科\n農芸化学科\n海洋資源科学科\n計\n農林海洋科学部  農林資源科学科\n第３年次編入学  560\n4  560\n4\n小計  564  564\n海洋資源科学科  260  260\n計  824  824\n地域協働学部  地域協働学科  240  240\n計  240  240\n合計  4,556  4,541\n４  改正後の別表第２の規定にかかわらず、修士課程及び合計の令和７年度の収容定員は、\n次のとおりとする。\n課程  専攻  収容定員\n令和７年度\n修士課程\n人文社会科学専攻  16\n理工学専攻  115\n医科学専攻  30\n看護学専攻  24\n農林海洋科学専攻  110\n地域協働学専攻  6\nスポーツ・芸術文化\n共創専攻  12\n計  313\n合計  499",
       "references_tables": [
         "別表第１",
         "別表第２"
@@ -2645,38 +3315,86 @@ input_file: sources/高知大学学則.pdf
     {
       "ordinal": 25,
       "heading_raw": "附  則（令和７年３月31日規則第130号）",
-      "raw_text": "１  この規則は、令和７年４月１日から施行する。\n２  高知大学土佐さきがけプログラム規則（平成23年規則第104号）、高知大学土佐さき\nがけプログラム運営委員会規則（平成23年規則第105号）、高知大学土佐さきがけプロ\nグラムコース実施委員会規則（平成23年規則第106号）、高知大学土佐さきがけプログ\nラムグリーンサイエンス人材育成コース履修規則（平成23年規則第114号）、高知大学\n土佐さきがけプログラム国際人材育成コース履修規則（平成23年規則第115号）、高知\n大学土佐さきがけプログラムスポーツ人材育成コース履修規則（平成23年規則第116\n号）及び高知大学土佐さきがけプログラム生命・環境人材育成コース履修規則（平成\n24年規則第58号）は廃止する。",
+      "amendment": {
+        "number": 130,
+        "year": null,
+        "raw": "規則第130号"
+      },
+      "promulgated": {
+        "era": "reiwa",
+        "year": 7,
+        "month": 3,
+        "day": 31,
+        "iso": "2025-03-31"
+      },
+      "effective": {
+        "kind": "date",
+        "era": "reiwa",
+        "year": 7,
+        "month": 4,
+        "day": 1,
+        "iso": "2025-04-01"
+      },
+      "text": "１  この規則は、令和７年４月１日から施行する。\n２  高知大学土佐さきがけプログラム規則（平成23年規則第104号）、高知大学土佐さき\nがけプログラム運営委員会規則（平成23年規則第105号）、高知大学土佐さきがけプロ\nグラムコース実施委員会規則（平成23年規則第106号）、高知大学土佐さきがけプログ\nラムグリーンサイエンス人材育成コース履修規則（平成23年規則第114号）、高知大学\n土佐さきがけプログラム国際人材育成コース履修規則（平成23年規則第115号）、高知\n大学土佐さきがけプログラムスポーツ人材育成コース履修規則（平成23年規則第116\n号）及び高知大学土佐さきがけプログラム生命・環境人材育成コース履修規則（平成\n24年規則第58号）は廃止する。",
       "references_tables": []
     },
     {
       "ordinal": 26,
       "heading_raw": "附  則（令和８年１月28日規則第58号）",
-      "raw_text": "１  この規則は、令和８年４月１日から施行する。\n２  別表第１に定める医学部及び合計の項の入学定員に、令和８年度は次に定める定員を\n加えるものとする。\n学部  学科・課程  入学定員\n医学部  医学科  14\n小計  14\n計  14\n合計  14\n３  改正後の別表第１及び高知大学学則の一部を改正する規則（令和７年１月23日規則第\n58号）附則第３項の規定にかかわらず、医学部及び合計の令和８年度から令和13年度\nまでの収容定員は、次のとおりとする。\n学部  学科・課程  収容定員\n令和８年度  令和９年度  令和 10 年度  令和 11 年度\n医学部  医学科\n第２年次編入学  658\n25  643\n25  628\n25  613\n25\n小計  683  668  653  638\n看護学科\n第３年次編入学  240\n4  240\n4  240\n4  240\n4\n小計  244  244  244  244\n計  927  912  897  882\n合計  4,605  4,595  4,585  4,570\n学部  学科・課程  収容定員\n令和12年度 令和13年度\n医学部  医学科\n第２年次編入学  598\n25  584\n25\n小計  623  609\n看護学科\n第３年次編入学  240\n4  240\n4\n小計  244  244\n計  867  853\n合計  4,555  4,541",
+      "amendment": {
+        "number": 58,
+        "year": null,
+        "raw": "規則第58号"
+      },
+      "promulgated": {
+        "era": "reiwa",
+        "year": 8,
+        "month": 1,
+        "day": 28,
+        "iso": "2026-01-28"
+      },
+      "effective": {
+        "kind": "date",
+        "era": "reiwa",
+        "year": 8,
+        "month": 4,
+        "day": 1,
+        "iso": "2026-04-01"
+      },
+      "text": "１  この規則は、令和８年４月１日から施行する。\n２  別表第１に定める医学部及び合計の項の入学定員に、令和８年度は次に定める定員を\n加えるものとする。\n学部  学科・課程  入学定員\n医学部  医学科  14\n小計  14\n計  14\n合計  14\n３  改正後の別表第１及び高知大学学則の一部を改正する規則（令和７年１月23日規則第\n58号）附則第３項の規定にかかわらず、医学部及び合計の令和８年度から令和13年度\nまでの収容定員は、次のとおりとする。\n学部  学科・課程  収容定員\n令和８年度  令和９年度  令和 10 年度  令和 11 年度\n医学部  医学科\n第２年次編入学  658\n25  643\n25  628\n25  613\n25\n小計  683  668  653  638\n看護学科\n第３年次編入学  240\n4  240\n4  240\n4  240\n4\n小計  244  244  244  244\n計  927  912  897  882\n合計  4,605  4,595  4,585  4,570\n学部  学科・課程  収容定員\n令和12年度 令和13年度\n医学部  医学科\n第２年次編入学  598\n25  584\n25\n小計  623  609\n看護学科\n第３年次編入学  240\n4  240\n4\n小計  244  244\n計  867  853\n合計  4,555  4,541",
       "references_tables": [
         "別表第１"
       ]
     }
   ],
-  "appended_tables": [
+  "appendices": [
     {
+      "kind": "table",
       "id": "別表第１",
       "related_article_raw": "第５条関係",
-      "raw_text": "学  部  学科・課程  入学定員  第２年次\n編入学定員\n第３年次\n編入学定員  収容\n定員\n人文 社会\n科学部  人文社会科学科\n第３年次編入学  275\n2    1,100\n4\n計  275    2  1,104\n教育学部  学校教育教員養成課程  130      520\n計  130      520\n理工学部  数学物理学科\n第３年次編入学   55\n2  220\n4\n情報科学科\n第３年次編入学   30\n12  120\n24\n生物科学科\n第３年次編入学   45\n2  180\n4\n化学生命理工学科\n第３年次編入学   70\n2  280\n4\n地球環境防災学科\n第３年次編入学   40\n2  160\n4\n計  240    20  1,000\n医学部  医学科\n第２年次編入学  95\n5    570\n25\n小計  95        5    595\n看護学科\n第３年次編入学  60\n2  240\n4\n小計  60    2  244\n計  155  5  2  839\n農林海洋\n科学部  農林資源科学科\n第３年次編入学  140\n2  560\n4\n小計  140    2  564\n海洋資源科学科  65      260\n計  205    2  824\n地域協働\n学部  地域協働学科  60      240\n計  60      240\n合   計  1,065  5  26  4,527"
+      "raw_text": "学  部  学科・課程  入学定員  第２年次\n編入学定員\n第３年次\n編入学定員  収容\n定員\n人文 社会\n科学部  人文社会科学科\n第３年次編入学  275\n2    1,100\n4\n計  275    2  1,104\n教育学部  学校教育教員養成課程  130      520\n計  130      520\n理工学部  数学物理学科\n第３年次編入学   55\n2  220\n4\n情報科学科\n第３年次編入学   30\n12  120\n24\n生物科学科\n第３年次編入学   45\n2  180\n4\n化学生命理工学科\n第３年次編入学   70\n2  280\n4\n地球環境防災学科\n第３年次編入学   40\n2  160\n4\n計  240    20  1,000\n医学部  医学科\n第２年次編入学  95\n5    570\n25\n小計  95        5    595\n看護学科\n第３年次編入学  60\n2  240\n4\n小計  60    2  244\n計  155  5  2  839\n農林海洋\n科学部  農林資源科学科\n第３年次編入学  140\n2  560\n4\n小計  140    2  564\n海洋資源科学科  65      260\n計  205    2  824\n地域協働\n学部  地域協働学科  60      240\n計  60      240\n合   計  1,065  5  26  4,527",
+      "cells": null
     },
     {
+      "kind": "table",
       "id": "別表第２",
       "related_article_raw": "第５条関係",
-      "raw_text": "研   究   科     課    程    専      攻  入学定員  収容定員\n総合人間自然科学\n研究科  修士課程\n人文社会科学専攻  ８  16\n理工学専攻  60  120\n医科学専攻  15        30\n看護学専攻  12  24\n農林海洋科学専攻  55  110\n地域協働学専攻  3  6\nスポーツ・芸術文化\n共創専攻  6  12\n計  159  318\n専門職学位課程  教職実践高度化専攻  15  30\n計  15  30\n博士課程\n応用自然科学専攻  6  18\n医学専攻  30  120\n黒潮圏総合科学専攻  6  18\n計  42  156\n合  計  216  504\n理工学専攻の入学定員には、同専攻の情報科学・データサイエンス・ＤＸ教育プログラム\n（募集人員 15 名）の入学者を含む。"
+      "raw_text": "研   究   科     課    程    専      攻  入学定員  収容定員\n総合人間自然科学\n研究科  修士課程\n人文社会科学専攻  ８  16\n理工学専攻  60  120\n医科学専攻  15        30\n看護学専攻  12  24\n農林海洋科学専攻  55  110\n地域協働学専攻  3  6\nスポーツ・芸術文化\n共創専攻  6  12\n計  159  318\n専門職学位課程  教職実践高度化専攻  15  30\n計  15  30\n博士課程\n応用自然科学専攻  6  18\n医学専攻  30  120\n黒潮圏総合科学専攻  6  18\n計  42  156\n合  計  216  504\n理工学専攻の入学定員には、同専攻の情報科学・データサイエンス・ＤＸ教育プログラム\n（募集人員 15 名）の入学者を含む。",
+      "cells": null
     },
     {
+      "kind": "table",
       "id": "別表第３",
       "related_article_raw": "第 18 条関係",
-      "raw_text": "学 部 学 科・課 程 取得できる免許状\n種  類  教  科  等\n人文社会科\n学部   人文社会科学科   中学校教諭一種免許状   国語  社会  英語\n高等学校教諭一種免許状\n国語  地理歴史\n公民  商業  英語\n教育学部   学校教育教員養成課程\n幼稚園教諭一種免許状\n小学校教諭一種免許状\n中学校教諭一種免許状\n国語  社会  数学\n理科  音楽  美術\n保健体育  技術\n家庭  英語\n高等学校教諭一種免許状\n国語  地理歴史\n公民  数学  理科\n音楽  美術\n保健体育  家庭\n情報  英語\n特別支援学校教諭一種免\n許状\n知的障害者\n肢体不自由者\n病弱者\n理工学部\n数学物理学科   中学校教諭一種免許状   数学  理科\n高等学校教諭一種免許状  数学  理科\n情報科学科  高等学校教諭一種免許状  情報\n生物科学科   中学校教諭一種免許状   理科\n高等学校教諭一種免許状  理科\n化学生命理工学科   中学校教諭一種免許状  理科\n高等学校教諭一種免許状  理科\n地球環境防災学科   中学校教諭一種免許状   理科\n高等学校教諭一種免許状  理科\n医学部   看護学科   養護教諭一種免許状\n農林海洋科\n学部\n農林資源科学科   中学校教諭一種免許状   理科\n高等学校教諭一種免許状  理科  農業\n海洋資源科学科   中学校教諭一種免許状   理科\n高等学校教諭一種免許状  理科  水産"
+      "raw_text": "学 部 学 科・課 程 取得できる免許状\n種  類  教  科  等\n人文社会科\n学部   人文社会科学科   中学校教諭一種免許状   国語  社会  英語\n高等学校教諭一種免許状\n国語  地理歴史\n公民  商業  英語\n教育学部   学校教育教員養成課程\n幼稚園教諭一種免許状\n小学校教諭一種免許状\n中学校教諭一種免許状\n国語  社会  数学\n理科  音楽  美術\n保健体育  技術\n家庭  英語\n高等学校教諭一種免許状\n国語  地理歴史\n公民  数学  理科\n音楽  美術\n保健体育  家庭\n情報  英語\n特別支援学校教諭一種免\n許状\n知的障害者\n肢体不自由者\n病弱者\n理工学部\n数学物理学科   中学校教諭一種免許状   数学  理科\n高等学校教諭一種免許状  数学  理科\n情報科学科  高等学校教諭一種免許状  情報\n生物科学科   中学校教諭一種免許状   理科\n高等学校教諭一種免許状  理科\n化学生命理工学科   中学校教諭一種免許状  理科\n高等学校教諭一種免許状  理科\n地球環境防災学科   中学校教諭一種免許状   理科\n高等学校教諭一種免許状  理科\n医学部   看護学科   養護教諭一種免許状\n農林海洋科\n学部\n農林資源科学科   中学校教諭一種免許状   理科\n高等学校教諭一種免許状  理科  農業\n海洋資源科学科   中学校教諭一種免許状   理科\n高等学校教諭一種免許状  理科  水産",
+      "cells": null
     },
     {
+      "kind": "table",
       "id": "別表第４",
       "related_article_raw": "第18条関係",
-      "raw_text": "研究科  課程  専攻  取得できる免許状\n種類  教科等\n総合人間\n自然科学\n研究科\n修士課程\n人文社会科学専攻  中学校教諭専修免許状  国語  社会  英語\n高等学校教諭専修免許状  国語   地理歴史\n公民  商業  英語\n理工学専攻  中学校教諭専修免許状  数学  理科\n高等学校教諭専修免許状  数学  理科  情報\n看護学専攻  高等学校教諭専修免許状  看護\n養護教諭専修免許状\n農林海洋科学専攻  中学校教諭専修免許状  理科\n高等学校教諭専修免許状  理科  農業  水産\n専門職学\n位課程  教職実践高度化専\n攻\n幼稚園教諭専修免許状\n小学校教諭専修免許状\n中学校教諭専修免許状\n国語  社会  数学\n理科  音楽  美術\n保健体育  保健\n技術  家庭  職業\n職業指導  英語\n宗教\n高等学校教諭専修免許状\n国語  地理歴史\n公民  数学  理科\n音楽  美術  工芸\n書道  保健体育\n保健  看護  家庭\n情報  農業  工業\n商業  水産  福祉\n商船  職業指導\n英語  宗教\n特別支援学校教諭専修免\n許状\n知的障害者\n肢体不自由者\n病弱者"
+      "raw_text": "研究科  課程  専攻  取得できる免許状\n種類  教科等\n総合人間\n自然科学\n研究科\n修士課程\n人文社会科学専攻  中学校教諭専修免許状  国語  社会  英語\n高等学校教諭専修免許状  国語   地理歴史\n公民  商業  英語\n理工学専攻  中学校教諭専修免許状  数学  理科\n高等学校教諭専修免許状  数学  理科  情報\n看護学専攻  高等学校教諭専修免許状  看護\n養護教諭専修免許状\n農林海洋科学専攻  中学校教諭専修免許状  理科\n高等学校教諭専修免許状  理科  農業  水産\n専門職学\n位課程  教職実践高度化専\n攻\n幼稚園教諭専修免許状\n小学校教諭専修免許状\n中学校教諭専修免許状\n国語  社会  数学\n理科  音楽  美術\n保健体育  保健\n技術  家庭  職業\n職業指導  英語\n宗教\n高等学校教諭専修免許状\n国語  地理歴史\n公民  数学  理科\n音楽  美術  工芸\n書道  保健体育\n保健  看護  家庭\n情報  農業  工業\n商業  水産  福祉\n商船  職業指導\n英語  宗教\n特別支援学校教諭専修免\n許状\n知的障害者\n肢体不自由者\n病弱者",
+      "cells": null
     }
   ]
 }

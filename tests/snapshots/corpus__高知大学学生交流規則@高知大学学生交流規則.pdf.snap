@@ -5,18 +5,50 @@ input_file: sources/高知大学学生交流規則.pdf
 ---
 {
   "title": "高知大学学生交流規則",
-  "enacted": "平成25年３月27日 規  則  第 109 号",
-  "last_amended": "最終改正  令和８年２月 13 日規則第 74 号 高知大学学生交流規則（平成 16 年規則第 139 号）の全部を改正する。",
+  "enacted": {
+    "date": {
+      "era": "heisei",
+      "year": 25,
+      "month": 3,
+      "day": 27,
+      "iso": "2013-03-27"
+    },
+    "rule_number": {
+      "number": 109,
+      "year": null,
+      "raw": "規  則  第 109 号"
+    },
+    "raw": "平成25年３月27日 規  則  第 109 号"
+  },
+  "last_amended": {
+    "date": {
+      "era": "reiwa",
+      "year": 8,
+      "month": 2,
+      "day": 13,
+      "iso": "2026-02-13"
+    },
+    "rule_number": {
+      "number": 74,
+      "year": null,
+      "raw": "規則第 74 号"
+    },
+    "raw": "最終改正  令和８年２月 13 日規則第 74 号"
+  },
+  "full_amendment_note": "高知大学学生交流規則（平成 16 年規則第 139 号）の全部を改正する。",
   "body": [
     {
       "type": "chapter",
-      "number": 1,
+      "number": {
+        "main": 1,
+        "branch": null
+      },
       "title": "総則",
       "children": [
         {
           "type": "article",
           "number": {
-            "article": 1,
+            "main": 1,
             "branch": null
           },
           "title": "趣旨",
@@ -31,7 +63,7 @@ input_file: sources/高知大学学生交流規則.pdf
         {
           "type": "article",
           "number": {
-            "article": 2,
+            "main": 2,
             "branch": null
           },
           "title": "定義",
@@ -76,7 +108,7 @@ input_file: sources/高知大学学生交流規則.pdf
         {
           "type": "article",
           "number": {
-            "article": 3,
+            "main": 3,
             "branch": null
           },
           "title": "大学間協議",
@@ -87,23 +119,28 @@ input_file: sources/高知大学学生交流規則.pdf
               "items": [
                 {
                   "number": 1,
-                  "text": "授業科目の範囲（特別聴講学生及び聴講派遣学生に限る。）"
+                  "text": "授業科目の範囲（特別聴講学生及び聴講派遣学生に限る。）",
+                  "subitems": []
                 },
                 {
                   "number": 2,
-                  "text": "学生数"
+                  "text": "学生数",
+                  "subitems": []
                 },
                 {
                   "number": 3,
-                  "text": "研究指導計画（特別研究学生及び研究派遣学生に限る。）"
+                  "text": "研究指導計画（特別研究学生及び研究派遣学生に限る。）",
+                  "subitems": []
                 },
                 {
                   "number": 4,
-                  "text": "授業料等費用の取扱い方法"
+                  "text": "授業料等費用の取扱い方法",
+                  "subitems": []
                 },
                 {
                   "number": 5,
-                  "text": "その他必要な事項"
+                  "text": "その他必要な事項",
+                  "subitems": []
                 }
               ]
             },
@@ -123,13 +160,16 @@ input_file: sources/高知大学学生交流規則.pdf
     },
     {
       "type": "chapter",
-      "number": 2,
+      "number": {
+        "main": 2,
+        "branch": null
+      },
       "title": "特別研究学生",
       "children": [
         {
           "type": "article",
           "number": {
-            "article": 4,
+            "main": 4,
             "branch": null
           },
           "title": "受入れ",
@@ -144,7 +184,7 @@ input_file: sources/高知大学学生交流規則.pdf
         {
           "type": "article",
           "number": {
-            "article": 5,
+            "main": 5,
             "branch": null
           },
           "title": "出願手続",
@@ -155,19 +195,23 @@ input_file: sources/高知大学学生交流規則.pdf
               "items": [
                 {
                   "number": 1,
-                  "text": "特別研究学生願"
+                  "text": "特別研究学生願",
+                  "subitems": []
                 },
                 {
                   "number": 2,
-                  "text": "在学証明書及び成績証明書"
+                  "text": "在学証明書及び成績証明書",
+                  "subitems": []
                 },
                 {
                   "number": 3,
-                  "text": "所属の他の大学の長の推薦書"
+                  "text": "所属の他の大学の長の推薦書",
+                  "subitems": []
                 },
                 {
                   "number": 4,
-                  "text": "その他必要と認められる書類"
+                  "text": "その他必要と認められる書類",
+                  "subitems": []
                 }
               ]
             }
@@ -176,7 +220,7 @@ input_file: sources/高知大学学生交流規則.pdf
         {
           "type": "article",
           "number": {
-            "article": 6,
+            "main": 6,
             "branch": null
           },
           "title": "受入れの許可",
@@ -196,7 +240,7 @@ input_file: sources/高知大学学生交流規則.pdf
         {
           "type": "article",
           "number": {
-            "article": 7,
+            "main": 7,
             "branch": null
           },
           "title": "学生証",
@@ -211,7 +255,7 @@ input_file: sources/高知大学学生交流規則.pdf
         {
           "type": "article",
           "number": {
-            "article": 8,
+            "main": 8,
             "branch": null
           },
           "title": "研究期間",
@@ -226,7 +270,7 @@ input_file: sources/高知大学学生交流規則.pdf
         {
           "type": "article",
           "number": {
-            "article": 9,
+            "main": 9,
             "branch": null
           },
           "title": "研究の終了",
@@ -246,7 +290,7 @@ input_file: sources/高知大学学生交流規則.pdf
         {
           "type": "article",
           "number": {
-            "article": 10,
+            "main": 10,
             "branch": null
           },
           "title": "授業料等の費用",
@@ -258,12 +302,12 @@ input_file: sources/高知大学学生交流規則.pdf
             },
             {
               "number": 2,
-              "text": "特別研究学生が国立大学法人法（平成 15 年法律第 112 号）第２条第２項に定義された国立大学の学生である場合には、本学での授業料は徴収しない。",
+              "text": "特別研究学生が国立大学法人法（平成15年法律第112号）第２条第２項に定義された国立大学の学生である場合には、本学での授業料は徴収しない。",
               "items": []
             },
             {
               "number": 3,
-              "text": "前項に規定する以外の特別研究学生から徴収する授業料は、国立大学法人高知大学における授業料等費用に関する規則（平成 16 年規則第 83 号）に定める研究生の規定を準用する。ただし、大学間協議において授業料の不徴収が定められている場合には、授業料は徴収しない。",
+              "text": "前項に規定する以外の特別研究学生から徴収する授業料は、国立大学法人高知大学における授業料等費用に関する規則（平成16年規則第83号）に定める研究生の規定を準用する。ただし、大学間協議において授業料の不徴収が定められている場合には、授業料は徴収しない。",
               "items": []
             },
             {
@@ -281,7 +325,7 @@ input_file: sources/高知大学学生交流規則.pdf
         {
           "type": "article",
           "number": {
-            "article": 11,
+            "main": 11,
             "branch": null
           },
           "title": "受入許可の取消し",
@@ -292,11 +336,13 @@ input_file: sources/高知大学学生交流規則.pdf
               "items": [
                 {
                   "number": 1,
-                  "text": "研究の見込みがないと認められるとき。"
+                  "text": "研究の見込みがないと認められるとき。",
+                  "subitems": []
                 },
                 {
                   "number": 2,
-                  "text": "特別研究学生として、その本分に反する行為があると認められるとき。"
+                  "text": "特別研究学生として、その本分に反する行為があると認められるとき。",
+                  "subitems": []
                 }
               ]
             }
@@ -306,20 +352,23 @@ input_file: sources/高知大学学生交流規則.pdf
     },
     {
       "type": "chapter",
-      "number": 3,
+      "number": {
+        "main": 3,
+        "branch": null
+      },
       "title": "特別聴講学生",
       "children": [
         {
           "type": "article",
           "number": {
-            "article": 12,
+            "main": 12,
             "branch": null
           },
           "title": "準用規定",
           "paragraphs": [
             {
               "number": 1,
-              "text": "第４条、第６条、第７条、第 10 条及び第 11 条の規定は、特別聴講学生に準用する。この場合において、第４条、第６条、第７条、第 10 条及び第 11 条中「特別研究学生」とあるのは「特別聴講学生」と、第 10 条第３項中「研究生」とあるのは「科目等履修生」と、第 11 条第１号中「研究」とあるのは「履修」と読み替えるものとする。",
+              "text": "第４条、第６条、第７条、第10条及び第11条の規定は、特別聴講学生に準用する。この場合において、第４条、第６条、第７条、第10条及び第11条中「特別研究学生」とあるのは「特別聴講学生」と、第10条第３項中「研究生」とあるのは「科目等履修生」と、第11条第１号中「研究」とあるのは「履修」と読み替えるものとする。",
               "items": []
             }
           ]
@@ -327,7 +376,7 @@ input_file: sources/高知大学学生交流規則.pdf
         {
           "type": "article",
           "number": {
-            "article": 13,
+            "main": 13,
             "branch": null
           },
           "title": "出願手続",
@@ -338,15 +387,18 @@ input_file: sources/高知大学学生交流規則.pdf
               "items": [
                 {
                   "number": 1,
-                  "text": "特別聴講学生願"
+                  "text": "特別聴講学生願",
+                  "subitems": []
                 },
                 {
                   "number": 2,
-                  "text": "所属の他の大学の長の推薦書"
+                  "text": "所属の他の大学の長の推薦書",
+                  "subitems": []
                 },
                 {
                   "number": 3,
-                  "text": "その他必要と認められる書類"
+                  "text": "その他必要と認められる書類",
+                  "subitems": []
                 }
               ]
             }
@@ -355,14 +407,14 @@ input_file: sources/高知大学学生交流規則.pdf
         {
           "type": "article",
           "number": {
-            "article": 14,
+            "main": 14,
             "branch": null
           },
           "title": "授業科目履修の範囲",
           "paragraphs": [
             {
               "number": 1,
-              "text": "特別聴講学生は、大学間協議に基づき、本学の授業科目を学部では 60 単位、大学院修士課程では 10 単位、専門職学位課程では 14 単位を超えない範囲で履修できるものとする。",
+              "text": "特別聴講学生は、大学間協議に基づき、本学の授業科目を学部では60単位、大学院修士課程では10単位、専門職学位課程では14単位を超えない範囲で履修できるものとする。",
               "items": []
             }
           ]
@@ -370,7 +422,7 @@ input_file: sources/高知大学学生交流規則.pdf
         {
           "type": "article",
           "number": {
-            "article": 15,
+            "main": 15,
             "branch": null
           },
           "title": "履修期間",
@@ -395,7 +447,7 @@ input_file: sources/高知大学学生交流規則.pdf
         {
           "type": "article",
           "number": {
-            "article": 16,
+            "main": 16,
             "branch": null
           },
           "title": "学業成績証明書等",
@@ -411,20 +463,23 @@ input_file: sources/高知大学学生交流規則.pdf
     },
     {
       "type": "chapter",
-      "number": 4,
+      "number": {
+        "main": 4,
+        "branch": null
+      },
       "title": "聴講派遣学生",
       "children": [
         {
           "type": "article",
           "number": {
-            "article": 17,
+            "main": 17,
             "branch": null
           },
           "title": "準用規定",
           "paragraphs": [
             {
               "number": 1,
-              "text": "第４条及び第 15 条の規定は、聴講派遣学生に準用する。この場合において、第４条及び第 15 条の規定中「特別研究学生」とあり、及び「特別聴講学生」とあるのは「聴講派遣学生」と、第４条中「受入れ」とあるのは「派遣」と読み替えるものとする。",
+              "text": "第４条及び第15条の規定は、聴講派遣学生に準用する。この場合において、第４条及び第15条の規定中「特別研究学生」とあり、及び「特別聴講学生」とあるのは「聴講派遣学生」と、第４条中「受入れ」とあるのは「派遣」と読み替えるものとする。",
               "items": []
             }
           ]
@@ -432,7 +487,7 @@ input_file: sources/高知大学学生交流規則.pdf
         {
           "type": "article",
           "number": {
-            "article": 18,
+            "main": 18,
             "branch": null
           },
           "title": "出願手続",
@@ -452,7 +507,7 @@ input_file: sources/高知大学学生交流規則.pdf
         {
           "type": "article",
           "number": {
-            "article": 19,
+            "main": 19,
             "branch": null
           },
           "title": "派遣の許可",
@@ -467,7 +522,7 @@ input_file: sources/高知大学学生交流規則.pdf
         {
           "type": "article",
           "number": {
-            "article": 20,
+            "main": 20,
             "branch": null
           },
           "title": "在学期間への算入",
@@ -482,7 +537,7 @@ input_file: sources/高知大学学生交流規則.pdf
         {
           "type": "article",
           "number": {
-            "article": 21,
+            "main": 21,
             "branch": null
           },
           "title": "履修報告書等の提出",
@@ -497,14 +552,14 @@ input_file: sources/高知大学学生交流規則.pdf
         {
           "type": "article",
           "number": {
-            "article": 22,
+            "main": 22,
             "branch": null
           },
           "title": "単位の認定",
           "paragraphs": [
             {
               "number": 1,
-              "text": "聴講派遣学生が他の大学で修得した単位は、学部では 60 単位（医学部にあっては、30 単位）、大学院修士課程では 10 単位、専門職学位課程では 14 単位を超えない範囲で本学で修得したものとして認定することができる。",
+              "text": "聴講派遣学生が他の大学で修得した単位は、学部では60単位（医学部にあっては、30単位）、大学院修士課程では10単位、専門職学位課程では14単位を超えない範囲で本学で修得したものとして認定することができる。",
               "items": []
             },
             {
@@ -517,7 +572,7 @@ input_file: sources/高知大学学生交流規則.pdf
         {
           "type": "article",
           "number": {
-            "article": 23,
+            "main": 23,
             "branch": null
           },
           "title": "授業料等",
@@ -537,7 +592,7 @@ input_file: sources/高知大学学生交流規則.pdf
         {
           "type": "article",
           "number": {
-            "article": 24,
+            "main": 24,
             "branch": null
           },
           "title": "派遣許可の取消し",
@@ -548,15 +603,18 @@ input_file: sources/高知大学学生交流規則.pdf
               "items": [
                 {
                   "number": 1,
-                  "text": "履修の見込みがないと認められるとき。"
+                  "text": "履修の見込みがないと認められるとき。",
+                  "subitems": []
                 },
                 {
                   "number": 2,
-                  "text": "聴講派遣学生として、その本分に反する行為があると認められるとき。"
+                  "text": "聴講派遣学生として、その本分に反する行為があると認められるとき。",
+                  "subitems": []
                 },
                 {
                   "number": 3,
-                  "text": "授業料等の納入を怠り、又は派遣の趣旨に反する行為があると認められるとき。"
+                  "text": "授業料等の納入を怠り、又は派遣の趣旨に反する行為があると認められるとき。",
+                  "subitems": []
                 }
               ]
             }
@@ -566,20 +624,23 @@ input_file: sources/高知大学学生交流規則.pdf
     },
     {
       "type": "chapter",
-      "number": 5,
+      "number": {
+        "main": 5,
+        "branch": null
+      },
       "title": "研究派遣学生",
       "children": [
         {
           "type": "article",
           "number": {
-            "article": 25,
+            "main": 25,
             "branch": null
           },
           "title": "準用規定",
           "paragraphs": [
             {
               "number": 1,
-              "text": "第４条、第８条、第 18 条から第 21 条まで及び前２条の規定は、研究派遣学生に準用する。この場合において、第４条、第８条、第 20 条、第 21 条及び前２条の規定中「特別研究学生」とあり、及び「聴講派遣学生」とあるのは「研究派遣学生」と、第４条中「受入れ」とあるのは「派遣」と、第 20 条及び第 21 条中「履修期間」とあるのは「研究期間」と、第 21 条中「履修報告書」とあるのは「研究報告書」と、第 24 条第１号中「履修」とあるのは「研究」と読み替えるものとする。",
+              "text": "第４条、第８条、第18条から第21条まで及び前２条の規定は、研究派遣学生に準用する。この場合において、第４条、第８条、第20条、第21条及び前２条の規定中「特別研究学生」とあり、及び「聴講派遣学生」とあるのは「研究派遣学生」と、第４条中「受入れ」とあるのは「派遣」と、第20条及び第21条中「履修期間」とあるのは「研究期間」と、第21条中「履修報告書」とあるのは「研究報告書」と、第24条第１号中「履修」とあるのは「研究」と読み替えるものとする。",
               "items": []
             }
           ]
@@ -588,13 +649,16 @@ input_file: sources/高知大学学生交流規則.pdf
     },
     {
       "type": "chapter",
-      "number": 6,
+      "number": {
+        "main": 6,
+        "branch": null
+      },
       "title": "雑則",
       "children": [
         {
           "type": "article",
           "number": {
-            "article": 26,
+            "main": 26,
             "branch": null
           },
           "title": "その他",
@@ -613,27 +677,97 @@ input_file: sources/高知大学学生交流規則.pdf
     {
       "ordinal": 1,
       "heading_raw": "附  則",
-      "raw_text": "１  この規則は、平成 25 年３月 27 日から施行する。\n２  高知大学大学院特別研究学生規則（平成 16 年規則第 316 号）は、廃止する。",
+      "amendment": null,
+      "promulgated": null,
+      "effective": {
+        "kind": "date",
+        "era": "heisei",
+        "year": 25,
+        "month": 3,
+        "day": 27,
+        "iso": "2013-03-27"
+      },
+      "text": "１  この規則は、平成 25 年３月 27 日から施行する。\n２  高知大学大学院特別研究学生規則（平成 16 年規則第 316 号）は、廃止する。",
       "references_tables": []
     },
     {
       "ordinal": 2,
       "heading_raw": "附  則（平成29年11月27日規則第31号）",
-      "raw_text": "この規則は、平成30年４月１日から施行する。",
+      "amendment": {
+        "number": 31,
+        "year": null,
+        "raw": "規則第31号"
+      },
+      "promulgated": {
+        "era": "heisei",
+        "year": 29,
+        "month": 11,
+        "day": 27,
+        "iso": "2017-11-27"
+      },
+      "effective": {
+        "kind": "date",
+        "era": "heisei",
+        "year": 30,
+        "month": 4,
+        "day": 1,
+        "iso": "2018-04-01"
+      },
+      "text": "この規則は、平成30年４月１日から施行する。",
       "references_tables": []
     },
     {
       "ordinal": 3,
       "heading_raw": "附  則（令和７年５月９日規則第13号）",
-      "raw_text": "この規則は、令和７年５月９日から施行する。",
+      "amendment": {
+        "number": 13,
+        "year": null,
+        "raw": "規則第13号"
+      },
+      "promulgated": {
+        "era": "reiwa",
+        "year": 7,
+        "month": 5,
+        "day": 9,
+        "iso": "2025-05-09"
+      },
+      "effective": {
+        "kind": "date",
+        "era": "reiwa",
+        "year": 7,
+        "month": 5,
+        "day": 9,
+        "iso": "2025-05-09"
+      },
+      "text": "この規則は、令和７年５月９日から施行する。",
       "references_tables": []
     },
     {
       "ordinal": 4,
       "heading_raw": "附  則（令和８年２月13日規則第74号）",
-      "raw_text": "この規則は、令和８年４月１日から施行する。",
+      "amendment": {
+        "number": 74,
+        "year": null,
+        "raw": "規則第74号"
+      },
+      "promulgated": {
+        "era": "reiwa",
+        "year": 8,
+        "month": 2,
+        "day": 13,
+        "iso": "2026-02-13"
+      },
+      "effective": {
+        "kind": "date",
+        "era": "reiwa",
+        "year": 8,
+        "month": 4,
+        "day": 1,
+        "iso": "2026-04-01"
+      },
+      "text": "この規則は、令和８年４月１日から施行する。",
       "references_tables": []
     }
   ],
-  "appended_tables": []
+  "appendices": []
 }

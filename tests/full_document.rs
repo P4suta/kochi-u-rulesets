@@ -1,6 +1,6 @@
 use std::collections::BTreeSet;
 
-use kochi_u_rulesets::model::{ArticleNumber, BodyNode};
+use kochi_u_rulesets::model::{AppendixKind, ArticleNumber, BodyNode};
 use kochi_u_rulesets::{extract, structure};
 
 fn pdf_path() -> std::path::PathBuf {
@@ -32,14 +32,10 @@ fn body_article_base_numbers_match_the_table_of_contents() {
 
     let expected: BTreeSet<u32> = structure::toc::expected_article_numbers(split.toc_lines)
         .into_iter()
-        .map(|n| n.article)
+        .map(|n| n.main)
         .collect();
     let doc = structure::parse(&pages).unwrap();
-    let actual: BTreeSet<u32> = doc
-        .article_numbers()
-        .into_iter()
-        .map(|n| n.article)
-        .collect();
+    let actual: BTreeSet<u32> = doc.article_numbers().into_iter().map(|n| n.main).collect();
 
     // Asserting equality (not just a literal count) means this test stays valid
     // even if the university amends the 学則 and the article count changes.
@@ -63,7 +59,7 @@ fn known_facts_about_the_real_document() {
     assert_eq!(
         art1.number,
         ArticleNumber {
-            article: 1,
+            main: 1,
             branch: None
         }
     );
@@ -91,35 +87,36 @@ fn known_facts_about_the_real_document() {
         (84, 2),
     ]
     .into_iter()
-    .map(|(article, branch)| ArticleNumber {
-        article,
+    .map(|(main, branch)| ArticleNumber {
+        main,
         branch: Some(branch),
     })
     .collect();
     assert_eq!(branches, expected_branches);
 
     // 別表第1〜4, in order, each carrying its raw "第N条関係" text.
-    assert_eq!(doc.appended_tables.len(), 4);
-    let ids: Vec<&str> = doc.appended_tables.iter().map(|t| t.id.as_str()).collect();
+    let tables: Vec<&kochi_u_rulesets::model::Appendix> = doc.tables().collect();
+    assert_eq!(tables.len(), 4);
+    let ids: Vec<&str> = tables.iter().map(|t| t.id.as_str()).collect();
     assert_eq!(ids, ["別表第１", "別表第２", "別表第３", "別表第４"]);
-    for t in &doc.appended_tables {
+    for t in &tables {
         assert!(
             !t.raw_text.is_empty(),
             "{} should carry raw table text",
             t.id
         );
+        assert_eq!(t.kind, AppendixKind::Table);
     }
 
-    // The founding 附則 block has no dated parenthetical and is ordinal 1.
-    // (heading_raw is kept verbatim, including the source's letter-spacing.)
+    // The founding 附則 block has no amendment citation and is ordinal 1.
     let founding = &doc.supplementary_provisions[0];
     assert_eq!(founding.ordinal, 1);
-    assert!(!founding.heading_raw.contains('（'));
+    assert!(founding.amendment.is_none());
 
-    // Every subsequent 附則 block carries a dated parenthetical.
+    // Every subsequent 附則 block carries a dated amendment citation.
     for block in &doc.supplementary_provisions[1..] {
         assert!(
-            block.heading_raw.contains('（'),
+            block.amendment.is_some(),
             "amendment block {} should carry a dated citation: {:?}",
             block.ordinal,
             block.heading_raw

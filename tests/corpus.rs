@@ -43,8 +43,8 @@ fn assert_article_numbers_strictly_increase(numbers: &[ArticleNumber], file: &st
         assert!(
             pair[0] < pair[1],
             "{file}: article numbers must strictly increase in document order, but {} is not < {}",
-            pair[0],
-            pair[1],
+            pair[0].labeled('条'),
+            pair[1].labeled('条'),
         );
     }
 }
@@ -80,6 +80,9 @@ fn every_ruleset_pdf_parses_and_snapshots() {
                 assert_no_intra_cjk_space(&p.text, &name);
                 for it in &p.items {
                     assert_no_intra_cjk_space(&it.text, &name);
+                    for sub in &it.subitems {
+                        assert_no_intra_cjk_space(&sub.text, &name);
+                    }
                 }
             }
         }
@@ -94,10 +97,9 @@ fn every_ruleset_pdf_parses_and_snapshots() {
             let expected: std::collections::BTreeSet<u32> =
                 structure::toc::expected_article_numbers(split.toc_lines)
                     .into_iter()
-                    .map(|n| n.article)
+                    .map(|n| n.main)
                     .collect();
-            let actual: std::collections::BTreeSet<u32> =
-                numbers.iter().map(|n| n.article).collect();
+            let actual: std::collections::BTreeSet<u32> = numbers.iter().map(|n| n.main).collect();
             let missing: Vec<u32> = expected.difference(&actual).copied().collect();
             assert!(
                 missing.is_empty(),

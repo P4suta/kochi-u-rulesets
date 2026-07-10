@@ -5,13 +5,42 @@ input_file: sources/高知大学国際交流会館規則.pdf
 ---
 {
   "title": "高知大学国際交流会館規則",
-  "enacted": "平成16年４月１日 規則第151号",
-  "last_amended": "最終改正  令和８年３月27日規則第127号",
+  "enacted": {
+    "date": {
+      "era": "heisei",
+      "year": 16,
+      "month": 4,
+      "day": 1,
+      "iso": "2004-04-01"
+    },
+    "rule_number": {
+      "number": 151,
+      "year": null,
+      "raw": "規則第151号"
+    },
+    "raw": "平成16年４月１日 規則第151号"
+  },
+  "last_amended": {
+    "date": {
+      "era": "reiwa",
+      "year": 8,
+      "month": 3,
+      "day": 27,
+      "iso": "2026-03-27"
+    },
+    "rule_number": {
+      "number": 127,
+      "year": null,
+      "raw": "規則第127号"
+    },
+    "raw": "最終改正  令和８年３月27日規則第127号"
+  },
+  "full_amendment_note": null,
   "body": [
     {
       "type": "article",
       "number": {
-        "article": 1,
+        "main": 1,
         "branch": null
       },
       "title": "趣旨",
@@ -26,7 +55,7 @@ input_file: sources/高知大学国際交流会館規則.pdf
     {
       "type": "article",
       "number": {
-        "article": 2,
+        "main": 2,
         "branch": null
       },
       "title": "目的",
@@ -41,7 +70,7 @@ input_file: sources/高知大学国際交流会館規則.pdf
     {
       "type": "article",
       "number": {
-        "article": 3,
+        "main": 3,
         "branch": null
       },
       "title": "職員",
@@ -52,15 +81,18 @@ input_file: sources/高知大学国際交流会館規則.pdf
           "items": [
             {
               "number": 1,
-              "text": "館長"
+              "text": "館長",
+              "subitems": []
             },
             {
               "number": 2,
-              "text": "会館主事  ２人"
+              "text": "会館主事  ２人",
+              "subitems": []
             },
             {
               "number": 3,
-              "text": "その他館長が必要と認める職員"
+              "text": "その他館長が必要と認める職員",
+              "subitems": []
             }
           ]
         }
@@ -69,7 +101,7 @@ input_file: sources/高知大学国際交流会館規則.pdf
     {
       "type": "article",
       "number": {
-        "article": 4,
+        "main": 4,
         "branch": null
       },
       "title": "館長",
@@ -89,7 +121,7 @@ input_file: sources/高知大学国際交流会館規則.pdf
     {
       "type": "article",
       "number": {
-        "article": 5,
+        "main": 5,
         "branch": null
       },
       "title": "会館主事",
@@ -114,7 +146,7 @@ input_file: sources/高知大学国際交流会館規則.pdf
     {
       "type": "article",
       "number": {
-        "article": 6,
+        "main": 6,
         "branch": null
       },
       "title": "管理運営",
@@ -129,7 +161,7 @@ input_file: sources/高知大学国際交流会館規則.pdf
     {
       "type": "article",
       "number": {
-        "article": 7,
+        "main": 7,
         "branch": null
       },
       "title": "入居資格",
@@ -140,15 +172,18 @@ input_file: sources/高知大学国際交流会館規則.pdf
           "items": [
             {
               "number": 1,
-              "text": "本学に在学する外国人留学生及びその家族"
+              "text": "本学に在学する外国人留学生及びその家族",
+              "subitems": []
             },
             {
               "number": 2,
-              "text": "本学において教育研究に従事する外国人研究者及びその家族"
+              "text": "本学において教育研究に従事する外国人研究者及びその家族",
+              "subitems": []
             },
             {
               "number": 3,
-              "text": "その他館長が適当と認めた者"
+              "text": "その他館長が適当と認めた者",
+              "subitems": []
             }
           ]
         }
@@ -157,7 +192,7 @@ input_file: sources/高知大学国際交流会館規則.pdf
     {
       "type": "article",
       "number": {
-        "article": 8,
+        "main": 8,
         "branch": null
       },
       "title": "入居許可等",
@@ -182,7 +217,7 @@ input_file: sources/高知大学国際交流会館規則.pdf
     {
       "type": "article",
       "number": {
-        "article": 9,
+        "main": 9,
         "branch": null
       },
       "title": "入居期間",
@@ -202,7 +237,7 @@ input_file: sources/高知大学国際交流会館規則.pdf
     {
       "type": "article",
       "number": {
-        "article": 10,
+        "main": 10,
         "branch": null
       },
       "title": "寄宿料及び使用料等",
@@ -227,7 +262,7 @@ input_file: sources/高知大学国際交流会館規則.pdf
     {
       "type": "article",
       "number": {
-        "article": 11,
+        "main": 11,
         "branch": null
       },
       "title": "使用上の注意",
@@ -242,7 +277,7 @@ input_file: sources/高知大学国際交流会館規則.pdf
     {
       "type": "article",
       "number": {
-        "article": 12,
+        "main": 12,
         "branch": null
       },
       "title": "遵守事項",
@@ -253,15 +288,18 @@ input_file: sources/高知大学国際交流会館規則.pdf
           "items": [
             {
               "number": 1,
-              "text": "居室の全部又は一部を入居を許可された者以外の者に貸与しないこと。"
+              "text": "居室の全部又は一部を入居を許可された者以外の者に貸与しないこと。",
+              "subitems": []
             },
             {
               "number": 2,
-              "text": "居室に入居を許可された者以外の者を宿泊させないこと。"
+              "text": "居室に入居を許可された者以外の者を宿泊させないこと。",
+              "subitems": []
             },
             {
               "number": 3,
-              "text": "その他会館の施設等を許可された目的以外に使用しないこと。"
+              "text": "その他会館の施設等を許可された目的以外に使用しないこと。",
+              "subitems": []
             }
           ]
         }
@@ -270,7 +308,7 @@ input_file: sources/高知大学国際交流会館規則.pdf
     {
       "type": "article",
       "number": {
-        "article": 13,
+        "main": 13,
         "branch": null
       },
       "title": "損害賠償",
@@ -285,7 +323,7 @@ input_file: sources/高知大学国際交流会館規則.pdf
     {
       "type": "article",
       "number": {
-        "article": 14,
+        "main": 14,
         "branch": null
       },
       "title": "入居許可の取消し",
@@ -296,23 +334,28 @@ input_file: sources/高知大学国際交流会館規則.pdf
           "items": [
             {
               "number": 1,
-              "text": "許可された入居期間中に、第７条に定める入居資格を失ったとき。"
+              "text": "許可された入居期間中に、第７条に定める入居資格を失ったとき。",
+              "subitems": []
             },
             {
               "number": 2,
-              "text": "第10条に定める寄宿料又は使用料及び光熱水料その他雑費を滞納し、督促を受けてもなお納入しないとき。"
+              "text": "第10条に定める寄宿料又は使用料及び光熱水料その他雑費を滞納し、督促を受けてもなお納入しないとき。",
+              "subitems": []
             },
             {
               "number": 3,
-              "text": "第12条に規定する遵守事項に違反したとき。"
+              "text": "第12条に規定する遵守事項に違反したとき。",
+              "subitems": []
             },
             {
               "number": 4,
-              "text": "前条に定める義務を履行しないとき。"
+              "text": "前条に定める義務を履行しないとき。",
+              "subitems": []
             },
             {
               "number": 5,
-              "text": "その他会館の管理運営に重大な支障を与えるとき、又は与えるおそれのあるとき。"
+              "text": "その他会館の管理運営に重大な支障を与えるとき、又は与えるおそれのあるとき。",
+              "subitems": []
             }
           ]
         },
@@ -326,7 +369,7 @@ input_file: sources/高知大学国際交流会館規則.pdf
     {
       "type": "article",
       "number": {
-        "article": 15,
+        "main": 15,
         "branch": null
       },
       "title": "退去",
@@ -337,11 +380,13 @@ input_file: sources/高知大学国際交流会館規則.pdf
           "items": [
             {
               "number": 1,
-              "text": "入居許可期間が満了したとき。"
+              "text": "入居許可期間が満了したとき。",
+              "subitems": []
             },
             {
               "number": 2,
-              "text": "前条第１項の規定に該当し、入居の許可が取り消されたとき。"
+              "text": "前条第１項の規定に該当し、入居の許可が取り消されたとき。",
+              "subitems": []
             }
           ]
         }
@@ -350,7 +395,7 @@ input_file: sources/高知大学国際交流会館規則.pdf
     {
       "type": "article",
       "number": {
-        "article": 16,
+        "main": 16,
         "branch": null
       },
       "title": "退去手続",
@@ -365,7 +410,7 @@ input_file: sources/高知大学国際交流会館規則.pdf
     {
       "type": "article",
       "number": {
-        "article": 17,
+        "main": 17,
         "branch": null
       },
       "title": "事務",
@@ -380,7 +425,7 @@ input_file: sources/高知大学国際交流会館規則.pdf
     {
       "type": "article",
       "number": {
-        "article": 18,
+        "main": 18,
         "branch": null
       },
       "title": "雑則",
@@ -397,69 +442,291 @@ input_file: sources/高知大学国際交流会館規則.pdf
     {
       "ordinal": 1,
       "heading_raw": "附  則",
-      "raw_text": "この規則は、平成16年４月１日から施行する。",
+      "amendment": null,
+      "promulgated": null,
+      "effective": {
+        "kind": "date",
+        "era": "heisei",
+        "year": 16,
+        "month": 4,
+        "day": 1,
+        "iso": "2004-04-01"
+      },
+      "text": "この規則は、平成16年４月１日から施行する。",
       "references_tables": []
     },
     {
       "ordinal": 2,
       "heading_raw": "附  則",
-      "raw_text": "この規則は、平成17年７月１日から施行する。",
+      "amendment": null,
+      "promulgated": null,
+      "effective": {
+        "kind": "date",
+        "era": "heisei",
+        "year": 17,
+        "month": 7,
+        "day": 1,
+        "iso": "2005-07-01"
+      },
+      "text": "この規則は、平成17年７月１日から施行する。",
       "references_tables": []
     },
     {
       "ordinal": 3,
       "heading_raw": "附  則（平成 18 年７月 12 日規則第 17 号）",
-      "raw_text": "この規則は、平成18年７月12日から施行し、平成18年４月１日から適用する。",
+      "amendment": {
+        "number": 17,
+        "year": null,
+        "raw": "規則第 17 号"
+      },
+      "promulgated": {
+        "era": "heisei",
+        "year": 18,
+        "month": 7,
+        "day": 12,
+        "iso": "2006-07-12"
+      },
+      "effective": {
+        "kind": "date",
+        "era": "heisei",
+        "year": 18,
+        "month": 7,
+        "day": 12,
+        "iso": "2006-07-12"
+      },
+      "text": "この規則は、平成18年７月12日から施行し、平成18年４月１日から適用する。",
       "references_tables": []
     },
     {
       "ordinal": 4,
       "heading_raw": "附  則（平成 22 年３月 31 日規則第 124 号）",
-      "raw_text": "この規則は、平成22年４月１日から施行する。",
+      "amendment": {
+        "number": 124,
+        "year": null,
+        "raw": "規則第 124 号"
+      },
+      "promulgated": {
+        "era": "heisei",
+        "year": 22,
+        "month": 3,
+        "day": 31,
+        "iso": "2010-03-31"
+      },
+      "effective": {
+        "kind": "date",
+        "era": "heisei",
+        "year": 22,
+        "month": 4,
+        "day": 1,
+        "iso": "2010-04-01"
+      },
+      "text": "この規則は、平成22年４月１日から施行する。",
       "references_tables": []
     },
     {
       "ordinal": 5,
       "heading_raw": "附  則（平成25年３月11日規則第91号）",
-      "raw_text": "この規則は、平成25年３月11日から施行する。",
+      "amendment": {
+        "number": 91,
+        "year": null,
+        "raw": "規則第91号"
+      },
+      "promulgated": {
+        "era": "heisei",
+        "year": 25,
+        "month": 3,
+        "day": 11,
+        "iso": "2013-03-11"
+      },
+      "effective": {
+        "kind": "date",
+        "era": "heisei",
+        "year": 25,
+        "month": 3,
+        "day": 11,
+        "iso": "2013-03-11"
+      },
+      "text": "この規則は、平成25年３月11日から施行する。",
       "references_tables": []
     },
     {
       "ordinal": 6,
       "heading_raw": "附  則（平成26年３月31日規則第115号）",
-      "raw_text": "この規則は、平成26年４月１日から施行する。",
+      "amendment": {
+        "number": 115,
+        "year": null,
+        "raw": "規則第115号"
+      },
+      "promulgated": {
+        "era": "heisei",
+        "year": 26,
+        "month": 3,
+        "day": 31,
+        "iso": "2014-03-31"
+      },
+      "effective": {
+        "kind": "date",
+        "era": "heisei",
+        "year": 26,
+        "month": 4,
+        "day": 1,
+        "iso": "2014-04-01"
+      },
+      "text": "この規則は、平成26年４月１日から施行する。",
       "references_tables": []
     },
     {
       "ordinal": 7,
       "heading_raw": "附  則（平成29年３月29日規則第103号）",
-      "raw_text": "この規則は、平成29年４月１日から施行する。",
+      "amendment": {
+        "number": 103,
+        "year": null,
+        "raw": "規則第103号"
+      },
+      "promulgated": {
+        "era": "heisei",
+        "year": 29,
+        "month": 3,
+        "day": 29,
+        "iso": "2017-03-29"
+      },
+      "effective": {
+        "kind": "date",
+        "era": "heisei",
+        "year": 29,
+        "month": 4,
+        "day": 1,
+        "iso": "2017-04-01"
+      },
+      "text": "この規則は、平成29年４月１日から施行する。",
       "references_tables": []
     },
     {
       "ordinal": 8,
       "heading_raw": "附  則（令和３年９月10日規則第20号）",
-      "raw_text": "この規則は、令和３年10月１日から施行する。",
+      "amendment": {
+        "number": 20,
+        "year": null,
+        "raw": "規則第20号"
+      },
+      "promulgated": {
+        "era": "reiwa",
+        "year": 3,
+        "month": 9,
+        "day": 10,
+        "iso": "2021-09-10"
+      },
+      "effective": {
+        "kind": "date",
+        "era": "reiwa",
+        "year": 3,
+        "month": 10,
+        "day": 1,
+        "iso": "2021-10-01"
+      },
+      "text": "この規則は、令和３年10月１日から施行する。",
       "references_tables": []
     },
     {
       "ordinal": 9,
       "heading_raw": "附  則（令和４年３月28日規則第101号）",
-      "raw_text": "この規則は、令和４年４月１日から施行する。",
+      "amendment": {
+        "number": 101,
+        "year": null,
+        "raw": "規則第101号"
+      },
+      "promulgated": {
+        "era": "reiwa",
+        "year": 4,
+        "month": 3,
+        "day": 28,
+        "iso": "2022-03-28"
+      },
+      "effective": {
+        "kind": "date",
+        "era": "reiwa",
+        "year": 4,
+        "month": 4,
+        "day": 1,
+        "iso": "2022-04-01"
+      },
+      "text": "この規則は、令和４年４月１日から施行する。",
       "references_tables": []
     },
     {
       "ordinal": 10,
       "heading_raw": "附  則（令和４年10月３日規則第55号）",
-      "raw_text": "この規則は、令和４年10月３日から施行し、令和４年10月１日から適用する。",
+      "amendment": {
+        "number": 55,
+        "year": null,
+        "raw": "規則第55号"
+      },
+      "promulgated": {
+        "era": "reiwa",
+        "year": 4,
+        "month": 10,
+        "day": 3,
+        "iso": "2022-10-03"
+      },
+      "effective": {
+        "kind": "date",
+        "era": "reiwa",
+        "year": 4,
+        "month": 10,
+        "day": 3,
+        "iso": "2022-10-03"
+      },
+      "text": "この規則は、令和４年10月３日から施行し、令和４年10月１日から適用する。",
       "references_tables": []
     },
     {
       "ordinal": 11,
       "heading_raw": "附  則（令和８年３月27日規則第127号）",
-      "raw_text": "この規則は、令和８年４月１日から施行する。\n別記様式第１号（第８条関係）\n（Form １） 入居許可申請書\nAPPLICATION  FOR  RESIDENCE\n日付：    年   月   日\nDate：     Year  Month  Day\n高知大学国際交流会館長  殿\nTo：House Director of Kochi University\n申請者  氏名\nApplicant’s Name\n□男  Male  □女  Female\n生年月日          年      月    日\nDate of Birth    Year   Month   Day\n国   籍\nNationality\n所属学部･研究科\nDepartment Major・Research Field\n□研究者  Researcher      □留学生  Student\n□単身 Single  □夫婦 Couple  □家族 Family\n指導又は受入教員  氏名\nAdvisor’s Name\n下記のとおり，高知大学国際交流会館に入館したいので，申請します。\nI hereby apply for admission to Kochi University International House.\n記\nDetails\n１．入居希望区分  □単身室  □夫婦室  □家族室\nDesired Room  Single Room  Double Room  Family Apartment\n２．入居希望期間    年   月   日から        年   月   日まで\nDesired Period of Residence at the House     from Year Month Day to Year Month Day\n３．同居家族  Accompanying Family Members\n氏      名  Name  生年月日  Date of Birth  性  別  Sex  関  係  Relationship\n４．渡日前の所属機関及び身分\nHome Department and Academic Status Before Arrival\n別記様式第２号（第９条関係）\n（Form  ２)\n入  居  期  間  延  長  申  請  書\nAPPLICATION FOR EXTENSION OF PERIOD OF RESIDENCE\n日付：    年   月   日\nDate：     Year  Month  Day\n高知大学国際交流会館長  殿\nTo: House Director of Kochi University\n氏     名\nName\n□研究者  Researcher      □留学生  Student\n下記のとおり，高知大学国際交流会館の入居期間を延長いたしたく許可くださるよう申請し\nます。\nI hereby apply for an extension of my period of residence in Kochi University International House as\nfollows:\n記\nDetails\n１．居室番号        第        号室\nRoom No.\n２．入居許可期間の最終日          年   月     日\nExpiration Date                  Year    Month    Day\n３．延長希望期間                           年        月      日から            年      月        日まで\nDesired Extension Period     from Year    Month    Day              to Year   Month    Day\n４．延長を希望する理由\nReason for Extension\n別記様式第３号（第 16 条関係）\n（Form  ３）\n退去 届\nNOTIFICATION  OF  DEPARTURE\n日付：    年   月   日\nDate：     Year  Month  Day\n高知大学国際交流会館長  殿\nTo：House Director of Kochi University\n氏  名\nName\n□研究者  Researcher   □留学生  Student\n下記のとおり，高知大学国際交流会館から退去しますので，届け出ます。\nI hereby notify you that I will move out of Kochi University International House as follows:\n記\nDetails\n１．居室番号        第        号室\nRoom No.\n２．退去期日             年   月   日\nDate of Departure                Year    Month    Day\n３．入居許可期間の最終日          年   月   日\nExpiration Date                 Year    Month    Day\n４．退去理由  １．入居許可の期間満了のため\nReason for Moving Out:  Expiration of the residence permit\n２．その他（理由を具体的に書くこと。）\nOther (Specify the reasons.)\n５．退去後の連絡先\nContact Address After Departure",
+      "amendment": {
+        "number": 127,
+        "year": null,
+        "raw": "規則第127号"
+      },
+      "promulgated": {
+        "era": "reiwa",
+        "year": 8,
+        "month": 3,
+        "day": 27,
+        "iso": "2026-03-27"
+      },
+      "effective": {
+        "kind": "date",
+        "era": "reiwa",
+        "year": 8,
+        "month": 4,
+        "day": 1,
+        "iso": "2026-04-01"
+      },
+      "text": "この規則は、令和８年４月１日から施行する。",
       "references_tables": []
     }
   ],
-  "appended_tables": []
+  "appendices": [
+    {
+      "kind": "style",
+      "id": "別記様式第１号",
+      "related_article_raw": "第８条関係",
+      "raw_text": "（Form １） 入居許可申請書\nAPPLICATION  FOR  RESIDENCE\n日付：    年   月   日\nDate：     Year  Month  Day\n高知大学国際交流会館長  殿\nTo：House Director of Kochi University\n申請者  氏名\nApplicant’s Name\n□男  Male  □女  Female\n生年月日          年      月    日\nDate of Birth    Year   Month   Day\n国   籍\nNationality\n所属学部･研究科\nDepartment Major・Research Field\n□研究者  Researcher      □留学生  Student\n□単身 Single  □夫婦 Couple  □家族 Family\n指導又は受入教員  氏名\nAdvisor’s Name\n下記のとおり，高知大学国際交流会館に入館したいので，申請します。\nI hereby apply for admission to Kochi University International House.\n記\nDetails\n１．入居希望区分  □単身室  □夫婦室  □家族室\nDesired Room  Single Room  Double Room  Family Apartment\n２．入居希望期間    年   月   日から        年   月   日まで\nDesired Period of Residence at the House     from Year Month Day to Year Month Day\n３．同居家族  Accompanying Family Members\n氏      名  Name  生年月日  Date of Birth  性  別  Sex  関  係  Relationship\n４．渡日前の所属機関及び身分\nHome Department and Academic Status Before Arrival",
+      "cells": null
+    },
+    {
+      "kind": "style",
+      "id": "別記様式第２号",
+      "related_article_raw": "第９条関係",
+      "raw_text": "（Form  ２)\n入  居  期  間  延  長  申  請  書\nAPPLICATION FOR EXTENSION OF PERIOD OF RESIDENCE\n日付：    年   月   日\nDate：     Year  Month  Day\n高知大学国際交流会館長  殿\nTo: House Director of Kochi University\n氏     名\nName\n□研究者  Researcher      □留学生  Student\n下記のとおり，高知大学国際交流会館の入居期間を延長いたしたく許可くださるよう申請し\nます。\nI hereby apply for an extension of my period of residence in Kochi University International House as\nfollows:\n記\nDetails\n１．居室番号        第        号室\nRoom No.\n２．入居許可期間の最終日          年   月     日\nExpiration Date                  Year    Month    Day\n３．延長希望期間                           年        月      日から            年      月        日まで\nDesired Extension Period     from Year    Month    Day              to Year   Month    Day\n４．延長を希望する理由\nReason for Extension",
+      "cells": null
+    },
+    {
+      "kind": "style",
+      "id": "別記様式第３号",
+      "related_article_raw": "第 16 条関係",
+      "raw_text": "（Form  ３）\n退去 届\nNOTIFICATION  OF  DEPARTURE\n日付：    年   月   日\nDate：     Year  Month  Day\n高知大学国際交流会館長  殿\nTo：House Director of Kochi University\n氏  名\nName\n□研究者  Researcher   □留学生  Student\n下記のとおり，高知大学国際交流会館から退去しますので，届け出ます。\nI hereby notify you that I will move out of Kochi University International House as follows:\n記\nDetails\n１．居室番号        第        号室\nRoom No.\n２．退去期日             年   月   日\nDate of Departure                Year    Month    Day\n３．入居許可期間の最終日          年   月   日\nExpiration Date                 Year    Month    Day\n４．退去理由  １．入居許可の期間満了のため\nReason for Moving Out:  Expiration of the residence permit\n２．その他（理由を具体的に書くこと。）\nOther (Specify the reasons.)\n５．退去後の連絡先\nContact Address After Departure",
+      "cells": null
+    }
+  ]
 }

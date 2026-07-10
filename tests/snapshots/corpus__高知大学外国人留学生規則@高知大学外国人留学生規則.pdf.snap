@@ -5,13 +5,42 @@ input_file: sources/高知大学外国人留学生規則.pdf
 ---
 {
   "title": "高知大学外国人留学生規則",
-  "enacted": "平成16年４月１日 規則第141号",
-  "last_amended": "最終改正  平成22年３月31日規則第124号",
+  "enacted": {
+    "date": {
+      "era": "heisei",
+      "year": 16,
+      "month": 4,
+      "day": 1,
+      "iso": "2004-04-01"
+    },
+    "rule_number": {
+      "number": 141,
+      "year": null,
+      "raw": "規則第141号"
+    },
+    "raw": "平成16年４月１日 規則第141号"
+  },
+  "last_amended": {
+    "date": {
+      "era": "heisei",
+      "year": 22,
+      "month": 3,
+      "day": 31,
+      "iso": "2010-03-31"
+    },
+    "rule_number": {
+      "number": 124,
+      "year": null,
+      "raw": "規則第124号"
+    },
+    "raw": "最終改正  平成22年３月31日規則第124号"
+  },
+  "full_amendment_note": null,
   "body": [
     {
       "type": "article",
       "number": {
-        "article": 1,
+        "main": 1,
         "branch": null
       },
       "title": "趣旨",
@@ -26,7 +55,7 @@ input_file: sources/高知大学外国人留学生規則.pdf
     {
       "type": "article",
       "number": {
-        "article": 2,
+        "main": 2,
         "branch": null
       },
       "title": "区分",
@@ -37,27 +66,33 @@ input_file: sources/高知大学外国人留学生規則.pdf
           "items": [
             {
               "number": 1,
-              "text": "学部学生"
+              "text": "学部学生",
+              "subitems": []
             },
             {
               "number": 2,
-              "text": "科目等履修生"
+              "text": "科目等履修生",
+              "subitems": []
             },
             {
               "number": 3,
-              "text": "特別聴講学生（大学間交流協定に基づく外国人留学生（以下「協定留学生」という。））"
+              "text": "特別聴講学生（大学間交流協定に基づく外国人留学生（以下「協定留学生」という。））",
+              "subitems": []
             },
             {
               "number": 4,
-              "text": "研究生"
+              "text": "研究生",
+              "subitems": []
             },
             {
               "number": 5,
-              "text": "大学院学生"
+              "text": "大学院学生",
+              "subitems": []
             },
             {
               "number": 6,
-              "text": "特別研究学生（協定留学生）"
+              "text": "特別研究学生（協定留学生）",
+              "subitems": []
             }
           ]
         }
@@ -66,7 +101,7 @@ input_file: sources/高知大学外国人留学生規則.pdf
     {
       "type": "article",
       "number": {
-        "article": 3,
+        "main": 3,
         "branch": null
       },
       "title": "入学の時期",
@@ -81,7 +116,7 @@ input_file: sources/高知大学外国人留学生規則.pdf
     {
       "type": "article",
       "number": {
-        "article": 4,
+        "main": 4,
         "branch": null
       },
       "title": "入学の出願",
@@ -96,7 +131,7 @@ input_file: sources/高知大学外国人留学生規則.pdf
     {
       "type": "article",
       "number": {
-        "article": 5,
+        "main": 5,
         "branch": null
       },
       "title": "入学者の選考",
@@ -126,7 +161,7 @@ input_file: sources/高知大学外国人留学生規則.pdf
     {
       "type": "article",
       "number": {
-        "article": 6,
+        "main": 6,
         "branch": null
       },
       "title": "入学の許可",
@@ -146,7 +181,7 @@ input_file: sources/高知大学外国人留学生規則.pdf
     {
       "type": "article",
       "number": {
-        "article": 7,
+        "main": 7,
         "branch": null
       },
       "title": "検定料、入学料、授業料及び寄宿料",
@@ -181,7 +216,7 @@ input_file: sources/高知大学外国人留学生規則.pdf
     {
       "type": "article",
       "number": {
-        "article": 8,
+        "main": 8,
         "branch": null
       },
       "title": "既納の授業料等",
@@ -196,7 +231,7 @@ input_file: sources/高知大学外国人留学生規則.pdf
     {
       "type": "article",
       "number": {
-        "article": 9,
+        "main": 9,
         "branch": null
       },
       "title": "規則の準用",
@@ -213,27 +248,87 @@ input_file: sources/高知大学外国人留学生規則.pdf
     {
       "ordinal": 1,
       "heading_raw": "附  則",
-      "raw_text": "この規則は、平成16年４月１日から施行する。",
+      "amendment": null,
+      "promulgated": null,
+      "effective": {
+        "kind": "date",
+        "era": "heisei",
+        "year": 16,
+        "month": 4,
+        "day": 1,
+        "iso": "2004-04-01"
+      },
+      "text": "この規則は、平成16年４月１日から施行する。",
       "references_tables": []
     },
     {
       "ordinal": 2,
       "heading_raw": "附  則",
-      "raw_text": "この規則は、平成18年６月28日から施行する。",
+      "amendment": null,
+      "promulgated": null,
+      "effective": {
+        "kind": "date",
+        "era": "heisei",
+        "year": 18,
+        "month": 6,
+        "day": 28,
+        "iso": "2006-06-28"
+      },
+      "text": "この規則は、平成18年６月28日から施行する。",
       "references_tables": []
     },
     {
       "ordinal": 3,
       "heading_raw": "附  則（平成 18 年７月 12 日規則第 17 号）",
-      "raw_text": "この規則は、平成18年７月12日から施行し、平成18年４月１日から適用する。",
+      "amendment": {
+        "number": 17,
+        "year": null,
+        "raw": "規則第 17 号"
+      },
+      "promulgated": {
+        "era": "heisei",
+        "year": 18,
+        "month": 7,
+        "day": 12,
+        "iso": "2006-07-12"
+      },
+      "effective": {
+        "kind": "date",
+        "era": "heisei",
+        "year": 18,
+        "month": 7,
+        "day": 12,
+        "iso": "2006-07-12"
+      },
+      "text": "この規則は、平成18年７月12日から施行し、平成18年４月１日から適用する。",
       "references_tables": []
     },
     {
       "ordinal": 4,
       "heading_raw": "附  則（平成 22 年３月 31 日規則第 124 号）",
-      "raw_text": "この規則は、平成22年４月１日から施行する。",
+      "amendment": {
+        "number": 124,
+        "year": null,
+        "raw": "規則第 124 号"
+      },
+      "promulgated": {
+        "era": "heisei",
+        "year": 22,
+        "month": 3,
+        "day": 31,
+        "iso": "2010-03-31"
+      },
+      "effective": {
+        "kind": "date",
+        "era": "heisei",
+        "year": 22,
+        "month": 4,
+        "day": 1,
+        "iso": "2010-04-01"
+      },
+      "text": "この規則は、平成22年４月１日から施行する。",
       "references_tables": []
     }
   ],
-  "appended_tables": []
+  "appendices": []
 }

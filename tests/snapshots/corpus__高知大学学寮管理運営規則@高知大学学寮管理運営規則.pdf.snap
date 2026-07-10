@@ -5,13 +5,42 @@ input_file: sources/高知大学学寮管理運営規則.pdf
 ---
 {
   "title": "高知大学学寮管理運営規則",
-  "enacted": "平成16年４月１日 規則第149号",
-  "last_amended": "最終改正  令和８年１月28日規則第60号",
+  "enacted": {
+    "date": {
+      "era": "heisei",
+      "year": 16,
+      "month": 4,
+      "day": 1,
+      "iso": "2004-04-01"
+    },
+    "rule_number": {
+      "number": 149,
+      "year": null,
+      "raw": "規則第149号"
+    },
+    "raw": "平成16年４月１日 規則第149号"
+  },
+  "last_amended": {
+    "date": {
+      "era": "reiwa",
+      "year": 8,
+      "month": 1,
+      "day": 28,
+      "iso": "2026-01-28"
+    },
+    "rule_number": {
+      "number": 60,
+      "year": null,
+      "raw": "規則第60号"
+    },
+    "raw": "最終改正  令和８年１月28日規則第60号"
+  },
+  "full_amendment_note": null,
   "body": [
     {
       "type": "article",
       "number": {
-        "article": 1,
+        "main": 1,
         "branch": null
       },
       "title": "趣旨",
@@ -26,7 +55,7 @@ input_file: sources/高知大学学寮管理運営規則.pdf
     {
       "type": "article",
       "number": {
-        "article": 2,
+        "main": 2,
         "branch": null
       },
       "title": "目的",
@@ -41,7 +70,7 @@ input_file: sources/高知大学学寮管理運営規則.pdf
     {
       "type": "article",
       "number": {
-        "article": 3,
+        "main": 3,
         "branch": null
       },
       "title": "管理運営責任者等",
@@ -76,7 +105,7 @@ input_file: sources/高知大学学寮管理運営規則.pdf
     {
       "type": "article",
       "number": {
-        "article": 4,
+        "main": 4,
         "branch": null
       },
       "title": "入寮願",
@@ -91,7 +120,7 @@ input_file: sources/高知大学学寮管理運営規則.pdf
     {
       "type": "article",
       "number": {
-        "article": 5,
+        "main": 5,
         "branch": null
       },
       "title": "入寮の選考及び許可",
@@ -111,7 +140,7 @@ input_file: sources/高知大学学寮管理運営規則.pdf
     {
       "type": "article",
       "number": {
-        "article": 6,
+        "main": 6,
         "branch": null
       },
       "title": "入寮の手続及び許可の取消し",
@@ -131,7 +160,7 @@ input_file: sources/高知大学学寮管理運営規則.pdf
     {
       "type": "article",
       "number": {
-        "article": 7,
+        "main": 7,
         "branch": null
       },
       "title": "寄宿料",
@@ -161,7 +190,7 @@ input_file: sources/高知大学学寮管理運営規則.pdf
     {
       "type": "article",
       "number": {
-        "article": 8,
+        "main": 8,
         "branch": null
       },
       "title": "光熱水料等の経費の負担",
@@ -181,7 +210,7 @@ input_file: sources/高知大学学寮管理運営規則.pdf
     {
       "type": "article",
       "number": {
-        "article": 9,
+        "main": 9,
         "branch": null
       },
       "title": "施設の保全等",
@@ -192,23 +221,28 @@ input_file: sources/高知大学学寮管理運営規則.pdf
           "items": [
             {
               "number": 1,
-              "text": "居室を居室以外の目的に使用しないこと。"
+              "text": "居室を居室以外の目的に使用しないこと。",
+              "subitems": []
             },
             {
               "number": 2,
-              "text": "許可なく居室に工作を加えないこと。"
+              "text": "許可なく居室に工作を加えないこと。",
+              "subitems": []
             },
             {
               "number": 3,
-              "text": "共同施設は、常に良好な状態で使用すること。"
+              "text": "共同施設は、常に良好な状態で使用すること。",
+              "subitems": []
             },
             {
               "number": 4,
-              "text": "学寮における掲示、はり紙等は、所定の場所以外にはしないこと。"
+              "text": "学寮における掲示、はり紙等は、所定の場所以外にはしないこと。",
+              "subitems": []
             },
             {
               "number": 5,
-              "text": "防火管理、保健衛生管理及び災害防止等に留意し、快適な環境の保持に努めること。"
+              "text": "防火管理、保健衛生管理及び災害防止等に留意し、快適な環境の保持に努めること。",
+              "subitems": []
             }
           ]
         }
@@ -217,7 +251,7 @@ input_file: sources/高知大学学寮管理運営規則.pdf
     {
       "type": "article",
       "number": {
-        "article": 10,
+        "main": 10,
         "branch": null
       },
       "title": null,
@@ -232,7 +266,7 @@ input_file: sources/高知大学学寮管理運営規則.pdf
     {
       "type": "article",
       "number": {
-        "article": 11,
+        "main": 11,
         "branch": null
       },
       "title": "退寮",
@@ -247,7 +281,7 @@ input_file: sources/高知大学学寮管理運営規則.pdf
     {
       "type": "article",
       "number": {
-        "article": 12,
+        "main": 12,
         "branch": null
       },
       "title": null,
@@ -258,15 +292,18 @@ input_file: sources/高知大学学寮管理運営規則.pdf
           "items": [
             {
               "number": 1,
-              "text": "本学学生の身分を失ったとき。"
+              "text": "本学学生の身分を失ったとき。",
+              "subitems": []
             },
             {
               "number": 2,
-              "text": "３か月以上寄宿料又は第８条に定める経費の納付を怠ったとき。"
+              "text": "３か月以上寄宿料又は第８条に定める経費の納付を怠ったとき。",
+              "subitems": []
             },
             {
               "number": 3,
-              "text": "第５条第２項に定める入寮許可期間の終了後も居住しているとき。"
+              "text": "第５条第２項に定める入寮許可期間の終了後も居住しているとき。",
+              "subitems": []
             }
           ]
         },
@@ -276,23 +313,28 @@ input_file: sources/高知大学学寮管理運営規則.pdf
           "items": [
             {
               "number": 1,
-              "text": "停学処分を受けたとき。"
+              "text": "停学処分を受けたとき。",
+              "subitems": []
             },
             {
               "number": 2,
-              "text": "長期にわたる休学又は留学等に該当するとき。"
+              "text": "長期にわたる休学又は留学等に該当するとき。",
+              "subitems": []
             },
             {
               "number": 3,
-              "text": "保健衛生上寮生活に適しないと認められるとき。"
+              "text": "保健衛生上寮生活に適しないと認められるとき。",
+              "subitems": []
             },
             {
               "number": 4,
-              "text": "学寮において著しく風紀、秩序を乱す行為のあったとき。"
+              "text": "学寮において著しく風紀、秩序を乱す行為のあったとき。",
+              "subitems": []
             },
             {
               "number": 5,
-              "text": "その他学寮の管理運営上支障をきたす行為のあったとき。"
+              "text": "その他学寮の管理運営上支障をきたす行為のあったとき。",
+              "subitems": []
             }
           ]
         }
@@ -301,7 +343,7 @@ input_file: sources/高知大学学寮管理運営規則.pdf
     {
       "type": "article",
       "number": {
-        "article": 13,
+        "main": 13,
         "branch": null
       },
       "title": null,
@@ -316,7 +358,7 @@ input_file: sources/高知大学学寮管理運営規則.pdf
     {
       "type": "article",
       "number": {
-        "article": 14,
+        "main": 14,
         "branch": null
       },
       "title": "寮生以外の者の宿泊",
@@ -331,7 +373,7 @@ input_file: sources/高知大学学寮管理運営規則.pdf
     {
       "type": "article",
       "number": {
-        "article": 15,
+        "main": 15,
         "branch": null
       },
       "title": "学寮生活の自主的規律",
@@ -351,7 +393,7 @@ input_file: sources/高知大学学寮管理運営規則.pdf
     {
       "type": "article",
       "number": {
-        "article": 16,
+        "main": 16,
         "branch": null
       },
       "title": "懇談会の開催",
@@ -366,7 +408,7 @@ input_file: sources/高知大学学寮管理運営規則.pdf
     {
       "type": "article",
       "number": {
-        "article": 17,
+        "main": 17,
         "branch": null
       },
       "title": "雑則",
@@ -383,81 +425,331 @@ input_file: sources/高知大学学寮管理運営規則.pdf
     {
       "ordinal": 1,
       "heading_raw": "附  則",
-      "raw_text": "この規則は、平成16年４月１日から施行する。",
+      "amendment": null,
+      "promulgated": null,
+      "effective": {
+        "kind": "date",
+        "era": "heisei",
+        "year": 16,
+        "month": 4,
+        "day": 1,
+        "iso": "2004-04-01"
+      },
+      "text": "この規則は、平成16年４月１日から施行する。",
       "references_tables": []
     },
     {
       "ordinal": 2,
       "heading_raw": "附  則（平成17年７月１日規則第545号）",
-      "raw_text": "この規則は、平成17年７月１日から施行する。",
+      "amendment": {
+        "number": 545,
+        "year": null,
+        "raw": "規則第545号"
+      },
+      "promulgated": {
+        "era": "heisei",
+        "year": 17,
+        "month": 7,
+        "day": 1,
+        "iso": "2005-07-01"
+      },
+      "effective": {
+        "kind": "date",
+        "era": "heisei",
+        "year": 17,
+        "month": 7,
+        "day": 1,
+        "iso": "2005-07-01"
+      },
+      "text": "この規則は、平成17年７月１日から施行する。",
       "references_tables": []
     },
     {
       "ordinal": 3,
       "heading_raw": "附  則（平成20年３月26日規則第127号）",
-      "raw_text": "この規則は、平成20年４月１日から施行する。",
+      "amendment": {
+        "number": 127,
+        "year": null,
+        "raw": "規則第127号"
+      },
+      "promulgated": {
+        "era": "heisei",
+        "year": 20,
+        "month": 3,
+        "day": 26,
+        "iso": "2008-03-26"
+      },
+      "effective": {
+        "kind": "date",
+        "era": "heisei",
+        "year": 20,
+        "month": 4,
+        "day": 1,
+        "iso": "2008-04-01"
+      },
+      "text": "この規則は、平成20年４月１日から施行する。",
       "references_tables": []
     },
     {
       "ordinal": 4,
       "heading_raw": "附  則（平成22年３月31日規則第124号）",
-      "raw_text": "この規則は、平成22年４月１日から施行する。",
+      "amendment": {
+        "number": 124,
+        "year": null,
+        "raw": "規則第124号"
+      },
+      "promulgated": {
+        "era": "heisei",
+        "year": 22,
+        "month": 3,
+        "day": 31,
+        "iso": "2010-03-31"
+      },
+      "effective": {
+        "kind": "date",
+        "era": "heisei",
+        "year": 22,
+        "month": 4,
+        "day": 1,
+        "iso": "2010-04-01"
+      },
+      "text": "この規則は、平成22年４月１日から施行する。",
       "references_tables": []
     },
     {
       "ordinal": 5,
       "heading_raw": "附  則（平成28年３月18日規則第116号）",
-      "raw_text": "この規則は、平成28年４月１日から施行する。",
+      "amendment": {
+        "number": 116,
+        "year": null,
+        "raw": "規則第116号"
+      },
+      "promulgated": {
+        "era": "heisei",
+        "year": 28,
+        "month": 3,
+        "day": 18,
+        "iso": "2016-03-18"
+      },
+      "effective": {
+        "kind": "date",
+        "era": "heisei",
+        "year": 28,
+        "month": 4,
+        "day": 1,
+        "iso": "2016-04-01"
+      },
+      "text": "この規則は、平成28年４月１日から施行する。",
       "references_tables": []
     },
     {
       "ordinal": 6,
       "heading_raw": "附  則（平成28年３月23日規則第118号）",
-      "raw_text": "この規則は、平成28年４月１日から施行する。",
+      "amendment": {
+        "number": 118,
+        "year": null,
+        "raw": "規則第118号"
+      },
+      "promulgated": {
+        "era": "heisei",
+        "year": 28,
+        "month": 3,
+        "day": 23,
+        "iso": "2016-03-23"
+      },
+      "effective": {
+        "kind": "date",
+        "era": "heisei",
+        "year": 28,
+        "month": 4,
+        "day": 1,
+        "iso": "2016-04-01"
+      },
+      "text": "この規則は、平成28年４月１日から施行する。",
       "references_tables": []
     },
     {
       "ordinal": 7,
       "heading_raw": "附  則（平成30年３月28日規則第86号）",
-      "raw_text": "この規則は、平成30年４月１日から施行する。",
+      "amendment": {
+        "number": 86,
+        "year": null,
+        "raw": "規則第86号"
+      },
+      "promulgated": {
+        "era": "heisei",
+        "year": 30,
+        "month": 3,
+        "day": 28,
+        "iso": "2018-03-28"
+      },
+      "effective": {
+        "kind": "date",
+        "era": "heisei",
+        "year": 30,
+        "month": 4,
+        "day": 1,
+        "iso": "2018-04-01"
+      },
+      "text": "この規則は、平成30年４月１日から施行する。",
       "references_tables": []
     },
     {
       "ordinal": 8,
       "heading_raw": "附  則（平成31年３月27日規則第100号）",
-      "raw_text": "この規則は、平成31年４月１日から施行する。",
+      "amendment": {
+        "number": 100,
+        "year": null,
+        "raw": "規則第100号"
+      },
+      "promulgated": {
+        "era": "heisei",
+        "year": 31,
+        "month": 3,
+        "day": 27,
+        "iso": "2019-03-27"
+      },
+      "effective": {
+        "kind": "date",
+        "era": "heisei",
+        "year": 31,
+        "month": 4,
+        "day": 1,
+        "iso": "2019-04-01"
+      },
+      "text": "この規則は、平成31年４月１日から施行する。",
       "references_tables": []
     },
     {
       "ordinal": 9,
       "heading_raw": "附  則（平成31年４月26日規則第15号）",
-      "raw_text": "この規則は、令和元年５月１日から施行する。",
+      "amendment": {
+        "number": 15,
+        "year": null,
+        "raw": "規則第15号"
+      },
+      "promulgated": {
+        "era": "heisei",
+        "year": 31,
+        "month": 4,
+        "day": 26,
+        "iso": "2019-04-26"
+      },
+      "effective": {
+        "kind": "date",
+        "era": "reiwa",
+        "year": 1,
+        "month": 5,
+        "day": 1,
+        "iso": "2019-05-01"
+      },
+      "text": "この規則は、令和元年５月１日から施行する。",
       "references_tables": []
     },
     {
       "ordinal": 10,
       "heading_raw": "附  則（令和３年３月30日規則第68号）",
-      "raw_text": "この規則は、令和３年３月30日から施行し、令和３年度入学生から適用する。",
+      "amendment": {
+        "number": 68,
+        "year": null,
+        "raw": "規則第68号"
+      },
+      "promulgated": {
+        "era": "reiwa",
+        "year": 3,
+        "month": 3,
+        "day": 30,
+        "iso": "2021-03-30"
+      },
+      "effective": {
+        "kind": "date",
+        "era": "reiwa",
+        "year": 3,
+        "month": 3,
+        "day": 30,
+        "iso": "2021-03-30"
+      },
+      "text": "この規則は、令和３年３月30日から施行し、令和３年度入学生から適用する。",
       "references_tables": []
     },
     {
       "ordinal": 11,
       "heading_raw": "附  則（令和３年９月10日規則第20号）",
-      "raw_text": "この規則は、令和３年 10 月１日から施行する。",
+      "amendment": {
+        "number": 20,
+        "year": null,
+        "raw": "規則第20号"
+      },
+      "promulgated": {
+        "era": "reiwa",
+        "year": 3,
+        "month": 9,
+        "day": 10,
+        "iso": "2021-09-10"
+      },
+      "effective": {
+        "kind": "date",
+        "era": "reiwa",
+        "year": 3,
+        "month": 10,
+        "day": 1,
+        "iso": "2021-10-01"
+      },
+      "text": "この規則は、令和３年 10 月１日から施行する。",
       "references_tables": []
     },
     {
       "ordinal": 12,
       "heading_raw": "附  則（令和６年３月28日規則第88号）",
-      "raw_text": "この規則は、令和６年３月 28 日から施行する。",
+      "amendment": {
+        "number": 88,
+        "year": null,
+        "raw": "規則第88号"
+      },
+      "promulgated": {
+        "era": "reiwa",
+        "year": 6,
+        "month": 3,
+        "day": 28,
+        "iso": "2024-03-28"
+      },
+      "effective": {
+        "kind": "date",
+        "era": "reiwa",
+        "year": 6,
+        "month": 3,
+        "day": 28,
+        "iso": "2024-03-28"
+      },
+      "text": "この規則は、令和６年３月 28 日から施行する。",
       "references_tables": []
     },
     {
       "ordinal": 13,
       "heading_raw": "附  則（令和８年１月28日規則第60号）",
-      "raw_text": "この規則は、令和８年１月 28 日から施行する。",
+      "amendment": {
+        "number": 60,
+        "year": null,
+        "raw": "規則第60号"
+      },
+      "promulgated": {
+        "era": "reiwa",
+        "year": 8,
+        "month": 1,
+        "day": 28,
+        "iso": "2026-01-28"
+      },
+      "effective": {
+        "kind": "date",
+        "era": "reiwa",
+        "year": 8,
+        "month": 1,
+        "day": 28,
+        "iso": "2026-01-28"
+      },
+      "text": "この規則は、令和８年１月 28 日から施行する。",
       "references_tables": []
     }
   ],
-  "appended_tables": []
+  "appendices": []
 }

@@ -5,13 +5,42 @@ input_file: sources/高知大学学位規則.pdf
 ---
 {
   "title": "高知大学学位規則",
-  "enacted": "平成16年４月１日 規則第312号",
-  "last_amended": "最終改正  令和７年３月31日規則第130号",
+  "enacted": {
+    "date": {
+      "era": "heisei",
+      "year": 16,
+      "month": 4,
+      "day": 1,
+      "iso": "2004-04-01"
+    },
+    "rule_number": {
+      "number": 312,
+      "year": null,
+      "raw": "規則第312号"
+    },
+    "raw": "平成16年４月１日 規則第312号"
+  },
+  "last_amended": {
+    "date": {
+      "era": "reiwa",
+      "year": 7,
+      "month": 3,
+      "day": 31,
+      "iso": "2025-03-31"
+    },
+    "rule_number": {
+      "number": 130,
+      "year": null,
+      "raw": "規則第130号"
+    },
+    "raw": "最終改正  令和７年３月31日規則第130号"
+  },
+  "full_amendment_note": null,
   "body": [
     {
       "type": "article",
       "number": {
-        "article": 1,
+        "main": 1,
         "branch": null
       },
       "title": "趣旨",
@@ -26,7 +55,7 @@ input_file: sources/高知大学学位規則.pdf
     {
       "type": "article",
       "number": {
-        "article": 2,
+        "main": 2,
         "branch": null
       },
       "title": "学位の種類",
@@ -41,7 +70,7 @@ input_file: sources/高知大学学位規則.pdf
     {
       "type": "article",
       "number": {
-        "article": 3,
+        "main": 3,
         "branch": null
       },
       "title": "学位授与の要件",
@@ -76,7 +105,7 @@ input_file: sources/高知大学学位規則.pdf
     {
       "type": "article",
       "number": {
-        "article": 4,
+        "main": 4,
         "branch": null
       },
       "title": "学位授与の申請",
@@ -106,7 +135,7 @@ input_file: sources/高知大学学位規則.pdf
     {
       "type": "article",
       "number": {
-        "article": 5,
+        "main": 5,
         "branch": null
       },
       "title": "学位論文",
@@ -131,7 +160,7 @@ input_file: sources/高知大学学位規則.pdf
     {
       "type": "article",
       "number": {
-        "article": 6,
+        "main": 6,
         "branch": null
       },
       "title": "学位論文の審査の付託",
@@ -146,7 +175,7 @@ input_file: sources/高知大学学位規則.pdf
     {
       "type": "article",
       "number": {
-        "article": 7,
+        "main": 7,
         "branch": null
       },
       "title": "審査委員会",
@@ -166,7 +195,7 @@ input_file: sources/高知大学学位規則.pdf
     {
       "type": "article",
       "number": {
-        "article": 8,
+        "main": 8,
         "branch": null
       },
       "title": "最終試験又は学力の確認",
@@ -191,7 +220,7 @@ input_file: sources/高知大学学位規則.pdf
     {
       "type": "article",
       "number": {
-        "article": 9,
+        "main": 9,
         "branch": null
       },
       "title": "審査結果の報告",
@@ -206,7 +235,7 @@ input_file: sources/高知大学学位規則.pdf
     {
       "type": "article",
       "number": {
-        "article": 10,
+        "main": 10,
         "branch": null
       },
       "title": "研究科委員会の議決",
@@ -226,7 +255,7 @@ input_file: sources/高知大学学位規則.pdf
     {
       "type": "article",
       "number": {
-        "article": 11,
+        "main": 11,
         "branch": null
       },
       "title": "学長への報告",
@@ -241,7 +270,7 @@ input_file: sources/高知大学学位規則.pdf
     {
       "type": "article",
       "number": {
-        "article": 12,
+        "main": 12,
         "branch": null
       },
       "title": "学位の授与",
@@ -256,7 +285,7 @@ input_file: sources/高知大学学位規則.pdf
     {
       "type": "article",
       "number": {
-        "article": 13,
+        "main": 13,
         "branch": null
       },
       "title": "学位授与の報告",
@@ -271,7 +300,7 @@ input_file: sources/高知大学学位規則.pdf
     {
       "type": "article",
       "number": {
-        "article": 14,
+        "main": 14,
         "branch": null
       },
       "title": "学位論文要旨の公表",
@@ -286,7 +315,7 @@ input_file: sources/高知大学学位規則.pdf
     {
       "type": "article",
       "number": {
-        "article": 15,
+        "main": 15,
         "branch": null
       },
       "title": "学位論文の公表",
@@ -311,7 +340,7 @@ input_file: sources/高知大学学位規則.pdf
     {
       "type": "article",
       "number": {
-        "article": 16,
+        "main": 16,
         "branch": null
       },
       "title": "専攻分野の付記",
@@ -326,7 +355,7 @@ input_file: sources/高知大学学位規則.pdf
     {
       "type": "article",
       "number": {
-        "article": 17,
+        "main": 17,
         "branch": null
       },
       "title": "学位の名称",
@@ -341,7 +370,7 @@ input_file: sources/高知大学学位規則.pdf
     {
       "type": "article",
       "number": {
-        "article": 18,
+        "main": 18,
         "branch": null
       },
       "title": "学位記の様式",
@@ -366,7 +395,7 @@ input_file: sources/高知大学学位規則.pdf
     {
       "type": "article",
       "number": {
-        "article": 19,
+        "main": 19,
         "branch": null
       },
       "title": "学位授与の取消し",
@@ -386,7 +415,7 @@ input_file: sources/高知大学学位規則.pdf
     {
       "type": "article",
       "number": {
-        "article": 20,
+        "main": 20,
         "branch": null
       },
       "title": "雑則",
@@ -403,99 +432,442 @@ input_file: sources/高知大学学位規則.pdf
     {
       "ordinal": 1,
       "heading_raw": "附  則",
-      "raw_text": "この規則は、平成16年4月１日から施行する。",
+      "amendment": null,
+      "promulgated": null,
+      "effective": {
+        "kind": "date",
+        "era": "heisei",
+        "year": 16,
+        "month": 4,
+        "day": 1,
+        "iso": "2004-04-01"
+      },
+      "text": "この規則は、平成16年4月１日から施行する。",
       "references_tables": []
     },
     {
       "ordinal": 2,
       "heading_raw": "附  則",
-      "raw_text": "この規則は、平成17年４月１日から施行する。",
+      "amendment": null,
+      "promulgated": null,
+      "effective": {
+        "kind": "date",
+        "era": "heisei",
+        "year": 17,
+        "month": 4,
+        "day": 1,
+        "iso": "2005-04-01"
+      },
+      "text": "この規則は、平成17年４月１日から施行する。",
       "references_tables": []
     },
     {
       "ordinal": 3,
       "heading_raw": "附  則（平成19年３月28日規則第114号）",
-      "raw_text": "１  この規則は、平成19年４月１日から施行する。\n２  改正後の別表の規定にかかわらず、平成 19 年３月 31 日に理学部数理情報科学科、物\n質科学科及び自然環境科学科並びに農学部暖地農学科、森林科学科、栽培漁業学科、生\n産環境工学科及び生物資源科学科に在学する者で、当該学科を卒業した者の学位に付記\nする専攻分野の名称は、それぞれ理学又は農学とする。",
+      "amendment": {
+        "number": 114,
+        "year": null,
+        "raw": "規則第114号"
+      },
+      "promulgated": {
+        "era": "heisei",
+        "year": 19,
+        "month": 3,
+        "day": 28,
+        "iso": "2007-03-28"
+      },
+      "effective": {
+        "kind": "date",
+        "era": "heisei",
+        "year": 19,
+        "month": 4,
+        "day": 1,
+        "iso": "2007-04-01"
+      },
+      "text": "１  この規則は、平成19年４月１日から施行する。\n２  改正後の別表の規定にかかわらず、平成 19 年３月 31 日に理学部数理情報科学科、物\n質科学科及び自然環境科学科並びに農学部暖地農学科、森林科学科、栽培漁業学科、生\n産環境工学科及び生物資源科学科に在学する者で、当該学科を卒業した者の学位に付記\nする専攻分野の名称は、それぞれ理学又は農学とする。",
       "references_tables": []
     },
     {
       "ordinal": 4,
       "heading_raw": "附  則（平成20年３月26日規則第86号）",
-      "raw_text": "１  この規則は、平成20年４月１日から施行する。\n２  平成19年以前の入学生に係る学位の授与に関しては、改正後の高知大学学位規則にか\nかわらず、なお、従前の例による。",
+      "amendment": {
+        "number": 86,
+        "year": null,
+        "raw": "規則第86号"
+      },
+      "promulgated": {
+        "era": "heisei",
+        "year": 20,
+        "month": 3,
+        "day": 26,
+        "iso": "2008-03-26"
+      },
+      "effective": {
+        "kind": "date",
+        "era": "heisei",
+        "year": 20,
+        "month": 4,
+        "day": 1,
+        "iso": "2008-04-01"
+      },
+      "text": "１  この規則は、平成20年４月１日から施行する。\n２  平成19年以前の入学生に係る学位の授与に関しては、改正後の高知大学学位規則にか\nかわらず、なお、従前の例による。",
       "references_tables": []
     },
     {
       "ordinal": 5,
       "heading_raw": "附  則（平成24年３月28日規則第103号）",
-      "raw_text": "１  この規則は、平成24年４月１日から施行する。\n２  平成23年以前の入学生に係る学位の授与に関しては、改正後の高知大学学位規則にか\nかわらず、なお従前の例による。",
+      "amendment": {
+        "number": 103,
+        "year": null,
+        "raw": "規則第103号"
+      },
+      "promulgated": {
+        "era": "heisei",
+        "year": 24,
+        "month": 3,
+        "day": 28,
+        "iso": "2012-03-28"
+      },
+      "effective": {
+        "kind": "date",
+        "era": "heisei",
+        "year": 24,
+        "month": 4,
+        "day": 1,
+        "iso": "2012-04-01"
+      },
+      "text": "１  この規則は、平成24年４月１日から施行する。\n２  平成23年以前の入学生に係る学位の授与に関しては、改正後の高知大学学位規則にか\nかわらず、なお従前の例による。",
       "references_tables": []
     },
     {
       "ordinal": 6,
       "heading_raw": "附  則（平成25年１月23日規則第61号）",
-      "raw_text": "１  この規則は、平成25年４月１日から施行する。\n２  平成24年度以前の入学生に係る学位の授与に関しては、改正後の高知大学学位規則に\nかかわらず、なお従前の例による。",
+      "amendment": {
+        "number": 61,
+        "year": null,
+        "raw": "規則第61号"
+      },
+      "promulgated": {
+        "era": "heisei",
+        "year": 25,
+        "month": 1,
+        "day": 23,
+        "iso": "2013-01-23"
+      },
+      "effective": {
+        "kind": "date",
+        "era": "heisei",
+        "year": 25,
+        "month": 4,
+        "day": 1,
+        "iso": "2013-04-01"
+      },
+      "text": "１  この規則は、平成25年４月１日から施行する。\n２  平成24年度以前の入学生に係る学位の授与に関しては、改正後の高知大学学位規則に\nかかわらず、なお従前の例による。",
       "references_tables": []
     },
     {
       "ordinal": 7,
       "heading_raw": "附  則（平成25年５月22日規則第22号）",
-      "raw_text": "１  この規則は、平成25年５月22日から施行し、平成25年４月１日から適用する。\n２  改正後の第14条及び第15条の規定は、平成25年４月１日以後に授与される学位に係る\n学位論文について適用し、同日前に授与された場合には、なお従前の例による。",
+      "amendment": {
+        "number": 22,
+        "year": null,
+        "raw": "規則第22号"
+      },
+      "promulgated": {
+        "era": "heisei",
+        "year": 25,
+        "month": 5,
+        "day": 22,
+        "iso": "2013-05-22"
+      },
+      "effective": {
+        "kind": "date",
+        "era": "heisei",
+        "year": 25,
+        "month": 5,
+        "day": 22,
+        "iso": "2013-05-22"
+      },
+      "text": "１  この規則は、平成25年５月22日から施行し、平成25年４月１日から適用する。\n２  改正後の第14条及び第15条の規定は、平成25年４月１日以後に授与される学位に係る\n学位論文について適用し、同日前に授与された場合には、なお従前の例による。",
       "references_tables": []
     },
     {
       "ordinal": 8,
       "heading_raw": "附  則（平成27年３月25日規則第155号）",
-      "raw_text": "１  この規則は、平成27年４月１日から施行する。\n２  平成26年度以前の入学生については、改正後の高知大学学位規則別表の規定にかかわ\nらず、なお従前の例による。",
+      "amendment": {
+        "number": 155,
+        "year": null,
+        "raw": "規則第155号"
+      },
+      "promulgated": {
+        "era": "heisei",
+        "year": 27,
+        "month": 3,
+        "day": 25,
+        "iso": "2015-03-25"
+      },
+      "effective": {
+        "kind": "date",
+        "era": "heisei",
+        "year": 27,
+        "month": 4,
+        "day": 1,
+        "iso": "2015-04-01"
+      },
+      "text": "１  この規則は、平成27年４月１日から施行する。\n２  平成26年度以前の入学生については、改正後の高知大学学位規則別表の規定にかかわ\nらず、なお従前の例による。",
       "references_tables": []
     },
     {
       "ordinal": 9,
       "heading_raw": "附  則（平成28年３月９日規則第84号）",
-      "raw_text": "１  この規則は、平成28年４月１日から施行する。\n２  平成27年度以前の入学生及び編入学等によって同学生と同じ学年に入学等を許可され\nた者に授与する学位に付記する専攻分野の名称については、改正後の別表の規定にかか\nわらず、なお従前の例による。",
+      "amendment": {
+        "number": 84,
+        "year": null,
+        "raw": "規則第84号"
+      },
+      "promulgated": {
+        "era": "heisei",
+        "year": 28,
+        "month": 3,
+        "day": 9,
+        "iso": "2016-03-09"
+      },
+      "effective": {
+        "kind": "date",
+        "era": "heisei",
+        "year": 28,
+        "month": 4,
+        "day": 1,
+        "iso": "2016-04-01"
+      },
+      "text": "１  この規則は、平成28年４月１日から施行する。\n２  平成27年度以前の入学生及び編入学等によって同学生と同じ学年に入学等を許可され\nた者に授与する学位に付記する専攻分野の名称については、改正後の別表の規定にかか\nわらず、なお従前の例による。",
       "references_tables": []
     },
     {
       "ordinal": 10,
       "heading_raw": "附  則（平成29年２月27日規則第59号）",
-      "raw_text": "１  この規則は、平成29年４月１日から施行する。\n２  平成28年度以前の入学生及び編入学等によって同学生と同じ学年に入学等を許可され\nた者に授与する学位に付記する専攻分野の名称については、改正後の別表の規定にかか\nわらず、なお従前の例による。",
+      "amendment": {
+        "number": 59,
+        "year": null,
+        "raw": "規則第59号"
+      },
+      "promulgated": {
+        "era": "heisei",
+        "year": 29,
+        "month": 2,
+        "day": 27,
+        "iso": "2017-02-27"
+      },
+      "effective": {
+        "kind": "date",
+        "era": "heisei",
+        "year": 29,
+        "month": 4,
+        "day": 1,
+        "iso": "2017-04-01"
+      },
+      "text": "１  この規則は、平成29年４月１日から施行する。\n２  平成28年度以前の入学生及び編入学等によって同学生と同じ学年に入学等を許可され\nた者に授与する学位に付記する専攻分野の名称については、改正後の別表の規定にかか\nわらず、なお従前の例による。",
       "references_tables": []
     },
     {
       "ordinal": 11,
       "heading_raw": "附  則（平成30年１月18日規則第36号）",
-      "raw_text": "この規則は、平成30年４月１日から施行する。",
+      "amendment": {
+        "number": 36,
+        "year": null,
+        "raw": "規則第36号"
+      },
+      "promulgated": {
+        "era": "heisei",
+        "year": 30,
+        "month": 1,
+        "day": 18,
+        "iso": "2018-01-18"
+      },
+      "effective": {
+        "kind": "date",
+        "era": "heisei",
+        "year": 30,
+        "month": 4,
+        "day": 1,
+        "iso": "2018-04-01"
+      },
+      "text": "この規則は、平成30年４月１日から施行する。",
       "references_tables": []
     },
     {
       "ordinal": 12,
       "heading_raw": "附  則（令和２年１月27日規則第53号）",
-      "raw_text": "１  この規則は、令和２年４月１日から施行する。\n２  令和元年度以前の入学生及び編入学等によって同学生と同じ学年に入学等を許可され\nた者に係る学位の授与に関しては、改正後の高知大学学位規則の規定にかかわらず、な\nお従前の例による。",
+      "amendment": {
+        "number": 53,
+        "year": null,
+        "raw": "規則第53号"
+      },
+      "promulgated": {
+        "era": "reiwa",
+        "year": 2,
+        "month": 1,
+        "day": 27,
+        "iso": "2020-01-27"
+      },
+      "effective": {
+        "kind": "date",
+        "era": "reiwa",
+        "year": 2,
+        "month": 4,
+        "day": 1,
+        "iso": "2020-04-01"
+      },
+      "text": "１  この規則は、令和２年４月１日から施行する。\n２  令和元年度以前の入学生及び編入学等によって同学生と同じ学年に入学等を許可され\nた者に係る学位の授与に関しては、改正後の高知大学学位規則の規定にかかわらず、な\nお従前の例による。",
       "references_tables": []
     },
     {
       "ordinal": 13,
       "heading_raw": "附  則（令和４年２月９日規則第56号）",
-      "raw_text": "１  この規則は、令和４年４月１日から施行する。\n２  令和３年度以前の入学生及び編入学等によって同学生と同じ学年に入学等を許可され\nた者に授与する学位に付記する専攻分野の名称については、改正後の高知大学学位規則\n別表の規定にかかわらず、なお従前の例による。",
+      "amendment": {
+        "number": 56,
+        "year": null,
+        "raw": "規則第56号"
+      },
+      "promulgated": {
+        "era": "reiwa",
+        "year": 4,
+        "month": 2,
+        "day": 9,
+        "iso": "2022-02-09"
+      },
+      "effective": {
+        "kind": "date",
+        "era": "reiwa",
+        "year": 4,
+        "month": 4,
+        "day": 1,
+        "iso": "2022-04-01"
+      },
+      "text": "１  この規則は、令和４年４月１日から施行する。\n２  令和３年度以前の入学生及び編入学等によって同学生と同じ学年に入学等を許可され\nた者に授与する学位に付記する専攻分野の名称については、改正後の高知大学学位規則\n別表の規定にかかわらず、なお従前の例による。",
       "references_tables": []
     },
     {
       "ordinal": 14,
       "heading_raw": "附  則（令和５年１月31日規則第72号）",
-      "raw_text": "１  この規則は、令和５年４月１日から施行する。\n２  令和４年度以前の入学生及び編入学等によって同学生と同じ学年に入学等を許可され\nた者に授与する学位に付記する専攻分野の名称については、改正後の高知大学学位規則\n別表の規定にかかわらず、なお従前の例による。",
+      "amendment": {
+        "number": 72,
+        "year": null,
+        "raw": "規則第72号"
+      },
+      "promulgated": {
+        "era": "reiwa",
+        "year": 5,
+        "month": 1,
+        "day": 31,
+        "iso": "2023-01-31"
+      },
+      "effective": {
+        "kind": "date",
+        "era": "reiwa",
+        "year": 5,
+        "month": 4,
+        "day": 1,
+        "iso": "2023-04-01"
+      },
+      "text": "１  この規則は、令和５年４月１日から施行する。\n２  令和４年度以前の入学生及び編入学等によって同学生と同じ学年に入学等を許可され\nた者に授与する学位に付記する専攻分野の名称については、改正後の高知大学学位規則\n別表の規定にかかわらず、なお従前の例による。",
       "references_tables": []
     },
     {
       "ordinal": 15,
       "heading_raw": "附  則（令和６年１月29日規則第46号）",
-      "raw_text": "この規則は、令和６年４月１日から施行する。",
+      "amendment": {
+        "number": 46,
+        "year": null,
+        "raw": "規則第46号"
+      },
+      "promulgated": {
+        "era": "reiwa",
+        "year": 6,
+        "month": 1,
+        "day": 29,
+        "iso": "2024-01-29"
+      },
+      "effective": {
+        "kind": "date",
+        "era": "reiwa",
+        "year": 6,
+        "month": 4,
+        "day": 1,
+        "iso": "2024-04-01"
+      },
+      "text": "この規則は、令和６年４月１日から施行する。",
       "references_tables": []
     },
     {
       "ordinal": 16,
       "heading_raw": "附  則（令和７年３月31日規則第130号）",
-      "raw_text": "この規則は、令和７年４月１日から施行する。\n別表（第16条関係）  学位に付記する専攻分野の名称\n学位  学部・学科（課程）及び研究科・専攻  専攻分野の名称\n学士  人文社会\n科学部 人文社会科学科 文学経済学学術\n教育学部 学校教育教員養成課程 教育\n理工学部 数学物理学科 理学\n情報科学科 理工学\n生物科学科 理学\n化学生命理工学科 理工学\n地球環境防災学科 理工学\n医学部  医学科  医学\n看護学科 看護学\n農林海洋\n科学部  農林資源 科学科  農学\n海洋資源科学 科  海洋科学\n地域協働\n学部  地域協働学科  地域協働学\n修士  総合人間\n自然科学\n研究科\n人文社会科学専攻 文学経済学学術\n理工 学専攻  理学  理工学\n医科学専攻 医科学公衆衛生学\n看護学専攻 看護学\n農林海洋科学専攻 農学 海洋科学\n地域協働学専攻 地域協働学\nスポーツ・芸術文化共創専攻 学術\n博士 応用自然科学専攻 理学 理工学\n医学専攻 医学\n黒潮圏総合科学専攻 学術\n様式第１（第18条関係）\n第３条第１項の規定により授与する学位記の様式\n○第     号\n学      位       記\n本  籍\n氏            名\n年        月     日生\n本  学            学  部                                所  定\nの課程を修め本学を卒業したので\n学士（ ）の学位を授与する\n年     月        日\n高知大学        学部長              氏              名    印\n高知大学長 氏 名 印\n様式第２（第18条関係）\n第３条第２項の規定により授与する学位記の様式\n○修第     号\n学     位      記\n本  籍\n氏            名\n年        月     日生\n本学大学院総合人間自然科学研究科          専 攻\nの修士課程において所定の単位を\n修得し学位論文の審査及び最終試 験\nに合格したので修士（ ）の学位\nを授与する\n年     月     日\n高知大学大学院総合人間自然科学研究科長    氏              名    印\n高知大学長 氏 名 印\n様式第３（第18条関係）\n第３条第３項の規定により授与する学位記の様式\n教職修第        号\n学       位     記\n本  籍\n氏            名\n年     月        日生\n本学大学院総合人間自然科学研究科教職実践高度化専攻\nの専門職学位課程を修了したので\n教職修士（専門職）の学位を授与する\n年     月     日\n高知大学大学院総合人間自然科学研究科長    氏              名    印\n高知大学長 氏 名 印\n様式第４（第18条関係）\n第３条第４項の規定により授与する学位記の様式\n○博第        号\n学       位     記\n本  籍\n氏            名\n年     月        日生\n本学大学院総合人間自然科学研究科 専攻\nの博士課程において所定の単位を\n修得し学位論文の審査及び最終試 験\nに合格したので博士（      ）の学 位\nを授与する\n年     月     日\n高知大学大学院総合人間自然科学研究科長    氏              名    印\n高知大学長 氏 名 印\n様式第５（第18条関係）\n第３条第５項の規定により授与する学位記の様式\n○博第        号\n学       位     記\n本  籍\n氏            名\n年     月        日生\n本学に学位論文を提出し\n所定の審査及び試験 に\n合格したので博士（     ）\nの学位を授与す る\n年   月   日\n高知大学長 氏 名 印",
+      "amendment": {
+        "number": 130,
+        "year": null,
+        "raw": "規則第130号"
+      },
+      "promulgated": {
+        "era": "reiwa",
+        "year": 7,
+        "month": 3,
+        "day": 31,
+        "iso": "2025-03-31"
+      },
+      "effective": {
+        "kind": "date",
+        "era": "reiwa",
+        "year": 7,
+        "month": 4,
+        "day": 1,
+        "iso": "2025-04-01"
+      },
+      "text": "この規則は、令和７年４月１日から施行する。",
       "references_tables": []
     }
   ],
-  "appended_tables": []
+  "appendices": [
+    {
+      "kind": "table",
+      "id": "別表",
+      "related_article_raw": "第16条関係",
+      "raw_text": "学位  学部・学科（課程）及び研究科・専攻  専攻分野の名称\n学士  人文社会\n科学部 人文社会科学科 文学経済学学術\n教育学部 学校教育教員養成課程 教育\n理工学部 数学物理学科 理学\n情報科学科 理工学\n生物科学科 理学\n化学生命理工学科 理工学\n地球環境防災学科 理工学\n医学部  医学科  医学\n看護学科 看護学\n農林海洋\n科学部  農林資源 科学科  農学\n海洋資源科学 科  海洋科学\n地域協働\n学部  地域協働学科  地域協働学\n修士  総合人間\n自然科学\n研究科\n人文社会科学専攻 文学経済学学術\n理工 学専攻  理学  理工学\n医科学専攻 医科学公衆衛生学\n看護学専攻 看護学\n農林海洋科学専攻 農学 海洋科学\n地域協働学専攻 地域協働学\nスポーツ・芸術文化共創専攻 学術\n博士 応用自然科学専攻 理学 理工学\n医学専攻 医学\n黒潮圏総合科学専攻 学術",
+      "cells": null
+    },
+    {
+      "kind": "style",
+      "id": "様式第１",
+      "related_article_raw": "第18条関係",
+      "raw_text": "第３条第１項の規定により授与する学位記の様式\n○第     号\n学      位       記\n本  籍\n氏            名\n年        月     日生\n本  学            学  部                                所  定\nの課程を修め本学を卒業したので\n学士（ ）の学位を授与する\n年     月        日\n高知大学        学部長              氏              名    印\n高知大学長 氏 名 印",
+      "cells": null
+    },
+    {
+      "kind": "style",
+      "id": "様式第２",
+      "related_article_raw": "第18条関係",
+      "raw_text": "第３条第２項の規定により授与する学位記の様式\n○修第     号\n学     位      記\n本  籍\n氏            名\n年        月     日生\n本学大学院総合人間自然科学研究科          専 攻\nの修士課程において所定の単位を\n修得し学位論文の審査及び最終試 験\nに合格したので修士（ ）の学位\nを授与する\n年     月     日\n高知大学大学院総合人間自然科学研究科長    氏              名    印\n高知大学長 氏 名 印",
+      "cells": null
+    },
+    {
+      "kind": "style",
+      "id": "様式第３",
+      "related_article_raw": "第18条関係",
+      "raw_text": "第３条第３項の規定により授与する学位記の様式\n教職修第        号\n学       位     記\n本  籍\n氏            名\n年     月        日生\n本学大学院総合人間自然科学研究科教職実践高度化専攻\nの専門職学位課程を修了したので\n教職修士（専門職）の学位を授与する\n年     月     日\n高知大学大学院総合人間自然科学研究科長    氏              名    印\n高知大学長 氏 名 印",
+      "cells": null
+    },
+    {
+      "kind": "style",
+      "id": "様式第４",
+      "related_article_raw": "第18条関係",
+      "raw_text": "第３条第４項の規定により授与する学位記の様式\n○博第        号\n学       位     記\n本  籍\n氏            名\n年     月        日生\n本学大学院総合人間自然科学研究科 専攻\nの博士課程において所定の単位を\n修得し学位論文の審査及び最終試 験\nに合格したので博士（      ）の学 位\nを授与する\n年     月     日\n高知大学大学院総合人間自然科学研究科長    氏              名    印\n高知大学長 氏 名 印",
+      "cells": null
+    },
+    {
+      "kind": "style",
+      "id": "様式第５",
+      "related_article_raw": "第18条関係",
+      "raw_text": "第３条第５項の規定により授与する学位記の様式\n○博第        号\n学       位     記\n本  籍\n氏            名\n年     月        日生\n本学に学位論文を提出し\n所定の審査及び試験 に\n合格したので博士（     ）\nの学位を授与す る\n年   月   日\n高知大学長 氏 名 印",
+      "cells": null
+    }
+  ]
 }

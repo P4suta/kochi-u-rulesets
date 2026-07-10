@@ -5,13 +5,42 @@ input_file: sources/高知大学職業紹介業務運営規則.pdf
 ---
 {
   "title": "高知大学職業紹介業務運営規則",
-  "enacted": "平成16年４月１日 規則第 153 号",
-  "last_amended": "最終改正  平成24年３月30日規則第119号",
+  "enacted": {
+    "date": {
+      "era": "heisei",
+      "year": 16,
+      "month": 4,
+      "day": 1,
+      "iso": "2004-04-01"
+    },
+    "rule_number": {
+      "number": 153,
+      "year": null,
+      "raw": "規則第 153 号"
+    },
+    "raw": "平成16年４月１日 規則第 153 号"
+  },
+  "last_amended": {
+    "date": {
+      "era": "heisei",
+      "year": 24,
+      "month": 3,
+      "day": 30,
+      "iso": "2012-03-30"
+    },
+    "rule_number": {
+      "number": 119,
+      "year": null,
+      "raw": "規則第119号"
+    },
+    "raw": "最終改正  平成24年３月30日規則第119号"
+  },
+  "full_amendment_note": null,
   "body": [
     {
       "type": "article",
       "number": {
-        "article": 1,
+        "main": 1,
         "branch": null
       },
       "title": "趣旨",
@@ -26,7 +55,7 @@ input_file: sources/高知大学職業紹介業務運営規則.pdf
     {
       "type": "article",
       "number": {
-        "article": 2,
+        "main": 2,
         "branch": null
       },
       "title": "対象",
@@ -41,7 +70,7 @@ input_file: sources/高知大学職業紹介業務運営規則.pdf
     {
       "type": "article",
       "number": {
-        "article": 3,
+        "main": 3,
         "branch": null
       },
       "title": "担当者及び総括",
@@ -61,7 +90,7 @@ input_file: sources/高知大学職業紹介業務運営規則.pdf
     {
       "type": "article",
       "number": {
-        "article": 4,
+        "main": 4,
         "branch": null
       },
       "title": "求人の受付",
@@ -76,7 +105,7 @@ input_file: sources/高知大学職業紹介業務運営規則.pdf
     {
       "type": "article",
       "number": {
-        "article": 5,
+        "main": 5,
         "branch": null
       },
       "title": null,
@@ -87,19 +116,23 @@ input_file: sources/高知大学職業紹介業務運営規則.pdf
           "items": [
             {
               "number": 1,
-              "text": "申込み内容が法令に違反するとき。"
+              "text": "申込み内容が法令に違反するとき。",
+              "subitems": []
             },
             {
               "number": 2,
-              "text": "法令により明示が義務付けられている労働条件を明示しないとき。"
+              "text": "法令により明示が義務付けられている労働条件を明示しないとき。",
+              "subitems": []
             },
             {
               "number": 3,
-              "text": "賃金、労働時間等の労働条件が通常の労働条件に比べて著しく不適当であるとき。"
+              "text": "賃金、労働時間等の労働条件が通常の労働条件に比べて著しく不適当であるとき。",
+              "subitems": []
             },
             {
               "number": 4,
-              "text": "その職業が教育上不適当と認められるとき。"
+              "text": "その職業が教育上不適当と認められるとき。",
+              "subitems": []
             }
           ]
         }
@@ -108,7 +141,7 @@ input_file: sources/高知大学職業紹介業務運営規則.pdf
     {
       "type": "article",
       "number": {
-        "article": 6,
+        "main": 6,
         "branch": null
       },
       "title": "求職の申込み",
@@ -128,7 +161,7 @@ input_file: sources/高知大学職業紹介業務運営規則.pdf
     {
       "type": "article",
       "number": {
-        "article": 7,
+        "main": 7,
         "branch": null
       },
       "title": "紹介の原則及び報告",
@@ -148,7 +181,7 @@ input_file: sources/高知大学職業紹介業務運営規則.pdf
     {
       "type": "article",
       "number": {
-        "article": 8,
+        "main": 8,
         "branch": null
       },
       "title": "紹介の中止",
@@ -163,7 +196,7 @@ input_file: sources/高知大学職業紹介業務運営規則.pdf
     {
       "type": "article",
       "number": {
-        "article": 9,
+        "main": 9,
         "branch": null
       },
       "title": "均等待遇の保証",
@@ -178,7 +211,7 @@ input_file: sources/高知大学職業紹介業務運営規則.pdf
     {
       "type": "article",
       "number": {
-        "article": 10,
+        "main": 10,
         "branch": null
       },
       "title": "秘密の厳守",
@@ -193,7 +226,7 @@ input_file: sources/高知大学職業紹介業務運営規則.pdf
     {
       "type": "article",
       "number": {
-        "article": 11,
+        "main": 11,
         "branch": null
       },
       "title": "帳簿等の保管",
@@ -208,7 +241,7 @@ input_file: sources/高知大学職業紹介業務運営規則.pdf
     {
       "type": "article",
       "number": {
-        "article": 12,
+        "main": 12,
         "branch": null
       },
       "title": "その他",
@@ -225,27 +258,97 @@ input_file: sources/高知大学職業紹介業務運営規則.pdf
     {
       "ordinal": 1,
       "heading_raw": "附  則",
-      "raw_text": "この規則は、平成16年４月１日から施行する。",
+      "amendment": null,
+      "promulgated": null,
+      "effective": {
+        "kind": "date",
+        "era": "heisei",
+        "year": 16,
+        "month": 4,
+        "day": 1,
+        "iso": "2004-04-01"
+      },
+      "text": "この規則は、平成16年４月１日から施行する。",
       "references_tables": []
     },
     {
       "ordinal": 2,
       "heading_raw": "附  則（平成17年７月１日規則第545号）",
-      "raw_text": "この規則は、平成17年７月１日から施行する。",
+      "amendment": {
+        "number": 545,
+        "year": null,
+        "raw": "規則第545号"
+      },
+      "promulgated": {
+        "era": "heisei",
+        "year": 17,
+        "month": 7,
+        "day": 1,
+        "iso": "2005-07-01"
+      },
+      "effective": {
+        "kind": "date",
+        "era": "heisei",
+        "year": 17,
+        "month": 7,
+        "day": 1,
+        "iso": "2005-07-01"
+      },
+      "text": "この規則は、平成17年７月１日から施行する。",
       "references_tables": []
     },
     {
       "ordinal": 3,
       "heading_raw": "附  則（平成22年３月31日規則第124号）",
-      "raw_text": "この規則は、平成22年４月１日から施行する。",
+      "amendment": {
+        "number": 124,
+        "year": null,
+        "raw": "規則第124号"
+      },
+      "promulgated": {
+        "era": "heisei",
+        "year": 22,
+        "month": 3,
+        "day": 31,
+        "iso": "2010-03-31"
+      },
+      "effective": {
+        "kind": "date",
+        "era": "heisei",
+        "year": 22,
+        "month": 4,
+        "day": 1,
+        "iso": "2010-04-01"
+      },
+      "text": "この規則は、平成22年４月１日から施行する。",
       "references_tables": []
     },
     {
       "ordinal": 4,
       "heading_raw": "附  則（平成24年３月30日規則第119号）",
-      "raw_text": "この規則は、平成24年４月１日から施行する。",
+      "amendment": {
+        "number": 119,
+        "year": null,
+        "raw": "規則第119号"
+      },
+      "promulgated": {
+        "era": "heisei",
+        "year": 24,
+        "month": 3,
+        "day": 30,
+        "iso": "2012-03-30"
+      },
+      "effective": {
+        "kind": "date",
+        "era": "heisei",
+        "year": 24,
+        "month": 4,
+        "day": 1,
+        "iso": "2012-04-01"
+      },
+      "text": "この規則は、平成24年４月１日から施行する。",
       "references_tables": []
     }
   ],
-  "appended_tables": []
+  "appendices": []
 }

@@ -5,18 +5,50 @@ input_file: sources/高知大学学術情報基盤図書館利用規.pdf
 ---
 {
   "title": "高知大学学術情報基盤図書館利用規則",
-  "enacted": "平成 28 年３月９日 規則第 109 号",
-  "last_amended": "最終改正  令和元年９月13日規則第32号",
+  "enacted": {
+    "date": {
+      "era": "heisei",
+      "year": 28,
+      "month": 3,
+      "day": 9,
+      "iso": "2016-03-09"
+    },
+    "rule_number": {
+      "number": 109,
+      "year": null,
+      "raw": "規則第 109 号"
+    },
+    "raw": "平成 28 年３月９日 規則第 109 号"
+  },
+  "last_amended": {
+    "date": {
+      "era": "reiwa",
+      "year": 1,
+      "month": 9,
+      "day": 13,
+      "iso": "2019-09-13"
+    },
+    "rule_number": {
+      "number": 32,
+      "year": null,
+      "raw": "規則第32号"
+    },
+    "raw": "最終改正  令和元年９月13日規則第32号"
+  },
+  "full_amendment_note": null,
   "body": [
     {
       "type": "chapter",
-      "number": 1,
+      "number": {
+        "main": 1,
+        "branch": null
+      },
       "title": "総則",
       "children": [
         {
           "type": "article",
           "number": {
-            "article": 1,
+            "main": 1,
             "branch": null
           },
           "title": "趣旨",
@@ -31,7 +63,7 @@ input_file: sources/高知大学学術情報基盤図書館利用規.pdf
         {
           "type": "article",
           "number": {
-            "article": 2,
+            "main": 2,
             "branch": null
           },
           "title": "利用者",
@@ -42,19 +74,23 @@ input_file: sources/高知大学学術情報基盤図書館利用規.pdf
               "items": [
                 {
                   "number": 1,
-                  "text": "本学の教職員及び学生"
+                  "text": "本学の教職員及び学生",
+                  "subitems": []
                 },
                 {
                   "number": 2,
-                  "text": "愛媛大学大学院連合農学研究科（以下「連合農学研究科」という。）の学生"
+                  "text": "愛媛大学大学院連合農学研究科（以下「連合農学研究科」という。）の学生",
+                  "subitems": []
                 },
                 {
                   "number": 3,
-                  "text": "本学の名誉教授"
+                  "text": "本学の名誉教授",
+                  "subitems": []
                 },
                 {
                   "number": 4,
-                  "text": "図書館の利用を申し出た一般市民等（以下「一般利用者」という。）"
+                  "text": "図書館の利用を申し出た一般市民等（以下「一般利用者」という。）",
+                  "subitems": []
                 }
               ]
             },
@@ -68,7 +104,7 @@ input_file: sources/高知大学学術情報基盤図書館利用規.pdf
         {
           "type": "article",
           "number": {
-            "article": 3,
+            "main": 3,
             "branch": null
           },
           "title": "図書館利用証",
@@ -98,7 +134,7 @@ input_file: sources/高知大学学術情報基盤図書館利用規.pdf
         {
           "type": "article",
           "number": {
-            "article": 4,
+            "main": 4,
             "branch": null
           },
           "title": "休館日",
@@ -109,15 +145,65 @@ input_file: sources/高知大学学術情報基盤図書館利用規.pdf
               "items": [
                 {
                   "number": 1,
-                  "text": "中央館イ  国民の祝日に関する法律（昭和23年法律第178号）に規定する休日ロ  12月28日から翌年の１月４日までハ  その他館長が特に必要と認めた日"
+                  "text": "中央館",
+                  "subitems": [
+                    {
+                      "label": "イ",
+                      "text": "国民の祝日に関する法律（昭和23年法律第178号）に規定する休日"
+                    },
+                    {
+                      "label": "ロ",
+                      "text": "12月28日から翌年の１月４日まで"
+                    },
+                    {
+                      "label": "ハ",
+                      "text": "その他館長が特に必要と認めた日"
+                    }
+                  ]
                 },
                 {
                   "number": 2,
-                  "text": "医学部分館イ  国民の祝日に関する法律（昭和23年法律第178号）に規定する休日ロ  12月28日から翌年の１月４日までハ  日曜日ニ  その他館長又は分館長（以下「館長等」という。）が特に必要と認めた日"
+                  "text": "医学部分館",
+                  "subitems": [
+                    {
+                      "label": "イ",
+                      "text": "国民の祝日に関する法律（昭和23年法律第178号）に規定する休日"
+                    },
+                    {
+                      "label": "ロ",
+                      "text": "12月28日から翌年の１月４日まで"
+                    },
+                    {
+                      "label": "ハ",
+                      "text": "日曜日"
+                    },
+                    {
+                      "label": "ニ",
+                      "text": "その他館長又は分館長（以下「館長等」という。）が特に必要と認めた日"
+                    }
+                  ]
                 },
                 {
                   "number": 3,
-                  "text": "物部分館イ  国民の祝日に関する法律（昭和23年法律第178号）に規定する休日ロ  12月28日から翌年の１月４日までハ  夏季及び学年末休業期間中の土曜日及び日曜日ニ  その他館長等が特に必要と認めた日"
+                  "text": "物部分館",
+                  "subitems": [
+                    {
+                      "label": "イ",
+                      "text": "国民の祝日に関する法律（昭和23年法律第178号）に規定する休日"
+                    },
+                    {
+                      "label": "ロ",
+                      "text": "12月28日から翌年の１月４日まで"
+                    },
+                    {
+                      "label": "ハ",
+                      "text": "夏季及び学年末休業期間中の土曜日及び日曜日"
+                    },
+                    {
+                      "label": "ニ",
+                      "text": "その他館長等が特に必要と認めた日"
+                    }
+                  ]
                 }
               ]
             },
@@ -131,7 +217,7 @@ input_file: sources/高知大学学術情報基盤図書館利用規.pdf
         {
           "type": "article",
           "number": {
-            "article": 5,
+            "main": 5,
             "branch": null
           },
           "title": "開館時間",
@@ -156,7 +242,7 @@ input_file: sources/高知大学学術情報基盤図書館利用規.pdf
         {
           "type": "article",
           "number": {
-            "article": 6,
+            "main": 6,
             "branch": null
           },
           "title": "損害賠償",
@@ -171,7 +257,7 @@ input_file: sources/高知大学学術情報基盤図書館利用規.pdf
         {
           "type": "article",
           "number": {
-            "article": 7,
+            "main": 7,
             "branch": null
           },
           "title": "利用の取消し等",
@@ -186,7 +272,7 @@ input_file: sources/高知大学学術情報基盤図書館利用規.pdf
         {
           "type": "article",
           "number": {
-            "article": 8,
+            "main": 8,
             "branch": null
           },
           "title": "経費の負担",
@@ -207,13 +293,16 @@ input_file: sources/高知大学学術情報基盤図書館利用規.pdf
     },
     {
       "type": "chapter",
-      "number": 2,
+      "number": {
+        "main": 2,
+        "branch": null
+      },
       "title": "図書館資料の利用",
       "children": [
         {
           "type": "article",
           "number": {
-            "article": 9,
+            "main": 9,
             "branch": null
           },
           "title": "図書館資料",
@@ -228,7 +317,7 @@ input_file: sources/高知大学学術情報基盤図書館利用規.pdf
         {
           "type": "article",
           "number": {
-            "article": 10,
+            "main": 10,
             "branch": null
           },
           "title": "館内閲覧",
@@ -243,7 +332,7 @@ input_file: sources/高知大学学術情報基盤図書館利用規.pdf
         {
           "type": "article",
           "number": {
-            "article": 11,
+            "main": 11,
             "branch": null
           },
           "title": "閲覧の制限",
@@ -254,15 +343,18 @@ input_file: sources/高知大学学術情報基盤図書館利用規.pdf
               "items": [
                 {
                   "number": 1,
-                  "text": "図書に独立行政法人等の保有する情報の公開に関する法律（平成 13 年法律第 140号。以下｢情報公開法｣という。）第５条第１号、第２号及び第４号イに掲げる情報（個人情報に係る部分等）が記録されていると認められる場合における、当該情報が記録されている部分"
+                  "text": "図書に独立行政法人等の保有する情報の公開に関する法律（平成13年法律第140号。以下｢情報公開法｣という。）第５条第１号、第２号及び第４号イに掲げる情報（個人情報に係る部分等）が記録されていると認められる場合における、当該情報が記録されている部分",
+                  "subitems": []
                 },
                 {
                   "number": 2,
-                  "text": "図書の全部又は一部を一定の期間、公にしないことを条件に個人又は情報公開法第５条第２号に規定する法人等から寄贈又は寄託を受けている場合における、当該期間が経過するまでの間"
+                  "text": "図書の全部又は一部を一定の期間、公にしないことを条件に個人又は情報公開法第５条第２号に規定する法人等から寄贈又は寄託を受けている場合における、当該期間が経過するまでの間",
+                  "subitems": []
                 },
                 {
                   "number": 3,
-                  "text": "図書の原本を利用させることにより当該原本の破損若しくはその汚損を生じるおそれがある場合又は図書館において当該原本が現に使用されている場合"
+                  "text": "図書の原本を利用させることにより当該原本の破損若しくはその汚損を生じるおそれがある場合又は図書館において当該原本が現に使用されている場合",
+                  "subitems": []
                 }
               ]
             }
@@ -271,14 +363,14 @@ input_file: sources/高知大学学術情報基盤図書館利用規.pdf
         {
           "type": "article",
           "number": {
-            "article": 12,
+            "main": 12,
             "branch": null
           },
           "title": "個人情報の漏えい防止",
           "paragraphs": [
             {
               "number": 1,
-              "text": "図書館資料に記録されている個人情報（生存する個人に関する情報であって、当該情報に含まれる氏名、生年月日その他の記述等により特定の個人を識別することができるもの（他の情報と照合することができ、それにより特定の個人を識別することができることとなるものを含む。）をいう。）については、国立大学法人高知大学の保有する個人情報の適切な管理に関する規則（平成 16 年規則第 435 号）の規定に基づき、その漏えい防止のための措置を講ずるものとする。",
+              "text": "図書館資料に記録されている個人情報（生存する個人に関する情報であって、当該情報に含まれる氏名、生年月日その他の記述等により特定の個人を識別することができるもの（他の情報と照合することができ、それにより特定の個人を識別することができることとなるものを含む。）をいう。）については、国立大学法人高知大学の保有する個人情報の適切な管理に関する規則（平成16年規則第435号）の規定に基づき、その漏えい防止のための措置を講ずるものとする。",
               "items": []
             }
           ]
@@ -286,7 +378,7 @@ input_file: sources/高知大学学術情報基盤図書館利用規.pdf
         {
           "type": "article",
           "number": {
-            "article": 13,
+            "main": 13,
             "branch": null
           },
           "title": "館外貸出し",
@@ -298,7 +390,7 @@ input_file: sources/高知大学学術情報基盤図書館利用規.pdf
             },
             {
               "number": 2,
-              "text": "図書の館外貸出しの冊数及び期間は、次のとおりとする。貸出冊数  貸出期間中央館・物部分館所蔵資料  医学部分館所蔵資料本学の教員及び本学の名誉教授  10 冊まで  30 日以内  14 日以内本学の職員及び学生、連合農学研究科の学生  ７冊まで  21 日以内  14 日以内一般利用者  ５冊まで  14 日以内  14 日以内",
+              "text": "図書の館外貸出しの冊数及び期間は、次のとおりとする。貸出冊数  貸出期間中央館・物部分館所蔵資料  医学部分館所蔵資料本学の教員及び本学の名誉教授  10冊まで  30日以内  14日以内本学の職員及び学生、連合農学研究科の学生  ７冊まで  21日以内  14日以内一般利用者  ５冊まで  14日以内  14日以内",
               "items": []
             },
             {
@@ -327,19 +419,23 @@ input_file: sources/高知大学学術情報基盤図書館利用規.pdf
               "items": [
                 {
                   "number": 1,
-                  "text": "参考図書"
+                  "text": "参考図書",
+                  "subitems": []
                 },
                 {
                   "number": 2,
-                  "text": "貴重図書"
+                  "text": "貴重図書",
+                  "subitems": []
                 },
                 {
                   "number": 3,
-                  "text": "視聴覚資料"
+                  "text": "視聴覚資料",
+                  "subitems": []
                 },
                 {
                   "number": 4,
-                  "text": "その他館長等の指定した図書館資料"
+                  "text": "その他館長等の指定した図書館資料",
+                  "subitems": []
                 }
               ]
             },
@@ -353,7 +449,7 @@ input_file: sources/高知大学学術情報基盤図書館利用規.pdf
         {
           "type": "article",
           "number": {
-            "article": 14,
+            "main": 14,
             "branch": null
           },
           "title": "研究室等備付資料",
@@ -383,7 +479,7 @@ input_file: sources/高知大学学術情報基盤図書館利用規.pdf
         {
           "type": "article",
           "number": {
-            "article": 15,
+            "main": 15,
             "branch": null
           },
           "title": "文献複写",
@@ -403,7 +499,7 @@ input_file: sources/高知大学学術情報基盤図書館利用規.pdf
         {
           "type": "article",
           "number": {
-            "article": 16,
+            "main": 16,
             "branch": null
           },
           "title": "参考調査",
@@ -418,7 +514,7 @@ input_file: sources/高知大学学術情報基盤図書館利用規.pdf
         {
           "type": "article",
           "number": {
-            "article": 17,
+            "main": 17,
             "branch": null
           },
           "title": "相互協力",
@@ -444,13 +540,16 @@ input_file: sources/高知大学学術情報基盤図書館利用規.pdf
     },
     {
       "type": "chapter",
-      "number": 3,
+      "number": {
+        "main": 3,
+        "branch": null
+      },
       "title": "情報システム設備の利用",
       "children": [
         {
           "type": "article",
           "number": {
-            "article": 18,
+            "main": 18,
             "branch": null
           },
           "title": "利用の承認",
@@ -475,7 +574,7 @@ input_file: sources/高知大学学術情報基盤図書館利用規.pdf
         {
           "type": "article",
           "number": {
-            "article": 19,
+            "main": 19,
             "branch": null
           },
           "title": "利用の制限",
@@ -491,13 +590,16 @@ input_file: sources/高知大学学術情報基盤図書館利用規.pdf
     },
     {
       "type": "chapter",
-      "number": 4,
+      "number": {
+        "main": 4,
+        "branch": null
+      },
       "title": "その他",
       "children": [
         {
           "type": "article",
           "number": {
-            "article": 20,
+            "main": 20,
             "branch": null
           },
           "title": "雑則",
@@ -516,21 +618,71 @@ input_file: sources/高知大学学術情報基盤図書館利用規.pdf
     {
       "ordinal": 1,
       "heading_raw": "附  則",
-      "raw_text": "１  この規則は、平成28年４月１日から施行する。\n２  この規則施行の際現に図書館の施設、設備等の利用の許可を受けている者は、この規\n則により利用の許可を受けた者とみなす。",
+      "amendment": null,
+      "promulgated": null,
+      "effective": {
+        "kind": "date",
+        "era": "heisei",
+        "year": 28,
+        "month": 4,
+        "day": 1,
+        "iso": "2016-04-01"
+      },
+      "text": "１  この規則は、平成28年４月１日から施行する。\n２  この規則施行の際現に図書館の施設、設備等の利用の許可を受けている者は、この規\n則により利用の許可を受けた者とみなす。",
       "references_tables": []
     },
     {
       "ordinal": 2,
       "heading_raw": "附  則（平成 30 年２月 15 日規則第 51 号）",
-      "raw_text": "１  この規則は、平成 30 年３月 26 日から施行する。\n２  この規則施行の際現に行われている図書の館外貸出しについては、改正後の高知大学\n学術情報基盤図書館利用規則の規定にかかわらず、なお従前の例による。",
+      "amendment": {
+        "number": 51,
+        "year": null,
+        "raw": "規則第 51 号"
+      },
+      "promulgated": {
+        "era": "heisei",
+        "year": 30,
+        "month": 2,
+        "day": 15,
+        "iso": "2018-02-15"
+      },
+      "effective": {
+        "kind": "date",
+        "era": "heisei",
+        "year": 30,
+        "month": 3,
+        "day": 26,
+        "iso": "2018-03-26"
+      },
+      "text": "１  この規則は、平成 30 年３月 26 日から施行する。\n２  この規則施行の際現に行われている図書の館外貸出しについては、改正後の高知大学\n学術情報基盤図書館利用規則の規定にかかわらず、なお従前の例による。",
       "references_tables": []
     },
     {
       "ordinal": 3,
       "heading_raw": "附  則（令和元年９月 13 日規則第 32 号）",
-      "raw_text": "この規則は、令和元年９月 13 日から施行する。",
+      "amendment": {
+        "number": 32,
+        "year": null,
+        "raw": "規則第 32 号"
+      },
+      "promulgated": {
+        "era": "reiwa",
+        "year": 1,
+        "month": 9,
+        "day": 13,
+        "iso": "2019-09-13"
+      },
+      "effective": {
+        "kind": "date",
+        "era": "reiwa",
+        "year": 1,
+        "month": 9,
+        "day": 13,
+        "iso": "2019-09-13"
+      },
+      "text": "この規則は、令和元年９月 13 日から施行する。",
       "references_tables": []
     }
   ],
-  "appended_tables": []
+  "appendices": []
 }

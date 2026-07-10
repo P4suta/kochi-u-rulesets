@@ -5,13 +5,28 @@ input_file: sources/高知大学国際交流会館料金規則.pdf
 ---
 {
   "title": "高知大学国際交流会館料金規則",
-  "enacted": "平成16年４月１日 規則第152号",
-  "last_amended": "",
+  "enacted": {
+    "date": {
+      "era": "heisei",
+      "year": 16,
+      "month": 4,
+      "day": 1,
+      "iso": "2004-04-01"
+    },
+    "rule_number": {
+      "number": 152,
+      "year": null,
+      "raw": "規則第152号"
+    },
+    "raw": "平成16年４月１日 規則第152号"
+  },
+  "last_amended": null,
+  "full_amendment_note": null,
   "body": [
     {
       "type": "article",
       "number": {
-        "article": 1,
+        "main": 1,
         "branch": null
       },
       "title": "趣旨",
@@ -26,7 +41,7 @@ input_file: sources/高知大学国際交流会館料金規則.pdf
     {
       "type": "article",
       "number": {
-        "article": 2,
+        "main": 2,
         "branch": null
       },
       "title": "寄宿料の額",
@@ -41,7 +56,7 @@ input_file: sources/高知大学国際交流会館料金規則.pdf
     {
       "type": "article",
       "number": {
-        "article": 3,
+        "main": 3,
         "branch": null
       },
       "title": "寄宿料の徴収方法",
@@ -61,7 +76,7 @@ input_file: sources/高知大学国際交流会館料金規則.pdf
     {
       "type": "article",
       "number": {
-        "article": 4,
+        "main": 4,
         "branch": null
       },
       "title": "使用料の額",
@@ -86,7 +101,7 @@ input_file: sources/高知大学国際交流会館料金規則.pdf
     {
       "type": "article",
       "number": {
-        "article": 5,
+        "main": 5,
         "branch": null
       },
       "title": "使用料の徴収方法",
@@ -106,7 +121,7 @@ input_file: sources/高知大学国際交流会館料金規則.pdf
     {
       "type": "article",
       "number": {
-        "article": 6,
+        "main": 6,
         "branch": null
       },
       "title": "雑費",
@@ -123,9 +138,19 @@ input_file: sources/高知大学国際交流会館料金規則.pdf
     {
       "ordinal": 1,
       "heading_raw": "附  則",
-      "raw_text": "この規則は、平成16年４月１日から施行する。",
+      "amendment": null,
+      "promulgated": null,
+      "effective": {
+        "kind": "date",
+        "era": "heisei",
+        "year": 16,
+        "month": 4,
+        "day": 1,
+        "iso": "2004-04-01"
+      },
+      "text": "この規則は、平成16年４月１日から施行する。",
       "references_tables": []
     }
   ],
-  "appended_tables": []
+  "appendices": []
 }

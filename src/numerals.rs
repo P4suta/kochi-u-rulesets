@@ -30,13 +30,23 @@ fn is_cjk(c: char) -> bool {
     )
 }
 
-/// Removes a lone ASCII space sitting between two CJK characters — a residual
-/// per-glyph extraction artifact that survives when a line is only lightly
-/// letter-spaced. Because Japanese prose never spaces two kanji/kana, this only
-/// deletes contamination; a run of two or more spaces (a table/column
-/// separator) and any space touching a non-CJK character (dates, ＧＰＡ, law
-/// citations) are left untouched.
+/// True for half- and full-width decimal digits.
+fn is_digit(c: char) -> bool {
+    c.is_ascii_digit() || matches!(c, '０'..='９')
+}
+
+/// Removes a lone ASCII space that is a residual per-glyph extraction artifact.
+/// pdf-extract sprinkles single spaces between adjacent glyphs on lightly
+/// letter-spaced lines, contaminating both prose ("退学 させ") and inline
+/// citations ("第 10 条", "昭和 35 年法律第 105 号"). A space is dropped only when
+/// both neighbors are CJK or a digit and at least one is CJK — so numbers stay
+/// glued to their 年/月/条 counters while genuine separators survive: a run of
+/// two or more spaces (a table column) and any space touching Latin/ＧＰＡ are
+/// left untouched.
 pub fn normalize_prose(text: &str) -> String {
+    fn cjk_or_digit(c: char) -> bool {
+        is_cjk(c) || is_digit(c)
+    }
     let chars: Vec<char> = text.chars().collect();
     let mut out = String::with_capacity(text.len());
     for (i, &c) in chars.iter().enumerate() {
@@ -45,8 +55,9 @@ pub fn normalize_prose(text: &str) -> String {
             && i + 1 < chars.len()
             && chars[i - 1] != ' '
             && chars[i + 1] != ' '
-            && is_cjk(chars[i - 1])
-            && is_cjk(chars[i + 1]);
+            && cjk_or_digit(chars[i - 1])
+            && cjk_or_digit(chars[i + 1])
+            && (is_cjk(chars[i - 1]) || is_cjk(chars[i + 1]));
         if !drop {
             out.push(c);
         }
@@ -84,10 +95,21 @@ mod tests {
     }
 
     #[test]
-    fn prose_keeps_spaces_around_non_cjk_and_runs() {
-        // A space touching a digit/latin glyph is a real separator; a 2-space
-        // run is a column separator — both survive.
-        assert_eq!(normalize_prose("第 178 号"), "第 178 号");
+    fn prose_glues_digits_to_their_cjk_counters() {
+        // A lone space between a digit and a CJK counter is extraction noise
+        // ("第 178 号" → "第178号", "平成 18 年" → "平成18年").
+        assert_eq!(normalize_prose("第 178 号"), "第178号");
+        assert_eq!(
+            normalize_prose("平成 18 年法律第 105 号"),
+            "平成18年法律第105号"
+        );
+    }
+
+    #[test]
+    fn prose_keeps_real_separators() {
+        // A 2-space run is a column separator; a space touching Latin/ＧＰＡ is
+        // meaningful — both survive.
         assert_eq!(normalize_prose("医学部  660"), "医学部  660");
+        assert_eq!(normalize_prose("ＧＰＡ 3.0"), "ＧＰＡ 3.0");
     }
 }

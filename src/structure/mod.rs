@@ -1,8 +1,10 @@
 pub mod line_kind;
 pub mod toc;
 
+use crate::dates;
 use crate::model::{
-    Article, ArticleNumber, BodyNode, Document, Item, Paragraph, SupplementaryBlock,
+    Appendix, AppendixKind, Article, BodyNode, BranchedNumber, Document, Item, Paragraph, Subitem,
+    SupplProvision,
 };
 use crate::numerals::{normalize_prose, normalize_title};
 use line_kind::LineKind;
@@ -69,11 +71,14 @@ fn is_letter_spaced(line: &str) -> bool {
     interior_singles >= 3 && interior_singles * 3 >= glyphs
 }
 
-/// The preamble (title/enacted/last_amended) plus the 目次 and body line ranges.
+/// The preamble segments (each raw, structured later in `parse`), plus the 目次
+/// and body line ranges.
 pub struct Split<'a> {
     pub title: String,
-    pub enacted: String,
-    pub last_amended: String,
+    pub enacted_raw: String,
+    pub last_amended_raw: String,
+    /// A "…の全部を改正する。" note, separated from `last_amended_raw` (S8).
+    pub full_amendment_raw: String,
     pub toc_lines: &'a [String],
     pub body_lines: &'a [String],
 }
@@ -90,7 +95,7 @@ fn is_body_boundary(line: &str) -> bool {
                 | LineKind::Section { .. }
                 | LineKind::ArticleHeading { .. }
                 | LineKind::SupplementaryMarker { .. }
-                | LineKind::AppendedTableMarker { .. }
+                | LineKind::AppendixMarker { .. }
         )
 }
 
@@ -104,8 +109,9 @@ pub fn split(lines: &[String]) -> Split<'_> {
     let Some(title) = lines.first().cloned() else {
         return Split {
             title: String::new(),
-            enacted: String::new(),
-            last_amended: String::new(),
+            enacted_raw: String::new(),
+            last_amended_raw: String::new(),
+            full_amendment_raw: String::new(),
             toc_lines: &[],
             body_lines: &[],
         };
@@ -132,14 +138,23 @@ pub fn split(lines: &[String]) -> Split<'_> {
         boundary -= 1;
     }
 
-    let preamble = &lines[1..boundary];
-    let (enacted, last_amended) = match preamble.iter().position(|l| l.starts_with("最終改正"))
-    {
-        // The tail from 最終改正 onward also absorbs a "…の全部を改正する。" note
-        // that some rules place immediately after the amendment citation.
-        Some(k) => (preamble[..k].join(" "), preamble[k..].join(" ")),
-        None => (preamble.join(" "), String::new()),
-    };
+    // Partition the preamble by three independent conditions so a "全部改正" note
+    // never folds into 最終改正 (S8), and a document with the note but no 最終改正
+    // line still separates them correctly.
+    let mut enacted = Vec::new();
+    let mut last_amended = Vec::new();
+    let mut full_amendment = Vec::new();
+    let mut seen_amended = false;
+    for line in &lines[1..boundary] {
+        if line.contains("の全部を改正する") {
+            full_amendment.push(line.as_str());
+        } else if line.starts_with("最終改正") || seen_amended {
+            seen_amended = true;
+            last_amended.push(line.as_str());
+        } else {
+            enacted.push(line.as_str());
+        }
+    }
 
     let after = &lines[boundary..];
     let (toc_lines, body_lines) = if after.first().map(String::as_str) == Some("目次") {
@@ -149,7 +164,12 @@ pub fn split(lines: &[String]) -> Split<'_> {
         let mut seen_chapter_one = false;
         let mut body_start = after.len();
         for (i, line) in after.iter().enumerate() {
-            if let LineKind::Chapter { number: 1, .. } = line_kind::classify(line) {
+            if let LineKind::Chapter {
+                number: 1,
+                branch: None,
+                ..
+            } = line_kind::classify(line)
+            {
                 if seen_chapter_one {
                     body_start = i;
                     break;
@@ -168,8 +188,9 @@ pub fn split(lines: &[String]) -> Split<'_> {
 
     Split {
         title,
-        enacted,
-        last_amended,
+        enacted_raw: enacted.join(" "),
+        last_amended_raw: last_amended.join(" "),
+        full_amendment_raw: full_amendment.join(" "),
         toc_lines,
         body_lines,
     }
@@ -178,22 +199,30 @@ pub fn split(lines: &[String]) -> Split<'_> {
 pub fn parse(pages: &[String]) -> anyhow::Result<Document> {
     let lines = flatten_lines(pages);
     let split = split(&lines);
-    let (body, supplementary_provisions, appended_tables) = parse_body(split.body_lines)?;
+    let (body, supplementary_provisions, appendices) = parse_body(split.body_lines)?;
+    let full = split.full_amendment_raw.trim();
     Ok(Document {
         title: split.title,
-        enacted: split.enacted,
-        last_amended: split.last_amended,
+        enacted: dates::parse_enactment(&split.enacted_raw),
+        last_amended: dates::parse_amendment(&split.last_amended_raw),
+        full_amendment_note: (!full.is_empty()).then(|| full.to_string()),
         body,
         supplementary_provisions,
-        appended_tables,
+        appendices,
     })
 }
 
-// --- Leaf builders (条/項/号): unchanged from the original 学則 parser. ---
+// --- Leaf builders (条/項/号/イロハ). ---
 
+struct SubitemB {
+    label: String,
+    text: Vec<String>,
+}
 struct ItemB {
     number: u32,
     text: Vec<String>,
+    subitems: Vec<Subitem>,
+    cur_subitem: Option<SubitemB>,
 }
 struct ParagraphB {
     number: u32,
@@ -202,17 +231,32 @@ struct ParagraphB {
     cur_item: Option<ItemB>,
 }
 struct ArticleB {
-    number: ArticleNumber,
+    number: BranchedNumber,
     title: Option<String>,
     paragraphs: Vec<Paragraph>,
     cur_paragraph: Option<ParagraphB>,
 }
 
+impl SubitemB {
+    fn finish(self) -> Subitem {
+        Subitem {
+            label: self.label,
+            text: normalize_prose(self.text.join("").trim()),
+        }
+    }
+}
 impl ItemB {
-    fn finish(self) -> Item {
+    fn close_subitem(&mut self) {
+        if let Some(s) = self.cur_subitem.take() {
+            self.subitems.push(s.finish());
+        }
+    }
+    fn finish(mut self) -> Item {
+        self.close_subitem();
         Item {
             number: self.number,
             text: normalize_prose(self.text.join("").trim()),
+            subitems: self.subitems,
         }
     }
 }
@@ -246,15 +290,19 @@ impl ArticleB {
         }
     }
     /// Appends a wrapped-line fragment to whichever unit is currently innermost
-    /// open (item > paragraph body), joining without a separator since Japanese
-    /// text wraps without spaces.
+    /// open (subitem > item > paragraph body), joining without a separator since
+    /// Japanese text wraps without spaces.
     fn append(&mut self, text: &str) {
         if text.is_empty() {
             return;
         }
         if let Some(p) = self.cur_paragraph.as_mut() {
             if let Some(item) = p.cur_item.as_mut() {
-                item.text.push(text.to_string());
+                if let Some(sub) = item.cur_subitem.as_mut() {
+                    sub.text.push(text.to_string());
+                } else {
+                    item.text.push(text.to_string());
+                }
             } else {
                 p.text.push(text.to_string());
             }
@@ -283,9 +331,13 @@ impl ContainerKind {
 /// One level of open structure. The bottom frame (`header == None`) is the
 /// document root; its `children` become `Document.body`.
 struct Frame {
-    header: Option<(ContainerKind, u32, String)>,
+    header: Option<(ContainerKind, BranchedNumber, String)>,
     children: Vec<BodyNode>,
     cur_article: Option<ArticleB>,
+    /// True from the moment this container opened until its first article /
+    /// caption / paragraph — while true, continuation lines extend the heading
+    /// title (recovers 2-line-wrapped 章/節 headings, S2).
+    title_open: bool,
 }
 
 impl Frame {
@@ -328,6 +380,7 @@ impl TreeBuilder {
                 header: None,
                 children: Vec::new(),
                 cur_article: None,
+                title_open: false,
             }],
             pending_title: None,
         }
@@ -348,7 +401,7 @@ impl TreeBuilder {
         self.top().children.push(node);
     }
 
-    fn open_container(&mut self, kind: ContainerKind, number: u32, title: String) {
+    fn open_container(&mut self, kind: ContainerKind, number: BranchedNumber, title: String) {
         self.top().close_article();
         let r = kind.rank();
         while self.stack.len() > 1 && self.top().rank() >= r {
@@ -358,11 +411,32 @@ impl TreeBuilder {
             header: Some((kind, number, title)),
             children: Vec::new(),
             cur_article: None,
+            title_open: true,
         });
     }
 
-    fn open_article(&mut self, number: ArticleNumber, title: Option<String>, rest: &str) {
-        self.top().close_article();
+    fn set_pending_title(&mut self, title: String) {
+        // A "（…）" line is a caption only when an article heading follows it. If
+        // one was pending and something else arrives, this new "（…）" proves the
+        // old one was inline body text, not a caption — flush it first.
+        self.flush_pending_title();
+        self.top().title_open = false;
+        self.pending_title = Some(title);
+    }
+
+    /// A pending "（…）" that turned out not to precede an article is inline body
+    /// text (a parenthetical clause on its own line); append it verbatim so it is
+    /// not lost and does not wrongly become a later article's title.
+    fn flush_pending_title(&mut self) {
+        if let Some(t) = self.pending_title.take() {
+            self.append_continuation(&format!("（{t}）"));
+        }
+    }
+
+    fn open_article(&mut self, number: BranchedNumber, title: Option<String>, rest: &str) {
+        let frame = self.top();
+        frame.title_open = false;
+        frame.close_article();
         let mut article = ArticleB {
             number,
             title,
@@ -405,6 +479,8 @@ impl TreeBuilder {
                 p.cur_item = Some(ItemB {
                     number,
                     text: Vec::new(),
+                    subitems: Vec::new(),
+                    cur_subitem: None,
                 });
                 article.append(rest);
             }
@@ -413,16 +489,58 @@ impl TreeBuilder {
         }
     }
 
-    fn append_continuation(&mut self, text: &str) {
-        if let Some(article) = self.cur_article() {
-            article.append(text);
+    fn open_subitem(&mut self, label: &str, rest: &str) {
+        // A 号 sub-item (イ/ロ/ハ) requires an open 号; otherwise it is an orphan
+        // and degrades to continuation text.
+        let has_item = self
+            .cur_article()
+            .and_then(|a| a.cur_paragraph.as_ref())
+            .is_some_and(|p| p.cur_item.is_some());
+        if !has_item {
+            self.append_continuation(rest);
+            return;
         }
-        // Continuation with no open article (before the first 条) is dropped,
-        // matching the original parser's behavior.
+        let item = self
+            .cur_article()
+            .unwrap()
+            .cur_paragraph
+            .as_mut()
+            .unwrap()
+            .cur_item
+            .as_mut()
+            .unwrap();
+        item.close_subitem();
+        item.cur_subitem = Some(SubitemB {
+            label: label.to_string(),
+            text: Vec::new(),
+        });
+        self.cur_article().unwrap().append(rest);
+    }
+
+    fn append_continuation(&mut self, text: &str) {
+        if self.cur_article().is_some() {
+            self.cur_article().unwrap().append(text);
+            return;
+        }
+        // No open article: if the current container's heading is still open,
+        // this is a wrapped heading line — extend the title (S2). A line starting
+        // with "（" is instead the start of an article caption, which ends the
+        // heading (freeze; a lone wrapped caption before the first 条 is dropped,
+        // as in the original parser). Otherwise drop.
+        let pending_none = self.pending_title.is_none();
+        let top = self.top();
+        if top.title_open && pending_none {
+            if text.starts_with('（') || text.starts_with('(') {
+                top.title_open = false;
+            } else if let Some((_, _, title)) = top.header.as_mut() {
+                *title = normalize_title(&format!("{title}{text}"));
+            }
+        }
     }
 
     /// Drains every open frame into the root and returns the finished body tree.
     fn finish(mut self) -> Vec<BodyNode> {
+        self.flush_pending_title();
         while self.stack.len() > 1 {
             self.pop_frame();
         }
@@ -431,11 +549,11 @@ impl TreeBuilder {
     }
 }
 
-// --- Raw blocks (附則/別表): unchanged accumulation, separate from the tree. ---
+// --- Raw blocks (附則/別表/様式): accumulated then structured on flush. ---
 
 enum RawKind {
     Supplementary,
-    Table,
+    Appendix(AppendixKind),
 }
 struct RawB {
     kind: RawKind,
@@ -447,43 +565,43 @@ struct RawB {
 #[allow(clippy::type_complexity)]
 fn parse_body(
     lines: &[String],
-) -> anyhow::Result<(
-    Vec<BodyNode>,
-    Vec<SupplementaryBlock>,
-    Vec<crate::model::AppendedTable>,
-)> {
-    let mut supplementary: Vec<SupplementaryBlock> = Vec::new();
-    let mut appended_tables: Vec<crate::model::AppendedTable> = Vec::new();
+) -> anyhow::Result<(Vec<BodyNode>, Vec<SupplProvision>, Vec<Appendix>)> {
+    let mut supplementary: Vec<SupplProvision> = Vec::new();
+    let mut appendices: Vec<Appendix> = Vec::new();
     let mut cur_raw: Option<RawB> = None;
 
     let flush_raw = |cur_raw: &mut Option<RawB>,
-                     supplementary: &mut Vec<SupplementaryBlock>,
-                     appended_tables: &mut Vec<crate::model::AppendedTable>| {
+                     supplementary: &mut Vec<SupplProvision>,
+                     appendices: &mut Vec<Appendix>| {
         if let Some(r) = cur_raw.take() {
             let text = r.text.join("\n").trim().to_string();
             match r.kind {
                 RawKind::Supplementary => {
-                    let references_tables = find_table_refs(&text);
-                    supplementary.push(SupplementaryBlock {
+                    supplementary.push(SupplProvision {
                         ordinal: supplementary.len() as u32 + 1,
+                        amendment: dates::parse_rule_number(&r.heading_raw),
+                        promulgated: dates::parse_era_date(&r.heading_raw),
+                        effective: dates::parse_effective(&text),
+                        references_tables: find_table_refs(&text),
                         heading_raw: r.heading_raw,
-                        raw_text: text,
-                        references_tables,
+                        text,
                     });
                 }
-                RawKind::Table => {
-                    appended_tables.push(crate::model::AppendedTable {
-                        id: r.heading_raw,
+                RawKind::Appendix(kind) => {
+                    appendices.push(Appendix {
+                        kind,
+                        id: normalize_title(&r.heading_raw),
                         related_article_raw: r.related_raw,
                         raw_text: text,
+                        cells: None,
                     });
                 }
             }
         }
     };
 
-    // The tree is finalized into `body` on the first 附則/別表 marker (everything
-    // after it is raw), or at end-of-input if no such marker appears.
+    // The tree is finalized into `body` on the first 附則/別表/様式 marker
+    // (everything after it is raw), or at end-of-input if no such marker appears.
     let mut body: Option<Vec<BodyNode>> = None;
     let take_tree = |tree: &mut Option<TreeBuilder>, body: &mut Option<Vec<BodyNode>>| {
         if let Some(t) = tree.take() {
@@ -495,13 +613,13 @@ fn parse_body(
     for line in lines {
         let kind = line_kind::classify(line);
 
-        // Once we've entered 附則/別表 raw-accumulation mode, only a new
-        // Supplementary/AppendedTable marker can end the current block — every
-        // other line, however it would otherwise classify, is raw text.
+        // Once we've entered raw-accumulation mode, only a new Supplementary /
+        // Appendix marker can end the current block — every other line, however
+        // it would otherwise classify, is raw text.
         if let Some(raw) = &mut cur_raw {
             match &kind {
                 LineKind::SupplementaryMarker { heading_raw } => {
-                    flush_raw(&mut cur_raw, &mut supplementary, &mut appended_tables);
+                    flush_raw(&mut cur_raw, &mut supplementary, &mut appendices);
                     cur_raw = Some(RawB {
                         kind: RawKind::Supplementary,
                         heading_raw: heading_raw.to_string(),
@@ -509,13 +627,14 @@ fn parse_body(
                         text: Vec::new(),
                     });
                 }
-                LineKind::AppendedTableMarker {
+                LineKind::AppendixMarker {
+                    kind,
                     id_raw,
                     related_raw,
                 } => {
-                    flush_raw(&mut cur_raw, &mut supplementary, &mut appended_tables);
+                    flush_raw(&mut cur_raw, &mut supplementary, &mut appendices);
                     cur_raw = Some(RawB {
-                        kind: RawKind::Table,
+                        kind: RawKind::Appendix(*kind),
                         heading_raw: id_raw.to_string(),
                         related_raw: related_raw.to_string(),
                         text: Vec::new(),
@@ -526,33 +645,51 @@ fn parse_body(
             continue;
         }
 
-        // Structural lines feed the main-provision tree; a 附則/別表 marker instead
-        // finalizes the tree and switches to raw accumulation. `builder` is
-        // borrowed only inside the tree-feeding arms so those arms don't clash
+        // Structural lines feed the main-provision tree; a 附則/別表/様式 marker
+        // instead finalizes the tree and switches to raw accumulation. `builder`
+        // is borrowed only inside the tree-feeding arms so those arms don't clash
         // with `take_tree`'s borrow of `tree`.
         macro_rules! builder {
             () => {
                 tree.as_mut()
-                    .expect("tree is present until the first 附則/別表")
+                    .expect("tree is present until the first 附則/別表/様式")
             };
         }
         match kind {
-            LineKind::Chapter { number, title_raw } => {
-                builder!().open_container(
+            LineKind::Chapter {
+                number,
+                branch,
+                title_raw,
+            } => {
+                let builder = builder!();
+                builder.flush_pending_title();
+                builder.open_container(
                     ContainerKind::Chapter,
-                    number,
+                    BranchedNumber {
+                        main: number,
+                        branch,
+                    },
                     normalize_title(title_raw),
                 );
             }
-            LineKind::Section { number, title_raw } => {
-                builder!().open_container(
+            LineKind::Section {
+                number,
+                branch,
+                title_raw,
+            } => {
+                let builder = builder!();
+                builder.flush_pending_title();
+                builder.open_container(
                     ContainerKind::Section,
-                    number,
+                    BranchedNumber {
+                        main: number,
+                        branch,
+                    },
                     normalize_title(title_raw),
                 );
             }
             LineKind::TitleAnnotation { title_raw } => {
-                builder!().pending_title = Some(title_raw.to_string());
+                builder!().set_pending_title(title_raw.to_string());
             }
             LineKind::ArticleHeading {
                 number,
@@ -562,8 +699,8 @@ fn parse_body(
                 let builder = builder!();
                 let title = builder.pending_title.take();
                 builder.open_article(
-                    ArticleNumber {
-                        article: number,
+                    BranchedNumber {
+                        main: number,
                         branch,
                     },
                     title,
@@ -571,15 +708,27 @@ fn parse_body(
                 );
             }
             LineKind::ParagraphMarker { number, rest } => {
-                builder!().open_paragraph(number, rest);
+                let builder = builder!();
+                builder.flush_pending_title();
+                builder.open_paragraph(number, rest);
             }
             LineKind::ItemMarker { number, rest } => {
-                builder!().open_item(number, rest);
+                let builder = builder!();
+                builder.flush_pending_title();
+                builder.open_item(number, rest);
+            }
+            LineKind::SubItemMarker { label, rest } => {
+                let builder = builder!();
+                builder.flush_pending_title();
+                builder.open_subitem(label, rest);
             }
             LineKind::Continuation(text) => {
-                builder!().append_continuation(text);
+                let builder = builder!();
+                builder.flush_pending_title();
+                builder.append_continuation(text);
             }
             LineKind::SupplementaryMarker { heading_raw } => {
+                builder!().flush_pending_title();
                 take_tree(&mut tree, &mut body);
                 cur_raw = Some(RawB {
                     kind: RawKind::Supplementary,
@@ -588,13 +737,15 @@ fn parse_body(
                     text: Vec::new(),
                 });
             }
-            LineKind::AppendedTableMarker {
+            LineKind::AppendixMarker {
+                kind,
                 id_raw,
                 related_raw,
             } => {
+                builder!().flush_pending_title();
                 take_tree(&mut tree, &mut body);
                 cur_raw = Some(RawB {
-                    kind: RawKind::Table,
+                    kind: RawKind::Appendix(kind),
                     heading_raw: id_raw.to_string(),
                     related_raw: related_raw.to_string(),
                     text: Vec::new(),
@@ -604,9 +755,9 @@ fn parse_body(
     }
 
     take_tree(&mut tree, &mut body);
-    flush_raw(&mut cur_raw, &mut supplementary, &mut appended_tables);
+    flush_raw(&mut cur_raw, &mut supplementary, &mut appendices);
 
-    Ok((body.unwrap_or_default(), supplementary, appended_tables))
+    Ok((body.unwrap_or_default(), supplementary, appendices))
 }
 
 fn find_table_refs(text: &str) -> Vec<String> {
@@ -627,12 +778,14 @@ fn find_table_refs(text: &str) -> Vec<String> {
 #[cfg(test)]
 mod tests {
     use super::*;
+    use crate::dates::Effective;
+    use crate::model::BodyNode;
 
     fn lines(s: &[&str]) -> Vec<String> {
         s.iter().map(|s| s.to_string()).collect()
     }
 
-    fn chapter(node: &BodyNode) -> (u32, &str, &[BodyNode]) {
+    fn chapter(node: &BodyNode) -> (BranchedNumber, &str, &[BodyNode]) {
         match node {
             BodyNode::Chapter {
                 number,
@@ -647,6 +800,13 @@ mod tests {
         match node {
             BodyNode::Article(a) => a,
             _ => panic!("expected an Article node"),
+        }
+    }
+
+    fn main_no(n: u32) -> BranchedNumber {
+        BranchedNumber {
+            main: n,
+            branch: None,
         }
     }
 
@@ -665,18 +825,12 @@ mod tests {
 
         assert_eq!(body.len(), 1);
         let (number, title, children) = chapter(&body[0]);
-        assert_eq!(number, 1);
+        assert_eq!(number, main_no(1));
         assert_eq!(title, "総則");
         assert_eq!(children.len(), 1);
 
         let a = article(&children[0]);
-        assert_eq!(
-            a.number,
-            ArticleNumber {
-                article: 1,
-                branch: None
-            }
-        );
+        assert_eq!(a.number, main_no(1));
         assert_eq!(a.title.as_deref(), Some("目的"));
         assert_eq!(a.paragraphs.len(), 2);
 
@@ -697,8 +851,6 @@ mod tests {
 
     #[test]
     fn chapter_less_document_puts_articles_at_the_root() {
-        // A short regulation with no 章/節 and no 目次: the articles hang directly
-        // off the body root, with no synthetic chapter.
         let (body, _, _) = parse_body(&lines(&[
             "（趣旨）",
             "第１条  この規則は、必要な事項を定める。",
@@ -708,37 +860,87 @@ mod tests {
         .unwrap();
 
         assert_eq!(body.len(), 2);
-        let a1 = article(&body[0]);
-        assert_eq!(a1.number.article, 1);
-        assert_eq!(a1.title.as_deref(), Some("趣旨"));
-        let a2 = article(&body[1]);
-        assert_eq!(a2.number.article, 2);
-        assert_eq!(a2.title.as_deref(), Some("対象"));
+        assert_eq!(article(&body[0]).number, main_no(1));
+        assert_eq!(article(&body[0]).title.as_deref(), Some("趣旨"));
+        assert_eq!(article(&body[1]).number, main_no(2));
     }
 
     #[test]
-    fn nested_section_under_chapter() {
+    fn section_branch_is_kept_distinct(/* S3 */) {
         let (body, _, _) = parse_body(&lines(&[
-            "第２章  通則",
-            "第１節  学年",
-            "第２条  学年は、４月１日に始まる。",
+            "第２章  免除",
+            "第１節  経済的理由による免除",
+            "第１条  本文一。",
+            "第１節の２  削除",
+            "第１節の３  大学等における修学の支援",
+            "第２条  本文二。",
         ]))
         .unwrap();
 
         let (_, _, ch_children) = chapter(&body[0]);
-        assert_eq!(ch_children.len(), 1);
-        match &ch_children[0] {
-            BodyNode::Section {
-                number,
-                title,
-                children,
-            } => {
-                assert_eq!(*number, 1);
-                assert_eq!(title, "学年");
-                assert_eq!(article(&children[0]).number.article, 2);
+        // Three distinct 節 nodes: 第1節 / 第1節の2 / 第1節の3.
+        let sections: Vec<&BodyNode> = ch_children
+            .iter()
+            .filter(|n| matches!(n, BodyNode::Section { .. }))
+            .collect();
+        assert_eq!(sections.len(), 3);
+        match sections[1] {
+            BodyNode::Section { number, title, .. } => {
+                assert_eq!(
+                    *number,
+                    BranchedNumber {
+                        main: 1,
+                        branch: Some(2)
+                    }
+                );
+                assert_eq!(title, "削除");
             }
-            _ => panic!("expected a Section node"),
+            _ => unreachable!(),
         }
+    }
+
+    #[test]
+    fn wrapped_section_heading_is_recovered(/* S2 */) {
+        // The 2nd line of a wrapped 節 heading must extend the title, not vanish.
+        let (body, _, _) = parse_body(&lines(&[
+            "第２章  免除",
+            "第１節の３  大学等における修学の支援に関する法律に基づく修学の支援を",
+            "受ける者に対する授業料の減免",
+            "第２条  本文。",
+        ]))
+        .unwrap();
+        let (_, _, ch_children) = chapter(&body[0]);
+        match &ch_children[0] {
+            BodyNode::Section { title, .. } => assert_eq!(
+                title,
+                "大学等における修学の支援に関する法律に基づく修学の支援を受ける者に対する授業料の減免"
+            ),
+            _ => panic!("expected a Section"),
+        }
+    }
+
+    #[test]
+    fn subitems_nest_under_their_item(/* S7 */) {
+        let (body, _, _) = parse_body(&lines(&[
+            "（休館日）",
+            "第10条  休館日は、次のとおりとする。",
+            "(1)  中央館",
+            "イ  国民の祝日に関する法律に規定する休日",
+            "ロ  12月28日から翌年の１月４日まで",
+            "ハ  その他館長が特に必要と認めた日",
+        ]))
+        .unwrap();
+
+        let a = article(&body[0]);
+        let item = &a.paragraphs[0].items[0];
+        assert_eq!(item.text, "中央館");
+        assert_eq!(item.subitems.len(), 3);
+        assert_eq!(item.subitems[0].label, "イ");
+        assert_eq!(
+            item.subitems[0].text,
+            "国民の祝日に関する法律に規定する休日"
+        );
+        assert_eq!(item.subitems[2].label, "ハ");
     }
 
     #[test]
@@ -752,109 +954,93 @@ mod tests {
 
         let (_, _, children) = chapter(&body[0]);
         assert_eq!(children.len(), 2);
-        assert_eq!(
-            article(&children[0]).number,
-            ArticleNumber {
-                article: 58,
-                branch: None
-            }
-        );
+        assert_eq!(article(&children[0]).number, main_no(58));
         assert_eq!(
             article(&children[1]).number,
-            ArticleNumber {
-                article: 58,
+            BranchedNumber {
+                main: 58,
                 branch: Some(2)
             }
         );
     }
 
     #[test]
-    fn orphan_paragraph_and_item_markers_downgrade_without_panicking() {
-        // A 項/号 marker with no open 条 must not panic; its text degrades to
-        // continuation (dropped here, since nothing is open before the article).
-        let (body, _, _) = parse_body(&lines(&[
-            "２  宙に浮いた項マーカー。",
-            "(1)  宙に浮いた号マーカー。",
-            "第１条  実際の条文。",
+    fn appendix_tables_and_styles_are_separated(/* S1 + S4 */) {
+        let (_, supplementary, appendices) = parse_body(&lines(&[
+            "第85条  本文。",
+            "附則",
+            "この規則は、令和７年４月１日から施行する。",
+            "別表（第16条関係）",
+            "学位  専攻分野",
+            "様式第１（第18条関係）",
+            "学位記のレイアウト",
         ]))
         .unwrap();
 
-        assert_eq!(body.len(), 1);
-        assert_eq!(article(&body[0]).number.article, 1);
+        // The 附則 body no longer swallows the 別表/様式.
+        assert_eq!(supplementary.len(), 1);
+        assert_eq!(
+            supplementary[0].text,
+            "この規則は、令和７年４月１日から施行する。"
+        );
+        assert!(matches!(supplementary[0].effective, Effective::Date(_)));
+
+        assert_eq!(appendices.len(), 2);
+        assert_eq!(appendices[0].kind, AppendixKind::Table);
+        assert_eq!(appendices[0].id, "別表");
+        assert_eq!(appendices[0].related_article_raw, "第16条関係");
+        assert_eq!(appendices[0].raw_text, "学位  専攻分野");
+        assert_eq!(appendices[1].kind, AppendixKind::Style);
+        assert_eq!(appendices[1].id, "様式第１");
     }
 
     #[test]
-    fn supplementary_and_table_blocks_stay_raw_and_ordered() {
-        let (body, supplementary, tables) = parse_body(&lines(&[
-            "第８章  雑則",
-            "第85条  雑則本文。",
+    fn founding_and_amendment_supplementary_blocks(/* structured 附則 */) {
+        let (_, supplementary, _) = parse_body(&lines(&[
+            "第85条  本文。",
             "附則",
-            "この規則は、施行日から施行する。",
-            "附  則（令和８年１月28日規則第58号）",
-            "１  改正後の別表第１に定める定員を加える。",
-            "別表第１（第５条関係）",
-            "学部  収容定員",
-            "医学部  660",
-            "別表第２（第56条関係）",
-            "研究科  収容定員",
+            "この規則は、平成16年４月１日から施行する。",
+            "附  則（令和７年３月25日規則第93号）",
+            "この規則は、令和７年４月１日から施行する。",
         ]))
         .unwrap();
-
-        let (_, _, children) = chapter(&body[0]);
-        assert_eq!(children.len(), 1);
 
         assert_eq!(supplementary.len(), 2);
-        assert_eq!(supplementary[0].ordinal, 1);
-        assert_eq!(supplementary[0].heading_raw, "附則");
+        assert!(supplementary[0].amendment.is_none()); // founding
+        assert!(supplementary[0].promulgated.is_none());
+        let amend = supplementary[1].amendment.as_ref().unwrap();
+        assert_eq!(amend.number, 93);
         assert_eq!(
-            supplementary[0].raw_text,
-            "この規則は、施行日から施行する。"
+            supplementary[1].promulgated.as_ref().unwrap().iso,
+            "2025-03-25"
         );
-        assert_eq!(supplementary[0].references_tables, Vec::<String>::new());
-
-        assert_eq!(supplementary[1].ordinal, 2);
-        assert_eq!(
-            supplementary[1].heading_raw,
-            "附  則（令和８年１月28日規則第58号）"
-        );
-        assert_eq!(
-            supplementary[1].references_tables,
-            vec!["別表第１".to_string()]
-        );
-
-        assert_eq!(tables.len(), 2);
-        assert_eq!(tables[0].id, "別表第１");
-        assert_eq!(tables[0].related_article_raw, "第５条関係");
-        assert_eq!(tables[0].raw_text, "学部  収容定員\n医学部  660");
-        assert_eq!(tables[1].id, "別表第２");
-        assert_eq!(tables[1].related_article_raw, "第56条関係");
     }
 
     #[test]
-    fn split_excludes_toc_from_the_body() {
+    fn split_partitions_preamble_and_separates_full_amendment(/* S8 */) {
         let all_lines = lines(&[
-            "高知大学学則",
-            "平成20年3月26日",
-            "最終改正 令和8年1月28日規則第58号",
-            "目次",
-            "第１章  総則（第１条）",
-            "第１章  総  則",
-            "（目的）",
+            "高知大学学生交流規則",
+            "平成25年３月27日",
+            "規則第109号",
+            "最終改正  令和８年２月13日規則第74号",
+            "高知大学学生交流規則（平成16年規則第139号）の全部を改正する。",
+            "（趣旨）",
             "第１条  本文。",
         ]);
         let split = split(&all_lines);
-        assert_eq!(split.toc_lines, &["目次", "第１章  総則（第１条）"]);
-        assert_eq!(split.body_lines[0], "第１章  総  則");
-        assert_eq!(split.enacted, "平成20年3月26日");
-        assert_eq!(split.last_amended, "最終改正 令和8年1月28日規則第58号");
-
-        let doc = parse(&all_lines).unwrap();
-        assert_eq!(doc.chapters().count(), 1);
+        assert_eq!(split.enacted_raw, "平成25年３月27日 規則第109号");
+        assert_eq!(
+            split.last_amended_raw,
+            "最終改正  令和８年２月13日規則第74号"
+        );
+        assert_eq!(
+            split.full_amendment_raw,
+            "高知大学学生交流規則（平成16年規則第139号）の全部を改正する。"
+        );
     }
 
     #[test]
     fn split_without_last_amended_keeps_the_rule_number_in_enacted() {
-        // A fee rule: title / 制定日 / 規則番号 / （趣旨）第１条 …, no 最終改正 line.
         let all_lines = lines(&[
             "高知大学国際交流会館料金規則",
             "平成16年４月１日",
@@ -863,9 +1049,8 @@ mod tests {
             "第１条  この規則は、必要な事項を定める。",
         ]);
         let split = split(&all_lines);
-        assert_eq!(split.enacted, "平成16年４月１日 規 則 第 152 号");
-        assert_eq!(split.last_amended, "");
-        // The caption back-up rule keeps （趣旨） in the body as the article title.
+        assert_eq!(split.enacted_raw, "平成16年４月１日 規 則 第 152 号");
+        assert_eq!(split.last_amended_raw, "");
         assert_eq!(split.body_lines[0], "（趣旨）");
         assert!(split.toc_lines.is_empty());
     }
@@ -875,5 +1060,17 @@ mod tests {
         let split = split(&[]);
         assert_eq!(split.title, "");
         assert!(split.body_lines.is_empty());
+    }
+
+    #[test]
+    fn orphan_paragraph_and_item_markers_downgrade_without_panicking() {
+        let (body, _, _) = parse_body(&lines(&[
+            "２  宙に浮いた項マーカー。",
+            "(1)  宙に浮いた号マーカー。",
+            "第１条  実際の条文。",
+        ]))
+        .unwrap();
+        assert_eq!(body.len(), 1);
+        assert_eq!(article(&body[0]).number, main_no(1));
     }
 }

@@ -5,18 +5,50 @@ input_file: sources/高知大学入学料免除及び徴収猶予規則.pdf
 ---
 {
   "title": "高知大学入学料免除及び徴収猶予規則",
-  "enacted": "平成16年４月１日 規則第145号",
-  "last_amended": "最終改正  令和７年４月21日規則第10号",
+  "enacted": {
+    "date": {
+      "era": "heisei",
+      "year": 16,
+      "month": 4,
+      "day": 1,
+      "iso": "2004-04-01"
+    },
+    "rule_number": {
+      "number": 145,
+      "year": null,
+      "raw": "規則第145号"
+    },
+    "raw": "平成16年４月１日 規則第145号"
+  },
+  "last_amended": {
+    "date": {
+      "era": "reiwa",
+      "year": 7,
+      "month": 4,
+      "day": 21,
+      "iso": "2025-04-21"
+    },
+    "rule_number": {
+      "number": 10,
+      "year": null,
+      "raw": "規則第10号"
+    },
+    "raw": "最終改正  令和７年４月21日規則第10号"
+  },
+  "full_amendment_note": null,
   "body": [
     {
       "type": "chapter",
-      "number": 1,
+      "number": {
+        "main": 1,
+        "branch": null
+      },
       "title": "総則",
       "children": [
         {
           "type": "article",
           "number": {
-            "article": 1,
+            "main": 1,
             "branch": null
           },
           "title": "趣旨",
@@ -32,13 +64,16 @@ input_file: sources/高知大学入学料免除及び徴収猶予規則.pdf
     },
     {
       "type": "chapter",
-      "number": 2,
+      "number": {
+        "main": 2,
+        "branch": null
+      },
       "title": "経済的理由等による免除",
       "children": [
         {
           "type": "article",
           "number": {
-            "article": 2,
+            "main": 2,
             "branch": null
           },
           "title": "免除の対象となる者",
@@ -49,19 +84,23 @@ input_file: sources/高知大学入学料免除及び徴収猶予規則.pdf
               "items": [
                 {
                   "number": 1,
-                  "text": "大学院に入学する者であって、経済的理由によって納付が困難であり、かつ、学業優秀と認められる者"
+                  "text": "大学院に入学する者であって、経済的理由によって納付が困難であり、かつ、学業優秀と認められる者",
+                  "subitems": []
                 },
                 {
                   "number": 2,
-                  "text": "大学院に入学する者であって、入学前１年以内において、入学する者の学資を主として負担している者（以下「学資負担者」という。）が死亡し、納付が著しく困難であると認められる場合"
+                  "text": "大学院に入学する者であって、入学前１年以内において、入学する者の学資を主として負担している者（以下「学資負担者」という。）が死亡し、納付が著しく困難であると認められる場合",
+                  "subitems": []
                 },
                 {
                   "number": 3,
-                  "text": "入学前１年以内において、入学する者又は学資負担者が風水害等の災害を受け、納付が著しく困難であると認められる場合"
+                  "text": "入学前１年以内において、入学する者又は学資負担者が風水害等の災害を受け、納付が著しく困難であると認められる場合",
+                  "subitems": []
                 },
                 {
                   "number": 4,
-                  "text": "前２号に準ずる場合であって、学長が相当と認める事由がある場合"
+                  "text": "前２号に準ずる場合であって、学長が相当と認める事由がある場合",
+                  "subitems": []
                 }
               ]
             }
@@ -70,7 +109,7 @@ input_file: sources/高知大学入学料免除及び徴収猶予規則.pdf
         {
           "type": "article",
           "number": {
-            "article": 3,
+            "main": 3,
             "branch": null
           },
           "title": "免除の許可",
@@ -85,7 +124,7 @@ input_file: sources/高知大学入学料免除及び徴収猶予規則.pdf
         {
           "type": "article",
           "number": {
-            "article": 4,
+            "main": 4,
             "branch": null
           },
           "title": "免除の額",
@@ -100,7 +139,7 @@ input_file: sources/高知大学入学料免除及び徴収猶予規則.pdf
         {
           "type": "article",
           "number": {
-            "article": 5,
+            "main": 5,
             "branch": null
           },
           "title": "申請の手続",
@@ -120,14 +159,14 @@ input_file: sources/高知大学入学料免除及び徴収猶予規則.pdf
         {
           "type": "article",
           "number": {
-            "article": 5,
+            "main": 5,
             "branch": 2
           },
           "title": null,
           "paragraphs": [
             {
               "number": 1,
-              "text": "第２条の規定にかかわらず、大学等における修学の支援に関する法律（令和元年法律第８号）、大学等における修学の支援に関する法律施行令（令和元年政令第 49号）及び大学等における修学の支援に関する法律施行規則（令和元年文部科学省令第６号）（以下「関係法令」という。）の規定に基づき、大学等における修学の支援に関する法律第４条に規定される授業料等減免対象者として認定を受けた者は、関係法令の規定に基づき算定された額について入学料の減免を受けることができる。",
+              "text": "第２条の規定にかかわらず、大学等における修学の支援に関する法律（令和元年法律第８号）、大学等における修学の支援に関する法律施行令（令和元年政令第49号）及び大学等における修学の支援に関する法律施行規則（令和元年文部科学省令第６号）（以下「関係法令」という。）の規定に基づき、大学等における修学の支援に関する法律第４条に規定される授業料等減免対象者として認定を受けた者は、関係法令の規定に基づき算定された額について入学料の減免を受けることができる。",
               "items": []
             },
             {
@@ -141,13 +180,16 @@ input_file: sources/高知大学入学料免除及び徴収猶予規則.pdf
     },
     {
       "type": "chapter",
-      "number": 3,
+      "number": {
+        "main": 3,
+        "branch": null
+      },
       "title": "徴収の猶予等",
       "children": [
         {
           "type": "article",
           "number": {
-            "article": 6,
+            "main": 6,
             "branch": null
           },
           "title": "徴収の猶予等",
@@ -158,15 +200,18 @@ input_file: sources/高知大学入学料免除及び徴収猶予規則.pdf
               "items": [
                 {
                   "number": 1,
-                  "text": "経済的理由によって納付期限までに納付が困難であり、かつ、学業優秀と認められる場合"
+                  "text": "経済的理由によって納付期限までに納付が困難であり、かつ、学業優秀と認められる場合",
+                  "subitems": []
                 },
                 {
                   "number": 2,
-                  "text": "入学前１年以内において、学資負担者が死亡し、又は入学する者若しくは学資負担者が風水害等の災害を受け、納付期限までに納付が困難であると認められる場合"
+                  "text": "入学前１年以内において、学資負担者が死亡し、又は入学する者若しくは学資負担者が風水害等の災害を受け、納付期限までに納付が困難であると認められる場合",
+                  "subitems": []
                 },
                 {
                   "number": 3,
-                  "text": "その他やむを得ない事情があると認められる場合"
+                  "text": "その他やむを得ない事情があると認められる場合",
+                  "subitems": []
                 }
               ]
             }
@@ -175,7 +220,7 @@ input_file: sources/高知大学入学料免除及び徴収猶予規則.pdf
         {
           "type": "article",
           "number": {
-            "article": 7,
+            "main": 7,
             "branch": null
           },
           "title": "徴収猶予の許可",
@@ -190,7 +235,7 @@ input_file: sources/高知大学入学料免除及び徴収猶予規則.pdf
         {
           "type": "article",
           "number": {
-            "article": 8,
+            "main": 8,
             "branch": null
           },
           "title": "申請の手続",
@@ -215,7 +260,7 @@ input_file: sources/高知大学入学料免除及び徴収猶予規則.pdf
         {
           "type": "article",
           "number": {
-            "article": 9,
+            "main": 9,
             "branch": null
           },
           "title": "徴収猶予の期間等",
@@ -241,13 +286,16 @@ input_file: sources/高知大学入学料免除及び徴収猶予規則.pdf
     },
     {
       "type": "chapter",
-      "number": 4,
+      "number": {
+        "main": 4,
+        "branch": null
+      },
       "title": "死亡等による免除",
       "children": [
         {
           "type": "article",
           "number": {
-            "article": 10,
+            "main": 10,
             "branch": null
           },
           "title": "死亡等による免除",
@@ -281,69 +329,269 @@ input_file: sources/高知大学入学料免除及び徴収猶予規則.pdf
     {
       "ordinal": 1,
       "heading_raw": "附  則",
-      "raw_text": "この規則は、平成16年４月１日から施行する。",
+      "amendment": null,
+      "promulgated": null,
+      "effective": {
+        "kind": "date",
+        "era": "heisei",
+        "year": 16,
+        "month": 4,
+        "day": 1,
+        "iso": "2004-04-01"
+      },
+      "text": "この規則は、平成16年４月１日から施行する。",
       "references_tables": []
     },
     {
       "ordinal": 2,
       "heading_raw": "附  則",
-      "raw_text": "この規則は、平成 16 年 11 月 26 日から施行する。",
+      "amendment": null,
+      "promulgated": null,
+      "effective": {
+        "kind": "date",
+        "era": "heisei",
+        "year": 16,
+        "month": 11,
+        "day": 26,
+        "iso": "2004-11-26"
+      },
+      "text": "この規則は、平成 16 年 11 月 26 日から施行する。",
       "references_tables": []
     },
     {
       "ordinal": 3,
       "heading_raw": "附  則（平成 17 年７月１日規則第 545 号）",
-      "raw_text": "この規則は、平成 17 年７月１日から施行する。",
+      "amendment": {
+        "number": 545,
+        "year": null,
+        "raw": "規則第 545 号"
+      },
+      "promulgated": {
+        "era": "heisei",
+        "year": 17,
+        "month": 7,
+        "day": 1,
+        "iso": "2005-07-01"
+      },
+      "effective": {
+        "kind": "date",
+        "era": "heisei",
+        "year": 17,
+        "month": 7,
+        "day": 1,
+        "iso": "2005-07-01"
+      },
+      "text": "この規則は、平成 17 年７月１日から施行する。",
       "references_tables": []
     },
     {
       "ordinal": 4,
       "heading_raw": "附  則（平成20年３月26日規則第127号）",
-      "raw_text": "この規則は、平成20年４月１日から施行する。",
+      "amendment": {
+        "number": 127,
+        "year": null,
+        "raw": "規則第127号"
+      },
+      "promulgated": {
+        "era": "heisei",
+        "year": 20,
+        "month": 3,
+        "day": 26,
+        "iso": "2008-03-26"
+      },
+      "effective": {
+        "kind": "date",
+        "era": "heisei",
+        "year": 20,
+        "month": 4,
+        "day": 1,
+        "iso": "2008-04-01"
+      },
+      "text": "この規則は、平成20年４月１日から施行する。",
       "references_tables": []
     },
     {
       "ordinal": 5,
       "heading_raw": "附  則（平成22年３月31日規則第124号）",
-      "raw_text": "この規則は、平成22年４月１日から施行する。",
+      "amendment": {
+        "number": 124,
+        "year": null,
+        "raw": "規則第124号"
+      },
+      "promulgated": {
+        "era": "heisei",
+        "year": 22,
+        "month": 3,
+        "day": 31,
+        "iso": "2010-03-31"
+      },
+      "effective": {
+        "kind": "date",
+        "era": "heisei",
+        "year": 22,
+        "month": 4,
+        "day": 1,
+        "iso": "2010-04-01"
+      },
+      "text": "この規則は、平成22年４月１日から施行する。",
       "references_tables": []
     },
     {
       "ordinal": 6,
       "heading_raw": "附  則（平成25年３月18日規則第94号）",
-      "raw_text": "この規則は、平成 25 年４月１日から施行する。",
+      "amendment": {
+        "number": 94,
+        "year": null,
+        "raw": "規則第94号"
+      },
+      "promulgated": {
+        "era": "heisei",
+        "year": 25,
+        "month": 3,
+        "day": 18,
+        "iso": "2013-03-18"
+      },
+      "effective": {
+        "kind": "date",
+        "era": "heisei",
+        "year": 25,
+        "month": 4,
+        "day": 1,
+        "iso": "2013-04-01"
+      },
+      "text": "この規則は、平成 25 年４月１日から施行する。",
       "references_tables": []
     },
     {
       "ordinal": 7,
       "heading_raw": "附  則（平成31年４月26日規則第15号）",
-      "raw_text": "この規則は、令和元年５月１日から施行する。",
+      "amendment": {
+        "number": 15,
+        "year": null,
+        "raw": "規則第15号"
+      },
+      "promulgated": {
+        "era": "heisei",
+        "year": 31,
+        "month": 4,
+        "day": 26,
+        "iso": "2019-04-26"
+      },
+      "effective": {
+        "kind": "date",
+        "era": "reiwa",
+        "year": 1,
+        "month": 5,
+        "day": 1,
+        "iso": "2019-05-01"
+      },
+      "text": "この規則は、令和元年５月１日から施行する。",
       "references_tables": []
     },
     {
       "ordinal": 8,
       "heading_raw": "附  則（令和２年３月24日規則第95号）",
-      "raw_text": "この規則は、令和２年４月１日から施行する。",
+      "amendment": {
+        "number": 95,
+        "year": null,
+        "raw": "規則第95号"
+      },
+      "promulgated": {
+        "era": "reiwa",
+        "year": 2,
+        "month": 3,
+        "day": 24,
+        "iso": "2020-03-24"
+      },
+      "effective": {
+        "kind": "date",
+        "era": "reiwa",
+        "year": 2,
+        "month": 4,
+        "day": 1,
+        "iso": "2020-04-01"
+      },
+      "text": "この規則は、令和２年４月１日から施行する。",
       "references_tables": []
     },
     {
       "ordinal": 9,
       "heading_raw": "附  則（令和４年２月９日規則第57号）",
-      "raw_text": "この規則は、令和４年４月１日から施行する。",
+      "amendment": {
+        "number": 57,
+        "year": null,
+        "raw": "規則第57号"
+      },
+      "promulgated": {
+        "era": "reiwa",
+        "year": 4,
+        "month": 2,
+        "day": 9,
+        "iso": "2022-02-09"
+      },
+      "effective": {
+        "kind": "date",
+        "era": "reiwa",
+        "year": 4,
+        "month": 4,
+        "day": 1,
+        "iso": "2022-04-01"
+      },
+      "text": "この規則は、令和４年４月１日から施行する。",
       "references_tables": []
     },
     {
       "ordinal": 10,
       "heading_raw": "附  則（令和６年11月14日規則第44号）",
-      "raw_text": "この規則は、令和７年４月１日から施行する。",
+      "amendment": {
+        "number": 44,
+        "year": null,
+        "raw": "規則第44号"
+      },
+      "promulgated": {
+        "era": "reiwa",
+        "year": 6,
+        "month": 11,
+        "day": 14,
+        "iso": "2024-11-14"
+      },
+      "effective": {
+        "kind": "date",
+        "era": "reiwa",
+        "year": 7,
+        "month": 4,
+        "day": 1,
+        "iso": "2025-04-01"
+      },
+      "text": "この規則は、令和７年４月１日から施行する。",
       "references_tables": []
     },
     {
       "ordinal": 11,
       "heading_raw": "附  則（令和７年４月 21 日規則第 10 号）",
-      "raw_text": "この規則は、令和７年４月 21 日から施行し、令和７年４月１日から適用する。",
+      "amendment": {
+        "number": 10,
+        "year": null,
+        "raw": "規則第 10 号"
+      },
+      "promulgated": {
+        "era": "reiwa",
+        "year": 7,
+        "month": 4,
+        "day": 21,
+        "iso": "2025-04-21"
+      },
+      "effective": {
+        "kind": "date",
+        "era": "reiwa",
+        "year": 7,
+        "month": 4,
+        "day": 21,
+        "iso": "2025-04-21"
+      },
+      "text": "この規則は、令和７年４月 21 日から施行し、令和７年４月１日から適用する。",
       "references_tables": []
     }
   ],
-  "appended_tables": []
+  "appendices": []
 }

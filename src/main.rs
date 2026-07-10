@@ -169,10 +169,10 @@ fn convert(
         .with_context(|| format!("failed to write {}", md_out.display()))?;
 
     Ok(format!(
-        "{} 章, {} 条, {} 附則, {} 別表",
+        "{} 章, {} 条, {} 附則, {} 別表/様式",
         document.chapters().count(),
         document.all_articles().len(),
         document.supplementary_provisions.len(),
-        document.appended_tables.len(),
+        document.appendices.len(),
     ))
 }
