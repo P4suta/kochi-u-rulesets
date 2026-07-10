@@ -1,14 +1,14 @@
-// A dependency-free hash router. Permalinks are keyed by the stable ruleset
-// `code` (never the display name), so a rule rename never breaks a link:
-//   #/            → the hub (browse + search), the default tab
-//   #/?q=…        → the hub with a full-text query active
-//   #/timeline    → the amendment timeline tab
-//   #/graph       → the reference graph tab
-//   #/210001      → a document (drill-in)
+// A dependency-free hash router. Everything lives on one page (`home`): browse +
+// search, the amendment timeline, and the reference graph are stacked sections
+// there, reached by in-page scrolling. The only other screen is a document
+// drill-in, permalinked by the stable ruleset `code` (never the display name), so
+// a rule rename never breaks a link:
+//   #/            → the one page (browse + search + 沿革 + 参照)
+//   #/?q=…        → the one page with a full-text query active
+//   #/210001      → a document
 //   #/210001/第5条 → a document scrolled to an article (anchor = the 条 label)
-// Numeric codes never collide with the reserved view keywords below.
 
-export type RouteName = 'home' | 'doc' | 'timeline' | 'graph'
+export type RouteName = 'home' | 'doc'
 
 export interface Route {
 	name: RouteName
@@ -20,7 +20,7 @@ export interface Route {
 	query?: string
 }
 
-/** Parse `location.hash` into a `Route`. Unknown shapes fall back to the hub. */
+/** Parse `location.hash` into a `Route`. Unknown shapes fall back to the page. */
 export function parseHash(hash: string): Route {
 	const raw = hash.replace(/^#\/?/, '')
 	const [pathPart, queryPart] = raw.split('?')
@@ -28,7 +28,6 @@ export function parseHash(hash: string): Route {
 	const segments = pathPart.split('/').filter(Boolean).map(decodeURIComponent)
 	const head = segments[0]
 
-	if (head === 'timeline' || head === 'graph') return { name: head }
 	if (head) return { name: 'doc', code: head, article: segments[1] }
 	return { name: 'home', query }
 }
@@ -42,10 +41,6 @@ export function href(route: Route): string {
 			return route.article
 				? `#/${route.code}/${encodeURIComponent(route.article)}`
 				: `#/${route.code}`
-		case 'timeline':
-			return '#/timeline'
-		case 'graph':
-			return '#/graph'
 	}
 }
 

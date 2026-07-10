@@ -9,16 +9,54 @@
 	import DocumentPage from './components/DocumentPage.svelte'
 	import GraphView from './components/GraphView.svelte'
 	import Timeline from './components/Timeline.svelte'
+	import LazyMount from './components/LazyMount.svelte'
 
 	// The site index gates every view (name/category/hasData lookups); load it once
 	// and pass it down. The WASM engine lives inside the `search` store.
 	const sitePromise: Promise<Site> = loadSite()
 
-	const tabs = [
-		{ name: 'home', label: '一覧・検索' },
-		{ name: 'timeline', label: '沿革' },
-		{ name: 'graph', label: '参照' },
+	// Everything lives on one page as stacked sections; the nav jumps between them.
+	const sections = [
+		{ id: 'sec-browse', label: '一覧・検索' },
+		{ id: 'sec-timeline', label: '沿革' },
+		{ id: 'sec-graph', label: '参照' },
 	] as const
+
+	let activeSection = $state<string>('sec-browse')
+
+	function jump(id: string): void {
+		document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+	}
+
+	// Scrollspy for the jump nav: highlight the section currently at the top.
+	$effect(() => {
+		if (router.route.name !== 'home') return
+		let obs: IntersectionObserver | null = null
+		const raf = requestAnimationFrame(() => {
+			const els = sections
+				.map((s) => document.getElementById(s.id))
+				.filter((e): e is HTMLElement => e !== null)
+			if (els.length === 0) return
+			const visible = new Set<string>()
+			obs = new IntersectionObserver(
+				(entries) => {
+					for (const e of entries) {
+						const id = (e.target as HTMLElement).id
+						if (e.isIntersecting) visible.add(id)
+						else visible.delete(id)
+					}
+					const top = els.find((e) => visible.has(e.id))
+					if (top) activeSection = top.id
+				},
+				{ rootMargin: '-120px 0px -55% 0px', threshold: 0 },
+			)
+			for (const e of els) obs.observe(e)
+		})
+		return () => {
+			cancelAnimationFrame(raf)
+			obs?.disconnect()
+		}
+	})
 
 	const themeIcon = $derived(theme.value === 'auto' ? '◐' : theme.value === 'light' ? '☀' : '☾')
 	const themeLabel = $derived(
@@ -34,7 +72,7 @@
 			<div class="flex items-center gap-3">
 				<a href={href({ name: 'home' })} class="shrink-0 font-bold text-ink">📜 高知大学 規則集</a>
 
-				<!-- Persistent search: typing from any tab jumps to the hub with results. -->
+				<!-- Persistent search: typing from a document jumps back to the page results. -->
 				<div
 					class="flex min-w-0 flex-1 items-center gap-2 rounded-full border border-line bg-card px-3 py-1.5 focus-within:border-accent"
 				>
@@ -71,19 +109,20 @@
 				</button>
 			</div>
 
-			<!-- Tab strip (hidden on a document drill-in). -->
-			{#if route.name !== 'doc'}
-				<nav class="mt-2 flex items-center gap-1 text-sm" aria-label="表示切替">
-					{#each tabs as t (t.name)}
-						<a
-							aria-current={route.name === t.name ? 'page' : undefined}
-							href={href({ name: t.name })}
-							class="rounded-md px-2.5 py-1 transition-colors hover:bg-fill {route.name === t.name
+			<!-- Section jump nav (only on the one page, not on a document drill-in). -->
+			{#if route.name === 'home'}
+				<nav class="mt-2 flex items-center gap-1 text-sm" aria-label="セクション">
+					{#each sections as s (s.id)}
+						<button
+							type="button"
+							onclick={() => jump(s.id)}
+							aria-current={activeSection === s.id ? 'true' : undefined}
+							class="rounded-md px-2.5 py-1 transition-colors hover:bg-fill {activeSection === s.id
 								? 'bg-fill-strong font-semibold text-ink'
 								: 'text-ink-2'}"
 						>
-							{t.label}
-						</a>
+							{s.label}
+						</button>
 					{/each}
 				</nav>
 			{/if}
@@ -97,13 +136,27 @@
 			{#if route.name === 'doc' && route.code}
 				<DocumentPage code={route.code} article={route.article} {site} />
 			{:else}
-				<!-- Browse stays mounted across hub/沿革/参照 (its facet + scroll persist);
-				     the query itself lives in the store, so it survives regardless. -->
-				<div style:display={route.name === 'home' ? '' : 'none'}>
+				<!-- One page: browse/search, then the timeline, then the graph. The two
+				     heavier sections mount lazily as they scroll into view. -->
+				<section id="sec-browse" class="scroll-mt-28">
 					<Browse {site} />
-				</div>
-				{#if route.name === 'timeline'}<Timeline {site} />{/if}
-				{#if route.name === 'graph'}<GraphView />{/if}
+				</section>
+
+				<section id="sec-timeline" class="mt-14 scroll-mt-28 border-t border-line pt-8">
+					<LazyMount>
+						{#snippet children()}
+							<Timeline {site} />
+						{/snippet}
+					</LazyMount>
+				</section>
+
+				<section id="sec-graph" class="mt-14 scroll-mt-28 border-t border-line pt-8">
+					<LazyMount>
+						{#snippet children()}
+							<GraphView />
+						{/snippet}
+					</LazyMount>
+				</section>
 			{/if}
 		{:catch err}
 			<p class="py-20 text-center text-ink-3">データの読み込みに失敗しました：{err.message}</p>
