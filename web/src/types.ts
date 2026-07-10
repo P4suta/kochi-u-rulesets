@@ -162,12 +162,3 @@ export interface Hit {
 	hl_len: number
 	score: number
 }
-
-// ── WASM live parser (crates/wasm parse) ──────────────────────────────────────
-
-export interface Parsed {
-	title: string
-	/** Pretty JSON identical to the native `build` output; parse to a `Document`. */
-	json: string
-	markdown: string
-}

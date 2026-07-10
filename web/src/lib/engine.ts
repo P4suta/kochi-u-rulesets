@@ -1,4 +1,4 @@
-import type { Hit, Parsed } from '../types'
+import type { Hit } from '../types'
 
 /** A worker reply: `id` echoes the request; `ok` gates `result` vs `error`. */
 type WorkerReply =
@@ -6,10 +6,10 @@ type WorkerReply =
 	| { id: number; ok: false; error: string }
 
 /**
- * The browser-side facade over the WASM core, which lives in a Web Worker
- * (engine.worker.ts) so the one-time index decode and each live PDF parse never
- * block the main thread. A single monotonic `id` correlates each request with its
- * reply through the `pending` map; the worker echoes the `id` back.
+ * The browser-side facade over the WASM search core, which lives in a Web Worker
+ * (engine.worker.ts) so the one-time index decode never blocks the main thread. A
+ * single monotonic `id` correlates each request with its reply through the
+ * `pending` map; the worker echoes the `id` back.
  *
  * Construction is cheap (it only spawns the worker); the search index is loaded
  * lazily inside the worker on the first `search`/`docCount` call, so nothing
@@ -53,13 +53,5 @@ export class Engine {
 	/** Number of documents in the search index (for a "N規則を検索" hint). */
 	docCount(): Promise<number> {
 		return this.send({ type: 'docCount' }) as Promise<number>
-	}
-
-	/**
-	 * Parse a dropped PDF's bytes live. The buffer is transferred (zero-copy);
-	 * ownership moves to the worker, so the caller must not touch it afterwards.
-	 */
-	parse(buffer: ArrayBuffer): Promise<Parsed> {
-		return this.send({ type: 'parse', buffer }, [buffer]) as Promise<Parsed>
 	}
 }
