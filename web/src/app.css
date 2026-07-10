@@ -1,0 +1,164 @@
+@import "tailwindcss";
+
+/* ── Design tokens ────────────────────────────────────────────────────────────
+   A calm, paper-like reading surface for legal prose. One warm-neutral ink scale,
+   a single indigo accent, and a restrained set of surfaces. Light values here;
+   the dark theme overrides the same variables under prefers-color-scheme below,
+   and the header's theme toggle stamps :root[data-theme] to force either way. */
+@theme {
+	--font-sans: 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', 'Noto Sans JP', 'Meiryo',
+		system-ui, sans-serif;
+	--font-serif: 'Hiragino Mincho ProN', 'Yu Mincho', 'YuMincho', 'Noto Serif JP', serif;
+
+	/* Minimum comfortable tap target (44px, the iOS/WCAG floor). */
+	--spacing-tap: 2.75rem;
+	/* Reading measure for legal prose. */
+	--spacing-measure: 44rem;
+
+	/* Ink */
+	--color-ink: #23201b;
+	--color-ink-2: #5a544c;
+	--color-ink-3: #857e73;
+
+	/* Accent (indigo). Clears WCAG AA as link text on paper and as a fill under
+	   on-accent text. */
+	--color-accent: #4f46b8;
+	--color-accent-hover: #423a9e;
+	--color-on-accent: #ffffff;
+
+	/* Surfaces */
+	--color-paper: #faf8f3;
+	--color-card: #ffffff;
+	--color-raised: #ffffff;
+
+	/* Structure (warm-neutral ink at semantic opacities) */
+	--color-line: rgb(35 32 27 / 0.10);
+	--color-line-soft: rgb(35 32 27 / 0.06);
+	--color-fill: rgb(35 32 27 / 0.04);
+	--color-fill-strong: rgb(35 32 27 / 0.08);
+	--color-backdrop: rgb(24 20 14 / 0.36);
+
+	/* Highlight for search matches. */
+	--color-mark: #ffe08a;
+	--color-mark-ink: #3b2f00;
+
+	--shadow-card: 0 1px 2px rgb(35 32 27 / 0.04), 0 4px 20px rgb(35 32 27 / 0.06);
+	--shadow-raised: 0 12px 40px rgb(35 32 27 / 0.16);
+
+	--radius-card: 0.75rem;
+}
+
+@media (prefers-color-scheme: dark) {
+	:root:not([data-theme]) {
+		--color-ink: #eae5db;
+		--color-ink-2: #b0a89b;
+		--color-ink-3: #857e73;
+		--color-accent: #a9a2f5;
+		--color-accent-hover: #bcb6f8;
+		--color-on-accent: #17141f;
+		--color-paper: #16140f;
+		--color-card: #201d17;
+		--color-raised: #262219;
+		--color-line: rgb(234 229 219 / 0.12);
+		--color-line-soft: rgb(234 229 219 / 0.07);
+		--color-fill: rgb(234 229 219 / 0.05);
+		--color-fill-strong: rgb(234 229 219 / 0.10);
+		--color-backdrop: rgb(0 0 0 / 0.6);
+		--color-mark: #7a5a00;
+		--color-mark-ink: #ffe9a8;
+		--shadow-card: 0 1px 2px rgb(0 0 0 / 0.3), 0 4px 20px rgb(0 0 0 / 0.4);
+		--shadow-raised: 0 12px 40px rgb(0 0 0 / 0.6);
+	}
+}
+
+/* Explicit theme override (header toggle stamps data-theme on :root). */
+:root[data-theme='dark'] {
+	--color-ink: #eae5db;
+	--color-ink-2: #b0a89b;
+	--color-ink-3: #857e73;
+	--color-accent: #a9a2f5;
+	--color-accent-hover: #bcb6f8;
+	--color-on-accent: #17141f;
+	--color-paper: #16140f;
+	--color-card: #201d17;
+	--color-raised: #262219;
+	--color-line: rgb(234 229 219 / 0.12);
+	--color-line-soft: rgb(234 229 219 / 0.07);
+	--color-fill: rgb(234 229 219 / 0.05);
+	--color-fill-strong: rgb(234 229 219 / 0.10);
+	--color-backdrop: rgb(0 0 0 / 0.6);
+	--color-mark: #7a5a00;
+	--color-mark-ink: #ffe9a8;
+	--shadow-card: 0 1px 2px rgb(0 0 0 / 0.3), 0 4px 20px rgb(0 0 0 / 0.4);
+	--shadow-raised: 0 12px 40px rgb(0 0 0 / 0.6);
+}
+
+:root {
+	color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+	:root:not([data-theme]) {
+		color-scheme: dark;
+	}
+}
+:root[data-theme='dark'] {
+	color-scheme: dark;
+}
+:root[data-theme='light'] {
+	color-scheme: light;
+}
+
+/* ── Base ─────────────────────────────────────────────────────────────────── */
+html {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	scroll-behavior: smooth;
+	/* Room for the sticky header when jumping to an article anchor. */
+	scroll-padding-top: 5rem;
+}
+
+body {
+	background: var(--color-paper);
+	color: var(--color-ink);
+	font-family: var(--font-sans);
+	letter-spacing: 0.01em;
+	-webkit-tap-highlight-color: transparent;
+}
+
+a {
+	color: var(--color-accent);
+	text-decoration: none;
+}
+a:hover {
+	color: var(--color-accent-hover);
+}
+
+mark {
+	background: var(--color-mark);
+	color: var(--color-mark-ink);
+	border-radius: 2px;
+	padding: 0 1px;
+}
+
+.glass {
+	background: color-mix(in srgb, var(--color-paper) 82%, transparent);
+	backdrop-filter: saturate(160%) blur(12px);
+	-webkit-backdrop-filter: saturate(160%) blur(12px);
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+	display: none;
+}
+.hide-scrollbar {
+	scrollbar-width: none;
+}
+
+/* Legal prose measure + vertical rhythm for the shared document renderer. */
+.prose-legal {
+	max-width: var(--spacing-measure);
+	line-height: 1.9;
+	text-align: justify;
+	word-break: normal;
+	overflow-wrap: anywhere;
+	line-break: strict;
+}
