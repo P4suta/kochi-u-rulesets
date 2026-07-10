@@ -107,6 +107,17 @@ fn every_ruleset_pdf_parses_and_snapshots() {
             );
         }
 
+        // Fallback integrity: an appendix must always carry its faithful
+        // raw_text, so a (future) confident-but-wrong cell reconstruction can
+        // never replace good content with garbage.
+        for appx in &doc.appendices {
+            assert!(
+                !appx.raw_text.trim().is_empty(),
+                "{name}: appendix {} has empty raw_text",
+                appx.id
+            );
+        }
+
         // --- Regression snapshot (the committed per-document fixture) ---
         insta::assert_json_snapshot!(name.clone(), doc);
     });
