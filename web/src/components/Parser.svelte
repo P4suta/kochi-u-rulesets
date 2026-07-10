@@ -117,9 +117,29 @@
 		fileSize = file.size // read before the buffer is transferred (neutered) into the worker
 		parsing = true
 
+		// The parse call is the only step that can poison the worker. With
+		// panic=abort a malformed PDF aborts the wasm module — that surfaces here
+		// either as a fast RuntimeError rejection OR (if it hangs) as the timeout.
+		// BOTH leave the shared module unusable, so `trapped` is set on ANY parse
+		// failure, not just the timeout, and later drops short-circuit.
+		let result: Parsed
 		try {
 			const buffer = await file.arrayBuffer()
-			const result = await parseWithTimeout(buffer)
+			result = await parseWithTimeout(buffer)
+		} catch (e) {
+			parsing = false
+			doc = null
+			parsed = null
+			trapped = true
+			error =
+				e === TIMED_OUT
+					? 'PDFの解析がタイムアウトしました。パーサが停止したため、ページを再読み込みしてからお試しください。'
+					: 'PDFを解析できませんでした。破損しているか対応外の形式のため、パーサが停止しました。ページを再読み込みしてから別のPDFをお試しください。'
+			return
+		}
+
+		// Parse succeeded; the remaining work is pure JS and never poisons the module.
+		try {
 			parsed = result
 			doc = JSON.parse(result.json) as Document
 			parsing = false
@@ -128,13 +148,7 @@
 			parsing = false
 			doc = null
 			parsed = null
-			if (e === TIMED_OUT) {
-				trapped = true
-				error =
-					'PDFを解析できませんでした。破損しているか対応外の形式のため、パーサが停止しました。ページを再読み込みしてから別のPDFをお試しください。'
-			} else {
-				error = `解析に失敗しました：${e instanceof Error ? e.message : String(e)}`
-			}
+			error = `解析結果の処理に失敗しました：${e instanceof Error ? e.message : String(e)}`
 		}
 	}
 
