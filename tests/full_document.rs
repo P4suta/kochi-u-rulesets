@@ -47,8 +47,7 @@ fn body_article_base_numbers_match_the_table_of_contents() {
 
 #[test]
 fn known_facts_about_the_real_document() {
-    let pages = extract::extract_pages(pdf_path()).unwrap();
-    let doc = structure::parse(&pages).unwrap();
+    let doc = extract::parse_pdf(pdf_path()).unwrap();
 
     assert_eq!(doc.title, "高知大学学則");
     let chapters: Vec<&BodyNode> = doc.chapters().collect();
@@ -107,6 +106,18 @@ fn known_facts_about_the_real_document() {
         );
         assert_eq!(t.kind, AppendixKind::Table);
     }
+
+    // 別表第１/第２ reconstruct into multi-column grids from glyph coordinates;
+    // the 入学定員 (275) and 収容定員 (1,100) of the first faculty land in the
+    // right columns. (別表第３/第４ are single-column lists and stay raw.)
+    let table1 = tables[0]
+        .cells
+        .as_ref()
+        .expect("別表第１ should reconstruct");
+    assert!(table1.rows[0].len() >= 4, "別表第１ should be multi-column");
+    let flat: String = table1.rows.iter().flatten().cloned().collect();
+    assert!(flat.contains("275") && flat.contains("1,100"));
+    assert!(tables[1].cells.is_some(), "別表第２ should reconstruct");
 
     // The founding 附則 block has no amendment citation and is ordinal 1.
     let founding = &doc.supplementary_provisions[0];

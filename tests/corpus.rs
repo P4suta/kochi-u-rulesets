@@ -62,8 +62,9 @@ fn every_ruleset_pdf_parses_and_snapshots() {
             return;
         }
 
+        // Full pipeline: text parse + coordinate-based 別表 grids.
         let doc =
-            structure::parse(&pages).unwrap_or_else(|e| panic!("{name}: parse failed: {e:#}"));
+            extract::parse_pdf(path).unwrap_or_else(|e| panic!("{name}: parse failed: {e:#}"));
 
         // --- Structural invariants (correctness floor) ---
         assert!(!doc.title.trim().is_empty(), "{name}: empty title");

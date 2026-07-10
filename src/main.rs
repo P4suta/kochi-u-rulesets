@@ -3,7 +3,7 @@ use std::path::{Path, PathBuf};
 
 use anyhow::{Context, anyhow};
 use clap::Parser;
-use kochi_u_rulesets::{extract, markdown, structure};
+use kochi_u_rulesets::{extract, markdown};
 
 /// Parse 高知大学 ruleset PDFs into structured JSON + human-readable Markdown.
 ///
@@ -161,18 +161,24 @@ fn convert(
         return Err(anyhow!("抽出テキストなし（スキャンPDFの可能性）"));
     }
 
-    let document = structure::parse(&pages)?;
+    let document = extract::parse_pdf(input)?;
     let json = serde_json::to_string_pretty(&document)?;
     std::fs::write(json_out, json)
         .with_context(|| format!("failed to write {}", json_out.display()))?;
     std::fs::write(md_out, markdown::render(&document))
         .with_context(|| format!("failed to write {}", md_out.display()))?;
 
+    let celled = document
+        .appendices
+        .iter()
+        .filter(|a| a.cells.is_some())
+        .count();
     Ok(format!(
-        "{} 章, {} 条, {} 附則, {} 別表/様式",
+        "{} 章, {} 条, {} 附則, {} 別表/様式（{} セル化）",
         document.chapters().count(),
         document.all_articles().len(),
         document.supplementary_provisions.len(),
         document.appendices.len(),
+        celled,
     ))
 }
