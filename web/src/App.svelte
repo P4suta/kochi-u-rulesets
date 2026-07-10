@@ -15,7 +15,8 @@
 	// and pass it down. The WASM engine lives inside the `search` store.
 	const sitePromise: Promise<Site> = loadSite()
 
-	// Everything lives on one page as stacked sections; the nav jumps between them.
+	// Everything is one page of stacked sections; a sticky ToC (like a document's)
+	// gives orientation and jump-to, scroll-synced.
 	const sections = [
 		{ id: 'sec-browse', label: '一覧・検索' },
 		{ id: 'sec-timeline', label: '沿革' },
@@ -28,7 +29,7 @@
 		document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' })
 	}
 
-	// Scrollspy for the jump nav: highlight the section currently at the top.
+	// Scrollspy — highlight the section currently at the top of the viewport.
 	$effect(() => {
 		if (router.route.name !== 'home') return
 		let obs: IntersectionObserver | null = null
@@ -48,7 +49,7 @@
 					const top = els.find((e) => visible.has(e.id))
 					if (top) activeSection = top.id
 				},
-				{ rootMargin: '-120px 0px -55% 0px', threshold: 0 },
+				{ rootMargin: '-72px 0px -60% 0px', threshold: 0 },
 			)
 			for (const e of els) obs.observe(e)
 		})
@@ -68,102 +69,110 @@
 
 <div class="min-h-dvh">
 	<header class="glass sticky top-0 z-50 border-b border-line">
-		<div class="mx-auto max-w-5xl px-4 py-3">
-			<div class="flex items-center gap-3">
-				<a href={href({ name: 'home' })} class="shrink-0 font-bold text-ink">📜 高知大学 規則集</a>
+		<div class="mx-auto flex max-w-6xl items-center gap-3 px-4 py-3">
+			<a href={href({ name: 'home' })} class="shrink-0 font-bold text-ink">📜 高知大学 規則集</a>
 
-				<!-- Persistent search: typing from a document jumps back to the page results. -->
-				<div
-					class="flex min-w-0 flex-1 items-center gap-2 rounded-full border border-line bg-card px-3 py-1.5 focus-within:border-accent"
-				>
-					<span class="shrink-0 text-ink-3" aria-hidden="true">🔍</span>
-					<input
-						value={search.query}
-						oninput={(e) => search.set(e.currentTarget.value)}
-						type="search"
-						enterkeyhint="search"
-						placeholder="全規則を条文検索…"
-						aria-label="全文検索"
-						class="min-w-0 flex-1 bg-transparent text-sm text-ink placeholder:text-ink-3 focus:outline-none"
-					/>
-					{#if search.query}
-						<button
-							type="button"
-							onclick={() => search.set('')}
-							aria-label="検索語を消去"
-							class="shrink-0 rounded px-1 text-ink-3 transition-colors hover:text-ink-2"
-						>
-							<span aria-hidden="true">✕</span>
-						</button>
-					{/if}
-				</div>
-
-				<button
-					type="button"
-					onclick={() => theme.cycle()}
-					class="shrink-0 rounded-md px-2 py-1 text-ink-2 transition-colors hover:bg-fill"
-					title={`テーマ: ${themeLabel}`}
-					aria-label={`テーマ切替（現在: ${themeLabel}）`}
-				>
-					<span aria-hidden="true">{themeIcon}</span>
-				</button>
+			<!-- Persistent search: typing from a document jumps back to the page results. -->
+			<div
+				class="flex min-w-0 flex-1 items-center gap-2 rounded-full border border-line bg-card px-3 py-1.5 focus-within:border-accent"
+			>
+				<span class="shrink-0 text-ink-3" aria-hidden="true">🔍</span>
+				<input
+					value={search.query}
+					oninput={(e) => search.set(e.currentTarget.value)}
+					type="search"
+					enterkeyhint="search"
+					placeholder="全規則を条文検索…"
+					aria-label="全文検索"
+					class="min-w-0 flex-1 bg-transparent text-sm text-ink placeholder:text-ink-3 focus:outline-none"
+				/>
+				{#if search.query}
+					<button
+						type="button"
+						onclick={() => search.set('')}
+						aria-label="検索語を消去"
+						class="shrink-0 rounded px-1 text-ink-3 transition-colors hover:text-ink-2"
+					>
+						<span aria-hidden="true">✕</span>
+					</button>
+				{/if}
 			</div>
 
-			<!-- Section jump nav (only on the one page, not on a document drill-in). -->
-			{#if route.name === 'home'}
-				<nav class="mt-2 flex items-center gap-1 text-sm" aria-label="セクション">
-					{#each sections as s (s.id)}
-						<button
-							type="button"
-							onclick={() => jump(s.id)}
-							aria-current={activeSection === s.id ? 'true' : undefined}
-							class="rounded-md px-2.5 py-1 transition-colors hover:bg-fill {activeSection === s.id
-								? 'bg-fill-strong font-semibold text-ink'
-								: 'text-ink-2'}"
-						>
-							{s.label}
-						</button>
-					{/each}
-				</nav>
-			{/if}
+			<button
+				type="button"
+				onclick={() => theme.cycle()}
+				class="shrink-0 rounded-md px-2 py-1 text-ink-2 transition-colors hover:bg-fill"
+				title={`テーマ: ${themeLabel}`}
+				aria-label={`テーマ切替（現在: ${themeLabel}）`}
+			>
+				<span aria-hidden="true">{themeIcon}</span>
+			</button>
 		</div>
 	</header>
 
-	<main class="mx-auto max-w-5xl px-4 py-6">
+	<main class="mx-auto max-w-6xl px-4 py-6">
 		{#await sitePromise}
 			<p class="py-20 text-center text-ink-3">読み込み中…</p>
 		{:then site}
 			{#if route.name === 'doc' && route.code}
 				<DocumentPage code={route.code} article={route.article} {site} />
 			{:else}
-				<!-- One page: browse/search, then the timeline, then the graph. The two
-				     heavier sections mount lazily as they scroll into view. -->
-				<section id="sec-browse" class="scroll-mt-28">
-					<Browse {site} />
-				</section>
+				<div class="lg:grid lg:grid-cols-[12rem_minmax(0,1fr)] lg:gap-8">
+					<!-- Sticky ToC rail (wide screens): the section index, scroll-synced. -->
+					<aside class="hidden lg:block">
+						<nav class="sticky top-20" aria-label="目次">
+							<p class="mb-2 text-xs font-semibold uppercase tracking-wide text-ink-3">目次</p>
+							<ul class="space-y-0.5">
+								{#each sections as s (s.id)}
+									<li>
+										<button
+											type="button"
+											onclick={() => jump(s.id)}
+											aria-current={activeSection === s.id ? 'true' : undefined}
+											class="block w-full rounded px-2 py-1 text-left text-sm transition-colors hover:bg-fill {activeSection ===
+											s.id
+												? 'bg-fill-strong font-medium text-ink'
+												: 'text-ink-2'}"
+										>
+											{s.label}
+										</button>
+									</li>
+								{/each}
+							</ul>
+						</nav>
+					</aside>
 
-				<section id="sec-timeline" class="mt-14 scroll-mt-28 border-t border-line pt-8">
-					<LazyMount>
-						{#snippet children()}
-							<Timeline {site} />
-						{/snippet}
-					</LazyMount>
-				</section>
+					<!-- One page: browse/search, then the timeline, then the graph. The two
+					     heavier sections mount lazily as they scroll into view. -->
+					<div class="min-w-0">
+						<section id="sec-browse" class="scroll-mt-20">
+							<Browse {site} />
+						</section>
 
-				<section id="sec-graph" class="mt-14 scroll-mt-28 border-t border-line pt-8">
-					<LazyMount>
-						{#snippet children()}
-							<GraphView />
-						{/snippet}
-					</LazyMount>
-				</section>
+						<section id="sec-timeline" class="mt-14 scroll-mt-20 border-t border-line pt-8">
+							<LazyMount>
+								{#snippet children()}
+									<Timeline {site} />
+								{/snippet}
+							</LazyMount>
+						</section>
+
+						<section id="sec-graph" class="mt-14 scroll-mt-20 border-t border-line pt-8">
+							<LazyMount>
+								{#snippet children()}
+									<GraphView />
+								{/snippet}
+							</LazyMount>
+						</section>
+					</div>
+				</div>
 			{/if}
 		{:catch err}
 			<p class="py-20 text-center text-ink-3">データの読み込みに失敗しました：{err.message}</p>
 		{/await}
 	</main>
 
-	<footer class="mx-auto max-w-5xl px-4 py-10 text-center text-xs text-ink-3">
+	<footer class="mx-auto max-w-6xl px-4 py-10 text-center text-xs text-ink-3">
 		非公式ビューアー。原典は
 		<a href="https://www.kochi-u.ac.jp/education-support/regulations/" target="_blank" rel="noopener">
 			高知大学 規則集
