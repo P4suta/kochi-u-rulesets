@@ -1,0 +1,85 @@
+name: Deploy site
+
+# Build the regulation browser and publish it to GitHub Pages. The native CLI
+# regenerates the structured data from sources/*.pdf, wasm-pack builds the
+# in-browser parser + search engine, and Vite bundles the Svelte frontend. Only
+# the built artifact is published — no generated data is committed to the repo.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'crates/**'
+      - 'web/**'
+      - 'sources/**'
+      - 'manifest.json'
+      - 'Cargo.toml'
+      - 'Cargo.lock'
+      - 'rust-toolchain.toml'
+      - '.github/workflows/deploy.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# One deploy at a time; let an in-flight publish finish rather than cancel it.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+
+      # rust-toolchain.toml pins the channel and the wasm32-unknown-unknown target.
+      - uses: actions-rust-lang/setup-rust-toolchain@v1
+
+      # Native build → structured data under web/public/ (docs, search.idx,
+      # graph.json, site.json), keyed by the stable `code` identifier.
+      - name: Generate site data
+        run: |
+          cargo build --release -p kochi-university-regulations
+          ./target/release/kochi-university-regulations build
+
+      - name: Install wasm-pack
+        uses: taiki-e/install-action@v2
+        with:
+          tool: wasm-pack@0.15.0
+
+      - name: Build wasm module
+        run: wasm-pack build crates/wasm --target web --out-dir ../../web/src/wasm
+
+      - uses: pnpm/action-setup@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: pnpm
+          cache-dependency-path: web/pnpm-lock.yaml
+
+      - name: Install frontend deps
+        working-directory: web
+        run: pnpm install --frozen-lockfile
+
+      - name: Build frontend
+        working-directory: web
+        env:
+          GITHUB_PAGES: 'true'
+        run: pnpm run build
+
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: web/dist
+
+      - id: deployment
+        uses: actions/deploy-pages@v4

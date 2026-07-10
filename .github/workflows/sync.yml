@@ -1,9 +1,10 @@
 name: Sync rulesets
 
-# Mirror the 高知大学 規則集 index weekly: pull the latest PDFs into sources/,
-# regenerate out/, and land any change on main as a signed Verified commit.
-# The commit diff (manifest.json = structural changes, out/*.md = content
-# changes) is itself the human-readable "what changed" report.
+# Mirror the 高知大学 規則集 index weekly: pull the latest PDFs into sources/ and
+# refresh manifest.json, landing any change on main as a signed Verified commit.
+# The commit diff (manifest.json = structural changes; the insta snapshots that
+# CI regenerates on a parse drift = content changes) is the "what changed" report.
+# Generated site data is NOT committed — deploy.yml regenerates it from sources/.
 
 on:
   schedule:
@@ -12,12 +13,12 @@ on:
   workflow_dispatch:
     inputs:
       dry-run:
-        description: Sync and regenerate only, without committing
+        description: Sync only, without committing
         type: boolean
         default: false
 
 permissions:
-  contents: write   # land sources/, out/, manifest.json on main via the GitHub API
+  contents: write   # land sources/ + manifest.json on main via the GitHub API
 
 concurrency:
   group: sync
@@ -32,13 +33,10 @@ jobs:
       - uses: actions-rust-lang/setup-rust-toolchain@v1
 
       - name: Build
-        run: cargo build --release
+        run: cargo build --release -p kochi-university-regulations
 
       - name: Sync index → sources/ + manifest.json
         run: ./target/release/kochi-university-regulations sync
-
-      - name: Rebuild out/
-        run: ./target/release/kochi-university-regulations build --out-dir out sources
 
       - name: Commit if changed
         if: ${{ !inputs.dry-run }}
@@ -46,5 +44,13 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           ./target/release/kochi-university-regulations commit \
-            --path sources --path out --path manifest.json \
+            --path sources --path manifest.json \
             --message "chore: sync rulesets ($(date -u +%Y-%m-%d))"
+
+      # A GITHUB_TOKEN push does not trigger other workflows, so kick the deploy
+      # explicitly to republish the site from the freshly synced sources.
+      - name: Trigger site deploy
+        if: ${{ !inputs.dry-run }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: gh workflow run deploy.yml --ref main
