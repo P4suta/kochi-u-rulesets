@@ -1,5 +1,5 @@
 ---
-source: tests/corpus.rs
+source: crates/core/tests/corpus.rs
 expression: doc
 input_file: sources/高知大学研究生規則.pdf
 ---
@@ -48,9 +48,11 @@ input_file: sources/高知大学研究生規則.pdf
         {
           "number": 1,
           "text": "この規則は、高知大学学則第21条第２項の規定に基づき、高知大学（以下「本学」という。）における研究生に関し必要な事項を定める。",
-          "items": []
+          "items": [],
+          "refs": []
         }
-      ]
+      ],
+      "subordinate_rules": []
     },
     {
       "type": "article",
@@ -67,21 +69,26 @@ input_file: sources/高知大学研究生規則.pdf
             {
               "number": 1,
               "text": "学部又は学内共同利用施設（以下「学部等」という。）にあっては、学士の学位を有する者又はこれと同等以上の学力があると認められる者",
-              "subitems": []
+              "subitems": [],
+              "refs": []
             },
             {
               "number": 2,
               "text": "大学院修士課程及び専門職学位課程にあっては、修士の学位若しくは専門職学位を有する者又はこれと同等以上の学力があると認められる者",
-              "subitems": []
+              "subitems": [],
+              "refs": []
             },
             {
               "number": 3,
               "text": "大学院博士課程にあっては、博士の学位を有する者又はこれと同等以上の学力があると認められる者",
-              "subitems": []
+              "subitems": [],
+              "refs": []
             }
-          ]
+          ],
+          "refs": []
         }
-      ]
+      ],
+      "subordinate_rules": []
     },
     {
       "type": "article",
@@ -98,36 +105,44 @@ input_file: sources/高知大学研究生規則.pdf
             {
               "number": 1,
               "text": "入学願書",
-              "subitems": []
+              "subitems": [],
+              "refs": []
             },
             {
               "number": 2,
               "text": "履歴書",
-              "subitems": []
+              "subitems": [],
+              "refs": []
             },
             {
               "number": 3,
               "text": "最終学校の卒業又は修了証明書",
-              "subitems": []
+              "subitems": [],
+              "refs": []
             },
             {
               "number": 4,
               "text": "その他学部等又は研究科が必要と認める書類",
-              "subitems": []
+              "subitems": [],
+              "refs": []
             }
-          ]
+          ],
+          "refs": []
         },
         {
           "number": 2,
           "text": "入学を志願する者が、官公庁又は会社等に勤務しているときは、事業目的の追求のため派遣するものでない旨及び在職のまま研究生として入学することについて差し支えない旨の所属長の確約・承諾書を提出しなければならない。",
-          "items": []
+          "items": [],
+          "refs": []
         },
         {
           "number": 3,
           "text": "入学を志願する者が現職教育のため任命権者の命により派遣される教職員であるときは、その旨の任命権者の証明書を提出しなければならない。",
-          "items": []
+          "items": [],
+          "refs": []
         }
-      ]
+      ],
+      "subordinate_rules": []
     },
     {
       "type": "article",
@@ -140,9 +155,11 @@ input_file: sources/高知大学研究生規則.pdf
         {
           "number": 1,
           "text": "前条の入学志願者については、学部等の教授会等又は研究科委員会において選考を行う。",
-          "items": []
+          "items": [],
+          "refs": []
         }
-      ]
+      ],
+      "subordinate_rules": []
     },
     {
       "type": "article",
@@ -155,14 +172,17 @@ input_file: sources/高知大学研究生規則.pdf
         {
           "number": 1,
           "text": "前条の選考により合格した者は、所定の期日までに入学料を納付しなければならない。",
-          "items": []
+          "items": [],
+          "refs": []
         },
         {
           "number": 2,
           "text": "学長は、前項の手続を完了した者に入学を許可する。",
-          "items": []
+          "items": [],
+          "refs": []
         }
-      ]
+      ],
+      "subordinate_rules": []
     },
     {
       "type": "article",
@@ -175,14 +195,17 @@ input_file: sources/高知大学研究生規則.pdf
         {
           "number": 1,
           "text": "研究生の研究期間は、原則として１か月以上１年以内とする。",
-          "items": []
+          "items": [],
+          "refs": []
         },
         {
           "number": 2,
           "text": "研究期間が満了しても、なお引き続き研究しようとする者は、学部等の教授会等又は研究科委員会の議を経て、研究期間を延長することができる。延長を許可する期間は、前項の規定を適用するものとする。",
-          "items": []
+          "items": [],
+          "refs": []
         }
-      ]
+      ],
+      "subordinate_rules": []
     },
     {
       "type": "article",
@@ -195,14 +218,17 @@ input_file: sources/高知大学研究生規則.pdf
         {
           "number": 1,
           "text": "研究生の指導教員は、学部長等又は研究科長の申出により、学長が定める。",
-          "items": []
+          "items": [],
+          "refs": []
         },
         {
           "number": 2,
           "text": "研究生は、指導教員の指導を受けて研究に従事するものとする。",
-          "items": []
+          "items": [],
+          "refs": []
         }
-      ]
+      ],
+      "subordinate_rules": []
     },
     {
       "type": "article",
@@ -215,9 +241,11 @@ input_file: sources/高知大学研究生規則.pdf
         {
           "number": 1,
           "text": "研究生は、指導教員及び担当教員の許可を得て、研究事項に関連のある講義又は実験実習等に出席することができる。",
-          "items": []
+          "items": [],
+          "refs": []
         }
-      ]
+      ],
+      "subordinate_rules": []
     },
     {
       "type": "article",
@@ -230,9 +258,11 @@ input_file: sources/高知大学研究生規則.pdf
         {
           "number": 1,
           "text": "研究生は、研究期間が満了したとき、又は研究期間の中途で研究を終えたときは、研究成果の概要を記載した研究終了報告書を指導教員を経て、学部長等又は研究科長に提出するものとする。",
-          "items": []
+          "items": [],
+          "refs": []
         }
-      ]
+      ],
+      "subordinate_rules": []
     },
     {
       "type": "article",
@@ -245,9 +275,11 @@ input_file: sources/高知大学研究生規則.pdf
         {
           "number": 1,
           "text": "学部長等又は研究科長は、前条の研究終了報告書を提出した者から申出があったときは、研究主題及び研究期間を記載した研究証明書を交付する。",
-          "items": []
+          "items": [],
+          "refs": []
         }
-      ]
+      ],
+      "subordinate_rules": []
     },
     {
       "type": "article",
@@ -260,9 +292,11 @@ input_file: sources/高知大学研究生規則.pdf
         {
           "number": 1,
           "text": "研究生は、研究期間に応じて第１学期及び第２学期に区分し、６か月分（研究期間が６か月未満のときは、その期間分）に相当する額を国立大学法人高知大学における授業料等費用に関する規則（以下「費用規則」という。）第４条第２項に定める徴収時期に納付するものとする。ただし、入学の時期が徴収の時期後である場合には、入学の日の属する月に納付するものとする。",
-          "items": []
+          "items": [],
+          "refs": []
         }
-      ]
+      ],
+      "subordinate_rules": []
     },
     {
       "type": "article",
@@ -275,14 +309,17 @@ input_file: sources/高知大学研究生規則.pdf
         {
           "number": 1,
           "text": "研究生の検定料、入学料及び授業料の額は、費用規則の定めるところによる。",
-          "items": []
+          "items": [],
+          "refs": []
         },
         {
           "number": 2,
           "text": "既納の検定料、入学料及び授業料は、還付しない。",
-          "items": []
+          "items": [],
+          "refs": []
         }
-      ]
+      ],
+      "subordinate_rules": []
     },
     {
       "type": "article",
@@ -295,9 +332,11 @@ input_file: sources/高知大学研究生規則.pdf
         {
           "number": 1,
           "text": "本学の規則に違反した者又は病気その他の理由により研究の見込みがない者に対しては、学部長等又は研究科長からの申出に基づき、学長が研究の中止を命ずる。",
-          "items": []
+          "items": [],
+          "refs": []
         }
-      ]
+      ],
+      "subordinate_rules": []
     },
     {
       "type": "article",
@@ -310,19 +349,23 @@ input_file: sources/高知大学研究生規則.pdf
         {
           "number": 1,
           "text": "現職教育のため任命権者の命により派遣されている研究生（以下本条において「現職教育研究生」という｡）については、第３条第１項、第５条第１項及び第11条の規定にかかわらず、検定料、入学料及び授業料は、徴収しない。",
-          "items": []
+          "items": [],
+          "refs": []
         },
         {
           "number": 2,
           "text": "現職教育研究生の入学志願手続については、第３条第１項の規定にかかわらず、提出書類のうち第３号を除くことができる。",
-          "items": []
+          "items": [],
+          "refs": []
         },
         {
           "number": 3,
           "text": "現職教育研究生の入学許可については、第５条第２項中「前項の手続を完了した者」とあるのは「選考に合格した者」と読み替えるものとする。",
-          "items": []
+          "items": [],
+          "refs": []
         }
-      ]
+      ],
+      "subordinate_rules": []
     },
     {
       "type": "article",
@@ -335,9 +378,11 @@ input_file: sources/高知大学研究生規則.pdf
         {
           "number": 1,
           "text": "研究生については、この規則に定めるもののほか、高知大学学則その他本学学生に関する規則を準用する。",
-          "items": []
+          "items": [],
+          "refs": []
         }
-      ]
+      ],
+      "subordinate_rules": []
     },
     {
       "type": "article",
@@ -350,9 +395,11 @@ input_file: sources/高知大学研究生規則.pdf
         {
           "number": 1,
           "text": "この規則に定めるもののほか、研究生に関し必要な事項は、学部等又は研究科において別に定める。",
-          "items": []
+          "items": [],
+          "refs": []
         }
-      ]
+      ],
+      "subordinate_rules": []
     }
   ],
   "supplementary_provisions": [
@@ -477,5 +524,6 @@ input_file: sources/高知大学研究生規則.pdf
       "references_tables": []
     }
   ],
-  "appendices": []
+  "appendices": [],
+  "authorities": []
 }

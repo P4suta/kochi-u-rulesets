@@ -1,5 +1,5 @@
 ---
-source: tests/corpus.rs
+source: crates/core/tests/corpus.rs
 expression: doc
 input_file: sources/高知大学合宿研修施設使用規則.pdf
 ---
@@ -48,9 +48,11 @@ input_file: sources/高知大学合宿研修施設使用規則.pdf
         {
           "number": 1,
           "text": "この規則は、高知大学課外活動施設管理運営規則第４条の規定に基づき、高知大学合宿研修施設（以下「合宿研修施設」という｡）の使用に関し必要な事項を定める。",
-          "items": []
+          "items": [],
+          "refs": []
         }
-      ]
+      ],
+      "subordinate_rules": []
     },
     {
       "type": "article",
@@ -67,21 +69,26 @@ input_file: sources/高知大学合宿研修施設使用規則.pdf
             {
               "number": 1,
               "text": "本学の企画する行事に関連して行う合宿",
-              "subitems": []
+              "subitems": [],
+              "refs": []
             },
             {
               "number": 2,
               "text": "本学の学生の課外活動のために行う合宿",
-              "subitems": []
+              "subitems": [],
+              "refs": []
             },
             {
               "number": 3,
               "text": "その他特に理事（教育担当）が必要と認めた場合",
-              "subitems": []
+              "subitems": [],
+              "refs": []
             }
-          ]
+          ],
+          "refs": []
         }
-      ]
+      ],
+      "subordinate_rules": []
     },
     {
       "type": "article",
@@ -94,14 +101,17 @@ input_file: sources/高知大学合宿研修施設使用規則.pdf
         {
           "number": 1,
           "text": "合宿研修施設を使用する課外活動団体の責任者（以下「責任者」という。）は、使用開始の10日前までに所定の様式により学長に願い出て、許可を得なければならない。",
-          "items": []
+          "items": [],
+          "refs": []
         },
         {
           "number": 2,
           "text": "前項の許可は、原則として申込順とする。ただし、状況により調整することがある。",
-          "items": []
+          "items": [],
+          "refs": []
         }
-      ]
+      ],
+      "subordinate_rules": []
     },
     {
       "type": "article",
@@ -114,14 +124,17 @@ input_file: sources/高知大学合宿研修施設使用規則.pdf
         {
           "number": 1,
           "text": "合宿研修施設の使用期間は、原則として１回につき７日以内とする。",
-          "items": []
+          "items": [],
+          "refs": []
         },
         {
           "number": 2,
           "text": "責任者は、鍵を使用当日の午後４時までに学務部学生支援課から受け取り、使用最終日の午後３時までに学務部学生支援課に返却しなければならない。",
-          "items": []
+          "items": [],
+          "refs": []
         }
-      ]
+      ],
+      "subordinate_rules": []
     },
     {
       "type": "article",
@@ -138,41 +151,50 @@ input_file: sources/高知大学合宿研修施設使用規則.pdf
             {
               "number": 1,
               "text": "使用目的以外の用途に使用しないこと。",
-              "subitems": []
+              "subitems": [],
+              "refs": []
             },
             {
               "number": 2,
               "text": "使用時間を厳守すること。",
-              "subitems": []
+              "subitems": [],
+              "refs": []
             },
             {
               "number": 3,
               "text": "建物及び備付物品を損傷しないこと。",
-              "subitems": []
+              "subitems": [],
+              "refs": []
             },
             {
               "number": 4,
               "text": "火気に特に注意し、所定の場所以外の熱器具等の使用及び喫煙をしないこと。",
-              "subitems": []
+              "subitems": [],
+              "refs": []
             },
             {
               "number": 5,
               "text": "整理整頓に心掛け、朝夕必ず清掃すること。",
-              "subitems": []
+              "subitems": [],
+              "refs": []
             },
             {
               "number": 6,
               "text": "盗難に留意し、全員不在となるときは、戸締りを厳重にすること。",
-              "subitems": []
+              "subitems": [],
+              "refs": []
             },
             {
               "number": 7,
               "text": "その他係員の指示事項を厳守すること。",
-              "subitems": []
+              "subitems": [],
+              "refs": []
             }
-          ]
+          ],
+          "refs": []
         }
-      ]
+      ],
+      "subordinate_rules": []
     },
     {
       "type": "article",
@@ -185,9 +207,11 @@ input_file: sources/高知大学合宿研修施設使用規則.pdf
         {
           "number": 1,
           "text": "責任者は、合宿日誌に所定の事項を記入しなければならない。",
-          "items": []
+          "items": [],
+          "refs": []
         }
-      ]
+      ],
+      "subordinate_rules": []
     },
     {
       "type": "article",
@@ -200,9 +224,11 @@ input_file: sources/高知大学合宿研修施設使用規則.pdf
         {
           "number": 1,
           "text": "この規則に違反した場合には、その使用を中止させることがある。",
-          "items": []
+          "items": [],
+          "refs": []
         }
-      ]
+      ],
+      "subordinate_rules": []
     },
     {
       "type": "article",
@@ -215,9 +241,11 @@ input_file: sources/高知大学合宿研修施設使用規則.pdf
         {
           "number": 1,
           "text": "責任者は、合宿終了後その旨を学務部学生支援課に連絡し、建物及び備付物品の点検を受け、合宿日誌を提出し、借用の用具を返還しなければならない。",
-          "items": []
+          "items": [],
+          "refs": []
         }
-      ]
+      ],
+      "subordinate_rules": []
     },
     {
       "type": "article",
@@ -230,9 +258,11 @@ input_file: sources/高知大学合宿研修施設使用規則.pdf
         {
           "number": 1,
           "text": "使用者が施設、器具等を故意又は過失により滅失又は毀損した場合は、本学の指示に従って速やかに修理し、又は本学の認定した額を賠償しなければならない。",
-          "items": []
+          "items": [],
+          "refs": []
         }
-      ]
+      ],
+      "subordinate_rules": []
     },
     {
       "type": "article",
@@ -245,9 +275,11 @@ input_file: sources/高知大学合宿研修施設使用規則.pdf
         {
           "number": 1,
           "text": "合宿研修施設に関する事務は、学務部学生支援課が行う。",
-          "items": []
+          "items": [],
+          "refs": []
         }
-      ]
+      ],
+      "subordinate_rules": []
     },
     {
       "type": "article",
@@ -260,9 +292,11 @@ input_file: sources/高知大学合宿研修施設使用規則.pdf
         {
           "number": 1,
           "text": "この規則に定めるもののほか、合宿研修施設の使用に関し必要な事項については、理事（教育担当）が定める。",
-          "items": []
+          "items": [],
+          "refs": []
         }
-      ]
+      ],
+      "subordinate_rules": []
     }
   ],
   "supplementary_provisions": [
@@ -439,5 +473,6 @@ input_file: sources/高知大学合宿研修施設使用規則.pdf
       "references_tables": []
     }
   ],
-  "appendices": []
+  "appendices": [],
+  "authorities": []
 }

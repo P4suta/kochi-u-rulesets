@@ -1,5 +1,5 @@
 ---
-source: tests/corpus.rs
+source: crates/core/tests/corpus.rs
 expression: doc
 input_file: sources/高知大学アドバイザー教員に関する規則.pdf
 ---
@@ -48,9 +48,11 @@ input_file: sources/高知大学アドバイザー教員に関する規則.pdf
         {
           "number": 1,
           "text": "高知大学に、アドバイザー教員の制度を置く。",
-          "items": []
+          "items": [],
+          "refs": []
         }
-      ]
+      ],
+      "subordinate_rules": []
     },
     {
       "type": "article",
@@ -63,9 +65,11 @@ input_file: sources/高知大学アドバイザー教員に関する規則.pdf
         {
           "number": 1,
           "text": "アドバイザー教員は、高知大学における基幹教員等に関する規則第３条第１号アに該当する基幹教員があたるものとする。",
-          "items": []
+          "items": [],
+          "refs": []
         }
-      ]
+      ],
+      "subordinate_rules": []
     },
     {
       "type": "article",
@@ -78,9 +82,11 @@ input_file: sources/高知大学アドバイザー教員に関する規則.pdf
         {
           "number": 1,
           "text": "アドバイザー教員は、学生の履修計画及び進学・就職等について助言を与えるとともに、学生生活全般について相談を受けるものとする。",
-          "items": []
+          "items": [],
+          "refs": []
         }
-      ]
+      ],
+      "subordinate_rules": []
     },
     {
       "type": "article",
@@ -93,9 +99,11 @@ input_file: sources/高知大学アドバイザー教員に関する規則.pdf
         {
           "number": 1,
           "text": "アドバイザー教員は、学生の便宜を図るためにオフィス・アワーを設けるものとする。",
-          "items": []
+          "items": [],
+          "refs": []
         }
-      ]
+      ],
+      "subordinate_rules": []
     },
     {
       "type": "article",
@@ -108,9 +116,11 @@ input_file: sources/高知大学アドバイザー教員に関する規則.pdf
         {
           "number": 1,
           "text": "アドバイザー教員は、学部教授会の求めがある場合には、学生に関する資料を作成し、報告しなければならない。",
-          "items": []
+          "items": [],
+          "refs": []
         }
-      ]
+      ],
+      "subordinate_rules": []
     },
     {
       "type": "article",
@@ -123,9 +133,11 @@ input_file: sources/高知大学アドバイザー教員に関する規則.pdf
         {
           "number": 1,
           "text": "その他アドバイザー教員の運用については、別に定める。",
-          "items": []
+          "items": [],
+          "refs": []
         }
-      ]
+      ],
+      "subordinate_rules": []
     }
   ],
   "supplementary_provisions": [
@@ -198,5 +210,6 @@ input_file: sources/高知大学アドバイザー教員に関する規則.pdf
       "references_tables": []
     }
   ],
-  "appendices": []
+  "appendices": [],
+  "authorities": []
 }

@@ -1,5 +1,5 @@
 ---
-source: tests/corpus.rs
+source: crates/core/tests/corpus.rs
 expression: doc
 input_file: sources/高知大学職業紹介業務運営規則.pdf
 ---
@@ -48,9 +48,11 @@ input_file: sources/高知大学職業紹介業務運営規則.pdf
         {
           "number": 1,
           "text": "この規則は、職業安定法（昭和22年法律第141号）第33条の２の規定に基づき、高知大学（以下｢本学｣という｡）において行う無料の職業紹介業務（以下「紹介業務」という。）に関し必要な事項を定める。",
-          "items": []
+          "items": [],
+          "refs": []
         }
-      ]
+      ],
+      "subordinate_rules": []
     },
     {
       "type": "article",
@@ -63,9 +65,11 @@ input_file: sources/高知大学職業紹介業務運営規則.pdf
         {
           "number": 1,
           "text": "紹介業務は、本学の学生及び卒業生（以下「学生等」という｡）を対象とする。",
-          "items": []
+          "items": [],
+          "refs": []
         }
-      ]
+      ],
+      "subordinate_rules": []
     },
     {
       "type": "article",
@@ -78,14 +82,17 @@ input_file: sources/高知大学職業紹介業務運営規則.pdf
         {
           "number": 1,
           "text": "紹介業務は、学務部学生支援課、医学部・病院事務部学生課及び総務部物部総務課学務室の担当係（以下「担当係」という。）が行う。",
-          "items": []
+          "items": [],
+          "refs": []
         },
         {
           "number": 2,
           "text": "紹介業務に関する連絡調整総括は、高知大学就職委員会委員長が行うものとする。",
-          "items": []
+          "items": [],
+          "refs": []
         }
-      ]
+      ],
+      "subordinate_rules": []
     },
     {
       "type": "article",
@@ -98,9 +105,11 @@ input_file: sources/高知大学職業紹介業務運営規則.pdf
         {
           "number": 1,
           "text": "求人の受付は、担当係で行うものとする。",
-          "items": []
+          "items": [],
+          "refs": []
         }
-      ]
+      ],
+      "subordinate_rules": []
     },
     {
       "type": "article",
@@ -117,26 +126,32 @@ input_file: sources/高知大学職業紹介業務運営規則.pdf
             {
               "number": 1,
               "text": "申込み内容が法令に違反するとき。",
-              "subitems": []
+              "subitems": [],
+              "refs": []
             },
             {
               "number": 2,
               "text": "法令により明示が義務付けられている労働条件を明示しないとき。",
-              "subitems": []
+              "subitems": [],
+              "refs": []
             },
             {
               "number": 3,
               "text": "賃金、労働時間等の労働条件が通常の労働条件に比べて著しく不適当であるとき。",
-              "subitems": []
+              "subitems": [],
+              "refs": []
             },
             {
               "number": 4,
               "text": "その職業が教育上不適当と認められるとき。",
-              "subitems": []
+              "subitems": [],
+              "refs": []
             }
-          ]
+          ],
+          "refs": []
         }
-      ]
+      ],
+      "subordinate_rules": []
     },
     {
       "type": "article",
@@ -149,14 +164,17 @@ input_file: sources/高知大学職業紹介業務運営規則.pdf
         {
           "number": 1,
           "text": "本学の学生等は、担当係が受理したいかなる求人についても求職を申し込むことができる。",
-          "items": []
+          "items": [],
+          "refs": []
         },
         {
           "number": 2,
           "text": "求職するに当たり、学生等はあらかじめ担当係に進路登録票を提出しなければならない。",
-          "items": []
+          "items": [],
+          "refs": []
         }
-      ]
+      ],
+      "subordinate_rules": []
     },
     {
       "type": "article",
@@ -169,14 +187,17 @@ input_file: sources/高知大学職業紹介業務運営規則.pdf
         {
           "number": 1,
           "text": "職業紹介に当たっては、学生等にその希望と能力に適合した職業を紹介し、求人者にその雇用条件に適合する学生等を紹介するものとする。",
-          "items": []
+          "items": [],
+          "refs": []
         },
         {
           "number": 2,
           "text": "求人者及び紹介を受けた学生等は、雇用関係が成立、中止又は終了した場合は、担当係にその旨を速やかに報告するものとする。",
-          "items": []
+          "items": [],
+          "refs": []
         }
-      ]
+      ],
+      "subordinate_rules": []
     },
     {
       "type": "article",
@@ -189,9 +210,11 @@ input_file: sources/高知大学職業紹介業務運営規則.pdf
         {
           "number": 1,
           "text": "同盟罷業又は作業所閉鎖の行われている事業所に対しては、その期間学生等を紹介しない。",
-          "items": []
+          "items": [],
+          "refs": []
         }
-      ]
+      ],
+      "subordinate_rules": []
     },
     {
       "type": "article",
@@ -204,9 +227,11 @@ input_file: sources/高知大学職業紹介業務運営規則.pdf
         {
           "number": 1,
           "text": "紹介業務については、学生等に対し、差別的な取扱いをしてはならない。",
-          "items": []
+          "items": [],
+          "refs": []
         }
-      ]
+      ],
+      "subordinate_rules": []
     },
     {
       "type": "article",
@@ -219,9 +244,11 @@ input_file: sources/高知大学職業紹介業務運営規則.pdf
         {
           "number": 1,
           "text": "紹介業務について、求人者、学生等その他の者から知り得た個人的な情報は、すべて秘密とし、これを他に漏らしてはならない。",
-          "items": []
+          "items": [],
+          "refs": []
         }
-      ]
+      ],
+      "subordinate_rules": []
     },
     {
       "type": "article",
@@ -234,9 +261,11 @@ input_file: sources/高知大学職業紹介業務運営規則.pdf
         {
           "number": 1,
           "text": "紹介業務上必要な帳簿及び書類は、担当係において保管するものとする。",
-          "items": []
+          "items": [],
+          "refs": []
         }
-      ]
+      ],
+      "subordinate_rules": []
     },
     {
       "type": "article",
@@ -249,9 +278,11 @@ input_file: sources/高知大学職業紹介業務運営規則.pdf
         {
           "number": 1,
           "text": "この規則に定めるもののほか、紹介業務に関し必要な事項は、別に定める。",
-          "items": []
+          "items": [],
+          "refs": []
         }
-      ]
+      ],
+      "subordinate_rules": []
     }
   ],
   "supplementary_provisions": [
@@ -350,5 +381,6 @@ input_file: sources/高知大学職業紹介業務運営規則.pdf
       "references_tables": []
     }
   ],
-  "appendices": []
+  "appendices": [],
+  "authorities": []
 }

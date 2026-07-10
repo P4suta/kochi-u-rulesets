@@ -209,6 +209,7 @@ pub fn parse(pages: &[String]) -> anyhow::Result<Document> {
         body,
         supplementary_provisions,
         appendices,
+        authorities: Vec::new(),
     })
 }
 
@@ -242,6 +243,7 @@ impl SubitemB {
         Subitem {
             label: self.label,
             text: normalize_prose(self.text.join("").trim()),
+            refs: Vec::new(),
         }
     }
 }
@@ -257,6 +259,7 @@ impl ItemB {
             number: self.number,
             text: normalize_prose(self.text.join("").trim()),
             subitems: self.subitems,
+            refs: Vec::new(),
         }
     }
 }
@@ -272,6 +275,7 @@ impl ParagraphB {
             number: self.number,
             text: normalize_prose(self.text.join("").trim()),
             items: self.items,
+            refs: Vec::new(),
         }
     }
 }
@@ -287,6 +291,7 @@ impl ArticleB {
             number: self.number,
             title: self.title,
             paragraphs: self.paragraphs,
+            subordinate_rules: Vec::new(),
         }
     }
     /// Appends a wrapped-line fragment to whichever unit is currently innermost

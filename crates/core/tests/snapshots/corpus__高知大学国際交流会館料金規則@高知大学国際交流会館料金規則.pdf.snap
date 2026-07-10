@@ -1,5 +1,5 @@
 ---
-source: tests/corpus.rs
+source: crates/core/tests/corpus.rs
 expression: doc
 input_file: sources/高知大学国際交流会館料金規則.pdf
 ---
@@ -34,9 +34,11 @@ input_file: sources/高知大学国際交流会館料金規則.pdf
         {
           "number": 1,
           "text": "この規則は、高知大学国際交流会館規則第10条第１項及び第３項の規定に基づき、高知大学国際交流会館の寄宿料、使用料の額及びその徴収方法並びに雑費の負担に関し必要な事項を定める。",
-          "items": []
+          "items": [],
+          "refs": []
         }
-      ]
+      ],
+      "subordinate_rules": []
     },
     {
       "type": "article",
@@ -49,9 +51,11 @@ input_file: sources/高知大学国際交流会館料金規則.pdf
         {
           "number": 1,
           "text": "外国人留学生の寄宿料の額は、国立大学法人高知大学における授業料等費用に関する規則の定めるところによる。",
-          "items": []
+          "items": [],
+          "refs": []
         }
-      ]
+      ],
+      "subordinate_rules": []
     },
     {
       "type": "article",
@@ -64,14 +68,17 @@ input_file: sources/高知大学国際交流会館料金規則.pdf
         {
           "number": 1,
           "text": "前条に規定する寄宿料は、毎月所定の日までに納入しなければならない。",
-          "items": []
+          "items": [],
+          "refs": []
         },
         {
           "number": 2,
           "text": "寄宿料は、入居又は退去の日が月の途中である場合にあっても、１か月の全額を納入しなければならない。",
-          "items": []
+          "items": [],
+          "refs": []
         }
-      ]
+      ],
+      "subordinate_rules": []
     },
     {
       "type": "article",
@@ -84,19 +91,23 @@ input_file: sources/高知大学国際交流会館料金規則.pdf
         {
           "number": 1,
           "text": "外国人研究者の使用料の額は、別に定める。",
-          "items": []
+          "items": [],
+          "refs": []
         },
         {
           "number": 2,
           "text": "月の途中において入居又は退去する場合、当該月の使用料の額は、前項に規定する日額にその入居許可日数（入居許可期間の初日及び退去の日は、それぞれ１日として計算する。）を乗じて得た額とする。",
-          "items": []
+          "items": [],
+          "refs": []
         },
         {
           "number": 3,
           "text": "既納の使用料は、還付しない。",
-          "items": []
+          "items": [],
+          "refs": []
         }
-      ]
+      ],
+      "subordinate_rules": []
     },
     {
       "type": "article",
@@ -109,14 +120,17 @@ input_file: sources/高知大学国際交流会館料金規則.pdf
         {
           "number": 1,
           "text": "入居期間が１か月以上の場合の使用料は、毎月所定の日までに納付しなければならない。ただし、入居又は退去の日が月の途中である場合の使用料は、入居の場合は月末までに、退去の場合は退去の前日までに納付しなければならない。",
-          "items": []
+          "items": [],
+          "refs": []
         },
         {
           "number": 2,
           "text": "入居期間が１か月に満たない場合の使用料は、使用開始前に納付しなければならない。",
-          "items": []
+          "items": [],
+          "refs": []
         }
-      ]
+      ],
+      "subordinate_rules": []
     },
     {
       "type": "article",
@@ -129,9 +143,11 @@ input_file: sources/高知大学国際交流会館料金規則.pdf
         {
           "number": 1,
           "text": "入居者が使用する光熱水料及びその他生活に要する経費（以下「光熱水料等」という。）は、その実費を負担しなければならない。",
-          "items": []
+          "items": [],
+          "refs": []
         }
-      ]
+      ],
+      "subordinate_rules": []
     }
   ],
   "supplementary_provisions": [
@@ -152,5 +168,6 @@ input_file: sources/高知大学国際交流会館料金規則.pdf
       "references_tables": []
     }
   ],
-  "appendices": []
+  "appendices": [],
+  "authorities": []
 }

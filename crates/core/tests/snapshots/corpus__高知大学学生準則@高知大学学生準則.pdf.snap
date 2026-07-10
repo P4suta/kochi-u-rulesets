@@ -1,5 +1,5 @@
 ---
-source: tests/corpus.rs
+source: crates/core/tests/corpus.rs
 expression: doc
 input_file: sources/高知大学学生準則.pdf
 ---
@@ -56,9 +56,11 @@ input_file: sources/高知大学学生準則.pdf
             {
               "number": 1,
               "text": "この準則は、高知大学学則（平成20年４月１日施行。以下「学則」という。）の施行に関し、高知大学学生（以下「学生」という。）の守るべき必要な事項について定めることを目的とする。",
-              "items": []
+              "items": [],
+              "refs": []
             }
-          ]
+          ],
+          "subordinate_rules": []
         }
       ]
     },
@@ -85,26 +87,32 @@ input_file: sources/高知大学学生準則.pdf
                 {
                   "number": 1,
                   "text": "宣誓書",
-                  "subitems": []
+                  "subitems": [],
+                  "refs": []
                 },
                 {
                   "number": 2,
                   "text": "身上調書",
-                  "subitems": []
+                  "subitems": [],
+                  "refs": []
                 },
                 {
                   "number": 3,
                   "text": "学資負担者届",
-                  "subitems": []
+                  "subitems": [],
+                  "refs": []
                 },
                 {
                   "number": 4,
                   "text": "その他本学の指定するもの",
-                  "subitems": []
+                  "subitems": [],
+                  "refs": []
                 }
-              ]
+              ],
+              "refs": []
             }
-          ]
+          ],
+          "subordinate_rules": []
         },
         {
           "type": "article",
@@ -117,19 +125,23 @@ input_file: sources/高知大学学生準則.pdf
             {
               "number": 1,
               "text": "保証人は、本学の教育方針に協力し、保証する学生の身上について、連帯責任を負うものとする。",
-              "items": []
+              "items": [],
+              "refs": []
             },
             {
               "number": 2,
               "text": "保証人は、保護者又は本学がこれに準ずるものと認める者とする。",
-              "items": []
+              "items": [],
+              "refs": []
             },
             {
               "number": 3,
               "text": "学生は、保証人を変更したときその他の保証人に関して届出をした事項に変更があったときは、直ちに第10条に定める身上異動届を提出しなければならない。",
-              "items": []
+              "items": [],
+              "refs": []
             }
-          ]
+          ],
+          "subordinate_rules": []
         },
         {
           "type": "article",
@@ -142,19 +154,23 @@ input_file: sources/高知大学学生準則.pdf
             {
               "number": 1,
               "text": "学資負担者は、学生と連帯して授業料・寄宿料債務を負担するものとする。",
-              "items": []
+              "items": [],
+              "refs": []
             },
             {
               "number": 2,
               "text": "学資負担者は、家計支持者又は本学がこれに準ずるものと認める者とする。",
-              "items": []
+              "items": [],
+              "refs": []
             },
             {
               "number": 3,
               "text": "学生は、学資負担者を変更したとき、又は学資負担者の住所に異動があったときは、直ちに学資負担者届を再提出しなければならない。",
-              "items": []
+              "items": [],
+              "refs": []
             }
-          ]
+          ],
+          "subordinate_rules": []
         }
       ]
     },
@@ -177,9 +193,11 @@ input_file: sources/高知大学学生準則.pdf
             {
               "number": 1,
               "text": "学生は、入学時に所定の様式により、３カ月以内に撮影した無帽半身像の写真（縦4.0cm、横3.0cm。以下「写真」という。）を学生証交付願に添えて提出し、学生証の交付を受けるものとする。",
-              "items": []
+              "items": [],
+              "refs": []
             }
-          ]
+          ],
+          "subordinate_rules": []
         },
         {
           "type": "article",
@@ -192,14 +210,17 @@ input_file: sources/高知大学学生準則.pdf
             {
               "number": 1,
               "text": "学生証は、常時携帯し、本学教職員の請求があったときは、これを提示しなければならない。",
-              "items": []
+              "items": [],
+              "refs": []
             },
             {
               "number": 2,
               "text": "学生証を携帯しないときは、教室、学術情報基盤図書館等本学の施設を利用できないことがある。",
-              "items": []
+              "items": [],
+              "refs": []
             }
-          ]
+          ],
+          "subordinate_rules": []
         },
         {
           "type": "article",
@@ -212,9 +233,11 @@ input_file: sources/高知大学学生準則.pdf
             {
               "number": 1,
               "text": "学生証は、学部の修業年限又は大学院の標準修業年限の間、有効とする。ただし、延長しなければならない場合は、毎学年の初めに交付申請の手続をとるものとする。",
-              "items": []
+              "items": [],
+              "refs": []
             }
-          ]
+          ],
+          "subordinate_rules": []
         },
         {
           "type": "article",
@@ -227,9 +250,11 @@ input_file: sources/高知大学学生準則.pdf
             {
               "number": 1,
               "text": "学生証を紛失し、又は汚損したときは、所定の様式により、直ちに学生証再交付願を提出し、再交付を受けなければならない。",
-              "items": []
+              "items": [],
+              "refs": []
             }
-          ]
+          ],
+          "subordinate_rules": []
         },
         {
           "type": "article",
@@ -242,9 +267,11 @@ input_file: sources/高知大学学生準則.pdf
             {
               "number": 1,
               "text": "学生証は、卒業、退学又は除籍等により学生の身分を失ったときは、直ちに返納しなければならない。",
-              "items": []
+              "items": [],
+              "refs": []
             }
-          ]
+          ],
+          "subordinate_rules": []
         }
       ]
     },
@@ -267,14 +294,17 @@ input_file: sources/高知大学学生準則.pdf
             {
               "number": 1,
               "text": "学生は、入学時には、所定の様式により、現住所等届を提出しなければならない。",
-              "items": []
+              "items": [],
+              "refs": []
             },
             {
               "number": 2,
               "text": "学生は、現住所等届により届出をした事項に変更があったときは、直ちに現住所等届を再提出しなければならない。ただし、現住所等届の再提出に代えて、教務情報システム上の登録機能により変更の届出を行うことができる。",
-              "items": []
+              "items": [],
+              "refs": []
             }
-          ]
+          ],
+          "subordinate_rules": []
         },
         {
           "type": "article",
@@ -287,9 +317,11 @@ input_file: sources/高知大学学生準則.pdf
             {
               "number": 1,
               "text": "学生は、改姓等その他一身上に異動があったときは、所定の様式により、直ちに身上異動届を提出しなければならない。",
-              "items": []
+              "items": [],
+              "refs": []
             }
-          ]
+          ],
+          "subordinate_rules": []
         }
       ]
     },
@@ -312,14 +344,17 @@ input_file: sources/高知大学学生準則.pdf
             {
               "number": 1,
               "text": "医学部においては、学生は病気その他の事由により欠席しようとするときは、所定の様式により、欠席届を学部長に提出しなければならない。ただし、病気による欠席が７日以上にわたるときは、医師の診断書を添付するものとする。",
-              "items": []
+              "items": [],
+              "refs": []
             },
             {
               "number": 2,
               "text": "やむを得ない事由により事前に届け出ることができなかったときは、その事由を付して、事後速やかに届け出なければならない。",
-              "items": []
+              "items": [],
+              "refs": []
             }
-          ]
+          ],
+          "subordinate_rules": []
         }
       ]
     },
@@ -342,14 +377,17 @@ input_file: sources/高知大学学生準則.pdf
             {
               "number": 1,
               "text": "学生は、毎年定期又は臨時に本学の実施する健康診断を受けなければならない。",
-              "items": []
+              "items": [],
+              "refs": []
             },
             {
               "number": 2,
               "text": "学生は、健康診断の結果に基づき、学長が行う健康管理に関する指導に従わなければならない。",
-              "items": []
+              "items": [],
+              "refs": []
             }
-          ]
+          ],
+          "subordinate_rules": []
         }
       ]
     },
@@ -372,14 +410,17 @@ input_file: sources/高知大学学生準則.pdf
             {
               "number": 1,
               "text": "休学、復学、退学、転学又は留学の許可を受けようとする者は、学則に基づき、それぞれ所定の様式により、休学願、復学願、退学願、転学願又は留学願に必要な書類を添えて学長に願い出なければならない。",
-              "items": []
+              "items": [],
+              "refs": []
             },
             {
               "number": 2,
               "text": "転学部、転学科又は転課程の許可を受けようとする者は、学則に基づき、所定の様式により、転学部・転学科・転課程許可申請書に必要な書類を添えて学長に申請しなければならない。",
-              "items": []
+              "items": [],
+              "refs": []
             }
-          ]
+          ],
+          "subordinate_rules": []
         }
       ]
     },
@@ -402,9 +443,11 @@ input_file: sources/高知大学学生準則.pdf
             {
               "number": 1,
               "text": "学生が、本学の学生を構成員とする団体を設立又は団体として学外の他団体へ参加若しくは加入しようとするときは、所定の様式により、学生団体設立承認願に団体の規約、役員名簿及び会員名簿を添えて提出し、学長の承認を得なければならない。",
-              "items": []
+              "items": [],
+              "refs": []
             }
-          ]
+          ],
+          "subordinate_rules": []
         },
         {
           "type": "article",
@@ -417,14 +460,17 @@ input_file: sources/高知大学学生準則.pdf
             {
               "number": 1,
               "text": "前条により設立を承認された団体が、団体活動を継続しようとするときは、前条に準じ毎年４月末日までに届け出なければならない。",
-              "items": []
+              "items": [],
+              "refs": []
             },
             {
               "number": 2,
               "text": "前項の届出がない団体は、解散したものとみなす。",
-              "items": []
+              "items": [],
+              "refs": []
             }
-          ]
+          ],
+          "subordinate_rules": []
         },
         {
           "type": "article",
@@ -437,14 +483,17 @@ input_file: sources/高知大学学生準則.pdf
             {
               "number": 1,
               "text": "第14条により設立を承認された団体が、事務所として本学の施設又は場所を使用しようとするときは、所定の様式により、学生団体事務所借用許可願を提出し、許可を得なければならない。",
-              "items": []
+              "items": [],
+              "refs": []
             },
             {
               "number": 2,
               "text": "前項の許可を得た者は、その団体の事務所に関して生じた一切の責に任じなければならない。",
-              "items": []
+              "items": [],
+              "refs": []
             }
-          ]
+          ],
+          "subordinate_rules": []
         },
         {
           "type": "article",
@@ -457,14 +506,17 @@ input_file: sources/高知大学学生準則.pdf
             {
               "number": 1,
               "text": "団体を解散しようとするときは、顧問教員の同意を得て、所定の様式により、団体解散届を提出しなければならない。",
-              "items": []
+              "items": [],
+              "refs": []
             },
             {
               "number": 2,
               "text": "学生の団体の行為が、本学の目的に著しく反すると認められたときは、学長は、その解散を命ずることができる。",
-              "items": []
+              "items": [],
+              "refs": []
             }
-          ]
+          ],
+          "subordinate_rules": []
         }
       ]
     },
@@ -487,14 +539,17 @@ input_file: sources/高知大学学生準則.pdf
             {
               "number": 1,
               "text": "学生又は団体が、学内又は学外で本学に関係のある名称を使用して集会その他の行為をしようとするときは、責任者を定め、所定の様式により、学生活動承認願を７日前までに提出し、学長の承認を得なければならない。",
-              "items": []
+              "items": [],
+              "refs": []
             },
             {
               "number": 2,
               "text": "集会、講演会等が、本学の目的に著しく反すると認められるときは、学長は、その解散を命ずることができる。",
-              "items": []
+              "items": [],
+              "refs": []
             }
-          ]
+          ],
+          "subordinate_rules": []
         }
       ]
     },
@@ -517,14 +572,17 @@ input_file: sources/高知大学学生準則.pdf
             {
               "number": 1,
               "text": "学生が、学内で掲示をしようとするときは、学長の承認を得て、所定の規格（Ｂ３版以内）で所定の場所に掲示しなければならない。",
-              "items": []
+              "items": [],
+              "refs": []
             },
             {
               "number": 2,
               "text": "掲示期間は、原則として７日以内とし、掲示期間を経過した掲示物は掲示責任者において速やかに撤去しなければならない。",
-              "items": []
+              "items": [],
+              "refs": []
             }
-          ]
+          ],
+          "subordinate_rules": []
         },
         {
           "type": "article",
@@ -541,21 +599,26 @@ input_file: sources/高知大学学生準則.pdf
                 {
                   "number": 1,
                   "text": "特定の個人、団体等をひぼうし、又は名誉を傷つけるもの",
-                  "subitems": []
+                  "subitems": [],
+                  "refs": []
                 },
                 {
                   "number": 2,
                   "text": "虚偽の事項を記載したもの",
-                  "subitems": []
+                  "subitems": [],
+                  "refs": []
                 },
                 {
                   "number": 3,
                   "text": "内容、形状、大きさ等品位を欠き、美観を損ねるもの",
-                  "subitems": []
+                  "subitems": [],
+                  "refs": []
                 }
-              ]
+              ],
+              "refs": []
             }
-          ]
+          ],
+          "subordinate_rules": []
         },
         {
           "type": "article",
@@ -572,16 +635,20 @@ input_file: sources/高知大学学生準則.pdf
                 {
                   "number": 1,
                   "text": "責任の所在が不明確なもの",
-                  "subitems": []
+                  "subitems": [],
+                  "refs": []
                 },
                 {
                   "number": 2,
                   "text": "その他学長が不適当と認めたもの",
-                  "subitems": []
+                  "subitems": [],
+                  "refs": []
                 }
-              ]
+              ],
+              "refs": []
             }
-          ]
+          ],
+          "subordinate_rules": []
         }
       ]
     },
@@ -604,7 +671,8 @@ input_file: sources/高知大学学生準則.pdf
             {
               "number": 1,
               "text": "学生が、本学の施設（場所）・設備を使用しようとするときは、所定の様式により、７日前までに集会施設（場所）借用許可願を提出し、その許可を受けなければならない。",
-              "items": []
+              "items": [],
+              "refs": []
             },
             {
               "number": 2,
@@ -613,26 +681,32 @@ input_file: sources/高知大学学生準則.pdf
                 {
                   "number": 1,
                   "text": "許可を受けた使用場所、期間又は時間を厳守すること。",
-                  "subitems": []
+                  "subitems": [],
+                  "refs": []
                 },
                 {
                   "number": 2,
                   "text": "許可を受けた場所及び周辺の静穏な秩序を乱さないこと。",
-                  "subitems": []
+                  "subitems": [],
+                  "refs": []
                 },
                 {
                   "number": 3,
                   "text": "施設・設備を汚染し、又は損傷しないこと。",
-                  "subitems": []
+                  "subitems": [],
+                  "refs": []
                 },
                 {
                   "number": 4,
                   "text": "その他施設・設備の管理上必要な事項については、学長の指示に従うこと。",
-                  "subitems": []
+                  "subitems": [],
+                  "refs": []
                 }
-              ]
+              ],
+              "refs": []
             }
-          ]
+          ],
+          "subordinate_rules": []
         },
         {
           "type": "article",
@@ -649,21 +723,26 @@ input_file: sources/高知大学学生準則.pdf
                 {
                   "number": 1,
                   "text": "営利を目的とするもの（福利厚生のためのものを除く。）",
-                  "subitems": []
+                  "subitems": [],
+                  "refs": []
                 },
                 {
                   "number": 2,
                   "text": "違法又は不当な行為を行うもの",
-                  "subitems": []
+                  "subitems": [],
+                  "refs": []
                 },
                 {
                   "number": 3,
                   "text": "その他学長が不適格と認めるもの",
-                  "subitems": []
+                  "subitems": [],
+                  "refs": []
                 }
-              ]
+              ],
+              "refs": []
             }
-          ]
+          ],
+          "subordinate_rules": []
         },
         {
           "type": "article",
@@ -680,21 +759,26 @@ input_file: sources/高知大学学生準則.pdf
                 {
                   "number": 1,
                   "text": "使用条件に違反したとき。",
-                  "subitems": []
+                  "subitems": [],
+                  "refs": []
                 },
                 {
                   "number": 2,
                   "text": "使用願に虚偽の記載があったとき。",
-                  "subitems": []
+                  "subitems": [],
+                  "refs": []
                 },
                 {
                   "number": 3,
                   "text": "本学において当該施設・設備を使用する必要が生じたとき。",
-                  "subitems": []
+                  "subitems": [],
+                  "refs": []
                 }
-              ]
+              ],
+              "refs": []
             }
-          ]
+          ],
+          "subordinate_rules": []
         },
         {
           "type": "article",
@@ -707,9 +791,11 @@ input_file: sources/高知大学学生準則.pdf
             {
               "number": 1,
               "text": "施設・設備を使用する者は、当該施設・設備を汚染し、又は損傷した場合は、当該損害額に相当する金額を賠償するものとする。",
-              "items": []
+              "items": [],
+              "refs": []
             }
-          ]
+          ],
+          "subordinate_rules": []
         }
       ]
     },
@@ -732,14 +818,17 @@ input_file: sources/高知大学学生準則.pdf
             {
               "number": 1,
               "text": "学生が、学内で新聞、雑誌、その他の印刷物を発行し、又は頒布しようとするときは、責任者を定め、所定の様式により、印刷物発行（頒布）承認願をあらかじめ提出し、学長の承認を得なければならない。",
-              "items": []
+              "items": [],
+              "refs": []
             },
             {
               "number": 2,
               "text": "印刷物等が、当初の趣旨に反すると認められるときは、学長は許可承認を取り消し、印刷物等の発行又は頒布の中止及び回収を命ずることができる。",
-              "items": []
+              "items": [],
+              "refs": []
             }
-          ]
+          ],
+          "subordinate_rules": []
         }
       ]
     },
@@ -762,9 +851,11 @@ input_file: sources/高知大学学生準則.pdf
             {
               "number": 1,
               "text": "この準則に基づく所定の様式は、全学教育機構長が別に定める。",
-              "items": []
+              "items": [],
+              "refs": []
             }
-          ]
+          ],
+          "subordinate_rules": []
         },
         {
           "type": "article",
@@ -777,9 +868,11 @@ input_file: sources/高知大学学生準則.pdf
             {
               "number": 1,
               "text": "この準則は、研究生、特別研究学生、科目等履修生及び特別聴講学生について準用する。",
-              "items": []
+              "items": [],
+              "refs": []
             }
-          ]
+          ],
+          "subordinate_rules": []
         }
       ]
     }
@@ -984,5 +1077,6 @@ input_file: sources/高知大学学生準則.pdf
       "references_tables": []
     }
   ],
-  "appendices": []
+  "appendices": [],
+  "authorities": []
 }

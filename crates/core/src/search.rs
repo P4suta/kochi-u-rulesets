@@ -6,7 +6,7 @@
 //! `fold` maps exactly one char to one char, so a char offset in the folded
 //! text is the same char offset in the original.
 
-use anyhow::{bail, Context};
+use anyhow::{Context, bail};
 
 use crate::model::{Article, Document};
 
@@ -179,8 +179,8 @@ impl SearchIndex {
         for entry in &self.entries {
             let title_count = entry.title_field.count(&needle);
             let body_count = entry.body_field.count(&needle);
-            let score =
-                entry.title_field.weight * title_count as f32 + entry.body_field.weight * body_count as f32;
+            let score = entry.title_field.weight * title_count as f32
+                + entry.body_field.weight * body_count as f32;
             if score <= 0.0 {
                 continue;
             }
@@ -293,10 +293,7 @@ struct Reader<'a> {
 impl<'a> Reader<'a> {
     fn take(&mut self, n: usize) -> anyhow::Result<&'a [u8]> {
         let end = self.pos.checked_add(n).context("index length overflow")?;
-        let slice = self
-            .bytes
-            .get(self.pos..end)
-            .context("index truncated")?;
+        let slice = self.bytes.get(self.pos..end).context("index truncated")?;
         self.pos = end;
         Ok(slice)
     }
@@ -368,6 +365,7 @@ mod tests {
             number: BranchedNumber { main, branch: None },
             title: title.map(str::to_owned),
             paragraphs: paras,
+            subordinate_rules: Vec::new(),
         }
     }
 
@@ -376,6 +374,7 @@ mod tests {
             number: 1,
             text: text.to_owned(),
             items: Vec::new(),
+            refs: Vec::new(),
         }
     }
 
@@ -388,13 +387,14 @@ mod tests {
             body: articles.into_iter().map(BodyNode::Article).collect(),
             supplementary_provisions: Vec::new(),
             appendices: Vec::new(),
+            authorities: Vec::new(),
         }
     }
 
     #[test]
     fn fold_preserves_char_count() {
         let mixed = "ＡｂＣ　１２３！漢字ｶﾅ AbC xyz";
-        assert_eq!(fold(&mixed).chars().count(), mixed.chars().count());
+        assert_eq!(fold(mixed).chars().count(), mixed.chars().count());
     }
 
     #[test]
@@ -418,8 +418,11 @@ mod tests {
                     subitems: vec![Subitem {
                         label: "イ".to_owned(),
                         text: "休学の取扱い".to_owned(),
+                        refs: Vec::new(),
                     }],
+                    refs: Vec::new(),
                 }],
+                refs: Vec::new(),
             }],
         )]);
         let index = SearchIndex::from_bytes(&build_index(&[("100".to_owned(), &d)])).unwrap();
@@ -429,11 +432,17 @@ mod tests {
     #[test]
     fn query_returns_expected_article_with_snippet_and_highlight() {
         let d = doc(vec![
-            article(3, Some("入学"), vec![para("入学を志願する者は所定の手続を行う。")]),
+            article(
+                3,
+                Some("入学"),
+                vec![para("入学を志願する者は所定の手続を行う。")],
+            ),
             article(
                 5,
                 Some("退学"),
-                vec![para("学生が退学しようとするときは、学長の許可を受けなければならない。")],
+                vec![para(
+                    "学生が退学しようとするときは、学長の許可を受けなければならない。",
+                )],
             ),
         ]);
         let index = SearchIndex::from_bytes(&build_index(&[("42".to_owned(), &d)])).unwrap();
@@ -459,8 +468,7 @@ mod tests {
 
     #[test]
     fn body_snippet_highlights_the_match() {
-        let long =
-            "第一段落の前置きがしばらく続いた後に重要語が現れてさらに文章が続いていく。";
+        let long = "第一段落の前置きがしばらく続いた後に重要語が現れてさらに文章が続いていく。";
         let d = doc(vec![article(1, Some("総則"), vec![para(long)])]);
         let index = SearchIndex::from_bytes(&build_index(&[("1".to_owned(), &d)])).unwrap();
 

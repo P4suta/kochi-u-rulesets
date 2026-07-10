@@ -29,8 +29,16 @@
 	const nameByCode = $derived(new Map(site.rulesets.map((r) => [r.code, r.name])))
 	const nameOf = (c: string): string => nameByCode.get(c) ?? c
 
-	const outgoing = $derived(graph ? graph.edges.filter((e) => e.from === code) : [])
-	const incoming = $derived(graph ? graph.edges.filter((e) => e.to === code) : [])
+	// The reference panel, split by edge kind so 委任 (制定根拠) reads as a hierarchy
+	// rather than a flat "参照". Each list is non-empty-checked in the template.
+	const edges = $derived(graph?.edges ?? [])
+	const subordinates = $derived(edges.filter((e) => e.from === code && e.kind === 'authority'))
+	const authorities = $derived(edges.filter((e) => e.to === code && e.kind === 'authority'))
+	const citesOut = $derived(edges.filter((e) => e.from === code && e.kind === 'reference'))
+	const citedBy = $derived(edges.filter((e) => e.to === code && e.kind === 'reference'))
+	const hasAnyRelation = $derived(
+		subordinates.length + authorities.length + citesOut.length + citedBy.length > 0,
+	)
 
 	// Load effect — depends on `code` ONLY. An article deep-link changes `article`,
 	// not `code`, so it must never touch `article` here or every jump would refetch.
@@ -168,13 +176,12 @@
 	</ul>
 {/snippet}
 
-<!-- One direction of the reference adjacency panel. -->
+<!-- One direction of the reference adjacency panel. `dir` picks which endpoint is
+     "the other rule"; the label describes the relationship in that direction. -->
 {#snippet refGroup(title: string, edges: Graph['edges'], dir: 'out' | 'in')}
-	<div>
-		<h3 class="text-sm font-semibold text-ink-2">{title}</h3>
-		{#if edges.length === 0}
-			<p class="mt-1 text-sm text-ink-3">参照なし</p>
-		{:else}
+	{#if edges.length > 0}
+		<div>
+			<h3 class="text-sm font-semibold text-ink-2">{title}</h3>
 			<ul class="mt-2 space-y-2">
 				{#each edges as edge (dir === 'out' ? edge.to : edge.from)}
 					{@const other = dir === 'out' ? edge.to : edge.from}
@@ -193,8 +200,8 @@
 					</li>
 				{/each}
 			</ul>
-		{/if}
-	</div>
+		</div>
+	{/if}
 {/snippet}
 
 <div>
@@ -245,18 +252,24 @@
 			</aside>
 
 			<div class="min-w-0" bind:this={contentEl}>
-				<DocumentView {doc} />
+				<DocumentView {doc} {code} {nameOf} />
 
 				<!-- Reference adjacency, aligned to the reading measure. -->
 				<section
 					class="mx-auto mt-12 border-t border-line pt-6"
 					style="max-width: var(--spacing-measure)"
 				>
-					<h2 class="text-lg font-bold text-ink">参照関係</h2>
-					<div class="mt-4 grid gap-6 sm:grid-cols-2">
-						{@render refGroup('この規則が参照している規則', outgoing, 'out')}
-						{@render refGroup('この規則を参照している規則', incoming, 'in')}
-					</div>
+					<h2 class="text-lg font-bold text-ink">関連規則</h2>
+					{#if hasAnyRelation}
+						<div class="mt-4 grid gap-6 sm:grid-cols-2">
+							{@render refGroup('根拠となる上位規則', authorities, 'in')}
+							{@render refGroup('この規則が委任する下位規則', subordinates, 'out')}
+							{@render refGroup('参照している規則', citesOut, 'out')}
+							{@render refGroup('参照されている規則', citedBy, 'in')}
+						</div>
+					{:else}
+						<p class="mt-2 text-sm text-ink-3">関連する規則は検出されていません。</p>
+					{/if}
 				</section>
 			</div>
 		</div>

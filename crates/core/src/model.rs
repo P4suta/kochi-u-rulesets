@@ -24,6 +24,29 @@ pub struct Document {
     pub supplementary_provisions: Vec<SupplProvision>,
     /// 別表 and 様式, unified and kept in document order (they interleave).
     pub appendices: Vec<Appendix>,
+    /// 制定根拠: the parent clauses this ruleset is enacted under, parsed from the
+    /// 第1条 "…の規定に基づき" citation. Empty for a root document (学則) or when no
+    /// such clause is present. Filled by the `references` pass, not the parser.
+    #[serde(default)]
+    pub authorities: Vec<Authority>,
+}
+
+/// One 制定根拠 citation: "(親規則名)第X条第Y項…の規定に基づき". A single 第1条
+/// clause can cite several parent clauses (and several parents), so a document
+/// holds a `Vec` of these.
+#[derive(Debug, Clone, Serialize)]
+pub struct Authority {
+    /// The parent ruleset's corpus code, when its name is in the manifest vocabulary.
+    /// `None` for out-of-corpus parents (external laws, unlisted 規程).
+    pub rule_code: Option<String>,
+    /// The parent ruleset name as cited, kept even when unresolved to a `code`.
+    pub rule_name: String,
+    /// The cited 条, when the citation pins one.
+    pub article: Option<BranchedNumber>,
+    /// The cited 項 within that 条, when pinned.
+    pub paragraph: Option<u32>,
+    /// The matched citation span, verbatim.
+    pub raw: String,
 }
 
 /// A node of the main provision tree: either a structural division (章/節) or a
@@ -102,7 +125,7 @@ impl Document {
 /// A branch-suffixed structural number, shared by 章/節/条 (第N条の２, 第N節の２).
 /// Kept structured rather than a formatted string so it sorts/compares correctly
 /// (64 < 64の2 < 64の3 < 65).
-#[derive(Debug, Clone, Copy, PartialEq, Eq, PartialOrd, Ord, Serialize)]
+#[derive(Debug, Clone, Copy, PartialEq, Eq, PartialOrd, Ord, Hash, Serialize)]
 pub struct BranchedNumber {
     pub main: u32,
     pub branch: Option<u32>,
@@ -128,6 +151,11 @@ pub struct Article {
     /// From the "（タイトル）" line immediately preceding the article heading, if any.
     pub title: Option<String>,
     pub paragraphs: Vec<Paragraph>,
+    /// Child rulesets (corpus codes) enacted under this 条, from the reverse of the
+    /// 制定根拠 index — the concrete answer to "別に定める" delegations sited here.
+    /// Empty by construction; filled by the `references` pass.
+    #[serde(default)]
+    pub subordinate_rules: Vec<String>,
 }
 
 #[derive(Debug, Serialize)]
@@ -136,6 +164,10 @@ pub struct Paragraph {
     pub number: u32,
     pub text: String,
     pub items: Vec<Item>,
+    /// Inline references found in `text` (別に定める, 前項, 別表第N, other rulesets…).
+    /// Empty by construction; filled by the `references` pass.
+    #[serde(default)]
+    pub refs: Vec<TextRef>,
 }
 
 #[derive(Debug, Serialize)]
@@ -144,6 +176,9 @@ pub struct Item {
     pub text: String,
     /// 号 sub-items ("イ"/"ロ"/"ハ"…); empty for the common case.
     pub subitems: Vec<Subitem>,
+    /// Inline references found in `text`. See [`Paragraph::refs`].
+    #[serde(default)]
+    pub refs: Vec<TextRef>,
 }
 
 /// An "イ"/"ロ"/"ハ" sub-item under a 号.
@@ -151,6 +186,42 @@ pub struct Item {
 pub struct Subitem {
     pub label: String,
     pub text: String,
+    /// Inline references found in `text`. See [`Paragraph::refs`].
+    #[serde(default)]
+    pub refs: Vec<TextRef>,
+}
+
+/// A reference occurrence inside a body text span. `start`/`end` are **character**
+/// (Unicode scalar) offsets into the sibling `text`, NOT byte offsets — the
+/// frontend slices the same text with `Array.from(text)`, whose indices are code
+/// points, so byte offsets (where 条 is 3 units) would misalign.
+#[derive(Debug, Clone, Serialize)]
+pub struct TextRef {
+    pub start: usize,
+    pub end: usize,
+    #[serde(flatten)]
+    pub target: RefTarget,
+}
+
+/// What a [`TextRef`] points at. Serialized internally tagged on `kind`.
+#[derive(Debug, Clone, Serialize)]
+#[serde(tag = "kind", rename_all = "snake_case")]
+pub enum RefTarget {
+    /// A 項 in the same 条 (前項 / 第N項).
+    Paragraph { paragraph: u32 },
+    /// A 条 in the same document (前条 / 第N条), optionally pinning a 項.
+    Article {
+        article: BranchedNumber,
+        paragraph: Option<u32>,
+    },
+    /// A 別表 in the same document, by its id ("別表第１").
+    Table { appendix_id: String },
+    /// Another ruleset cited by name.
+    Rule { code: String },
+    /// A 別に定める delegation. `rules` are the child rulesets (corpus codes)
+    /// enacted under this clause; empty when the delegated provision lies outside
+    /// the corpus (rendered as a marker, not a link).
+    SeparatelyProvided { rules: Vec<String> },
 }
 
 #[derive(Debug, Serialize)]

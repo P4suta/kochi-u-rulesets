@@ -4,7 +4,7 @@ use std::path::{Path, PathBuf};
 use anyhow::{Context, anyhow};
 use clap::{Parser, Subcommand};
 use kochi_university_regulations::model::Document;
-use kochi_university_regulations::{extract, graph, markdown, search};
+use kochi_university_regulations::{extract, graph, markdown, references, search};
 use serde::Deserialize;
 
 mod commit;
@@ -124,17 +124,36 @@ fn build(args: BuildArgs) -> anyhow::Result<()> {
             continue;
         };
 
-        let json = serde_json::to_string_pretty(&document)?;
-        let json_out = docs_dir.join(&code).with_extension("json");
-        let md_out = docs_dir.join(&code).with_extension("md");
-        std::fs::write(&json_out, json)
-            .with_context(|| format!("failed to write {}", json_out.display()))?;
-        std::fs::write(&md_out, markdown::render(&document))
-            .with_context(|| format!("failed to write {}", md_out.display()))?;
-
         succeeded += 1;
         println!("✓ {} → {code}: {}", display_name(input), stats(&document));
         docs.push((code, document));
+    }
+
+    // Cross-reference pass, corpus-wide and in dependency order: parse each document's
+    // 制定根拠, invert them into the subordinate index, then annotate every document's
+    // inline references (別に定める resolves against the index). Must run before the
+    // JSON is written and before the graph/search aggregates borrow the documents.
+    let vocab: Vec<(String, String)> = manifest
+        .iter()
+        .map(|e| (e.code.clone(), e.name.clone()))
+        .collect();
+    for (_code, document) in docs.iter_mut() {
+        document.authorities = references::parse_authorities(document, &vocab);
+    }
+    let sub_index = references::build_subordinate_index(&docs);
+    for (code, document) in docs.iter_mut() {
+        references::annotate(code, document, &vocab, &sub_index);
+    }
+
+    // Now write each document's JSON + Markdown (annotated).
+    for (code, document) in &docs {
+        let json = serde_json::to_string_pretty(document)?;
+        let json_out = docs_dir.join(code).with_extension("json");
+        let md_out = docs_dir.join(code).with_extension("md");
+        std::fs::write(&json_out, json)
+            .with_context(|| format!("failed to write {}", json_out.display()))?;
+        std::fs::write(&md_out, markdown::render(document))
+            .with_context(|| format!("failed to write {}", md_out.display()))?;
     }
 
     // Aggregate outputs. `pairs` borrows every owned document.
@@ -145,10 +164,6 @@ fn build(args: BuildArgs) -> anyhow::Result<()> {
     std::fs::write(&idx_out, &idx)
         .with_context(|| format!("failed to write {}", idx_out.display()))?;
 
-    let vocab: Vec<(String, String)> = manifest
-        .iter()
-        .map(|e| (e.code.clone(), e.name.clone()))
-        .collect();
     let graph_json = serde_json::to_string_pretty(&graph::build_graph(&vocab, &pairs))?;
     let graph_out = args.out_dir.join("graph.json");
     std::fs::write(&graph_out, graph_json)
@@ -307,7 +322,10 @@ mod tests {
             .is_ok()
         );
         // `commit` requires at least one --path.
-        assert!(Cli::try_parse_from(["kochi-university-regulations", "commit", "--message", "m"]).is_err());
+        assert!(
+            Cli::try_parse_from(["kochi-university-regulations", "commit", "--message", "m"])
+                .is_err()
+        );
         assert!(Cli::try_parse_from(["kochi-university-regulations"]).is_err());
         assert!(Cli::try_parse_from(["kochi-university-regulations", "bogus"]).is_err());
     }

@@ -47,27 +47,53 @@ export interface BranchedNumber {
 	branch: number | null
 }
 
+/** `RefTarget` — serde internally tagged on `kind`, flattened into `TextRef`. */
+export type RefTarget =
+	| { kind: 'paragraph'; paragraph: number }
+	| { kind: 'article'; article: BranchedNumber; paragraph: number | null }
+	| { kind: 'table'; appendix_id: string }
+	| { kind: 'rule'; code: string }
+	| { kind: 'separately_provided'; rules: string[] }
+
+/** An inline reference span. `start`/`end` are **character** offsets into the sibling
+ *  `text` (Unicode scalars) — slice with `Array.from(text)`, never `text.slice`. */
+export type TextRef = { start: number; end: number } & RefTarget
+
 export interface Subitem {
 	label: string
 	text: string
+	refs: TextRef[]
 }
 
 export interface Item {
 	number: number
 	text: string
 	subitems: Subitem[]
+	refs: TextRef[]
 }
 
 export interface Paragraph {
 	number: number
 	text: string
 	items: Item[]
+	refs: TextRef[]
 }
 
 export interface Article {
 	number: BranchedNumber
 	title: string | null
 	paragraphs: Paragraph[]
+	/** Child rulesets (codes) enacted under this 条 — the reverse of 制定根拠. */
+	subordinate_rules: string[]
+}
+
+/** `Authority` — one 制定根拠 citation ("親規則名第X条第Y項…の規定に基づき"). */
+export interface Authority {
+	rule_code: string | null
+	rule_name: string
+	article: BranchedNumber | null
+	paragraph: number | null
+	raw: string
 }
 
 /** `BodyNode` — serde internally tagged on `type`. */
@@ -111,6 +137,7 @@ export interface Document {
 	body: BodyNode[]
 	supplementary_provisions: SupplProvision[]
 	appendices: Appendix[]
+	authorities: Authority[]
 }
 
 // ── site.json (CLI, camelCase) ────────────────────────────────────────────────
@@ -136,10 +163,16 @@ export interface GraphNode {
 	name: string
 }
 
+/** `authority` = 制定根拠 (from delegates to → to, the 別に定める hierarchy);
+ *  `reference` = a plain by-name mention (from cites to). */
+export type EdgeKind = 'authority' | 'reference'
+
 export interface GraphEdge {
 	from: string
 	to: string
-	/** Article labels where the reference occurs, e.g. ["第1条"]. */
+	kind: EdgeKind
+	/** For authority: the parent 条 the delegation sits in; for reference: the citing
+	 *  条 in `from`. e.g. ["第21条"]. */
 	articles: string[]
 	count: number
 }

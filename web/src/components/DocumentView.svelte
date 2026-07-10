@@ -1,8 +1,9 @@
 <script lang="ts">
-	// The shared Document → DOM renderer. Used by both the saved-document page and
-	// the live-parser view, so the two are visually identical by construction — the
-	// design spine ("one contract") carried all the way to the UI.
-	import type { Appendix, BodyNode, Document } from '../types'
+	// The shared Document → DOM renderer. Body prose is rendered through the inline
+	// reference layer (別に定める / 前項 / 第N条 / 別表第N / other rulesets become
+	// links), a 条 carries a "別に定める規則" panel from the reverse 制定根拠 index,
+	// and the header shows this ruleset's own 根拠 (upward links).
+	import type { Appendix, Authority, BodyNode, Document, TextRef } from '../types'
 	import {
 		articleLabel,
 		branchedLabel,
@@ -11,9 +12,52 @@
 		kanjiNumeral,
 		ruleNumberLabel,
 	} from '../lib/format'
+	import { href } from '../lib/router.svelte'
+	import { refHref, refKindClass, refTitle, segments } from '../lib/refs'
 
-	let { doc }: { doc: Document } = $props()
+	let {
+		doc,
+		code,
+		nameOf,
+	}: { doc: Document; code: string; nameOf: (code: string) => string } = $props()
+
+	// Visual register per reference class (see refKindClass). These literals are kept
+	// whole so Tailwind's scanner sees them.
+	const REF_CLASS = {
+		in: 'text-ink underline decoration-dotted decoration-line underline-offset-2 hover:text-accent hover:decoration-accent',
+		out: 'text-accent hover:underline',
+		mark: 'text-ink-2 underline decoration-dotted decoration-ink-3 underline-offset-2 cursor-help',
+	}
+
+	// "第X条第Y項" for an authority citation (either part may be absent).
+	function clauseLabel(a: Authority): string {
+		const art = a.article ? branchedLabel(a.article, '条') : ''
+		const par = a.paragraph != null ? `第${a.paragraph}項` : ''
+		return art + par
+	}
+	function authorityHref(a: Authority): string {
+		if (!a.rule_code) return '#'
+		return a.article
+			? href({ name: 'doc', code: a.rule_code, article: branchedLabel(a.article, '条') })
+			: href({ name: 'doc', code: a.rule_code })
+	}
 </script>
+
+<!-- Body prose with inline references resolved to links/markers. -->
+{#snippet richText(text: string, refs: TextRef[], artLabel: string)}
+	{#each segments(text, refs) as seg, i (i)}
+		{#if seg.ref}
+			{@const h = refHref(seg.ref, code, artLabel)}
+			{#if h}
+				<a href={h} class={REF_CLASS[refKindClass(seg.ref)]} title={refTitle(seg.ref, nameOf)}
+					>{seg.text}</a
+				>
+			{:else}
+				<span class={REF_CLASS.mark} title={refTitle(seg.ref, nameOf)}>{seg.text}</span>
+			{/if}
+		{:else}{seg.text}{/if}
+	{/each}
+{/snippet}
 
 {#snippet bodyNodeView(node: BodyNode)}
 	{#if node.type === 'chapter' || node.type === 'section'}
@@ -31,16 +75,17 @@
 			{/each}
 		</section>
 	{:else}
-		<article id={articleLabel(node.number)} class="mt-6 scroll-mt-20">
+		{@const artLabel = articleLabel(node.number)}
+		<article id={artLabel} class="mt-6 scroll-mt-20">
 			<h3 class="font-semibold text-ink">
-				<span class="text-accent">{articleLabel(node.number)}</span>
+				<span class="text-accent">{artLabel}</span>
 				{#if node.title}<span class="ml-1 text-ink">（{node.title}）</span>{/if}
 			</h3>
 			{#each node.paragraphs as para, i (i)}
 				<div class="mt-2">
 					<p>
 						{#if para.number > 1}<span class="mr-1 text-ink-3 tabular-nums">{para.number}</span
-							>{/if}{para.text}
+							>{/if}{@render richText(para.text, para.refs, artLabel)}
 					</p>
 					{#if para.items.length > 0}
 						<ol class="mt-1 space-y-1">
@@ -48,13 +93,15 @@
 								<li class="flex gap-2">
 									<span class="shrink-0 text-ink-2">{kanjiNumeral(item.number)}</span>
 									<div class="min-w-0">
-										<span>{item.text}</span>
+										<span>{@render richText(item.text, item.refs, artLabel)}</span>
 										{#if item.subitems.length > 0}
 											<ul class="mt-1 space-y-1">
 												{#each item.subitems as sub, k (k)}
 													<li class="flex gap-2">
 														<span class="shrink-0 text-ink-2">{sub.label}</span>
-														<span class="min-w-0">{sub.text}</span>
+														<span class="min-w-0"
+															>{@render richText(sub.text, sub.refs, artLabel)}</span
+														>
 													</li>
 												{/each}
 											</ul>
@@ -66,12 +113,24 @@
 					{/if}
 				</div>
 			{/each}
+
+			{#if node.subordinate_rules.length > 0}
+				<div class="mt-3 rounded-md border border-line-soft bg-fill px-3 py-2 text-sm">
+					<span class="text-ink-3">▸ この条で「別に定める」規則：</span>
+					{#each node.subordinate_rules as rc, i (rc)}
+						{#if i > 0}<span class="text-ink-3">、</span>{/if}<a
+							href={href({ name: 'doc', code: rc })}
+							class="font-medium text-accent hover:underline">{nameOf(rc)}</a
+						>
+					{/each}
+				</div>
+			{/if}
 		</article>
 	{/if}
 {/snippet}
 
 {#snippet appendixView(ap: Appendix)}
-	<section class="mt-8">
+	<section id={ap.id} class="mt-8 scroll-mt-20">
 		<h3 class="font-semibold text-ink">
 			{ap.id}
 			{#if ap.related_article_raw}<span class="ml-2 text-sm text-ink-3">{ap.related_article_raw}</span
@@ -114,6 +173,20 @@
 			{/if}
 			{#if doc.full_amendment_note}
 				<div class="text-ink-3">{doc.full_amendment_note}</div>
+			{/if}
+			{#if doc.authorities.length > 0}
+				<div>
+					<dt class="inline text-ink-3">根拠：</dt>
+					<dd class="inline">
+						{#each doc.authorities as a, i (i)}
+							{#if i > 0}<span class="text-ink-3">　</span>{/if}{#if a.rule_code}<a
+									href={authorityHref(a)}
+									class="text-accent hover:underline"
+									>{nameOf(a.rule_code)}{clauseLabel(a)}</a
+								>{:else}<span>{a.rule_name}{clauseLabel(a)}</span>{/if}
+						{/each}
+					</dd>
+				</div>
 			{/if}
 		</dl>
 	</header>

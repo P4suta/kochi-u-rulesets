@@ -1,5 +1,5 @@
 ---
-source: tests/corpus.rs
+source: crates/core/tests/corpus.rs
 expression: doc
 input_file: sources/高知大学国際交流会館規則.pdf
 ---
@@ -48,9 +48,11 @@ input_file: sources/高知大学国際交流会館規則.pdf
         {
           "number": 1,
           "text": "この規則は、高知大学学則第84条第２項の規定に基づき、高知大学国際交流会館（以下「会館」という。）の管理運営に関し必要な事項を定める。",
-          "items": []
+          "items": [],
+          "refs": []
         }
-      ]
+      ],
+      "subordinate_rules": []
     },
     {
       "type": "article",
@@ -63,9 +65,11 @@ input_file: sources/高知大学国際交流会館規則.pdf
         {
           "number": 1,
           "text": "会館は、外国人留学生（愛媛大学大学院連合農学研究科学生のうち、高知大学教員を主指導教員として配属された者を含む。以下同じ。）及び外国人研究者（以下「留学生等」という。）に宿舎を提供し、高知大学（以下「本学」という。）の教育、学術及び文化に係る国際交流の促進に寄与することを目的とする。",
-          "items": []
+          "items": [],
+          "refs": []
         }
-      ]
+      ],
+      "subordinate_rules": []
     },
     {
       "type": "article",
@@ -82,21 +86,26 @@ input_file: sources/高知大学国際交流会館規則.pdf
             {
               "number": 1,
               "text": "館長",
-              "subitems": []
+              "subitems": [],
+              "refs": []
             },
             {
               "number": 2,
               "text": "会館主事  ２人",
-              "subitems": []
+              "subitems": [],
+              "refs": []
             },
             {
               "number": 3,
               "text": "その他館長が必要と認める職員",
-              "subitems": []
+              "subitems": [],
+              "refs": []
             }
-          ]
+          ],
+          "refs": []
         }
-      ]
+      ],
+      "subordinate_rules": []
     },
     {
       "type": "article",
@@ -109,14 +118,17 @@ input_file: sources/高知大学国際交流会館規則.pdf
         {
           "number": 1,
           "text": "館長は、副学長（国際教育担当）をもって充てる。",
-          "items": []
+          "items": [],
+          "refs": []
         },
         {
           "number": 2,
           "text": "館長は、会館の業務を掌理する。",
-          "items": []
+          "items": [],
+          "refs": []
         }
-      ]
+      ],
+      "subordinate_rules": []
     },
     {
       "type": "article",
@@ -129,19 +141,23 @@ input_file: sources/高知大学国際交流会館規則.pdf
         {
           "number": 1,
           "text": "会館主事は、本学の教員のうちから学長が任命する。",
-          "items": []
+          "items": [],
+          "refs": []
         },
         {
           "number": 2,
           "text": "会館主事は、居住する留学生等の生活上の諸問題について指導又は助言を行い、館長を補佐する。",
-          "items": []
+          "items": [],
+          "refs": []
         },
         {
           "number": 3,
           "text": "会館主事の任期は、２年とし、再任を妨げない。",
-          "items": []
+          "items": [],
+          "refs": []
         }
-      ]
+      ],
+      "subordinate_rules": []
     },
     {
       "type": "article",
@@ -154,9 +170,11 @@ input_file: sources/高知大学国際交流会館規則.pdf
         {
           "number": 1,
           "text": "会館の管理運営に関する重要事項については、高知大学国際連携推進委員会で審議する。",
-          "items": []
+          "items": [],
+          "refs": []
         }
-      ]
+      ],
+      "subordinate_rules": []
     },
     {
       "type": "article",
@@ -173,21 +191,26 @@ input_file: sources/高知大学国際交流会館規則.pdf
             {
               "number": 1,
               "text": "本学に在学する外国人留学生及びその家族",
-              "subitems": []
+              "subitems": [],
+              "refs": []
             },
             {
               "number": 2,
               "text": "本学において教育研究に従事する外国人研究者及びその家族",
-              "subitems": []
+              "subitems": [],
+              "refs": []
             },
             {
               "number": 3,
               "text": "その他館長が適当と認めた者",
-              "subitems": []
+              "subitems": [],
+              "refs": []
             }
-          ]
+          ],
+          "refs": []
         }
-      ]
+      ],
+      "subordinate_rules": []
     },
     {
       "type": "article",
@@ -200,19 +223,23 @@ input_file: sources/高知大学国際交流会館規則.pdf
         {
           "number": 1,
           "text": "会館に入居を希望する者は、所定の入居許可申請書（別記様式第１号）に本学が指定する書類を添えて館長に提出し、その許可を受けなければならない。",
-          "items": []
+          "items": [],
+          "refs": []
         },
         {
           "number": 2,
           "text": "入居の許可は、選考の上、館長が行う。",
-          "items": []
+          "items": [],
+          "refs": []
         },
         {
           "number": 3,
           "text": "入居の許可を受けた者は、所定の期日までに入居の手続をしなければならない。",
-          "items": []
+          "items": [],
+          "refs": []
         }
-      ]
+      ],
+      "subordinate_rules": []
     },
     {
       "type": "article",
@@ -225,14 +252,17 @@ input_file: sources/高知大学国際交流会館規則.pdf
         {
           "number": 1,
           "text": "会館に入居することのできる期間（以下「入居期間」という。）は、１年以内とする。ただし、教育研究上特に必要がある場合は、入居期間の延長を許可することがある。",
-          "items": []
+          "items": [],
+          "refs": []
         },
         {
           "number": 2,
           "text": "入居期間の延長の許可を受けようとする者は、入居期間の満了する日の１か月前までに入居期間延長申請書（別記様式第２号）を館長に提出し、その許可を受けなければならない。",
-          "items": []
+          "items": [],
+          "refs": []
         }
-      ]
+      ],
+      "subordinate_rules": []
     },
     {
       "type": "article",
@@ -245,19 +275,23 @@ input_file: sources/高知大学国際交流会館規則.pdf
         {
           "number": 1,
           "text": "入居を許可された者（以下「入居者」という。）は、別に定めるところにより、外国人留学生にあっては寄宿料を、外国人研究者にあっては使用料を、それぞれ所定の期日までに納入しなければならない。",
-          "items": []
+          "items": [],
+          "refs": []
         },
         {
           "number": 2,
           "text": "既納の寄宿料又は使用料は、還付しない。",
-          "items": []
+          "items": [],
+          "refs": []
         },
         {
           "number": 3,
           "text": "入居者は、寄宿料又は使用料のほか、光熱水料その他別に定める雑費を負担するものとし、これを所定の期日までに納入しなければならない。",
-          "items": []
+          "items": [],
+          "refs": []
         }
-      ]
+      ],
+      "subordinate_rules": []
     },
     {
       "type": "article",
@@ -270,9 +304,11 @@ input_file: sources/高知大学国際交流会館規則.pdf
         {
           "number": 1,
           "text": "入居者及び同居家族は、会館の施設、設備及び備品等を常に正常な状態に保全することに留意しなければならない。",
-          "items": []
+          "items": [],
+          "refs": []
         }
-      ]
+      ],
+      "subordinate_rules": []
     },
     {
       "type": "article",
@@ -289,21 +325,26 @@ input_file: sources/高知大学国際交流会館規則.pdf
             {
               "number": 1,
               "text": "居室の全部又は一部を入居を許可された者以外の者に貸与しないこと。",
-              "subitems": []
+              "subitems": [],
+              "refs": []
             },
             {
               "number": 2,
               "text": "居室に入居を許可された者以外の者を宿泊させないこと。",
-              "subitems": []
+              "subitems": [],
+              "refs": []
             },
             {
               "number": 3,
               "text": "その他会館の施設等を許可された目的以外に使用しないこと。",
-              "subitems": []
+              "subitems": [],
+              "refs": []
             }
-          ]
+          ],
+          "refs": []
         }
-      ]
+      ],
+      "subordinate_rules": []
     },
     {
       "type": "article",
@@ -316,9 +357,11 @@ input_file: sources/高知大学国際交流会館規則.pdf
         {
           "number": 1,
           "text": "入居者は、入居者本人又は同居家族が故意又は過失により会館の施設、設備及び備品を破損、滅失又は汚損したときは、速やかに館長に届けるとともに、館長の指示により遅滞なくこれを原状に回復し、又はその損害を賠償しなければならない。",
-          "items": []
+          "items": [],
+          "refs": []
         }
-      ]
+      ],
+      "subordinate_rules": []
     },
     {
       "type": "article",
@@ -335,36 +378,44 @@ input_file: sources/高知大学国際交流会館規則.pdf
             {
               "number": 1,
               "text": "許可された入居期間中に、第７条に定める入居資格を失ったとき。",
-              "subitems": []
+              "subitems": [],
+              "refs": []
             },
             {
               "number": 2,
               "text": "第10条に定める寄宿料又は使用料及び光熱水料その他雑費を滞納し、督促を受けてもなお納入しないとき。",
-              "subitems": []
+              "subitems": [],
+              "refs": []
             },
             {
               "number": 3,
               "text": "第12条に規定する遵守事項に違反したとき。",
-              "subitems": []
+              "subitems": [],
+              "refs": []
             },
             {
               "number": 4,
               "text": "前条に定める義務を履行しないとき。",
-              "subitems": []
+              "subitems": [],
+              "refs": []
             },
             {
               "number": 5,
               "text": "その他会館の管理運営に重大な支障を与えるとき、又は与えるおそれのあるとき。",
-              "subitems": []
+              "subitems": [],
+              "refs": []
             }
-          ]
+          ],
+          "refs": []
         },
         {
           "number": 2,
           "text": "前項の規定により許可を取り消された場合に入居者が被る損失については、本学はその責を負わないものとする。",
-          "items": []
+          "items": [],
+          "refs": []
         }
-      ]
+      ],
+      "subordinate_rules": []
     },
     {
       "type": "article",
@@ -381,16 +432,20 @@ input_file: sources/高知大学国際交流会館規則.pdf
             {
               "number": 1,
               "text": "入居許可期間が満了したとき。",
-              "subitems": []
+              "subitems": [],
+              "refs": []
             },
             {
               "number": 2,
               "text": "前条第１項の規定に該当し、入居の許可が取り消されたとき。",
-              "subitems": []
+              "subitems": [],
+              "refs": []
             }
-          ]
+          ],
+          "refs": []
         }
-      ]
+      ],
+      "subordinate_rules": []
     },
     {
       "type": "article",
@@ -403,9 +458,11 @@ input_file: sources/高知大学国際交流会館規則.pdf
         {
           "number": 1,
           "text": "入居者が会館を退去するときは、所定の退去届（別記様式第３号）を館長に提出するものとする。ただし、入居の許可を取り消された者にあっては、この限りでない。",
-          "items": []
+          "items": [],
+          "refs": []
         }
-      ]
+      ],
+      "subordinate_rules": []
     },
     {
       "type": "article",
@@ -418,9 +475,11 @@ input_file: sources/高知大学国際交流会館規則.pdf
         {
           "number": 1,
           "text": "会館に関する事務は、総務部物部総務課、学務部国際教育支援室及び医学部・病院事務部学生課において処理する。",
-          "items": []
+          "items": [],
+          "refs": []
         }
-      ]
+      ],
+      "subordinate_rules": []
     },
     {
       "type": "article",
@@ -433,9 +492,11 @@ input_file: sources/高知大学国際交流会館規則.pdf
         {
           "number": 1,
           "text": "この規則に定めるもののほか、会館の管理運営及び使用に関し必要な事項は、館長が別に定める。",
-          "items": []
+          "items": [],
+          "refs": []
         }
-      ]
+      ],
+      "subordinate_rules": []
     }
   ],
   "supplementary_provisions": [
@@ -728,5 +789,6 @@ input_file: sources/高知大学国際交流会館規則.pdf
       "raw_text": "（Form  ３）\n退去 届\nNOTIFICATION  OF  DEPARTURE\n日付：    年   月   日\nDate：     Year  Month  Day\n高知大学国際交流会館長  殿\nTo：House Director of Kochi University\n氏  名\nName\n□研究者  Researcher   □留学生  Student\n下記のとおり，高知大学国際交流会館から退去しますので，届け出ます。\nI hereby notify you that I will move out of Kochi University International House as follows:\n記\nDetails\n１．居室番号        第        号室\nRoom No.\n２．退去期日             年   月   日\nDate of Departure                Year    Month    Day\n３．入居許可期間の最終日          年   月   日\nExpiration Date                 Year    Month    Day\n４．退去理由  １．入居許可の期間満了のため\nReason for Moving Out:  Expiration of the residence permit\n２．その他（理由を具体的に書くこと。）\nOther (Specify the reasons.)\n５．退去後の連絡先\nContact Address After Departure",
       "cells": null
     }
-  ]
+  ],
+  "authorities": []
 }

@@ -1,5 +1,5 @@
 ---
-source: tests/corpus.rs
+source: crates/core/tests/corpus.rs
 expression: doc
 input_file: sources/高知大学学寮管理運営規則.pdf
 ---
@@ -48,9 +48,11 @@ input_file: sources/高知大学学寮管理運営規則.pdf
         {
           "number": 1,
           "text": "この規則は、高知大学学則第82条第２項の規定に基づき、高知大学南溟寮、日章寮、かつら寮及びときわ寮（以下「学寮」という。）の管理運営に関し必要な事項を定める。",
-          "items": []
+          "items": [],
+          "refs": []
         }
-      ]
+      ],
+      "subordinate_rules": []
     },
     {
       "type": "article",
@@ -63,9 +65,11 @@ input_file: sources/高知大学学寮管理運営規則.pdf
         {
           "number": 1,
           "text": "学寮は、本学の学生に勉学と良好な生活の環境を提供し、その修学を容易にすることを目的とする。",
-          "items": []
+          "items": [],
+          "refs": []
         }
-      ]
+      ],
+      "subordinate_rules": []
     },
     {
       "type": "article",
@@ -78,29 +82,35 @@ input_file: sources/高知大学学寮管理運営規則.pdf
         {
           "number": 1,
           "text": "学寮の管理運営責任者、入寮可能者及び入寮定員は、次の表に定めるとおりとする。名   称  管理運営責任者  入寮可能者  入寮定員男子寮南溟寮  理事（教育担当）  学部学生・大学院学生  242人日章寮農林海洋科学部長",
-          "items": []
+          "items": [],
+          "refs": []
         },
         {
           "number": 1,
           "text": "学部学生・大学院学生",
-          "items": []
+          "items": [],
+          "refs": []
         },
         {
           "number": 2,
           "text": "愛媛大学大学院連合農学研究科学生のうち、本学研究科農林海洋科学専攻を担当する大学教員を主指導教員として配属された学生60人女子寮かつら寮  理事（教育担当）  学部学生・大学院学生   60人ときわ寮  理事（教育担当）  学部学生・大学院学生   80人",
-          "items": []
+          "items": [],
+          "refs": []
         },
         {
           "number": 2,
           "text": "前項の規定にかかわらず、管理運営責任者は、当該学寮の入寮定員に欠員がある場合には、特別聴講学生、研究生等の外国人留学生を入寮可能者として取り扱うことができるものとする。",
-          "items": []
+          "items": [],
+          "refs": []
         },
         {
           "number": 3,
           "text": "学寮の管理運営に関する基本的な事項については、高知大学学生支援委員会（以下「学生支援委員会」という。）で審議する。",
-          "items": []
+          "items": [],
+          "refs": []
         }
-      ]
+      ],
+      "subordinate_rules": []
     },
     {
       "type": "article",
@@ -113,9 +123,11 @@ input_file: sources/高知大学学寮管理運営規則.pdf
         {
           "number": 1,
           "text": "入寮を希望する学生は、所定の様式による入寮願に必要な書類を添えて、管理運営責任者に願い出るものとする。",
-          "items": []
+          "items": [],
+          "refs": []
         }
-      ]
+      ],
+      "subordinate_rules": []
     },
     {
       "type": "article",
@@ -128,14 +140,17 @@ input_file: sources/高知大学学寮管理運営規則.pdf
         {
           "number": 1,
           "text": "入寮の選考及び許可は、管理運営責任者が行う。",
-          "items": []
+          "items": [],
+          "refs": []
         },
         {
           "number": 2,
           "text": "入寮の許可期間は、最短修業年限終了の日を超えることができない。ただし、特別の理由がある場合には、入寮期間の延長を認めることがある。",
-          "items": []
+          "items": [],
+          "refs": []
         }
-      ]
+      ],
+      "subordinate_rules": []
     },
     {
       "type": "article",
@@ -148,14 +163,17 @@ input_file: sources/高知大学学寮管理運営規則.pdf
         {
           "number": 1,
           "text": "入寮を許可された学生は、指定された期間内に入寮の手続をしなければならない。",
-          "items": []
+          "items": [],
+          "refs": []
         },
         {
           "number": 2,
           "text": "前項の学生が、指定された期間内に入寮の手続を完了しないとき、又は第４条に定める必要書類の内容に虚偽の事実が判明したときは、管理運営責任者は、速やかに当該入寮の許可を取り消すものとする。",
-          "items": []
+          "items": [],
+          "refs": []
         }
-      ]
+      ],
+      "subordinate_rules": []
     },
     {
       "type": "article",
@@ -168,24 +186,29 @@ input_file: sources/高知大学学寮管理運営規則.pdf
         {
           "number": 1,
           "text": "学寮に入寮した学生（以下「寮生」という。）は、国立大学法人高知大学における授業料等費用に関する規則に定める寄宿料を毎月所定の日までに出納主任の補助者に納入しなければならない。",
-          "items": []
+          "items": [],
+          "refs": []
         },
         {
           "number": 2,
           "text": "入退寮の日が月の中途である場合にあっても、寄宿料は１か月分納入しなければならない。",
-          "items": []
+          "items": [],
+          "refs": []
         },
         {
           "number": 3,
           "text": "休業期間中に係る寄宿料は、第１項の規定にかかわらず当該期間前の所定の日までに納入するものとする。",
-          "items": []
+          "items": [],
+          "refs": []
         },
         {
           "number": 4,
           "text": "既納の寄宿料は、還付しない。",
-          "items": []
+          "items": [],
+          "refs": []
         }
-      ]
+      ],
+      "subordinate_rules": []
     },
     {
       "type": "article",
@@ -198,14 +221,17 @@ input_file: sources/高知大学学寮管理運営規則.pdf
         {
           "number": 1,
           "text": "食費その他私生活に使用する光熱水料等の経費は、寮生の負担とする。",
-          "items": []
+          "items": [],
+          "refs": []
         },
         {
           "number": 2,
           "text": "寮生は、前項の経費について、大学が定める額を毎月所定の日までに、管理運営責任者の指定する者に納めなければならない。",
-          "items": []
+          "items": [],
+          "refs": []
         }
-      ]
+      ],
+      "subordinate_rules": []
     },
     {
       "type": "article",
@@ -222,31 +248,38 @@ input_file: sources/高知大学学寮管理運営規則.pdf
             {
               "number": 1,
               "text": "居室を居室以外の目的に使用しないこと。",
-              "subitems": []
+              "subitems": [],
+              "refs": []
             },
             {
               "number": 2,
               "text": "許可なく居室に工作を加えないこと。",
-              "subitems": []
+              "subitems": [],
+              "refs": []
             },
             {
               "number": 3,
               "text": "共同施設は、常に良好な状態で使用すること。",
-              "subitems": []
+              "subitems": [],
+              "refs": []
             },
             {
               "number": 4,
               "text": "学寮における掲示、はり紙等は、所定の場所以外にはしないこと。",
-              "subitems": []
+              "subitems": [],
+              "refs": []
             },
             {
               "number": 5,
               "text": "防火管理、保健衛生管理及び災害防止等に留意し、快適な環境の保持に努めること。",
-              "subitems": []
+              "subitems": [],
+              "refs": []
             }
-          ]
+          ],
+          "refs": []
         }
-      ]
+      ],
+      "subordinate_rules": []
     },
     {
       "type": "article",
@@ -259,9 +292,11 @@ input_file: sources/高知大学学寮管理運営規則.pdf
         {
           "number": 1,
           "text": "施設及び設備等を故意又は過失により滅失、毀損又は汚染したときは、管理運営責任者の指示に従って速やかに修理し、又は原状回復に必要な経費を賠償しなければならない。",
-          "items": []
+          "items": [],
+          "refs": []
         }
-      ]
+      ],
+      "subordinate_rules": []
     },
     {
       "type": "article",
@@ -274,9 +309,11 @@ input_file: sources/高知大学学寮管理運営規則.pdf
         {
           "number": 1,
           "text": "退寮を希望する寮生は、事前に管理運営責任者に所定の様式による退寮願を提出し、その承認を受けなければならない。",
-          "items": []
+          "items": [],
+          "refs": []
         }
-      ]
+      ],
+      "subordinate_rules": []
     },
     {
       "type": "article",
@@ -293,19 +330,23 @@ input_file: sources/高知大学学寮管理運営規則.pdf
             {
               "number": 1,
               "text": "本学学生の身分を失ったとき。",
-              "subitems": []
+              "subitems": [],
+              "refs": []
             },
             {
               "number": 2,
               "text": "３か月以上寄宿料又は第８条に定める経費の納付を怠ったとき。",
-              "subitems": []
+              "subitems": [],
+              "refs": []
             },
             {
               "number": 3,
               "text": "第５条第２項に定める入寮許可期間の終了後も居住しているとき。",
-              "subitems": []
+              "subitems": [],
+              "refs": []
             }
-          ]
+          ],
+          "refs": []
         },
         {
           "number": 2,
@@ -314,31 +355,38 @@ input_file: sources/高知大学学寮管理運営規則.pdf
             {
               "number": 1,
               "text": "停学処分を受けたとき。",
-              "subitems": []
+              "subitems": [],
+              "refs": []
             },
             {
               "number": 2,
               "text": "長期にわたる休学又は留学等に該当するとき。",
-              "subitems": []
+              "subitems": [],
+              "refs": []
             },
             {
               "number": 3,
               "text": "保健衛生上寮生活に適しないと認められるとき。",
-              "subitems": []
+              "subitems": [],
+              "refs": []
             },
             {
               "number": 4,
               "text": "学寮において著しく風紀、秩序を乱す行為のあったとき。",
-              "subitems": []
+              "subitems": [],
+              "refs": []
             },
             {
               "number": 5,
               "text": "その他学寮の管理運営上支障をきたす行為のあったとき。",
-              "subitems": []
+              "subitems": [],
+              "refs": []
             }
-          ]
+          ],
+          "refs": []
         }
-      ]
+      ],
+      "subordinate_rules": []
     },
     {
       "type": "article",
@@ -351,9 +399,11 @@ input_file: sources/高知大学学寮管理運営規則.pdf
         {
           "number": 1,
           "text": "退寮の際は、居室その他居室に付属する設備等について管理運営責任者の指定する者の点検を受け、その指示に従わなければならない。",
-          "items": []
+          "items": [],
+          "refs": []
         }
-      ]
+      ],
+      "subordinate_rules": []
     },
     {
       "type": "article",
@@ -366,9 +416,11 @@ input_file: sources/高知大学学寮管理運営規則.pdf
         {
           "number": 1,
           "text": "学寮には、寮生以外の者を宿泊させてはならない。",
-          "items": []
+          "items": [],
+          "refs": []
         }
-      ]
+      ],
+      "subordinate_rules": []
     },
     {
       "type": "article",
@@ -381,14 +433,17 @@ input_file: sources/高知大学学寮管理運営規則.pdf
         {
           "number": 1,
           "text": "寮生は、寮生活を自主的に規律するため、学寮ごとに規約を定めるものとする。",
-          "items": []
+          "items": [],
+          "refs": []
         },
         {
           "number": 2,
           "text": "前項の規約を定めようとするとき、又は変更しようとするときは、管理運営責任者の承認を得なければならない。",
-          "items": []
+          "items": [],
+          "refs": []
         }
-      ]
+      ],
+      "subordinate_rules": []
     },
     {
       "type": "article",
@@ -401,9 +456,11 @@ input_file: sources/高知大学学寮管理運営規則.pdf
         {
           "number": 1,
           "text": "学寮における日常的、具体的な問題の対応について意見を交換し、関係教職員と寮生の相互理解を深めるため、管理運営責任者は適宜、懇談会を開催するものとする。",
-          "items": []
+          "items": [],
+          "refs": []
         }
-      ]
+      ],
+      "subordinate_rules": []
     },
     {
       "type": "article",
@@ -416,9 +473,11 @@ input_file: sources/高知大学学寮管理運営規則.pdf
         {
           "number": 1,
           "text": "この規則に定めるもののほか、必要な事項は、学生支援委員会の議を経て、管理運営責任者が定める。",
-          "items": []
+          "items": [],
+          "refs": []
         }
-      ]
+      ],
+      "subordinate_rules": []
     }
   ],
   "supplementary_provisions": [
@@ -751,5 +810,6 @@ input_file: sources/高知大学学寮管理運営規則.pdf
       "references_tables": []
     }
   ],
-  "appendices": []
+  "appendices": [],
+  "authorities": []
 }

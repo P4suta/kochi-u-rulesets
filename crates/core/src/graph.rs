@@ -19,8 +19,18 @@
 //!
 //! External laws (学校教育法 etc.) are out of vocabulary and are simply never
 //! matched. Self-references (from == to) are excluded.
+//!
+//! Two kinds of edge, richest first:
+//!   * **authority** (委任) — the 制定根拠 backbone, parent → child. Derived from each
+//!     document's parsed `authorities`, so the delegation hierarchy rooted at 学則 is
+//!     explicit even though the citation "学則第21条" is dropped by the name scan's
+//!     maximal-token guard. This is where 「別に定める」 lands on the graph.
+//!   * **reference** (参照) — a plain name mention, from → to, for cross-references
+//!     that are *not* an enactment basis. A pair already joined by an authority edge
+//!     (either direction) is suppressed here, so the two layers never restate each
+//!     other.
 
-use std::collections::HashMap;
+use std::collections::{HashMap, HashSet};
 
 use crate::model::Document;
 
@@ -30,12 +40,35 @@ pub struct Node {
     pub name: String,
 }
 
+/// How two rulesets relate. Serialized snake_case (`"authority"` / `"reference"`).
+#[derive(serde::Serialize, Clone, Copy, PartialEq, Eq)]
+#[serde(rename_all = "snake_case")]
+pub enum EdgeKind {
+    /// 制定根拠: `from` (parent) delegates to `to` (child) — the 別に定める hierarchy.
+    Authority,
+    /// A plain by-name citation: `from` mentions `to`.
+    Reference,
+}
+
 #[derive(serde::Serialize)]
 pub struct Edge {
     pub from: String,
     pub to: String,
+    pub kind: EdgeKind,
+    /// For an authority edge, the parent 条 the delegation sits in ("第21条"); for a
+    /// reference edge, the citing 条 in `from`.
     pub articles: Vec<String>,
     pub count: usize,
+}
+
+/// An order-independent key for a pair of codes, so an authority link suppresses a
+/// reference in either direction.
+fn unordered(a: &str, b: &str) -> (String, String) {
+    if a <= b {
+        (a.to_string(), b.to_string())
+    } else {
+        (b.to_string(), a.to_string())
+    }
 }
 
 #[derive(serde::Serialize)]
@@ -47,7 +80,7 @@ pub struct Graph {
 /// A ruleset name is a name-constituent character iff a following occurrence of it
 /// would extend the matched span into a longer, different token. Han ideographs and
 /// katakana qualify; hiragana (particles) and everything else do not.
-fn is_name_char(c: char) -> bool {
+pub(crate) fn is_name_char(c: char) -> bool {
     matches!(c,
         '\u{3005}'                 // 々 iteration mark
         | '\u{3400}'..='\u{4DBF}'  // CJK Unified Ideographs Extension A
@@ -96,13 +129,45 @@ pub fn build_graph(vocab: &[(String, String)], docs: &[(String, &Document)]) -> 
         .map(|(code, name)| (name.chars().collect::<Vec<char>>(), code.as_str()))
         .filter(|(chars, _)| !chars.is_empty())
         .collect();
-    candidates.sort_by(|a, b| b.0.len().cmp(&a.0.len()));
+    candidates.sort_by_key(|(chars, _)| std::cmp::Reverse(chars.len()));
 
     // Insertion-ordered edge accumulator: index by (from, to), keep builders in a Vec
     // so first-seen order is preserved and article labels accumulate in document order.
     let mut index: HashMap<(String, String), usize> = HashMap::new();
     let mut builders: Vec<Edge> = Vec::new();
 
+    // 1. Authority (委任) edges — parent → child, from each document's 制定根拠.
+    // `auth_pairs` records the unordered pairs so the reference pass can skip them.
+    let mut auth_pairs: HashSet<(String, String)> = HashSet::new();
+    for (child, doc) in docs {
+        for a in &doc.authorities {
+            let Some(parent) = a.rule_code.as_deref() else {
+                continue;
+            };
+            if parent == child.as_str() {
+                continue;
+            }
+            let key = (parent.to_string(), child.clone());
+            let idx = *index.entry(key).or_insert_with(|| {
+                builders.push(Edge {
+                    from: parent.to_string(),
+                    to: child.clone(),
+                    kind: EdgeKind::Authority,
+                    articles: Vec::new(),
+                    count: 0,
+                });
+                builders.len() - 1
+            });
+            if let Some(label) = a.article.map(|n| n.labeled('条'))
+                && !builders[idx].articles.contains(&label)
+            {
+                builders[idx].articles.push(label);
+            }
+            auth_pairs.insert(unordered(parent, child));
+        }
+    }
+
+    // 2. Reference (参照) edges — name mentions, minus pairs already joined above.
     for (from, doc) in docs {
         for article in doc.all_articles() {
             let prose: Vec<char> = article_prose(article).chars().collect();
@@ -143,11 +208,17 @@ pub fn build_graph(vocab: &[(String, String)], docs: &[(String, &Document)]) -> 
             }
 
             for to in hits {
+                // Skip a mention when the pair is already an authority (委任) edge —
+                // the two layers should never restate the same relationship.
+                if auth_pairs.contains(&unordered(from, to)) {
+                    continue;
+                }
                 let key = (from.clone(), to.to_string());
                 let idx = *index.entry(key).or_insert_with(|| {
                     builders.push(Edge {
                         from: from.clone(),
                         to: to.to_string(),
+                        kind: EdgeKind::Reference,
                         articles: Vec::new(),
                         count: 0,
                     });
@@ -185,7 +256,9 @@ mod tests {
                 number: 1,
                 text: text.to_string(),
                 items: Vec::new(),
+                refs: Vec::new(),
             }],
+            subordinate_rules: Vec::new(),
         })
     }
 
@@ -202,6 +275,7 @@ mod tests {
             body: articles,
             supplementary_provisions: Vec::new(),
             appendices: Vec::new(),
+            authorities: Vec::new(),
         }
     }
 
@@ -222,10 +296,16 @@ mod tests {
         // The prose contains the longer nested name; the shorter 高知大学学生準則
         // must NOT be matched inside 高知大学学生懲戒規則. A hiragana particle
         // follows so the maximal-token guard accepts the (correct) match.
-        let d = doc(vec![art(5, "この件は高知大学学生懲戒規則の定めるところによる。")]);
+        let d = doc(vec![art(
+            5,
+            "この件は高知大学学生懲戒規則の定めるところによる。",
+        )]);
         let g = build_graph(&vocab(), &[("1".to_string(), &d)]);
 
-        assert!(edge(&g, "1", "3").is_some(), "should cite 懲戒規則 (code 3)");
+        assert!(
+            edge(&g, "1", "3").is_some(),
+            "should cite 懲戒規則 (code 3)"
+        );
         assert!(edge(&g, "1", "2").is_none(), "must not cite 準則 (code 2)");
         assert_eq!(edge(&g, "1", "3").unwrap().articles, vec!["第5条"]);
     }
@@ -260,6 +340,32 @@ mod tests {
         assert_eq!(e.count, 2);
         // A single merged edge, not one per citing article.
         assert_eq!(g.edges.iter().filter(|x| x.to == "2").count(), 1);
+    }
+
+    #[test]
+    fn authority_edge_forms_hierarchy_and_suppresses_duplicate_mention() {
+        use crate::model::Authority;
+        // Child (code 3) is enacted under 学則 (code 1) 第5条第2項, and *also* mentions
+        // 学則 by name in its body. The 委任 edge must appear parent→child, and the
+        // redundant name mention (child→parent) must be suppressed.
+        let mut child = doc(vec![art(1, "この件は高知大学学則の定めるところによる。")]);
+        child.authorities = vec![Authority {
+            rule_code: Some("1".to_string()),
+            rule_name: "高知大学学則".to_string(),
+            article: Some(BranchedNumber {
+                main: 5,
+                branch: None,
+            }),
+            paragraph: Some(2),
+            raw: "第5条第2項".to_string(),
+        }];
+        let g = build_graph(&vocab(), &[("3".to_string(), &child)]);
+
+        assert_eq!(g.edges.len(), 1, "the mention is folded into the 委任 edge");
+        let e = &g.edges[0];
+        assert_eq!((e.from.as_str(), e.to.as_str()), ("1", "3"));
+        assert!(matches!(e.kind, EdgeKind::Authority));
+        assert_eq!(e.articles, vec!["第5条"]);
     }
 
     #[test]

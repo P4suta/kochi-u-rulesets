@@ -1,5 +1,5 @@
 ---
-source: tests/corpus.rs
+source: crates/core/tests/corpus.rs
 expression: doc
 input_file: sources/高知大学学章取扱要領.pdf
 ---
@@ -48,9 +48,11 @@ input_file: sources/高知大学学章取扱要領.pdf
         {
           "number": 1,
           "text": "高知大学学章（以下「学章」という。）は、高知大学（以下「本学」という。）を象徴するものであることを認識し、その取扱いは、この規則の定めるところによる。",
-          "items": []
+          "items": [],
+          "refs": []
         }
-      ]
+      ],
+      "subordinate_rules": []
     },
     {
       "type": "article",
@@ -63,14 +65,17 @@ input_file: sources/高知大学学章取扱要領.pdf
         {
           "number": 1,
           "text": "学章の形状は、次のとおりとする。高知大学のイニシャル「K」を基本に、太平洋の波涛と黒潮、若者の可能性と大空を表している。基本配色は、青色と空色とする。",
-          "items": []
+          "items": [],
+          "refs": []
         },
         {
           "number": 2,
           "text": "学章を学旗として使用する場合は、次のとおりとする。旗の色は、青色とする。",
-          "items": []
+          "items": [],
+          "refs": []
         }
-      ]
+      ],
+      "subordinate_rules": []
     },
     {
       "type": "article",
@@ -87,31 +92,38 @@ input_file: sources/高知大学学章取扱要領.pdf
             {
               "number": 1,
               "text": "本学が発行する印刷物等",
-              "subitems": []
+              "subitems": [],
+              "refs": []
             },
             {
               "number": 2,
               "text": "本学が作成する物品及び文具類等",
-              "subitems": []
+              "subitems": [],
+              "refs": []
             },
             {
               "number": 3,
               "text": "学生の諸団体が課外活動に使用する学旗及び用具類等",
-              "subitems": []
+              "subitems": [],
+              "refs": []
             },
             {
               "number": 4,
               "text": "本学以外の団体の使用する物品で学長が認めたもの",
-              "subitems": []
+              "subitems": [],
+              "refs": []
             },
             {
               "number": 5,
               "text": "その他学長が適当と認めたもの",
-              "subitems": []
+              "subitems": [],
+              "refs": []
             }
-          ]
+          ],
+          "refs": []
         }
-      ]
+      ],
+      "subordinate_rules": []
     },
     {
       "type": "article",
@@ -124,19 +136,23 @@ input_file: sources/高知大学学章取扱要領.pdf
         {
           "number": 1,
           "text": "本学の学生の諸団体が課外活動に学章を使用する場合は、別記様式第１号により、学長に届け出なければならない。",
-          "items": []
+          "items": [],
+          "refs": []
         },
         {
           "number": 2,
           "text": "本学以外の団体等が学章を使用する場合は、別記様式第２号により事前に提出し、学長の許可を得なければならない。",
-          "items": []
+          "items": [],
+          "refs": []
         },
         {
           "number": 3,
           "text": "学長は、前号の許可をする場合は、別記様式第３号により、使用に当たっての条件を付した高知大学学章使用許可書を交付するものとする。",
-          "items": []
+          "items": [],
+          "refs": []
         }
-      ]
+      ],
+      "subordinate_rules": []
     },
     {
       "type": "article",
@@ -149,9 +165,11 @@ input_file: sources/高知大学学章取扱要領.pdf
         {
           "number": 1,
           "text": "学章を表示する場合は、尊厳と品位を損なわないよう配慮して使用しなければならない。",
-          "items": []
+          "items": [],
+          "refs": []
         }
-      ]
+      ],
+      "subordinate_rules": []
     },
     {
       "type": "article",
@@ -168,16 +186,20 @@ input_file: sources/高知大学学章取扱要領.pdf
             {
               "number": 1,
               "text": "前条に定める表示の方法に著しく違背しているとき。",
-              "subitems": []
+              "subitems": [],
+              "refs": []
             },
             {
               "number": 2,
               "text": "その他学章の使用目的及び使用方法等が適切でないとき。",
-              "subitems": []
+              "subitems": [],
+              "refs": []
             }
-          ]
+          ],
+          "refs": []
         }
-      ]
+      ],
+      "subordinate_rules": []
     },
     {
       "type": "article",
@@ -190,9 +212,11 @@ input_file: sources/高知大学学章取扱要領.pdf
         {
           "number": 1,
           "text": "学章の使用についての事務は、広報・校友課において処理する。",
-          "items": []
+          "items": [],
+          "refs": []
         }
-      ]
+      ],
+      "subordinate_rules": []
     }
   ],
   "supplementary_provisions": [
@@ -433,5 +457,6 @@ input_file: sources/高知大学学章取扱要領.pdf
       "raw_text": "年   月   日\n殿\n高知大学長\n高知大学学章使用許可書\n年  月  日付けで願い出のありました標記のことについては、下記の条件を付し\nて使用を許可します。\n記\n１  次の各号の一に該当すると認めた場合は、学章の使用の許可を取り消し、又は使用\nを停止させることがあります。\n(1)  高知大学学章取扱規則第５条に規定する表示の方法に著しく違背しているとき。\n(2)  その他学章の使用目的及び使用方法等が適切でないとき。\n２  学章の使用の許可、取消し及び停止された使用期間中における学章デザインの変更\n等に関して、万一申請者若しくは第三者に損害が生じた場合又はその他の不測の事態\nが生じた場合は、申請者においてこれを処理し、本学では一切その責任を負いません。\n３  その他",
       "cells": null
     }
-  ]
+  ],
+  "authorities": []
 }

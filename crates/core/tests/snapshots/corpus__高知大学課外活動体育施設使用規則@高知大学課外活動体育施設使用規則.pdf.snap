@@ -1,5 +1,5 @@
 ---
-source: tests/corpus.rs
+source: crates/core/tests/corpus.rs
 expression: doc
 input_file: sources/高知大学課外活動体育施設使用規則.pdf
 ---
@@ -48,9 +48,11 @@ input_file: sources/高知大学課外活動体育施設使用規則.pdf
         {
           "number": 1,
           "text": "この規則は、高知大学課外活動施設管理運営規則第４条の規定に基づき、高知大学課外活動体育施設（以下「施設」という。）の使用に関し必要な事項を定める。",
-          "items": []
+          "items": [],
+          "refs": []
         }
-      ]
+      ],
+      "subordinate_rules": []
     },
     {
       "type": "article",
@@ -67,16 +69,20 @@ input_file: sources/高知大学課外活動体育施設使用規則.pdf
             {
               "number": 1,
               "text": "学生の課外活動",
-              "subitems": []
+              "subitems": [],
+              "refs": []
             },
             {
               "number": 2,
               "text": "その他学長が認めたもの",
-              "subitems": []
+              "subitems": [],
+              "refs": []
             }
-          ]
+          ],
+          "refs": []
         }
-      ]
+      ],
+      "subordinate_rules": []
     },
     {
       "type": "article",
@@ -93,16 +99,20 @@ input_file: sources/高知大学課外活動体育施設使用規則.pdf
             {
               "number": 1,
               "text": "本学学生",
-              "subitems": []
+              "subitems": [],
+              "refs": []
             },
             {
               "number": 2,
               "text": "その他学長が許可した者",
-              "subitems": []
+              "subitems": [],
+              "refs": []
             }
-          ]
+          ],
+          "refs": []
         }
-      ]
+      ],
+      "subordinate_rules": []
     },
     {
       "type": "article",
@@ -119,16 +129,20 @@ input_file: sources/高知大学課外活動体育施設使用規則.pdf
             {
               "number": 1,
               "text": "使用できる日日曜日、国民の祝日に関する法律（昭和23年法律第178号）に規定する休日及び年末年始（12月28日から翌年１月４日まで）を除く日",
-              "subitems": []
+              "subitems": [],
+              "refs": []
             },
             {
               "number": 2,
               "text": "使用できる時間午前８時30分から午後９時まで",
-              "subitems": []
+              "subitems": [],
+              "refs": []
             }
-          ]
+          ],
+          "refs": []
         }
-      ]
+      ],
+      "subordinate_rules": []
     },
     {
       "type": "article",
@@ -141,14 +155,17 @@ input_file: sources/高知大学課外活動体育施設使用規則.pdf
         {
           "number": 1,
           "text": "施設を第２条各号の目的に使用する場合は、原則として使用開始日の７日前までに所定の様式による施設使用願を学務部学生支援課に提出し、学長の許可を受けなければならない。",
-          "items": []
+          "items": [],
+          "refs": []
         },
         {
           "number": 2,
           "text": "高知大学学生準則第14条の規定により認められた学生の団体が課外活動として施設を使用する場合は、学期の始めに所定の様式による施設使用計画書を学務部学生支援課に提出し、学長の許可を受けなければならない。",
-          "items": []
+          "items": [],
+          "refs": []
         }
-      ]
+      ],
+      "subordinate_rules": []
     },
     {
       "type": "article",
@@ -165,46 +182,56 @@ input_file: sources/高知大学課外活動体育施設使用規則.pdf
             {
               "number": 1,
               "text": "使用目的以外の用途に使用しないこと。",
-              "subitems": []
+              "subitems": [],
+              "refs": []
             },
             {
               "number": 2,
               "text": "使用時間を守ること。",
-              "subitems": []
+              "subitems": [],
+              "refs": []
             },
             {
               "number": 3,
               "text": "火災及び盗難防止に留意すること。",
-              "subitems": []
+              "subitems": [],
+              "refs": []
             },
             {
               "number": 4,
               "text": "体育施設内においては、喫煙をしないこと。",
-              "subitems": []
+              "subitems": [],
+              "refs": []
             },
             {
               "number": 5,
               "text": "施設、設備、備品等を無断で改廃、新設、移動しないこと。",
-              "subitems": []
+              "subitems": [],
+              "refs": []
             },
             {
               "number": 6,
               "text": "使用中止のときは、速やかに届け出ること。",
-              "subitems": []
+              "subitems": [],
+              "refs": []
             },
             {
               "number": 7,
               "text": "使用後は清掃のうえ原状に復し、施錠すべき箇所は施錠し、鍵を学務部学生支援課に返還すること。",
-              "subitems": []
+              "subitems": [],
+              "refs": []
             },
             {
               "number": 8,
               "text": "その他管理事務担当者の指示に従うこと。",
-              "subitems": []
+              "subitems": [],
+              "refs": []
             }
-          ]
+          ],
+          "refs": []
         }
-      ]
+      ],
+      "subordinate_rules": []
     },
     {
       "type": "article",
@@ -221,16 +248,20 @@ input_file: sources/高知大学課外活動体育施設使用規則.pdf
             {
               "number": 1,
               "text": "本学の行事等のため、施設を使用する必要が生じた場合",
-              "subitems": []
+              "subitems": [],
+              "refs": []
             },
             {
               "number": 2,
               "text": "この規則及びこの規則に基づき定められた事項に違反した場合",
-              "subitems": []
+              "subitems": [],
+              "refs": []
             }
-          ]
+          ],
+          "refs": []
         }
-      ]
+      ],
+      "subordinate_rules": []
     },
     {
       "type": "article",
@@ -243,9 +274,11 @@ input_file: sources/高知大学課外活動体育施設使用規則.pdf
         {
           "number": 1,
           "text": "使用した者が、故意又は過失により施設、設備、備品等を破損し、又は滅失した場合は、その損害を賠償しなければならない。",
-          "items": []
+          "items": [],
+          "refs": []
         }
-      ]
+      ],
+      "subordinate_rules": []
     },
     {
       "type": "article",
@@ -258,9 +291,11 @@ input_file: sources/高知大学課外活動体育施設使用規則.pdf
         {
           "number": 1,
           "text": "この規則に定めるもののほか、施設使用に関し必要な事項は、学長が定める。",
-          "items": []
+          "items": [],
+          "refs": []
         }
-      ]
+      ],
+      "subordinate_rules": []
     }
   ],
   "supplementary_provisions": [
@@ -359,5 +394,6 @@ input_file: sources/高知大学課外活動体育施設使用規則.pdf
       "references_tables": []
     }
   ],
-  "appendices": []
+  "appendices": [],
+  "authorities": []
 }

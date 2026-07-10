@@ -190,6 +190,30 @@
 		return s.length > 11 ? s.slice(0, 10) + '…' : s
 	}
 
+	const nameByCode = $derived(new Map((graph?.nodes ?? []).map((n) => [n.code, n.name])))
+	const nodeName = (code: string): string => nameByCode.get(code) ?? code
+
+	// Edge counts by kind, for the caption.
+	const authorityCount = $derived(graph ? graph.edges.filter((e) => e.kind === 'authority').length : 0)
+	const referenceCount = $derived(graph ? graph.edges.filter((e) => e.kind === 'reference').length : 0)
+
+	/** Inline style for an edge line: 委任 is a solid accent spine whose width grows
+	 *  with the number of delegating 条; 参照 is a thin dashed ink line. Hover dims
+	 *  everything not touching the hovered node. */
+	function edgeStyle(e: GraphEdge, active: boolean): string {
+		const authority = e.kind === 'authority'
+		const color = active ? (authority ? 'accent' : 'ink-2') : 'ink-3'
+		const width = authority ? 1.7 + e.count * 0.7 : 1.2
+		const dash = authority ? '' : 'stroke-dasharray: 4 3;'
+		return `stroke: var(--color-${color}); stroke-width: ${width}; opacity: ${active ? 0.9 : 0.12}; ${dash} transition: opacity 0.2s, stroke 0.2s;`
+	}
+
+	function edgeLabel(e: GraphEdge): string {
+		const verb = e.kind === 'authority' ? '委任' : '参照'
+		const arts = e.articles.length > 0 ? `（${e.articles.join('、')}）` : ''
+		return `${verb}${arts}`
+	}
+
 	function open(code: string): void {
 		router.navigate({ name: 'doc', code })
 	}
@@ -204,9 +228,8 @@
 <section>
 	<h1 class="text-xl font-bold text-ink">参照グラフ</h1>
 	<p class="mt-1 text-sm text-ink-3">
-		規則どうしの引用関係。矢印 <span class="font-mono">A → B</span> は
-		<span class="text-ink-2">A が B を参照</span>していることを表します。ノードをクリックすると
-		その規則を開きます。
+		規則どうしの関係。<span class="text-ink-2">実線 <span class="font-mono">A → B</span> は
+		A が B に委任</span>（制定根拠・「別に定める」）、<span class="text-ink-2">点線は名称による参照</span>を表します。学則を根に下位規則がぶら下がる階層が見えます。ノードをクリックするとその規則を開きます。
 	</p>
 
 	{#if error}
@@ -217,9 +240,9 @@
 		<p class="py-20 text-center text-ink-3">読み込み中…</p>
 	{:else}
 		<p class="mt-3 text-xs text-ink-3">
-			<span class="tabular-nums">{graph.nodes.length}</span> ノード・<span class="tabular-nums"
-				>{graph.edges.length}</span
-			> 本の参照。
+			<span class="tabular-nums">{graph.nodes.length}</span> ノード・委任
+			<span class="tabular-nums">{authorityCount}</span>・参照
+			<span class="tabular-nums">{referenceCount}</span>。
 		</p>
 
 		<div
@@ -247,8 +270,8 @@
 					</marker>
 				</defs>
 
-				<!-- Edges -->
-				{#each graph.edges as e (e.from + '->' + e.to)}
+				<!-- Edges: authority (委任) drawn last so the spine sits above 参照 lines. -->
+				{#each [...graph.edges].sort((a, b) => Number(a.kind === 'authority') - Number(b.kind === 'authority')) as e (e.from + '->' + e.to)}
 					{@const g = edgeGeom(e, layout)}
 					{@const active = edgeActive(e)}
 					<line
@@ -257,13 +280,9 @@
 						x2={g.x2}
 						y2={g.y2}
 						marker-end="url(#graph-arrow)"
-						style="stroke: var(--color-{active
-							? 'accent'
-							: 'ink-3'}); stroke-width: {1.4 + e.count * 0.8}; opacity: {active
-							? 0.9
-							: 0.15}; transition: opacity 0.2s, stroke 0.2s;"
+						style={edgeStyle(e, active)}
 					>
-						<title>{e.from} → {e.to}（{e.articles.join('、')}）</title>
+						<title>{nodeName(e.from)} → {nodeName(e.to)}：{edgeLabel(e)}</title>
 					</line>
 				{/each}
 
@@ -335,43 +354,59 @@
 						x2="26"
 						y2="5"
 						marker-end="url(#legend-arrow)"
-						style="stroke: var(--color-accent); stroke-width: 2;"
+						style="stroke: var(--color-accent); stroke-width: 2.4;"
 					/>
 				</svg>
-				A → B ＝ A が B を参照
+				実線 ＝ 委任（親 → 子・別に定める）
 			</span>
 			<span class="inline-flex items-center gap-1.5">
-				<span class="inline-block h-3 w-3 rounded-full bg-accent"></span>被参照・参照あり
+				<svg width="34" height="10" aria-hidden="true">
+					<line
+						x1="1"
+						y1="5"
+						x2="32"
+						y2="5"
+						style="stroke: var(--color-ink-2); stroke-width: 1.4; stroke-dasharray: 4 3;"
+					/>
+				</svg>
+				点線 ＝ 名称による参照
 			</span>
 			<span class="inline-flex items-center gap-1.5">
-				<span class="inline-block h-3 w-3 rounded-full bg-fill-strong"></span>孤立（参照なし）
+				<span class="inline-block h-3 w-3 rounded-full bg-accent"></span>関係あり
 			</span>
-			<span>線の太さは参照回数に対応します。</span>
+			<span class="inline-flex items-center gap-1.5">
+				<span class="inline-block h-3 w-3 rounded-full bg-fill-strong"></span>孤立
+			</span>
+			<span>委任線の太さは委任している条数に対応します。</span>
 		</div>
 
 		<!-- Textual fallback so the relationships are not SVG-only. -->
 		<div class="mt-6">
-			<h2 class="text-sm font-semibold text-ink">参照一覧</h2>
+			<h2 class="text-sm font-semibold text-ink">関係一覧</h2>
 			{#if graph.edges.length === 0}
-				<p class="mt-2 text-sm text-ink-3">規則間の参照は検出されていません。</p>
+				<p class="mt-2 text-sm text-ink-3">規則間の関係は検出されていません。</p>
 			{:else}
 				<ul class="mt-2 grid gap-1.5 text-sm">
 					{#each graph.edges as e (e.from + '->' + e.to)}
-						{@const fromName = graph.nodes.find((n) => n.code === e.from)?.name ?? e.from}
-						{@const toName = graph.nodes.find((n) => n.code === e.to)?.name ?? e.to}
 						<li class="text-ink-2">
+							<span
+								class="mr-1.5 rounded px-1.5 py-0.5 text-xs {e.kind === 'authority'
+									? 'bg-accent/12 text-accent'
+									: 'bg-fill text-ink-3'}">{e.kind === 'authority' ? '委任' : '参照'}</span
+							>
 							<button
 								type="button"
 								class="text-accent hover:underline"
-								onclick={() => open(e.from)}>{fromName}</button
+								onclick={() => open(e.from)}>{nodeName(e.from)}</button
 							>
 							<span class="mx-1 text-ink-3" aria-hidden="true">→</span>
 							<button
 								type="button"
 								class="text-accent hover:underline"
-								onclick={() => open(e.to)}>{toName}</button
+								onclick={() => open(e.to)}>{nodeName(e.to)}</button
 							>
-							<span class="text-ink-3">（{e.articles.join('、')}）</span>
+							{#if e.articles.length > 0}<span class="text-ink-3">（{e.articles.join('、')}）</span
+								>{/if}
 						</li>
 					{/each}
 				</ul>
