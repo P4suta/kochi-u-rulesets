@@ -1,0 +1,437 @@
+---
+source: tests/corpus.rs
+expression: doc
+input_file: sources/高知大学学章取扱要領.pdf
+---
+{
+  "title": "高知大学学章取扱規則",
+  "enacted": {
+    "date": {
+      "era": "heisei",
+      "year": 16,
+      "month": 4,
+      "day": 1,
+      "iso": "2004-04-01"
+    },
+    "rule_number": {
+      "number": 15,
+      "year": null,
+      "raw": "規則第 15 号"
+    },
+    "raw": "平成16年４月１日 規則第 15 号"
+  },
+  "last_amended": {
+    "date": {
+      "era": "reiwa",
+      "year": 7,
+      "month": 1,
+      "day": 20,
+      "iso": "2025-01-20"
+    },
+    "rule_number": {
+      "number": 53,
+      "year": null,
+      "raw": "規則第53号"
+    },
+    "raw": "最終改正  令和７年１月20日規則第53号"
+  },
+  "full_amendment_note": null,
+  "body": [
+    {
+      "type": "article",
+      "number": {
+        "main": 1,
+        "branch": null
+      },
+      "title": "趣旨",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "高知大学学章（以下「学章」という。）は、高知大学（以下「本学」という。）を象徴するものであることを認識し、その取扱いは、この規則の定めるところによる。",
+          "items": []
+        }
+      ]
+    },
+    {
+      "type": "article",
+      "number": {
+        "main": 2,
+        "branch": null
+      },
+      "title": "学章の形状等",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "学章の形状は、次のとおりとする。高知大学のイニシャル「K」を基本に、太平洋の波涛と黒潮、若者の可能性と大空を表している。基本配色は、青色と空色とする。",
+          "items": []
+        },
+        {
+          "number": 2,
+          "text": "学章を学旗として使用する場合は、次のとおりとする。旗の色は、青色とする。",
+          "items": []
+        }
+      ]
+    },
+    {
+      "type": "article",
+      "number": {
+        "main": 3,
+        "branch": null
+      },
+      "title": "使用の範囲",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "学章の使用の範囲については、次のとおりとする。",
+          "items": [
+            {
+              "number": 1,
+              "text": "本学が発行する印刷物等",
+              "subitems": []
+            },
+            {
+              "number": 2,
+              "text": "本学が作成する物品及び文具類等",
+              "subitems": []
+            },
+            {
+              "number": 3,
+              "text": "学生の諸団体が課外活動に使用する学旗及び用具類等",
+              "subitems": []
+            },
+            {
+              "number": 4,
+              "text": "本学以外の団体の使用する物品で学長が認めたもの",
+              "subitems": []
+            },
+            {
+              "number": 5,
+              "text": "その他学長が適当と認めたもの",
+              "subitems": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "article",
+      "number": {
+        "main": 4,
+        "branch": null
+      },
+      "title": "使用の手続",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "本学の学生の諸団体が課外活動に学章を使用する場合は、別記様式第１号により、学長に届け出なければならない。",
+          "items": []
+        },
+        {
+          "number": 2,
+          "text": "本学以外の団体等が学章を使用する場合は、別記様式第２号により事前に提出し、学長の許可を得なければならない。",
+          "items": []
+        },
+        {
+          "number": 3,
+          "text": "学長は、前号の許可をする場合は、別記様式第３号により、使用に当たっての条件を付した高知大学学章使用許可書を交付するものとする。",
+          "items": []
+        }
+      ]
+    },
+    {
+      "type": "article",
+      "number": {
+        "main": 5,
+        "branch": null
+      },
+      "title": "表示の方法",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "学章を表示する場合は、尊厳と品位を損なわないよう配慮して使用しなければならない。",
+          "items": []
+        }
+      ]
+    },
+    {
+      "type": "article",
+      "number": {
+        "main": 6,
+        "branch": null
+      },
+      "title": "使用許可の取消し又は使用の停止",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "学長は、次の各号の一に該当すると認めた場合は、学章の使用の許可を取り消し、又は使用を停止させることができるものとする。",
+          "items": [
+            {
+              "number": 1,
+              "text": "前条に定める表示の方法に著しく違背しているとき。",
+              "subitems": []
+            },
+            {
+              "number": 2,
+              "text": "その他学章の使用目的及び使用方法等が適切でないとき。",
+              "subitems": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "article",
+      "number": {
+        "main": 7,
+        "branch": null
+      },
+      "title": "事務",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "学章の使用についての事務は、広報・校友課において処理する。",
+          "items": []
+        }
+      ]
+    }
+  ],
+  "supplementary_provisions": [
+    {
+      "ordinal": 1,
+      "heading_raw": "附  則",
+      "amendment": null,
+      "promulgated": null,
+      "effective": {
+        "kind": "date",
+        "era": "heisei",
+        "year": 16,
+        "month": 4,
+        "day": 1,
+        "iso": "2004-04-01"
+      },
+      "text": "この要領は、平成16年４月１日から施行する。",
+      "references_tables": []
+    },
+    {
+      "ordinal": 2,
+      "heading_raw": "附  則",
+      "amendment": null,
+      "promulgated": null,
+      "effective": {
+        "kind": "date",
+        "era": "heisei",
+        "year": 17,
+        "month": 7,
+        "day": 1,
+        "iso": "2005-07-01"
+      },
+      "text": "この要領は、平成17年７月１日から施行する。",
+      "references_tables": []
+    },
+    {
+      "ordinal": 3,
+      "heading_raw": "附  則（平成20年９月10日規則第32号）",
+      "amendment": {
+        "number": 32,
+        "year": null,
+        "raw": "規則第32号"
+      },
+      "promulgated": {
+        "era": "heisei",
+        "year": 20,
+        "month": 9,
+        "day": 10,
+        "iso": "2008-09-10"
+      },
+      "effective": {
+        "kind": "date",
+        "era": "heisei",
+        "year": 20,
+        "month": 9,
+        "day": 10,
+        "iso": "2008-09-10"
+      },
+      "text": "この要領は、平成20年９月10日から施行する。",
+      "references_tables": []
+    },
+    {
+      "ordinal": 4,
+      "heading_raw": "附  則（平成23年３月31日規則第107号）",
+      "amendment": {
+        "number": 107,
+        "year": null,
+        "raw": "規則第107号"
+      },
+      "promulgated": {
+        "era": "heisei",
+        "year": 23,
+        "month": 3,
+        "day": 31,
+        "iso": "2011-03-31"
+      },
+      "effective": {
+        "kind": "date",
+        "era": "heisei",
+        "year": 23,
+        "month": 4,
+        "day": 1,
+        "iso": "2011-04-01"
+      },
+      "text": "この要領は、平成23年４月１日から施行する。",
+      "references_tables": []
+    },
+    {
+      "ordinal": 5,
+      "heading_raw": "附  則（平成27年５月22日規則第３号）",
+      "amendment": {
+        "number": 3,
+        "year": null,
+        "raw": "規則第３号"
+      },
+      "promulgated": {
+        "era": "heisei",
+        "year": 27,
+        "month": 5,
+        "day": 22,
+        "iso": "2015-05-22"
+      },
+      "effective": {
+        "kind": "date",
+        "era": "heisei",
+        "year": 27,
+        "month": 5,
+        "day": 22,
+        "iso": "2015-05-22"
+      },
+      "text": "この規則は、平成27年５月22日から施行し、平成27年４月１日から適用する。",
+      "references_tables": []
+    },
+    {
+      "ordinal": 6,
+      "heading_raw": "附  則（平成28年３月30日規則第160号）",
+      "amendment": {
+        "number": 160,
+        "year": null,
+        "raw": "規則第160号"
+      },
+      "promulgated": {
+        "era": "heisei",
+        "year": 28,
+        "month": 3,
+        "day": 30,
+        "iso": "2016-03-30"
+      },
+      "effective": {
+        "kind": "date",
+        "era": "heisei",
+        "year": 28,
+        "month": 4,
+        "day": 1,
+        "iso": "2016-04-01"
+      },
+      "text": "この規則は、平成28年４月１日から施行する。",
+      "references_tables": []
+    },
+    {
+      "ordinal": 7,
+      "heading_raw": "附  則（令和３年９月10日規則第20号）",
+      "amendment": {
+        "number": 20,
+        "year": null,
+        "raw": "規則第20号"
+      },
+      "promulgated": {
+        "era": "reiwa",
+        "year": 3,
+        "month": 9,
+        "day": 10,
+        "iso": "2021-09-10"
+      },
+      "effective": {
+        "kind": "date",
+        "era": "reiwa",
+        "year": 3,
+        "month": 10,
+        "day": 1,
+        "iso": "2021-10-01"
+      },
+      "text": "この規則は、令和３年10月１日から施行する。",
+      "references_tables": []
+    },
+    {
+      "ordinal": 8,
+      "heading_raw": "附  則（令和６年３月29日規則第91号）",
+      "amendment": {
+        "number": 91,
+        "year": null,
+        "raw": "規則第91号"
+      },
+      "promulgated": {
+        "era": "reiwa",
+        "year": 6,
+        "month": 3,
+        "day": 29,
+        "iso": "2024-03-29"
+      },
+      "effective": {
+        "kind": "date",
+        "era": "reiwa",
+        "year": 6,
+        "month": 4,
+        "day": 1,
+        "iso": "2024-04-01"
+      },
+      "text": "この規則は、令和６年４月１日から施行する。",
+      "references_tables": []
+    },
+    {
+      "ordinal": 9,
+      "heading_raw": "附  則（令和７年１月20日規則第53号）",
+      "amendment": {
+        "number": 53,
+        "year": null,
+        "raw": "規則第53号"
+      },
+      "promulgated": {
+        "era": "reiwa",
+        "year": 7,
+        "month": 1,
+        "day": 20,
+        "iso": "2025-01-20"
+      },
+      "effective": {
+        "kind": "date",
+        "era": "reiwa",
+        "year": 7,
+        "month": 1,
+        "day": 20,
+        "iso": "2025-01-20"
+      },
+      "text": "この規則は、令和７年１月20日から施行する。",
+      "references_tables": []
+    }
+  ],
+  "appendices": [
+    {
+      "kind": "style",
+      "id": "別記様式第１号",
+      "related_article_raw": "第４条関係",
+      "raw_text": "年   月   日\n高知大学長        殿\n使用団体名\n代表者           学部\n氏名\n高知大学学章使用届\n下記のとおり学章の使用をしたいので、お届けします。\n記\n１  使用目的\n２  使用方法\n３  備考",
+      "cells": null
+    },
+    {
+      "kind": "style",
+      "id": "別記様式第２号",
+      "related_article_raw": "第４条関係",
+      "raw_text": "年   月   日\n高知大学長        殿\n申請者\n住所\n氏名\n高知大学学章使用願\n下記のとおり学章の使用をしたいので、許可くださるようお願いします。\n記\n１  使用目的\n２  使用方法\n３  備考\n学章の使用の許可、取消し及び停止された使用期間中における学章デザイン\nの変更等に関して、万一当方若しくは第三者に損害が生じた場合又はその他の\n不測の事態が生じた場合においても、当方で処理し、貴学及びその関係者に損\n害賠償の請求は、一切行いません。",
+      "cells": null
+    },
+    {
+      "kind": "style",
+      "id": "別記様式第３号",
+      "related_article_raw": "第４条関係",
+      "raw_text": "年   月   日\n殿\n高知大学長\n高知大学学章使用許可書\n年  月  日付けで願い出のありました標記のことについては、下記の条件を付し\nて使用を許可します。\n記\n１  次の各号の一に該当すると認めた場合は、学章の使用の許可を取り消し、又は使用\nを停止させることがあります。\n(1)  高知大学学章取扱規則第５条に規定する表示の方法に著しく違背しているとき。\n(2)  その他学章の使用目的及び使用方法等が適切でないとき。\n２  学章の使用の許可、取消し及び停止された使用期間中における学章デザインの変更\n等に関して、万一申請者若しくは第三者に損害が生じた場合又はその他の不測の事態\nが生じた場合は、申請者においてこれを処理し、本学では一切その責任を負いません。\n３  その他",
+      "cells": null
+    }
+  ]
+}

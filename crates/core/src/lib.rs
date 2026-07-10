@@ -1,7 +1,9 @@
 pub mod dates;
 pub mod extract;
+pub mod graph;
 pub mod markdown;
 pub mod model;
 pub mod numerals;
+pub mod search;
 pub mod structure;
 pub mod table;

@@ -11,8 +11,8 @@
 //! out of scope. Detection is by content, not an allowlist, so a future scraped
 //! scan is handled the same way.
 
-use kochi_u_rulesets::model::ArticleNumber;
-use kochi_u_rulesets::{extract, structure};
+use kochi_university_regulations::model::ArticleNumber;
+use kochi_university_regulations::{extract, structure};
 
 fn has_text(pages: &[String]) -> bool {
     pages
@@ -51,7 +51,11 @@ fn assert_article_numbers_strictly_increase(numbers: &[ArticleNumber], file: &st
 
 #[test]
 fn every_ruleset_pdf_parses_and_snapshots() {
-    let sources = std::path::Path::new(env!("CARGO_MANIFEST_DIR")).join("sources");
+    // sources/ lives at the workspace root; this test crate is crates/core.
+    let sources = std::path::Path::new(env!("CARGO_MANIFEST_DIR"))
+        .join("../../sources")
+        .canonicalize()
+        .expect("workspace sources directory");
     insta::glob!(&sources, "*.pdf", |path| {
         let name = path.file_stem().unwrap().to_string_lossy().into_owned();
         let pages = extract::extract_pages(path)

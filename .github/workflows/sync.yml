@@ -1,0 +1,50 @@
+name: Sync rulesets
+
+# Mirror the 高知大学 規則集 index weekly: pull the latest PDFs into sources/,
+# regenerate out/, and land any change on main as a signed Verified commit.
+# The commit diff (manifest.json = structural changes, out/*.md = content
+# changes) is itself the human-readable "what changed" report.
+
+on:
+  schedule:
+    # 19:00 UTC Monday = 04:00 JST Tuesday (low-traffic early morning).
+    - cron: '0 19 * * 1'
+  workflow_dispatch:
+    inputs:
+      dry-run:
+        description: Sync and regenerate only, without committing
+        type: boolean
+        default: false
+
+permissions:
+  contents: write   # land sources/, out/, manifest.json on main via the GitHub API
+
+concurrency:
+  group: sync
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions-rust-lang/setup-rust-toolchain@v1
+
+      - name: Build
+        run: cargo build --release
+
+      - name: Sync index → sources/ + manifest.json
+        run: ./target/release/kochi-university-regulations sync
+
+      - name: Rebuild out/
+        run: ./target/release/kochi-university-regulations build --out-dir out sources
+
+      - name: Commit if changed
+        if: ${{ !inputs.dry-run }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          ./target/release/kochi-university-regulations commit \
+            --path sources --path out --path manifest.json \
+            --message "chore: sync rulesets ($(date -u +%Y-%m-%d))"

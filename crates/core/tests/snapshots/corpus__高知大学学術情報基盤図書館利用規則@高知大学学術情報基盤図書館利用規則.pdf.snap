@@ -1,7 +1,7 @@
 ---
 source: tests/corpus.rs
 expression: doc
-input_file: sources/高知大学学術情報基盤図書館利用規.pdf
+input_file: sources/高知大学学術情報基盤図書館利用規則.pdf
 ---
 {
   "title": "高知大学学術情報基盤図書館利用規則",

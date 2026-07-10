@@ -1,10 +1,11 @@
 use std::collections::BTreeSet;
 
-use kochi_u_rulesets::model::{AppendixKind, ArticleNumber, BodyNode};
-use kochi_u_rulesets::{extract, structure};
+use kochi_university_regulations::model::{AppendixKind, ArticleNumber, BodyNode};
+use kochi_university_regulations::{extract, structure};
 
 fn pdf_path() -> std::path::PathBuf {
-    std::path::Path::new(env!("CARGO_MANIFEST_DIR")).join("sources/高知大学学則.pdf")
+    // sources/ lives at the workspace root; this test crate is crates/core.
+    std::path::Path::new(env!("CARGO_MANIFEST_DIR")).join("../../sources/高知大学学則.pdf")
 }
 
 /// Counts the 節 directly under a chapter node.
@@ -94,7 +95,7 @@ fn known_facts_about_the_real_document() {
     assert_eq!(branches, expected_branches);
 
     // 別表第1〜4, in order, each carrying its raw "第N条関係" text.
-    let tables: Vec<&kochi_u_rulesets::model::Appendix> = doc.tables().collect();
+    let tables: Vec<&kochi_university_regulations::model::Appendix> = doc.tables().collect();
     assert_eq!(tables.len(), 4);
     let ids: Vec<&str> = tables.iter().map(|t| t.id.as_str()).collect();
     assert_eq!(ids, ["別表第１", "別表第２", "別表第３", "別表第４"]);

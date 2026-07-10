@@ -14,12 +14,28 @@ use crate::table;
 /// order; `raw_text` is always kept, so a cell mismatch can never lose content.
 pub fn parse_pdf(path: impl AsRef<Path>) -> anyhow::Result<RuleDocument> {
     let path = path.as_ref();
-    let doc =
-        Document::load(path).with_context(|| format!("failed to load PDF {}", path.display()))?;
-    let pages = extract_pages_from_doc(&doc);
+    let bytes =
+        std::fs::read(path).with_context(|| format!("failed to read PDF {}", path.display()))?;
+    parse_pdf_bytes(&bytes)
+}
+
+/// Parse a PDF already resident in memory — the browser (wasm) entry point.
+/// Equivalent to [`parse_pdf`] but sourced from bytes rather than a path, so the
+/// exact same core drives both build-time generation and in-browser live parsing
+/// (and their JSON is byte-for-byte identical). `Document::load(path)` is itself
+/// read-then-parse, so `fs::read` + `load_mem` is behaviourally identical.
+pub fn parse_pdf_bytes(bytes: &[u8]) -> anyhow::Result<RuleDocument> {
+    let doc = Document::load_mem(bytes).context("failed to load PDF from memory")?;
+    parse_loaded(&doc)
+}
+
+/// Runs both passes (text: 章/条/…, 附則, dates; coordinate: 別表 grids) on an
+/// already-loaded document and attaches reconstructed cells by document order.
+fn parse_loaded(doc: &Document) -> anyhow::Result<RuleDocument> {
+    let pages = extract_pages_from_doc(doc);
     let mut document = crate::structure::parse(&pages)?;
 
-    let tables = appendix_tables(&doc);
+    let tables = appendix_tables(doc);
     // Both passes enumerate the same 別表/様式 markers in document order; only
     // attach when the counts agree, otherwise fall back to raw for the document.
     if tables.len() == document.appendices.len() {
@@ -44,8 +60,14 @@ pub fn parse_pdf(path: impl AsRef<Path>) -> anyhow::Result<RuleDocument> {
 /// backends means touching just this module.
 pub fn extract_pages(path: impl AsRef<Path>) -> anyhow::Result<Vec<String>> {
     let path = path.as_ref();
-    let doc =
-        Document::load(path).with_context(|| format!("failed to load PDF {}", path.display()))?;
+    let bytes =
+        std::fs::read(path).with_context(|| format!("failed to read PDF {}", path.display()))?;
+    extract_pages_from_bytes(&bytes)
+}
+
+/// Per-page ruby-free text from PDF bytes already in memory (wasm entry point).
+pub fn extract_pages_from_bytes(bytes: &[u8]) -> anyhow::Result<Vec<String>> {
+    let doc = Document::load_mem(bytes).context("failed to load PDF from memory")?;
     Ok(extract_pages_from_doc(&doc))
 }
 

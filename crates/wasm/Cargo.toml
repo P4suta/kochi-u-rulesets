@@ -1,0 +1,19 @@
+# Thin wasm-bindgen wrapper over `crates/core`. Two browser uses of the same core:
+# (a) `parse(bytes)` — parse a dropped PDF live, returning JSON that is byte-for-byte
+# identical to the native `build` output; (b) `Engine` — folding full-text search
+# over the prebuilt index (added in Phase 2). Built with `wasm-pack --target web`.
+[package]
+name = "kochi-university-regulations-wasm"
+version.workspace = true
+edition.workspace = true
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+[dependencies]
+kochi-university-regulations-core.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+wasm-bindgen = "0.2"
+serde-wasm-bindgen = "0.6"
+console_error_panic_hook = "0.1"

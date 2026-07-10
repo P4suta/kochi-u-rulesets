@@ -5,4 +5,9 @@
 just = "latest"
 lefthook = "latest"
 typos = "latest"
-# The Rust toolchain itself is pinned by rust-toolchain.toml.
+actionlint = "latest"
+# Frontend (web/): Svelte 5 + Vite, managed with pnpm (not npm/bun).
+node = "latest"
+pnpm = "latest"
+# The Rust toolchain is pinned by rust-toolchain.toml; wasm-pack is installed
+# separately (cargo install wasm-pack) — it is not in the mise registry.
