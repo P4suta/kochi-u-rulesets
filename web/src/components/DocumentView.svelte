@@ -104,7 +104,7 @@
 	</section>
 {/snippet}
 
-<div class="prose-legal mx-auto">
+<div class="prose-legal reading mx-auto">
 	<header class="border-b border-line pb-4">
 		<h1 class="text-2xl font-bold tracking-tight text-ink">{doc.title}</h1>
 		<dl class="mt-2 space-y-0.5 text-sm text-ink-2">
@@ -146,3 +146,19 @@
 		</div>
 	{/if}
 </div>
+
+<style>
+	/* Reading focus: hovering a 条 keeps it bright and fades the other articles, so
+	   the eye settles on one provision at a time. Only <article> leaves are dimmed
+	   (章/節 headings and 別表/附則 stay as landmarks) — dimming a wrapper would
+	   multiply opacity down onto the hovered article. Pure CSS, no JS. */
+	.reading :global(article) {
+		transition: opacity 0.25s ease;
+	}
+	.reading:has(:global(article:hover)) :global(article) {
+		opacity: 0.4;
+	}
+	.reading:has(:global(article:hover)) :global(article:hover) {
+		opacity: 1;
+	}
+</style>

@@ -17,6 +17,13 @@
 	let graph = $state<Graph | null>(null)
 	let error = $state<string | null>(null)
 
+	// The reading column (holds DocumentView's <article id> elements), and the
+	// article the reader is currently on — tracked by scroll via IntersectionObserver.
+	let contentEl = $state<HTMLElement>()
+	let activeArticle = $state<string | undefined>(undefined)
+	// The ToC highlights the scroll position once we have one, else the deep-link target.
+	const current = $derived(activeArticle ?? article)
+
 	// The site index resolves a ruleset `code` to its display name and origin PDF.
 	const entry = $derived(site.rulesets.find((r) => r.code === code))
 	const nameByCode = $derived(new Map(site.rulesets.map((r) => [r.code, r.name])))
@@ -79,6 +86,42 @@
 			}
 		}
 	})
+
+	// Scrollspy — depends on `doc` (article elements must be mounted) and `contentEl`.
+	// Tracks which article the reader is on so the ToC can follow. rootMargin trims
+	// the sticky header off the top and treats only the top ~40% as "current". Does
+	// not touch the URL (no history noise); highlight only.
+	$effect(() => {
+		const ready = doc
+		const root = contentEl
+		if (!ready || !root) return
+
+		let obs: IntersectionObserver | null = null
+		const raf = requestAnimationFrame(() => {
+			const articles = [...root.querySelectorAll<HTMLElement>('article[id]')]
+			if (articles.length === 0) return
+			const visible = new Set<string>()
+			obs = new IntersectionObserver(
+				(entries) => {
+					for (const e of entries) {
+						const id = (e.target as HTMLElement).id
+						if (e.isIntersecting) visible.add(id)
+						else visible.delete(id)
+					}
+					// The top-most visible article in document order is the current one.
+					const top = articles.find((a) => visible.has(a.id))
+					if (top) activeArticle = top.id
+				},
+				{ rootMargin: '-80px 0px -60% 0px', threshold: 0 },
+			)
+			for (const a of articles) obs.observe(a)
+		})
+
+		return () => {
+			cancelAnimationFrame(raf)
+			obs?.disconnect()
+		}
+	})
 </script>
 
 <!-- Recursive table-of-contents entry: chapters/sections nest, articles link. -->
@@ -104,8 +147,8 @@
 		<li>
 			<a
 				href={href({ name: 'doc', code, article: label })}
-				aria-current={article === label ? 'true' : undefined}
-				class="block rounded px-2 py-0.5 text-sm transition-colors hover:bg-fill {article === label
+				aria-current={current === label ? 'true' : undefined}
+				class="block rounded px-2 py-0.5 text-sm transition-colors hover:bg-fill {current === label
 					? 'bg-fill-strong font-medium text-ink'
 					: 'text-ink-2'}"
 			>
@@ -157,7 +200,7 @@
 <div>
 	<!-- Header: breadcrumb back to the list and a link to the origin PDF. -->
 	<div class="flex flex-wrap items-center justify-between gap-2">
-		<a href={href({ name: 'list' })} class="text-sm text-ink-2 hover:text-accent">
+		<a href={href({ name: 'home' })} class="text-sm text-ink-2 hover:text-accent">
 			← 一覧
 		</a>
 		{#if entry}
@@ -176,7 +219,7 @@
 		<div class="rounded-card border border-line bg-card p-6 shadow-card mt-6 text-center">
 			<p class="text-ink-2">規則の読み込みに失敗しました。</p>
 			<p class="mt-1 text-sm text-ink-3">{error}</p>
-			<a href={href({ name: 'list' })} class="mt-3 inline-block text-sm text-accent hover:underline">
+			<a href={href({ name: 'home' })} class="mt-3 inline-block text-sm text-accent hover:underline">
 				一覧に戻る
 			</a>
 		</div>
@@ -201,7 +244,7 @@
 				</nav>
 			</aside>
 
-			<div class="min-w-0">
+			<div class="min-w-0" bind:this={contentEl}>
 				<DocumentView {doc} />
 
 				<!-- Reference adjacency, aligned to the reading measure. -->
