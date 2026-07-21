@@ -1,0 +1,529 @@
+---
+source: crates/core/tests/corpus.rs
+expression: doc
+input_file: sources/高知大学研究生規則.pdf
+---
+{
+  "title": "高知大学研究生規則",
+  "enacted": {
+    "date": {
+      "era": "heisei",
+      "year": 24,
+      "month": 3,
+      "day": 28,
+      "iso": "2012-03-28"
+    },
+    "rule_number": {
+      "number": 108,
+      "year": null,
+      "raw": "規則第 108 号"
+    },
+    "raw": "平成24年３月28日 規則第 108 号"
+  },
+  "last_amended": {
+    "date": {
+      "era": "reiwa",
+      "year": 8,
+      "month": 2,
+      "day": 13,
+      "iso": "2026-02-13"
+    },
+    "rule_number": {
+      "number": 74,
+      "year": null,
+      "raw": "規則第74号"
+    },
+    "raw": "最終改正  令和８年２月13日規則第74号"
+  },
+  "full_amendment_note": null,
+  "body": [
+    {
+      "type": "article",
+      "number": {
+        "main": 1,
+        "branch": null
+      },
+      "title": "趣旨",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "この規則は、高知大学学則第21条第２項の規定に基づき、高知大学（以下「本学」という。）における研究生に関し必要な事項を定める。",
+          "items": [],
+          "refs": []
+        }
+      ],
+      "subordinate_rules": []
+    },
+    {
+      "type": "article",
+      "number": {
+        "main": 2,
+        "branch": null
+      },
+      "title": "入学資格",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "研究生として入学することのできる者は、次の各号に定める者とする。",
+          "items": [
+            {
+              "number": 1,
+              "text": "学部又は学内共同利用施設（以下「学部等」という。）にあっては、学士の学位を有する者又はこれと同等以上の学力があると認められる者",
+              "subitems": [],
+              "refs": []
+            },
+            {
+              "number": 2,
+              "text": "大学院修士課程及び専門職学位課程にあっては、修士の学位若しくは専門職学位を有する者又はこれと同等以上の学力があると認められる者",
+              "subitems": [],
+              "refs": []
+            },
+            {
+              "number": 3,
+              "text": "大学院博士課程にあっては、博士の学位を有する者又はこれと同等以上の学力があると認められる者",
+              "subitems": [],
+              "refs": []
+            }
+          ],
+          "refs": []
+        }
+      ],
+      "subordinate_rules": []
+    },
+    {
+      "type": "article",
+      "number": {
+        "main": 3,
+        "branch": null
+      },
+      "title": "出願手続",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "研究生として本学に入学を志願する者は、次の各号に掲げる書類に検定料を添えて、学部長若しくは学内共同利用施設の長（以下「学部長等」という。）又は研究科長に提出しなければならない。",
+          "items": [
+            {
+              "number": 1,
+              "text": "入学願書",
+              "subitems": [],
+              "refs": []
+            },
+            {
+              "number": 2,
+              "text": "履歴書",
+              "subitems": [],
+              "refs": []
+            },
+            {
+              "number": 3,
+              "text": "最終学校の卒業又は修了証明書",
+              "subitems": [],
+              "refs": []
+            },
+            {
+              "number": 4,
+              "text": "その他学部等又は研究科が必要と認める書類",
+              "subitems": [],
+              "refs": []
+            }
+          ],
+          "refs": []
+        },
+        {
+          "number": 2,
+          "text": "入学を志願する者が、官公庁又は会社等に勤務しているときは、事業目的の追求のため派遣するものでない旨及び在職のまま研究生として入学することについて差し支えない旨の所属長の確約・承諾書を提出しなければならない。",
+          "items": [],
+          "refs": []
+        },
+        {
+          "number": 3,
+          "text": "入学を志願する者が現職教育のため任命権者の命により派遣される教職員であるときは、その旨の任命権者の証明書を提出しなければならない。",
+          "items": [],
+          "refs": []
+        }
+      ],
+      "subordinate_rules": []
+    },
+    {
+      "type": "article",
+      "number": {
+        "main": 4,
+        "branch": null
+      },
+      "title": "入学者の選考",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "前条の入学志願者については、学部等の教授会等又は研究科委員会において選考を行う。",
+          "items": [],
+          "refs": []
+        }
+      ],
+      "subordinate_rules": []
+    },
+    {
+      "type": "article",
+      "number": {
+        "main": 5,
+        "branch": null
+      },
+      "title": "入学許可",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "前条の選考により合格した者は、所定の期日までに入学料を納付しなければならない。",
+          "items": [],
+          "refs": []
+        },
+        {
+          "number": 2,
+          "text": "学長は、前項の手続を完了した者に入学を許可する。",
+          "items": [],
+          "refs": []
+        }
+      ],
+      "subordinate_rules": []
+    },
+    {
+      "type": "article",
+      "number": {
+        "main": 6,
+        "branch": null
+      },
+      "title": "研究期間",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "研究生の研究期間は、原則として１か月以上１年以内とする。",
+          "items": [],
+          "refs": []
+        },
+        {
+          "number": 2,
+          "text": "研究期間が満了しても、なお引き続き研究しようとする者は、学部等の教授会等又は研究科委員会の議を経て、研究期間を延長することができる。延長を許可する期間は、前項の規定を適用するものとする。",
+          "items": [],
+          "refs": []
+        }
+      ],
+      "subordinate_rules": []
+    },
+    {
+      "type": "article",
+      "number": {
+        "main": 7,
+        "branch": null
+      },
+      "title": "指導教員",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "研究生の指導教員は、学部長等又は研究科長の申出により、学長が定める。",
+          "items": [],
+          "refs": []
+        },
+        {
+          "number": 2,
+          "text": "研究生は、指導教員の指導を受けて研究に従事するものとする。",
+          "items": [],
+          "refs": []
+        }
+      ],
+      "subordinate_rules": []
+    },
+    {
+      "type": "article",
+      "number": {
+        "main": 8,
+        "branch": null
+      },
+      "title": "講義等への出席",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "研究生は、指導教員及び担当教員の許可を得て、研究事項に関連のある講義又は実験実習等に出席することができる。",
+          "items": [],
+          "refs": []
+        }
+      ],
+      "subordinate_rules": []
+    },
+    {
+      "type": "article",
+      "number": {
+        "main": 9,
+        "branch": null
+      },
+      "title": "研究終了報告",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "研究生は、研究期間が満了したとき、又は研究期間の中途で研究を終えたときは、研究成果の概要を記載した研究終了報告書を指導教員を経て、学部長等又は研究科長に提出するものとする。",
+          "items": [],
+          "refs": []
+        }
+      ],
+      "subordinate_rules": []
+    },
+    {
+      "type": "article",
+      "number": {
+        "main": 10,
+        "branch": null
+      },
+      "title": "研究証明書",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "学部長等又は研究科長は、前条の研究終了報告書を提出した者から申出があったときは、研究主題及び研究期間を記載した研究証明書を交付する。",
+          "items": [],
+          "refs": []
+        }
+      ],
+      "subordinate_rules": []
+    },
+    {
+      "type": "article",
+      "number": {
+        "main": 11,
+        "branch": null
+      },
+      "title": "授業料の納付",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "研究生は、研究期間に応じて第１学期及び第２学期に区分し、６か月分（研究期間が６か月未満のときは、その期間分）に相当する額を国立大学法人高知大学における授業料等費用に関する規則（以下「費用規則」という。）第４条第２項に定める徴収時期に納付するものとする。ただし、入学の時期が徴収の時期後である場合には、入学の日の属する月に納付するものとする。",
+          "items": [],
+          "refs": []
+        }
+      ],
+      "subordinate_rules": []
+    },
+    {
+      "type": "article",
+      "number": {
+        "main": 12,
+        "branch": null
+      },
+      "title": "検定料、入学料及び授業料",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "研究生の検定料、入学料及び授業料の額は、費用規則の定めるところによる。",
+          "items": [],
+          "refs": []
+        },
+        {
+          "number": 2,
+          "text": "既納の検定料、入学料及び授業料は、還付しない。",
+          "items": [],
+          "refs": []
+        }
+      ],
+      "subordinate_rules": []
+    },
+    {
+      "type": "article",
+      "number": {
+        "main": 13,
+        "branch": null
+      },
+      "title": "研究の中止",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "本学の規則に違反した者又は病気その他の理由により研究の見込みがない者に対しては、学部長等又は研究科長からの申出に基づき、学長が研究の中止を命ずる。",
+          "items": [],
+          "refs": []
+        }
+      ],
+      "subordinate_rules": []
+    },
+    {
+      "type": "article",
+      "number": {
+        "main": 14,
+        "branch": null
+      },
+      "title": "現職教育に関する特例",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "現職教育のため任命権者の命により派遣されている研究生（以下本条において「現職教育研究生」という｡）については、第３条第１項、第５条第１項及び第11条の規定にかかわらず、検定料、入学料及び授業料は、徴収しない。",
+          "items": [],
+          "refs": []
+        },
+        {
+          "number": 2,
+          "text": "現職教育研究生の入学志願手続については、第３条第１項の規定にかかわらず、提出書類のうち第３号を除くことができる。",
+          "items": [],
+          "refs": []
+        },
+        {
+          "number": 3,
+          "text": "現職教育研究生の入学許可については、第５条第２項中「前項の手続を完了した者」とあるのは「選考に合格した者」と読み替えるものとする。",
+          "items": [],
+          "refs": []
+        }
+      ],
+      "subordinate_rules": []
+    },
+    {
+      "type": "article",
+      "number": {
+        "main": 15,
+        "branch": null
+      },
+      "title": "規則の準用",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "研究生については、この規則に定めるもののほか、高知大学学則その他本学学生に関する規則を準用する。",
+          "items": [],
+          "refs": []
+        }
+      ],
+      "subordinate_rules": []
+    },
+    {
+      "type": "article",
+      "number": {
+        "main": 16,
+        "branch": null
+      },
+      "title": "雑則",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "この規則に定めるもののほか、研究生に関し必要な事項は、学部等又は研究科において別に定める。",
+          "items": [],
+          "refs": []
+        }
+      ],
+      "subordinate_rules": []
+    }
+  ],
+  "supplementary_provisions": [
+    {
+      "ordinal": 1,
+      "heading_raw": "附  則",
+      "amendment": null,
+      "promulgated": null,
+      "effective": {
+        "kind": "date",
+        "era": "heisei",
+        "year": 24,
+        "month": 4,
+        "day": 1,
+        "iso": "2012-04-01"
+      },
+      "text": "１  この規則は、平成24年４月１日から施行する。\n２  高知大学研究生規則（平成16年規則第137号）及び高知大学大学院研究生規則（平成16\n年規則第315号）は廃止する。",
+      "references_tables": []
+    },
+    {
+      "ordinal": 2,
+      "heading_raw": "附  則（平成24年６月27日規則第27号）",
+      "amendment": {
+        "number": 27,
+        "year": null,
+        "raw": "規則第27号"
+      },
+      "promulgated": {
+        "era": "heisei",
+        "year": 24,
+        "month": 6,
+        "day": 27,
+        "iso": "2012-06-27"
+      },
+      "effective": {
+        "kind": "date",
+        "era": "heisei",
+        "year": 24,
+        "month": 10,
+        "day": 1,
+        "iso": "2012-10-01"
+      },
+      "text": "この規則は、平成24年10月１日から施行する。",
+      "references_tables": []
+    },
+    {
+      "ordinal": 3,
+      "heading_raw": "附  則（平成25年１月23日規則第60号）",
+      "amendment": {
+        "number": 60,
+        "year": null,
+        "raw": "規則第60号"
+      },
+      "promulgated": {
+        "era": "heisei",
+        "year": 25,
+        "month": 1,
+        "day": 23,
+        "iso": "2013-01-23"
+      },
+      "effective": {
+        "kind": "date",
+        "era": "heisei",
+        "year": 25,
+        "month": 1,
+        "day": 23,
+        "iso": "2013-01-23"
+      },
+      "text": "この規則は、平成25年１月23日から施行する。",
+      "references_tables": []
+    },
+    {
+      "ordinal": 4,
+      "heading_raw": "附  則（平成29年11月27日規則第29号）",
+      "amendment": {
+        "number": 29,
+        "year": null,
+        "raw": "規則第29号"
+      },
+      "promulgated": {
+        "era": "heisei",
+        "year": 29,
+        "month": 11,
+        "day": 27,
+        "iso": "2017-11-27"
+      },
+      "effective": {
+        "kind": "date",
+        "era": "heisei",
+        "year": 30,
+        "month": 4,
+        "day": 1,
+        "iso": "2018-04-01"
+      },
+      "text": "この規則は、平成30年４月１日から施行する。",
+      "references_tables": []
+    },
+    {
+      "ordinal": 5,
+      "heading_raw": "附  則（令和８年２月13日規則第74号）",
+      "amendment": {
+        "number": 74,
+        "year": null,
+        "raw": "規則第74号"
+      },
+      "promulgated": {
+        "era": "reiwa",
+        "year": 8,
+        "month": 2,
+        "day": 13,
+        "iso": "2026-02-13"
+      },
+      "effective": {
+        "kind": "date",
+        "era": "reiwa",
+        "year": 8,
+        "month": 4,
+        "day": 1,
+        "iso": "2026-04-01"
+      },
+      "text": "この規則は、令和８年４月１日から施行する。",
+      "references_tables": []
+    }
+  ],
+  "appendices": [],
+  "authorities": []
+}

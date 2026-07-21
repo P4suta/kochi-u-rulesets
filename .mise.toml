@@ -5,4 +5,13 @@
 just = "latest"
 lefthook = "latest"
 typos = "latest"
-# The Rust toolchain itself is pinned by rust-toolchain.toml.
+actionlint = "latest"
+# Conventional-Commits linter for the lefthook commit-msg hook — the local guard
+# that keeps release-please's version + CHANGELOG derivation fed with well-formed
+# commits. cargo backend.
+"cargo:committed" = "1"
+# Frontend (web/): Svelte 5 + Vite, managed with pnpm (not npm/bun).
+node = "latest"
+pnpm = "latest"
+# The Rust toolchain is pinned by rust-toolchain.toml; wasm-pack is installed
+# separately (cargo install wasm-pack) — it is not in the mise registry.

@@ -1,0 +1,474 @@
+---
+source: crates/core/tests/corpus.rs
+expression: doc
+input_file: sources/高知大学課外活動共用施設使用規則.pdf
+---
+{
+  "title": "高知大学課外活動共用施設使用規則",
+  "enacted": {
+    "date": {
+      "era": "heisei",
+      "year": 16,
+      "month": 4,
+      "day": 1,
+      "iso": "2004-04-01"
+    },
+    "rule_number": {
+      "number": 155,
+      "year": null,
+      "raw": "規則第155号"
+    },
+    "raw": "平成16年４月１日 規則第155号"
+  },
+  "last_amended": {
+    "date": {
+      "era": "reiwa",
+      "year": 3,
+      "month": 9,
+      "day": 10,
+      "iso": "2021-09-10"
+    },
+    "rule_number": {
+      "number": 20,
+      "year": null,
+      "raw": "規則第20号"
+    },
+    "raw": "最終改正  令和３年９月10日規則第20号"
+  },
+  "full_amendment_note": null,
+  "body": [
+    {
+      "type": "article",
+      "number": {
+        "main": 1,
+        "branch": null
+      },
+      "title": "趣旨",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "この規則は、高知大学課外活動施設管理運営規則第４条の規定に基づき、高知大学課外活動共用施設（以下「共用施設」という｡）の使用に関し必要な事項を定める。",
+          "items": [],
+          "refs": []
+        }
+      ],
+      "subordinate_rules": []
+    },
+    {
+      "type": "article",
+      "number": {
+        "main": 2,
+        "branch": null
+      },
+      "title": "使用施設",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "共用施設は、本学が認める学生団体の課外活動に使用するため、類似した複数の課外活動団体の共用連絡室として使用する共用室、企画、研究、討論、編集、談話等に使用する集会室、音楽等の練習に使用する音楽室、制作活動に使用する制作・作業室及び課外活動に必要な用具を保管するために使用する器具庫を置く。",
+          "items": [],
+          "refs": []
+        },
+        {
+          "number": 2,
+          "text": "医学部共用施設は、用途に応じて次のとおり区分する",
+          "items": [
+            {
+              "number": 1,
+              "text": "短期使用施設共用室  複数の課外活動団体が課外活動の場として使用する。",
+              "subitems": [],
+              "refs": []
+            },
+            {
+              "number": 2,
+              "text": "長期使用施設音楽系共用室  複数の音楽系課外活動団体が課外活動の場として使用する。暗室  課外活動団体が課外活動の場として使用する。文化系器具室  文化系の課外活動に必要な器具を保管する。体育系器具室  体育系の課外活動に必要な器具を保管する。",
+              "subitems": [],
+              "refs": []
+            }
+          ],
+          "refs": []
+        }
+      ],
+      "subordinate_rules": []
+    },
+    {
+      "type": "article",
+      "number": {
+        "main": 3,
+        "branch": null
+      },
+      "title": "使用期間",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "前条に定める施設の使用日時は、次に定める。",
+          "items": [
+            {
+              "number": 1,
+              "text": "使用日は、国民の祝日に関する法律（昭和23年法律第178号）に定める休日及び年末年始（12月28日から翌年１月４日まで）を除き、使用することができる。",
+              "subitems": [],
+              "refs": []
+            },
+            {
+              "number": 2,
+              "text": "使用時間は、午前８時から午後９時までとする。",
+              "subitems": [],
+              "refs": []
+            },
+            {
+              "number": 3,
+              "text": "理事（教育担当）は特に必要があると認めるときは、前各号の規定にかかわらず、使用を許可することができる。",
+              "subitems": [],
+              "refs": []
+            }
+          ],
+          "refs": []
+        }
+      ],
+      "subordinate_rules": []
+    },
+    {
+      "type": "article",
+      "number": {
+        "main": 4,
+        "branch": null
+      },
+      "title": "使用手続",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "共用施設を長期に使用しようとする課外活動団体の責任者（以下「責任者」という｡）は、毎年前年度の２月末日までに所定の様式により学長に願い出て、許可を得なければならない。",
+          "items": [],
+          "refs": []
+        },
+        {
+          "number": 2,
+          "text": "共用施設を短期に使用しようとする責任者は、１週間前までに所定の様式により学長に願い出て、許可を得なければならない。",
+          "items": [],
+          "refs": []
+        }
+      ],
+      "subordinate_rules": []
+    },
+    {
+      "type": "article",
+      "number": {
+        "main": 5,
+        "branch": null
+      },
+      "title": "鍵の保管",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "共用施設の鍵は、学務部学生支援課が管理する。",
+          "items": [],
+          "refs": []
+        }
+      ],
+      "subordinate_rules": []
+    },
+    {
+      "type": "article",
+      "number": {
+        "main": 6,
+        "branch": null
+      },
+      "title": "使用心得",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "共用施設を使用する者は、次の各号に掲げる事項を遵守しなければならない。",
+          "items": [
+            {
+              "number": 1,
+              "text": "使用目的以外の用途に使用しないこと。",
+              "subitems": [],
+              "refs": []
+            },
+            {
+              "number": 2,
+              "text": "使用時間を厳守すること。",
+              "subitems": [],
+              "refs": []
+            },
+            {
+              "number": 3,
+              "text": "施設、設備及び備品を無断で移動、改廃及び新設しないこと。",
+              "subitems": [],
+              "refs": []
+            },
+            {
+              "number": 4,
+              "text": "火気に特に注意し、所定の場所以外の熱器具等の使用及び喫煙をしないこと。",
+              "subitems": [],
+              "refs": []
+            },
+            {
+              "number": 5,
+              "text": "使用後の清掃、消灯及び戸締りを行うこと。",
+              "subitems": [],
+              "refs": []
+            },
+            {
+              "number": 6,
+              "text": "使用を許可された施設、設備を転貸しないこと。",
+              "subitems": [],
+              "refs": []
+            },
+            {
+              "number": 7,
+              "text": "その他係員の指示事項を厳守すること。",
+              "subitems": [],
+              "refs": []
+            }
+          ],
+          "refs": []
+        }
+      ],
+      "subordinate_rules": []
+    },
+    {
+      "type": "article",
+      "number": {
+        "main": 7,
+        "branch": null
+      },
+      "title": null,
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "この規則に違反した場合は、その使用を中止させ、又は禁止することがある。",
+          "items": [],
+          "refs": []
+        }
+      ],
+      "subordinate_rules": []
+    },
+    {
+      "type": "article",
+      "number": {
+        "main": 8,
+        "branch": null
+      },
+      "title": "損害賠償",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "使用者が施設、設備及び備品等を故意又は過失により滅失又は毀損した場合は、本学の指示に従って速やかに修理し、又は本学の認定した額を賠償しなければならない。",
+          "items": [],
+          "refs": []
+        }
+      ],
+      "subordinate_rules": []
+    },
+    {
+      "type": "article",
+      "number": {
+        "main": 9,
+        "branch": null
+      },
+      "title": "事務",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "共用施設に関する事務は、学務部学生支援課が行う。",
+          "items": [],
+          "refs": []
+        }
+      ],
+      "subordinate_rules": []
+    },
+    {
+      "type": "article",
+      "number": {
+        "main": 10,
+        "branch": null
+      },
+      "title": "補則",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "この規則に定めるもののほか、共用施設の使用に関する必要な事項は、学長が定める。",
+          "items": [],
+          "refs": []
+        }
+      ],
+      "subordinate_rules": []
+    }
+  ],
+  "supplementary_provisions": [
+    {
+      "ordinal": 1,
+      "heading_raw": "附  則",
+      "amendment": null,
+      "promulgated": null,
+      "effective": {
+        "kind": "date",
+        "era": "heisei",
+        "year": 16,
+        "month": 4,
+        "day": 1,
+        "iso": "2004-04-01"
+      },
+      "text": "この規則は、平成16年４月１日から施行する。",
+      "references_tables": []
+    },
+    {
+      "ordinal": 2,
+      "heading_raw": "附  則（平成17年７月１日規則第545号）",
+      "amendment": {
+        "number": 545,
+        "year": null,
+        "raw": "規則第545号"
+      },
+      "promulgated": {
+        "era": "heisei",
+        "year": 17,
+        "month": 7,
+        "day": 1,
+        "iso": "2005-07-01"
+      },
+      "effective": {
+        "kind": "date",
+        "era": "heisei",
+        "year": 17,
+        "month": 7,
+        "day": 1,
+        "iso": "2005-07-01"
+      },
+      "text": "この規則は、平成17年７月１日から施行する。",
+      "references_tables": []
+    },
+    {
+      "ordinal": 3,
+      "heading_raw": "附  則（平成28年３月23日規則第118号）",
+      "amendment": {
+        "number": 118,
+        "year": null,
+        "raw": "規則第118号"
+      },
+      "promulgated": {
+        "era": "heisei",
+        "year": 28,
+        "month": 3,
+        "day": 23,
+        "iso": "2016-03-23"
+      },
+      "effective": {
+        "kind": "date",
+        "era": "heisei",
+        "year": 28,
+        "month": 4,
+        "day": 1,
+        "iso": "2016-04-01"
+      },
+      "text": "この規則は、平成28年４月１日から施行する。",
+      "references_tables": []
+    },
+    {
+      "ordinal": 4,
+      "heading_raw": "附  則（平成30年３月28日規則第86号）",
+      "amendment": {
+        "number": 86,
+        "year": null,
+        "raw": "規則第86号"
+      },
+      "promulgated": {
+        "era": "heisei",
+        "year": 30,
+        "month": 3,
+        "day": 28,
+        "iso": "2018-03-28"
+      },
+      "effective": {
+        "kind": "date",
+        "era": "heisei",
+        "year": 30,
+        "month": 4,
+        "day": 1,
+        "iso": "2018-04-01"
+      },
+      "text": "この規則は、平成30年４月１日から施行する。",
+      "references_tables": []
+    },
+    {
+      "ordinal": 5,
+      "heading_raw": "附  則（平成31年３月27日規則第100号）",
+      "amendment": {
+        "number": 100,
+        "year": null,
+        "raw": "規則第100号"
+      },
+      "promulgated": {
+        "era": "heisei",
+        "year": 31,
+        "month": 3,
+        "day": 27,
+        "iso": "2019-03-27"
+      },
+      "effective": {
+        "kind": "date",
+        "era": "heisei",
+        "year": 31,
+        "month": 4,
+        "day": 1,
+        "iso": "2019-04-01"
+      },
+      "text": "この規則は、平成31年４月１日から施行する。",
+      "references_tables": []
+    },
+    {
+      "ordinal": 6,
+      "heading_raw": "附  則（平成31年４月26日規則第15号）",
+      "amendment": {
+        "number": 15,
+        "year": null,
+        "raw": "規則第15号"
+      },
+      "promulgated": {
+        "era": "heisei",
+        "year": 31,
+        "month": 4,
+        "day": 26,
+        "iso": "2019-04-26"
+      },
+      "effective": {
+        "kind": "date",
+        "era": "reiwa",
+        "year": 1,
+        "month": 5,
+        "day": 1,
+        "iso": "2019-05-01"
+      },
+      "text": "この規則は、令和元年５月１日から施行する。",
+      "references_tables": []
+    },
+    {
+      "ordinal": 7,
+      "heading_raw": "附  則（令和３年９月10日規則第20号）",
+      "amendment": {
+        "number": 20,
+        "year": null,
+        "raw": "規則第20号"
+      },
+      "promulgated": {
+        "era": "reiwa",
+        "year": 3,
+        "month": 9,
+        "day": 10,
+        "iso": "2021-09-10"
+      },
+      "effective": {
+        "kind": "date",
+        "era": "reiwa",
+        "year": 3,
+        "month": 10,
+        "day": 1,
+        "iso": "2021-10-01"
+      },
+      "text": "この規則は、令和３年10月１日から施行する。",
+      "references_tables": []
+    }
+  ],
+  "appendices": [],
+  "authorities": []
+}

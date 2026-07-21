@@ -1,0 +1,5 @@
+# Select getrandom's JS backend for the browser build. lopdf → rand → getrandom
+# needs an explicit backend on wasm32; this cfg is target-scoped so native builds
+# (cli, tests) are completely unaffected.
+[target.wasm32-unknown-unknown]
+rustflags = ["--cfg", 'getrandom_backend="wasm_js"']

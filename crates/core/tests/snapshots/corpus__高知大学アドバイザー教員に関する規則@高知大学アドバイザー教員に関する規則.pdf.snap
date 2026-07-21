@@ -1,0 +1,215 @@
+---
+source: crates/core/tests/corpus.rs
+expression: doc
+input_file: sources/高知大学アドバイザー教員に関する規則.pdf
+---
+{
+  "title": "高知大学アドバイザー教員に関する規則",
+  "enacted": {
+    "date": {
+      "era": "heisei",
+      "year": 16,
+      "month": 4,
+      "day": 1,
+      "iso": "2004-04-01"
+    },
+    "rule_number": {
+      "number": 143,
+      "year": null,
+      "raw": "規則第143号"
+    },
+    "raw": "平成16年４月１日 規則第143号"
+  },
+  "last_amended": {
+    "date": {
+      "era": "reiwa",
+      "year": 7,
+      "month": 3,
+      "day": 25,
+      "iso": "2025-03-25"
+    },
+    "rule_number": {
+      "number": 93,
+      "year": null,
+      "raw": "規則第93号"
+    },
+    "raw": "最終改正  令和７年３月25日規則第93号"
+  },
+  "full_amendment_note": null,
+  "body": [
+    {
+      "type": "article",
+      "number": {
+        "main": 1,
+        "branch": null
+      },
+      "title": null,
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "高知大学に、アドバイザー教員の制度を置く。",
+          "items": [],
+          "refs": []
+        }
+      ],
+      "subordinate_rules": []
+    },
+    {
+      "type": "article",
+      "number": {
+        "main": 2,
+        "branch": null
+      },
+      "title": null,
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "アドバイザー教員は、高知大学における基幹教員等に関する規則第３条第１号アに該当する基幹教員があたるものとする。",
+          "items": [],
+          "refs": []
+        }
+      ],
+      "subordinate_rules": []
+    },
+    {
+      "type": "article",
+      "number": {
+        "main": 3,
+        "branch": null
+      },
+      "title": null,
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "アドバイザー教員は、学生の履修計画及び進学・就職等について助言を与えるとともに、学生生活全般について相談を受けるものとする。",
+          "items": [],
+          "refs": []
+        }
+      ],
+      "subordinate_rules": []
+    },
+    {
+      "type": "article",
+      "number": {
+        "main": 4,
+        "branch": null
+      },
+      "title": null,
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "アドバイザー教員は、学生の便宜を図るためにオフィス・アワーを設けるものとする。",
+          "items": [],
+          "refs": []
+        }
+      ],
+      "subordinate_rules": []
+    },
+    {
+      "type": "article",
+      "number": {
+        "main": 5,
+        "branch": null
+      },
+      "title": null,
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "アドバイザー教員は、学部教授会の求めがある場合には、学生に関する資料を作成し、報告しなければならない。",
+          "items": [],
+          "refs": []
+        }
+      ],
+      "subordinate_rules": []
+    },
+    {
+      "type": "article",
+      "number": {
+        "main": 6,
+        "branch": null
+      },
+      "title": null,
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "その他アドバイザー教員の運用については、別に定める。",
+          "items": [],
+          "refs": []
+        }
+      ],
+      "subordinate_rules": []
+    }
+  ],
+  "supplementary_provisions": [
+    {
+      "ordinal": 1,
+      "heading_raw": "附  則",
+      "amendment": null,
+      "promulgated": null,
+      "effective": {
+        "kind": "date",
+        "era": "heisei",
+        "year": 16,
+        "month": 4,
+        "day": 1,
+        "iso": "2004-04-01"
+      },
+      "text": "この規則は、平成16年４月１日から施行する。",
+      "references_tables": []
+    },
+    {
+      "ordinal": 2,
+      "heading_raw": "附  則（平成20年３月26日規則第127号）",
+      "amendment": {
+        "number": 127,
+        "year": null,
+        "raw": "規則第127号"
+      },
+      "promulgated": {
+        "era": "heisei",
+        "year": 20,
+        "month": 3,
+        "day": 26,
+        "iso": "2008-03-26"
+      },
+      "effective": {
+        "kind": "date",
+        "era": "heisei",
+        "year": 20,
+        "month": 4,
+        "day": 1,
+        "iso": "2008-04-01"
+      },
+      "text": "この規則は、平成20年４月１日から施行する。",
+      "references_tables": []
+    },
+    {
+      "ordinal": 3,
+      "heading_raw": "附  則（令和７年３月25日規則第93号）",
+      "amendment": {
+        "number": 93,
+        "year": null,
+        "raw": "規則第93号"
+      },
+      "promulgated": {
+        "era": "reiwa",
+        "year": 7,
+        "month": 3,
+        "day": 25,
+        "iso": "2025-03-25"
+      },
+      "effective": {
+        "kind": "date",
+        "era": "reiwa",
+        "year": 7,
+        "month": 4,
+        "day": 1,
+        "iso": "2025-04-01"
+      },
+      "text": "この規則は、令和７年４月１日から施行する。",
+      "references_tables": []
+    }
+  ],
+  "appendices": [],
+  "authorities": []
+}

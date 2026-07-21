@@ -1,0 +1,386 @@
+---
+source: crates/core/tests/corpus.rs
+expression: doc
+input_file: sources/高知大学職業紹介業務運営規則.pdf
+---
+{
+  "title": "高知大学職業紹介業務運営規則",
+  "enacted": {
+    "date": {
+      "era": "heisei",
+      "year": 16,
+      "month": 4,
+      "day": 1,
+      "iso": "2004-04-01"
+    },
+    "rule_number": {
+      "number": 153,
+      "year": null,
+      "raw": "規則第 153 号"
+    },
+    "raw": "平成16年４月１日 規則第 153 号"
+  },
+  "last_amended": {
+    "date": {
+      "era": "heisei",
+      "year": 24,
+      "month": 3,
+      "day": 30,
+      "iso": "2012-03-30"
+    },
+    "rule_number": {
+      "number": 119,
+      "year": null,
+      "raw": "規則第119号"
+    },
+    "raw": "最終改正  平成24年３月30日規則第119号"
+  },
+  "full_amendment_note": null,
+  "body": [
+    {
+      "type": "article",
+      "number": {
+        "main": 1,
+        "branch": null
+      },
+      "title": "趣旨",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "この規則は、職業安定法（昭和22年法律第141号）第33条の２の規定に基づき、高知大学（以下｢本学｣という｡）において行う無料の職業紹介業務（以下「紹介業務」という。）に関し必要な事項を定める。",
+          "items": [],
+          "refs": []
+        }
+      ],
+      "subordinate_rules": []
+    },
+    {
+      "type": "article",
+      "number": {
+        "main": 2,
+        "branch": null
+      },
+      "title": "対象",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "紹介業務は、本学の学生及び卒業生（以下「学生等」という｡）を対象とする。",
+          "items": [],
+          "refs": []
+        }
+      ],
+      "subordinate_rules": []
+    },
+    {
+      "type": "article",
+      "number": {
+        "main": 3,
+        "branch": null
+      },
+      "title": "担当者及び総括",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "紹介業務は、学務部学生支援課、医学部・病院事務部学生課及び総務部物部総務課学務室の担当係（以下「担当係」という。）が行う。",
+          "items": [],
+          "refs": []
+        },
+        {
+          "number": 2,
+          "text": "紹介業務に関する連絡調整総括は、高知大学就職委員会委員長が行うものとする。",
+          "items": [],
+          "refs": []
+        }
+      ],
+      "subordinate_rules": []
+    },
+    {
+      "type": "article",
+      "number": {
+        "main": 4,
+        "branch": null
+      },
+      "title": "求人の受付",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "求人の受付は、担当係で行うものとする。",
+          "items": [],
+          "refs": []
+        }
+      ],
+      "subordinate_rules": []
+    },
+    {
+      "type": "article",
+      "number": {
+        "main": 5,
+        "branch": null
+      },
+      "title": null,
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "求人の申込みは、次の場合を除き、すべて受理するものとする。",
+          "items": [
+            {
+              "number": 1,
+              "text": "申込み内容が法令に違反するとき。",
+              "subitems": [],
+              "refs": []
+            },
+            {
+              "number": 2,
+              "text": "法令により明示が義務付けられている労働条件を明示しないとき。",
+              "subitems": [],
+              "refs": []
+            },
+            {
+              "number": 3,
+              "text": "賃金、労働時間等の労働条件が通常の労働条件に比べて著しく不適当であるとき。",
+              "subitems": [],
+              "refs": []
+            },
+            {
+              "number": 4,
+              "text": "その職業が教育上不適当と認められるとき。",
+              "subitems": [],
+              "refs": []
+            }
+          ],
+          "refs": []
+        }
+      ],
+      "subordinate_rules": []
+    },
+    {
+      "type": "article",
+      "number": {
+        "main": 6,
+        "branch": null
+      },
+      "title": "求職の申込み",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "本学の学生等は、担当係が受理したいかなる求人についても求職を申し込むことができる。",
+          "items": [],
+          "refs": []
+        },
+        {
+          "number": 2,
+          "text": "求職するに当たり、学生等はあらかじめ担当係に進路登録票を提出しなければならない。",
+          "items": [],
+          "refs": []
+        }
+      ],
+      "subordinate_rules": []
+    },
+    {
+      "type": "article",
+      "number": {
+        "main": 7,
+        "branch": null
+      },
+      "title": "紹介の原則及び報告",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "職業紹介に当たっては、学生等にその希望と能力に適合した職業を紹介し、求人者にその雇用条件に適合する学生等を紹介するものとする。",
+          "items": [],
+          "refs": []
+        },
+        {
+          "number": 2,
+          "text": "求人者及び紹介を受けた学生等は、雇用関係が成立、中止又は終了した場合は、担当係にその旨を速やかに報告するものとする。",
+          "items": [],
+          "refs": []
+        }
+      ],
+      "subordinate_rules": []
+    },
+    {
+      "type": "article",
+      "number": {
+        "main": 8,
+        "branch": null
+      },
+      "title": "紹介の中止",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "同盟罷業又は作業所閉鎖の行われている事業所に対しては、その期間学生等を紹介しない。",
+          "items": [],
+          "refs": []
+        }
+      ],
+      "subordinate_rules": []
+    },
+    {
+      "type": "article",
+      "number": {
+        "main": 9,
+        "branch": null
+      },
+      "title": "均等待遇の保証",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "紹介業務については、学生等に対し、差別的な取扱いをしてはならない。",
+          "items": [],
+          "refs": []
+        }
+      ],
+      "subordinate_rules": []
+    },
+    {
+      "type": "article",
+      "number": {
+        "main": 10,
+        "branch": null
+      },
+      "title": "秘密の厳守",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "紹介業務について、求人者、学生等その他の者から知り得た個人的な情報は、すべて秘密とし、これを他に漏らしてはならない。",
+          "items": [],
+          "refs": []
+        }
+      ],
+      "subordinate_rules": []
+    },
+    {
+      "type": "article",
+      "number": {
+        "main": 11,
+        "branch": null
+      },
+      "title": "帳簿等の保管",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "紹介業務上必要な帳簿及び書類は、担当係において保管するものとする。",
+          "items": [],
+          "refs": []
+        }
+      ],
+      "subordinate_rules": []
+    },
+    {
+      "type": "article",
+      "number": {
+        "main": 12,
+        "branch": null
+      },
+      "title": "その他",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "この規則に定めるもののほか、紹介業務に関し必要な事項は、別に定める。",
+          "items": [],
+          "refs": []
+        }
+      ],
+      "subordinate_rules": []
+    }
+  ],
+  "supplementary_provisions": [
+    {
+      "ordinal": 1,
+      "heading_raw": "附  則",
+      "amendment": null,
+      "promulgated": null,
+      "effective": {
+        "kind": "date",
+        "era": "heisei",
+        "year": 16,
+        "month": 4,
+        "day": 1,
+        "iso": "2004-04-01"
+      },
+      "text": "この規則は、平成16年４月１日から施行する。",
+      "references_tables": []
+    },
+    {
+      "ordinal": 2,
+      "heading_raw": "附  則（平成17年７月１日規則第545号）",
+      "amendment": {
+        "number": 545,
+        "year": null,
+        "raw": "規則第545号"
+      },
+      "promulgated": {
+        "era": "heisei",
+        "year": 17,
+        "month": 7,
+        "day": 1,
+        "iso": "2005-07-01"
+      },
+      "effective": {
+        "kind": "date",
+        "era": "heisei",
+        "year": 17,
+        "month": 7,
+        "day": 1,
+        "iso": "2005-07-01"
+      },
+      "text": "この規則は、平成17年７月１日から施行する。",
+      "references_tables": []
+    },
+    {
+      "ordinal": 3,
+      "heading_raw": "附  則（平成22年３月31日規則第124号）",
+      "amendment": {
+        "number": 124,
+        "year": null,
+        "raw": "規則第124号"
+      },
+      "promulgated": {
+        "era": "heisei",
+        "year": 22,
+        "month": 3,
+        "day": 31,
+        "iso": "2010-03-31"
+      },
+      "effective": {
+        "kind": "date",
+        "era": "heisei",
+        "year": 22,
+        "month": 4,
+        "day": 1,
+        "iso": "2010-04-01"
+      },
+      "text": "この規則は、平成22年４月１日から施行する。",
+      "references_tables": []
+    },
+    {
+      "ordinal": 4,
+      "heading_raw": "附  則（平成24年３月30日規則第119号）",
+      "amendment": {
+        "number": 119,
+        "year": null,
+        "raw": "規則第119号"
+      },
+      "promulgated": {
+        "era": "heisei",
+        "year": 24,
+        "month": 3,
+        "day": 30,
+        "iso": "2012-03-30"
+      },
+      "effective": {
+        "kind": "date",
+        "era": "heisei",
+        "year": 24,
+        "month": 4,
+        "day": 1,
+        "iso": "2012-04-01"
+      },
+      "text": "この規則は、平成24年４月１日から施行する。",
+      "references_tables": []
+    }
+  ],
+  "appendices": [],
+  "authorities": []
+}

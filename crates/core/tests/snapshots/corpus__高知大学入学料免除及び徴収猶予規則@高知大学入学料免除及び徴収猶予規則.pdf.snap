@@ -1,0 +1,636 @@
+---
+source: crates/core/tests/corpus.rs
+expression: doc
+input_file: sources/高知大学入学料免除及び徴収猶予規則.pdf
+---
+{
+  "title": "高知大学入学料免除及び徴収猶予規則",
+  "enacted": {
+    "date": {
+      "era": "heisei",
+      "year": 16,
+      "month": 4,
+      "day": 1,
+      "iso": "2004-04-01"
+    },
+    "rule_number": {
+      "number": 145,
+      "year": null,
+      "raw": "規則第145号"
+    },
+    "raw": "平成16年４月１日 規則第145号"
+  },
+  "last_amended": {
+    "date": {
+      "era": "reiwa",
+      "year": 7,
+      "month": 4,
+      "day": 21,
+      "iso": "2025-04-21"
+    },
+    "rule_number": {
+      "number": 10,
+      "year": null,
+      "raw": "規則第10号"
+    },
+    "raw": "最終改正  令和７年４月21日規則第10号"
+  },
+  "full_amendment_note": null,
+  "body": [
+    {
+      "type": "chapter",
+      "number": {
+        "main": 1,
+        "branch": null
+      },
+      "title": "総則",
+      "children": [
+        {
+          "type": "article",
+          "number": {
+            "main": 1,
+            "branch": null
+          },
+          "title": "趣旨",
+          "paragraphs": [
+            {
+              "number": 1,
+              "text": "この規則は、高知大学学則第80条第１項の規定に基づき、入学料の免除（以下「免除」という。）及び徴収猶予に関し必要な事項を定める。",
+              "items": [],
+              "refs": []
+            }
+          ],
+          "subordinate_rules": []
+        }
+      ]
+    },
+    {
+      "type": "chapter",
+      "number": {
+        "main": 2,
+        "branch": null
+      },
+      "title": "経済的理由等による免除",
+      "children": [
+        {
+          "type": "article",
+          "number": {
+            "main": 2,
+            "branch": null
+          },
+          "title": "免除の対象となる者",
+          "paragraphs": [
+            {
+              "number": 1,
+              "text": "大学院に入学する者（研究生、科目等履修生、特別聴講学生及び特別研究学生として入学する者を除く。以下同じ。）又は学部に入学する者（研究生、科目等履修生及び特別聴講学生として入学する者を除く。以下同じ。）であって、次の各号の一に該当すると認められる場合には、免除の対象とすることができる。",
+              "items": [
+                {
+                  "number": 1,
+                  "text": "大学院に入学する者であって、経済的理由によって納付が困難であり、かつ、学業優秀と認められる者",
+                  "subitems": [],
+                  "refs": []
+                },
+                {
+                  "number": 2,
+                  "text": "大学院に入学する者であって、入学前１年以内において、入学する者の学資を主として負担している者（以下「学資負担者」という。）が死亡し、納付が著しく困難であると認められる場合",
+                  "subitems": [],
+                  "refs": []
+                },
+                {
+                  "number": 3,
+                  "text": "入学前１年以内において、入学する者又は学資負担者が風水害等の災害を受け、納付が著しく困難であると認められる場合",
+                  "subitems": [],
+                  "refs": []
+                },
+                {
+                  "number": 4,
+                  "text": "前２号に準ずる場合であって、学長が相当と認める事由がある場合",
+                  "subitems": [],
+                  "refs": []
+                }
+              ],
+              "refs": []
+            }
+          ],
+          "subordinate_rules": []
+        },
+        {
+          "type": "article",
+          "number": {
+            "main": 3,
+            "branch": null
+          },
+          "title": "免除の許可",
+          "paragraphs": [
+            {
+              "number": 1,
+              "text": "免除の許可は、入学手続終了の日までに受理した本人の申請に基づき、高知大学学生支援委員会（以下「学生支援委員会」という。）の議を経て学長が行う。",
+              "items": [],
+              "refs": []
+            }
+          ],
+          "subordinate_rules": []
+        },
+        {
+          "type": "article",
+          "number": {
+            "main": 4,
+            "branch": null
+          },
+          "title": "免除の額",
+          "paragraphs": [
+            {
+              "number": 1,
+              "text": "免除の額は、入学料の全額又は一部とする。",
+              "items": [],
+              "refs": []
+            }
+          ],
+          "subordinate_rules": []
+        },
+        {
+          "type": "article",
+          "number": {
+            "main": 5,
+            "branch": null
+          },
+          "title": "申請の手続",
+          "paragraphs": [
+            {
+              "number": 1,
+              "text": "免除を受けようとする者は、入学手続終了の日までに、所定の申請書に関係書類を添えて、学長に提出しなければならない。",
+              "items": [],
+              "refs": []
+            },
+            {
+              "number": 2,
+              "text": "申請書の様式は、教育を担当する理事が別に定める。（大学等における修学の支援に関する法律に基づく修学の支援を受ける者に対する入学料減免)",
+              "items": [],
+              "refs": []
+            }
+          ],
+          "subordinate_rules": []
+        },
+        {
+          "type": "article",
+          "number": {
+            "main": 5,
+            "branch": 2
+          },
+          "title": null,
+          "paragraphs": [
+            {
+              "number": 1,
+              "text": "第２条の規定にかかわらず、大学等における修学の支援に関する法律（令和元年法律第８号）、大学等における修学の支援に関する法律施行令（令和元年政令第49号）及び大学等における修学の支援に関する法律施行規則（令和元年文部科学省令第６号）（以下「関係法令」という。）の規定に基づき、大学等における修学の支援に関する法律第４条に規定される授業料等減免対象者として認定を受けた者は、関係法令の規定に基づき算定された額について入学料の減免を受けることができる。",
+              "items": [],
+              "refs": []
+            },
+            {
+              "number": 2,
+              "text": "本学が大学等における修学の支援に関する法律第２条第４項に規定される確認大学等として行う認定については、関係法令に定めるもののほか、第３条及び第５条の規定を準用して行うものとする。この場合において、これらの規定中「入学手続終了の日」とあるのは、「入学手続終了の日又は入学後の本学の定める期日」と読み替えるものとする。",
+              "items": [],
+              "refs": []
+            }
+          ],
+          "subordinate_rules": []
+        }
+      ]
+    },
+    {
+      "type": "chapter",
+      "number": {
+        "main": 3,
+        "branch": null
+      },
+      "title": "徴収の猶予等",
+      "children": [
+        {
+          "type": "article",
+          "number": {
+            "main": 6,
+            "branch": null
+          },
+          "title": "徴収の猶予等",
+          "paragraphs": [
+            {
+              "number": 1,
+              "text": "入学料の徴収猶予（以下「徴収猶予」という。）は、大学院に入学する者又は学部に入学する者であって、次の各号の一に該当すると認められる場合には行うことができる。",
+              "items": [
+                {
+                  "number": 1,
+                  "text": "経済的理由によって納付期限までに納付が困難であり、かつ、学業優秀と認められる場合",
+                  "subitems": [],
+                  "refs": []
+                },
+                {
+                  "number": 2,
+                  "text": "入学前１年以内において、学資負担者が死亡し、又は入学する者若しくは学資負担者が風水害等の災害を受け、納付期限までに納付が困難であると認められる場合",
+                  "subitems": [],
+                  "refs": []
+                },
+                {
+                  "number": 3,
+                  "text": "その他やむを得ない事情があると認められる場合",
+                  "subitems": [],
+                  "refs": []
+                }
+              ],
+              "refs": []
+            }
+          ],
+          "subordinate_rules": []
+        },
+        {
+          "type": "article",
+          "number": {
+            "main": 7,
+            "branch": null
+          },
+          "title": "徴収猶予の許可",
+          "paragraphs": [
+            {
+              "number": 1,
+              "text": "徴収猶予の許可は、入学手続終了の日までに受理した本人の申請に基づき、学生支援委員会の議を経て学長が行う。ただし、免除の申請をした者（第５条の２の規定により準用する第３条及び第５条の規定による減免の申請をした者を除く。）については、免除の不許可又は一部免除の許可を告知した日から起算して21日以内に徴収猶予の申請を行うことができる。",
+              "items": [],
+              "refs": []
+            }
+          ],
+          "subordinate_rules": []
+        },
+        {
+          "type": "article",
+          "number": {
+            "main": 8,
+            "branch": null
+          },
+          "title": "申請の手続",
+          "paragraphs": [
+            {
+              "number": 1,
+              "text": "徴収猶予を受けようとする者は、所定の期日までに、所定の申請書に関係書類を添えて、学長に提出しなければならない。",
+              "items": [],
+              "refs": []
+            },
+            {
+              "number": 2,
+              "text": "申請書の様式は、教育を担当する理事が別に定める。",
+              "items": [],
+              "refs": []
+            },
+            {
+              "number": 3,
+              "text": "免除を申請した者は、第１項に定める書類のうち所定の申請書以外の書類を省略することができる。",
+              "items": [],
+              "refs": []
+            }
+          ],
+          "subordinate_rules": []
+        },
+        {
+          "type": "article",
+          "number": {
+            "main": 9,
+            "branch": null
+          },
+          "title": "徴収猶予の期間等",
+          "paragraphs": [
+            {
+              "number": 1,
+              "text": "免除又は徴収猶予を許可若しくは不許可とするまでの間は、免除又は徴収猶予の申請をした者に係る入学料の徴収を猶予する。",
+              "items": [],
+              "refs": []
+            },
+            {
+              "number": 2,
+              "text": "免除若しくは徴収猶予を不許可とした者又は一部免除の許可をした者については、免除若しくは徴収猶予の不許可又は一部免除の許可を告知した日から起算して21日以内に納入すべき入学料を納入させるものとする。ただし、免除の不許可又は一部免除の許可を告知した者で当該告知を受けた後第７条ただし書の規定により徴収猶予の申請を行い、前項の規定により当該徴収猶予を許可若しくは不許可とするまでの間入学料の徴収を猶予されている者については、この限りではない。",
+              "items": [],
+              "refs": []
+            },
+            {
+              "number": 3,
+              "text": "第６条による徴収猶予の期間は９月30日までとし、10月以降に入学した者は、翌年２月末日までとする。ただし、当該期日が、土曜日、日曜日又は国民の祝日に関する法律に規定する休日（以下「休日等」という。）に当たるときは、その日の前において、その日に最も近い休日等でない日までとする。",
+              "items": [],
+              "refs": []
+            }
+          ],
+          "subordinate_rules": []
+        }
+      ]
+    },
+    {
+      "type": "chapter",
+      "number": {
+        "main": 4,
+        "branch": null
+      },
+      "title": "死亡等による免除",
+      "children": [
+        {
+          "type": "article",
+          "number": {
+            "main": 10,
+            "branch": null
+          },
+          "title": "死亡等による免除",
+          "paragraphs": [
+            {
+              "number": 1,
+              "text": "免除又は徴収猶予を申請した者について、前条第１項の規定により徴収を猶予している期間内において死亡した場合は、未納の入学料の全額を免除する。",
+              "items": [],
+              "refs": []
+            },
+            {
+              "number": 2,
+              "text": "免除若しくは徴収猶予を不許可とした者又は一部免除の許可をした者について、前条第２項に規定する期間内において死亡した場合は、未納の入学料の全額を免除する。",
+              "items": [],
+              "refs": []
+            },
+            {
+              "number": 3,
+              "text": "免除若しくは徴収猶予を不許可とした者又は一部免除の許可をした者であって、納付すべき入学料を納付しないことにより除籍となる場合は、その者に係る未納の入学料の全額を免除する。",
+              "items": [],
+              "refs": []
+            },
+            {
+              "number": 4,
+              "text": "前項の場合において、授業料又は寄宿料が未納である場合は、その者に係る未納の授業料又は寄宿料の全額を免除することができる。",
+              "items": [],
+              "refs": []
+            }
+          ],
+          "subordinate_rules": []
+        }
+      ]
+    }
+  ],
+  "supplementary_provisions": [
+    {
+      "ordinal": 1,
+      "heading_raw": "附  則",
+      "amendment": null,
+      "promulgated": null,
+      "effective": {
+        "kind": "date",
+        "era": "heisei",
+        "year": 16,
+        "month": 4,
+        "day": 1,
+        "iso": "2004-04-01"
+      },
+      "text": "この規則は、平成16年４月１日から施行する。",
+      "references_tables": []
+    },
+    {
+      "ordinal": 2,
+      "heading_raw": "附  則",
+      "amendment": null,
+      "promulgated": null,
+      "effective": {
+        "kind": "date",
+        "era": "heisei",
+        "year": 16,
+        "month": 11,
+        "day": 26,
+        "iso": "2004-11-26"
+      },
+      "text": "この規則は、平成 16 年 11 月 26 日から施行する。",
+      "references_tables": []
+    },
+    {
+      "ordinal": 3,
+      "heading_raw": "附  則（平成 17 年７月１日規則第 545 号）",
+      "amendment": {
+        "number": 545,
+        "year": null,
+        "raw": "規則第 545 号"
+      },
+      "promulgated": {
+        "era": "heisei",
+        "year": 17,
+        "month": 7,
+        "day": 1,
+        "iso": "2005-07-01"
+      },
+      "effective": {
+        "kind": "date",
+        "era": "heisei",
+        "year": 17,
+        "month": 7,
+        "day": 1,
+        "iso": "2005-07-01"
+      },
+      "text": "この規則は、平成 17 年７月１日から施行する。",
+      "references_tables": []
+    },
+    {
+      "ordinal": 4,
+      "heading_raw": "附  則（平成20年３月26日規則第127号）",
+      "amendment": {
+        "number": 127,
+        "year": null,
+        "raw": "規則第127号"
+      },
+      "promulgated": {
+        "era": "heisei",
+        "year": 20,
+        "month": 3,
+        "day": 26,
+        "iso": "2008-03-26"
+      },
+      "effective": {
+        "kind": "date",
+        "era": "heisei",
+        "year": 20,
+        "month": 4,
+        "day": 1,
+        "iso": "2008-04-01"
+      },
+      "text": "この規則は、平成20年４月１日から施行する。",
+      "references_tables": []
+    },
+    {
+      "ordinal": 5,
+      "heading_raw": "附  則（平成22年３月31日規則第124号）",
+      "amendment": {
+        "number": 124,
+        "year": null,
+        "raw": "規則第124号"
+      },
+      "promulgated": {
+        "era": "heisei",
+        "year": 22,
+        "month": 3,
+        "day": 31,
+        "iso": "2010-03-31"
+      },
+      "effective": {
+        "kind": "date",
+        "era": "heisei",
+        "year": 22,
+        "month": 4,
+        "day": 1,
+        "iso": "2010-04-01"
+      },
+      "text": "この規則は、平成22年４月１日から施行する。",
+      "references_tables": []
+    },
+    {
+      "ordinal": 6,
+      "heading_raw": "附  則（平成25年３月18日規則第94号）",
+      "amendment": {
+        "number": 94,
+        "year": null,
+        "raw": "規則第94号"
+      },
+      "promulgated": {
+        "era": "heisei",
+        "year": 25,
+        "month": 3,
+        "day": 18,
+        "iso": "2013-03-18"
+      },
+      "effective": {
+        "kind": "date",
+        "era": "heisei",
+        "year": 25,
+        "month": 4,
+        "day": 1,
+        "iso": "2013-04-01"
+      },
+      "text": "この規則は、平成 25 年４月１日から施行する。",
+      "references_tables": []
+    },
+    {
+      "ordinal": 7,
+      "heading_raw": "附  則（平成31年４月26日規則第15号）",
+      "amendment": {
+        "number": 15,
+        "year": null,
+        "raw": "規則第15号"
+      },
+      "promulgated": {
+        "era": "heisei",
+        "year": 31,
+        "month": 4,
+        "day": 26,
+        "iso": "2019-04-26"
+      },
+      "effective": {
+        "kind": "date",
+        "era": "reiwa",
+        "year": 1,
+        "month": 5,
+        "day": 1,
+        "iso": "2019-05-01"
+      },
+      "text": "この規則は、令和元年５月１日から施行する。",
+      "references_tables": []
+    },
+    {
+      "ordinal": 8,
+      "heading_raw": "附  則（令和２年３月24日規則第95号）",
+      "amendment": {
+        "number": 95,
+        "year": null,
+        "raw": "規則第95号"
+      },
+      "promulgated": {
+        "era": "reiwa",
+        "year": 2,
+        "month": 3,
+        "day": 24,
+        "iso": "2020-03-24"
+      },
+      "effective": {
+        "kind": "date",
+        "era": "reiwa",
+        "year": 2,
+        "month": 4,
+        "day": 1,
+        "iso": "2020-04-01"
+      },
+      "text": "この規則は、令和２年４月１日から施行する。",
+      "references_tables": []
+    },
+    {
+      "ordinal": 9,
+      "heading_raw": "附  則（令和４年２月９日規則第57号）",
+      "amendment": {
+        "number": 57,
+        "year": null,
+        "raw": "規則第57号"
+      },
+      "promulgated": {
+        "era": "reiwa",
+        "year": 4,
+        "month": 2,
+        "day": 9,
+        "iso": "2022-02-09"
+      },
+      "effective": {
+        "kind": "date",
+        "era": "reiwa",
+        "year": 4,
+        "month": 4,
+        "day": 1,
+        "iso": "2022-04-01"
+      },
+      "text": "この規則は、令和４年４月１日から施行する。",
+      "references_tables": []
+    },
+    {
+      "ordinal": 10,
+      "heading_raw": "附  則（令和６年11月14日規則第44号）",
+      "amendment": {
+        "number": 44,
+        "year": null,
+        "raw": "規則第44号"
+      },
+      "promulgated": {
+        "era": "reiwa",
+        "year": 6,
+        "month": 11,
+        "day": 14,
+        "iso": "2024-11-14"
+      },
+      "effective": {
+        "kind": "date",
+        "era": "reiwa",
+        "year": 7,
+        "month": 4,
+        "day": 1,
+        "iso": "2025-04-01"
+      },
+      "text": "この規則は、令和７年４月１日から施行する。",
+      "references_tables": []
+    },
+    {
+      "ordinal": 11,
+      "heading_raw": "附  則（令和７年４月 21 日規則第 10 号）",
+      "amendment": {
+        "number": 10,
+        "year": null,
+        "raw": "規則第 10 号"
+      },
+      "promulgated": {
+        "era": "reiwa",
+        "year": 7,
+        "month": 4,
+        "day": 21,
+        "iso": "2025-04-21"
+      },
+      "effective": {
+        "kind": "date",
+        "era": "reiwa",
+        "year": 7,
+        "month": 4,
+        "day": 21,
+        "iso": "2025-04-21"
+      },
+      "text": "この規則は、令和７年４月 21 日から施行し、令和７年４月１日から適用する。",
+      "references_tables": []
+    }
+  ],
+  "appendices": [],
+  "authorities": []
+}

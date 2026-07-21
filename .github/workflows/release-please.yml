@@ -1,0 +1,49 @@
+name: release-please
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: release-please
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  release-please:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    environment: release-please
+    permissions:
+      actions: write
+      contents: write
+      pull-requests: write
+    env:
+      HAS_APP: ${{ secrets.RELEASE_PLEASE_CLIENT_ID != '' && secrets.RELEASE_PLEASE_PRIVATE_KEY != '' }}
+    steps:
+      - name: Require GitHub App configuration for manual runs
+        if: ${{ github.event_name == 'workflow_dispatch' && env.HAS_APP != 'true' }}
+        run: |
+          echo "::error::release-please GitHub App credentials are not configured"
+          exit 1
+      - name: Mint GitHub App token
+        id: app-token
+        if: env.HAS_APP == 'true'
+        uses: actions/create-github-app-token@bcd2ba49218906704ab6c1aa796996da409d3eb1 # v3.2.0
+        with:
+          client-id: ${{ secrets.RELEASE_PLEASE_CLIENT_ID }}
+          private-key: ${{ secrets.RELEASE_PLEASE_PRIVATE_KEY }}
+      - name: Update release pull request
+        id: release
+        if: env.HAS_APP == 'true'
+        uses: googleapis/release-please-action@45996ed1f6d02564a971a2fa1b5860e934307cf7 # v5.0.0
+        with:
+          token: ${{ steps.app-token.outputs.token }}
+          config-file: release-please-config.json
+          manifest-file: .release-please-manifest.json
+      - name: Report dormant integration
+        if: ${{ github.event_name != 'workflow_dispatch' && env.HAS_APP != 'true' }}
+        run: echo "::notice::release-please is dormant until its GitHub App credentials are configured"

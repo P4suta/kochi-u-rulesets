@@ -1,0 +1,1082 @@
+---
+source: crates/core/tests/corpus.rs
+expression: doc
+input_file: sources/高知大学学生準則.pdf
+---
+{
+  "title": "高知大学学生準則",
+  "enacted": {
+    "date": {
+      "era": "heisei",
+      "year": 16,
+      "month": 4,
+      "day": 1,
+      "iso": "2004-04-01"
+    },
+    "rule_number": {
+      "number": 142,
+      "year": null,
+      "raw": "規則第142号"
+    },
+    "raw": "平成16年４月１日 規則第142号"
+  },
+  "last_amended": {
+    "date": {
+      "era": "reiwa",
+      "year": 8,
+      "month": 1,
+      "day": 28,
+      "iso": "2026-01-28"
+    },
+    "rule_number": {
+      "number": 59,
+      "year": null,
+      "raw": "規則第59号"
+    },
+    "raw": "最終改正  令和８年１月28日規則第59号"
+  },
+  "full_amendment_note": null,
+  "body": [
+    {
+      "type": "chapter",
+      "number": {
+        "main": 1,
+        "branch": null
+      },
+      "title": "総則",
+      "children": [
+        {
+          "type": "article",
+          "number": {
+            "main": 1,
+            "branch": null
+          },
+          "title": "目的",
+          "paragraphs": [
+            {
+              "number": 1,
+              "text": "この準則は、高知大学学則（平成20年４月１日施行。以下「学則」という。）の施行に関し、高知大学学生（以下「学生」という。）の守るべき必要な事項について定めることを目的とする。",
+              "items": [],
+              "refs": []
+            }
+          ],
+          "subordinate_rules": []
+        }
+      ]
+    },
+    {
+      "type": "chapter",
+      "number": {
+        "main": 2,
+        "branch": null
+      },
+      "title": "宣誓書・身上調書・学資負担者届",
+      "children": [
+        {
+          "type": "article",
+          "number": {
+            "main": 2,
+            "branch": null
+          },
+          "title": "宣誓書、身上調書及び学資負担者届等",
+          "paragraphs": [
+            {
+              "number": 1,
+              "text": "高知大学（以下「本学」という。）に入学する者は、本学の定める期日までに所定の様式により、次に掲げるものを提出しなければならない。",
+              "items": [
+                {
+                  "number": 1,
+                  "text": "宣誓書",
+                  "subitems": [],
+                  "refs": []
+                },
+                {
+                  "number": 2,
+                  "text": "身上調書",
+                  "subitems": [],
+                  "refs": []
+                },
+                {
+                  "number": 3,
+                  "text": "学資負担者届",
+                  "subitems": [],
+                  "refs": []
+                },
+                {
+                  "number": 4,
+                  "text": "その他本学の指定するもの",
+                  "subitems": [],
+                  "refs": []
+                }
+              ],
+              "refs": []
+            }
+          ],
+          "subordinate_rules": []
+        },
+        {
+          "type": "article",
+          "number": {
+            "main": 3,
+            "branch": null
+          },
+          "title": "保証人",
+          "paragraphs": [
+            {
+              "number": 1,
+              "text": "保証人は、本学の教育方針に協力し、保証する学生の身上について、連帯責任を負うものとする。",
+              "items": [],
+              "refs": []
+            },
+            {
+              "number": 2,
+              "text": "保証人は、保護者又は本学がこれに準ずるものと認める者とする。",
+              "items": [],
+              "refs": []
+            },
+            {
+              "number": 3,
+              "text": "学生は、保証人を変更したときその他の保証人に関して届出をした事項に変更があったときは、直ちに第10条に定める身上異動届を提出しなければならない。",
+              "items": [],
+              "refs": []
+            }
+          ],
+          "subordinate_rules": []
+        },
+        {
+          "type": "article",
+          "number": {
+            "main": 3,
+            "branch": 2
+          },
+          "title": "学資負担者",
+          "paragraphs": [
+            {
+              "number": 1,
+              "text": "学資負担者は、学生と連帯して授業料・寄宿料債務を負担するものとする。",
+              "items": [],
+              "refs": []
+            },
+            {
+              "number": 2,
+              "text": "学資負担者は、家計支持者又は本学がこれに準ずるものと認める者とする。",
+              "items": [],
+              "refs": []
+            },
+            {
+              "number": 3,
+              "text": "学生は、学資負担者を変更したとき、又は学資負担者の住所に異動があったときは、直ちに学資負担者届を再提出しなければならない。",
+              "items": [],
+              "refs": []
+            }
+          ],
+          "subordinate_rules": []
+        }
+      ]
+    },
+    {
+      "type": "chapter",
+      "number": {
+        "main": 3,
+        "branch": null
+      },
+      "title": "学生証",
+      "children": [
+        {
+          "type": "article",
+          "number": {
+            "main": 4,
+            "branch": null
+          },
+          "title": "学生証",
+          "paragraphs": [
+            {
+              "number": 1,
+              "text": "学生は、入学時に所定の様式により、３カ月以内に撮影した無帽半身像の写真（縦4.0cm、横3.0cm。以下「写真」という。）を学生証交付願に添えて提出し、学生証の交付を受けるものとする。",
+              "items": [],
+              "refs": []
+            }
+          ],
+          "subordinate_rules": []
+        },
+        {
+          "type": "article",
+          "number": {
+            "main": 5,
+            "branch": null
+          },
+          "title": "学生証の携帯",
+          "paragraphs": [
+            {
+              "number": 1,
+              "text": "学生証は、常時携帯し、本学教職員の請求があったときは、これを提示しなければならない。",
+              "items": [],
+              "refs": []
+            },
+            {
+              "number": 2,
+              "text": "学生証を携帯しないときは、教室、学術情報基盤図書館等本学の施設を利用できないことがある。",
+              "items": [],
+              "refs": []
+            }
+          ],
+          "subordinate_rules": []
+        },
+        {
+          "type": "article",
+          "number": {
+            "main": 6,
+            "branch": null
+          },
+          "title": "学生証の更新",
+          "paragraphs": [
+            {
+              "number": 1,
+              "text": "学生証は、学部の修業年限又は大学院の標準修業年限の間、有効とする。ただし、延長しなければならない場合は、毎学年の初めに交付申請の手続をとるものとする。",
+              "items": [],
+              "refs": []
+            }
+          ],
+          "subordinate_rules": []
+        },
+        {
+          "type": "article",
+          "number": {
+            "main": 7,
+            "branch": null
+          },
+          "title": "学生証の再交付",
+          "paragraphs": [
+            {
+              "number": 1,
+              "text": "学生証を紛失し、又は汚損したときは、所定の様式により、直ちに学生証再交付願を提出し、再交付を受けなければならない。",
+              "items": [],
+              "refs": []
+            }
+          ],
+          "subordinate_rules": []
+        },
+        {
+          "type": "article",
+          "number": {
+            "main": 8,
+            "branch": null
+          },
+          "title": "学生証の返納",
+          "paragraphs": [
+            {
+              "number": 1,
+              "text": "学生証は、卒業、退学又は除籍等により学生の身分を失ったときは、直ちに返納しなければならない。",
+              "items": [],
+              "refs": []
+            }
+          ],
+          "subordinate_rules": []
+        }
+      ]
+    },
+    {
+      "type": "chapter",
+      "number": {
+        "main": 4,
+        "branch": null
+      },
+      "title": "現住所等届及び身上異動届",
+      "children": [
+        {
+          "type": "article",
+          "number": {
+            "main": 9,
+            "branch": null
+          },
+          "title": "現住所等届",
+          "paragraphs": [
+            {
+              "number": 1,
+              "text": "学生は、入学時には、所定の様式により、現住所等届を提出しなければならない。",
+              "items": [],
+              "refs": []
+            },
+            {
+              "number": 2,
+              "text": "学生は、現住所等届により届出をした事項に変更があったときは、直ちに現住所等届を再提出しなければならない。ただし、現住所等届の再提出に代えて、教務情報システム上の登録機能により変更の届出を行うことができる。",
+              "items": [],
+              "refs": []
+            }
+          ],
+          "subordinate_rules": []
+        },
+        {
+          "type": "article",
+          "number": {
+            "main": 10,
+            "branch": null
+          },
+          "title": "身上異動届",
+          "paragraphs": [
+            {
+              "number": 1,
+              "text": "学生は、改姓等その他一身上に異動があったときは、所定の様式により、直ちに身上異動届を提出しなければならない。",
+              "items": [],
+              "refs": []
+            }
+          ],
+          "subordinate_rules": []
+        }
+      ]
+    },
+    {
+      "type": "chapter",
+      "number": {
+        "main": 5,
+        "branch": null
+      },
+      "title": "欠席",
+      "children": [
+        {
+          "type": "article",
+          "number": {
+            "main": 11,
+            "branch": null
+          },
+          "title": "欠席手続",
+          "paragraphs": [
+            {
+              "number": 1,
+              "text": "医学部においては、学生は病気その他の事由により欠席しようとするときは、所定の様式により、欠席届を学部長に提出しなければならない。ただし、病気による欠席が７日以上にわたるときは、医師の診断書を添付するものとする。",
+              "items": [],
+              "refs": []
+            },
+            {
+              "number": 2,
+              "text": "やむを得ない事由により事前に届け出ることができなかったときは、その事由を付して、事後速やかに届け出なければならない。",
+              "items": [],
+              "refs": []
+            }
+          ],
+          "subordinate_rules": []
+        }
+      ]
+    },
+    {
+      "type": "chapter",
+      "number": {
+        "main": 6,
+        "branch": null
+      },
+      "title": "健康診断",
+      "children": [
+        {
+          "type": "article",
+          "number": {
+            "main": 12,
+            "branch": null
+          },
+          "title": "健康診断",
+          "paragraphs": [
+            {
+              "number": 1,
+              "text": "学生は、毎年定期又は臨時に本学の実施する健康診断を受けなければならない。",
+              "items": [],
+              "refs": []
+            },
+            {
+              "number": 2,
+              "text": "学生は、健康診断の結果に基づき、学長が行う健康管理に関する指導に従わなければならない。",
+              "items": [],
+              "refs": []
+            }
+          ],
+          "subordinate_rules": []
+        }
+      ]
+    },
+    {
+      "type": "chapter",
+      "number": {
+        "main": 7,
+        "branch": null
+      },
+      "title": "休学、復学、退学、転学及び留学並びに転学部及び転学科等",
+      "children": [
+        {
+          "type": "article",
+          "number": {
+            "main": 13,
+            "branch": null
+          },
+          "title": "休学、復学、退学、転学及び留学並びに転学部及び転学科等",
+          "paragraphs": [
+            {
+              "number": 1,
+              "text": "休学、復学、退学、転学又は留学の許可を受けようとする者は、学則に基づき、それぞれ所定の様式により、休学願、復学願、退学願、転学願又は留学願に必要な書類を添えて学長に願い出なければならない。",
+              "items": [],
+              "refs": []
+            },
+            {
+              "number": 2,
+              "text": "転学部、転学科又は転課程の許可を受けようとする者は、学則に基づき、所定の様式により、転学部・転学科・転課程許可申請書に必要な書類を添えて学長に申請しなければならない。",
+              "items": [],
+              "refs": []
+            }
+          ],
+          "subordinate_rules": []
+        }
+      ]
+    },
+    {
+      "type": "chapter",
+      "number": {
+        "main": 8,
+        "branch": null
+      },
+      "title": "学生団体",
+      "children": [
+        {
+          "type": "article",
+          "number": {
+            "main": 14,
+            "branch": null
+          },
+          "title": "団体の設立、学外団体への加入等",
+          "paragraphs": [
+            {
+              "number": 1,
+              "text": "学生が、本学の学生を構成員とする団体を設立又は団体として学外の他団体へ参加若しくは加入しようとするときは、所定の様式により、学生団体設立承認願に団体の規約、役員名簿及び会員名簿を添えて提出し、学長の承認を得なければならない。",
+              "items": [],
+              "refs": []
+            }
+          ],
+          "subordinate_rules": []
+        },
+        {
+          "type": "article",
+          "number": {
+            "main": 15,
+            "branch": null
+          },
+          "title": "団体の継続",
+          "paragraphs": [
+            {
+              "number": 1,
+              "text": "前条により設立を承認された団体が、団体活動を継続しようとするときは、前条に準じ毎年４月末日までに届け出なければならない。",
+              "items": [],
+              "refs": []
+            },
+            {
+              "number": 2,
+              "text": "前項の届出がない団体は、解散したものとみなす。",
+              "items": [],
+              "refs": []
+            }
+          ],
+          "subordinate_rules": []
+        },
+        {
+          "type": "article",
+          "number": {
+            "main": 16,
+            "branch": null
+          },
+          "title": "団体事務所",
+          "paragraphs": [
+            {
+              "number": 1,
+              "text": "第14条により設立を承認された団体が、事務所として本学の施設又は場所を使用しようとするときは、所定の様式により、学生団体事務所借用許可願を提出し、許可を得なければならない。",
+              "items": [],
+              "refs": []
+            },
+            {
+              "number": 2,
+              "text": "前項の許可を得た者は、その団体の事務所に関して生じた一切の責に任じなければならない。",
+              "items": [],
+              "refs": []
+            }
+          ],
+          "subordinate_rules": []
+        },
+        {
+          "type": "article",
+          "number": {
+            "main": 17,
+            "branch": null
+          },
+          "title": "団体の解散",
+          "paragraphs": [
+            {
+              "number": 1,
+              "text": "団体を解散しようとするときは、顧問教員の同意を得て、所定の様式により、団体解散届を提出しなければならない。",
+              "items": [],
+              "refs": []
+            },
+            {
+              "number": 2,
+              "text": "学生の団体の行為が、本学の目的に著しく反すると認められたときは、学長は、その解散を命ずることができる。",
+              "items": [],
+              "refs": []
+            }
+          ],
+          "subordinate_rules": []
+        }
+      ]
+    },
+    {
+      "type": "chapter",
+      "number": {
+        "main": 9,
+        "branch": null
+      },
+      "title": "集会",
+      "children": [
+        {
+          "type": "article",
+          "number": {
+            "main": 18,
+            "branch": null
+          },
+          "title": "集会",
+          "paragraphs": [
+            {
+              "number": 1,
+              "text": "学生又は団体が、学内又は学外で本学に関係のある名称を使用して集会その他の行為をしようとするときは、責任者を定め、所定の様式により、学生活動承認願を７日前までに提出し、学長の承認を得なければならない。",
+              "items": [],
+              "refs": []
+            },
+            {
+              "number": 2,
+              "text": "集会、講演会等が、本学の目的に著しく反すると認められるときは、学長は、その解散を命ずることができる。",
+              "items": [],
+              "refs": []
+            }
+          ],
+          "subordinate_rules": []
+        }
+      ]
+    },
+    {
+      "type": "chapter",
+      "number": {
+        "main": 10,
+        "branch": null
+      },
+      "title": "掲示",
+      "children": [
+        {
+          "type": "article",
+          "number": {
+            "main": 19,
+            "branch": null
+          },
+          "title": "掲示場所",
+          "paragraphs": [
+            {
+              "number": 1,
+              "text": "学生が、学内で掲示をしようとするときは、学長の承認を得て、所定の規格（Ｂ３版以内）で所定の場所に掲示しなければならない。",
+              "items": [],
+              "refs": []
+            },
+            {
+              "number": 2,
+              "text": "掲示期間は、原則として７日以内とし、掲示期間を経過した掲示物は掲示責任者において速やかに撤去しなければならない。",
+              "items": [],
+              "refs": []
+            }
+          ],
+          "subordinate_rules": []
+        },
+        {
+          "type": "article",
+          "number": {
+            "main": 20,
+            "branch": null
+          },
+          "title": "掲示の条件",
+          "paragraphs": [
+            {
+              "number": 1,
+              "text": "掲示物の内容又は形状が、次の各号の一に該当するものであってはいけない。",
+              "items": [
+                {
+                  "number": 1,
+                  "text": "特定の個人、団体等をひぼうし、又は名誉を傷つけるもの",
+                  "subitems": [],
+                  "refs": []
+                },
+                {
+                  "number": 2,
+                  "text": "虚偽の事項を記載したもの",
+                  "subitems": [],
+                  "refs": []
+                },
+                {
+                  "number": 3,
+                  "text": "内容、形状、大きさ等品位を欠き、美観を損ねるもの",
+                  "subitems": [],
+                  "refs": []
+                }
+              ],
+              "refs": []
+            }
+          ],
+          "subordinate_rules": []
+        },
+        {
+          "type": "article",
+          "number": {
+            "main": 21,
+            "branch": null
+          },
+          "title": "掲示物の撤去",
+          "paragraphs": [
+            {
+              "number": 1,
+              "text": "掲示物等で次の各号の一に該当するものに対しては、責任者にこれらの撤去を命じ、又は撤去することができる。",
+              "items": [
+                {
+                  "number": 1,
+                  "text": "責任の所在が不明確なもの",
+                  "subitems": [],
+                  "refs": []
+                },
+                {
+                  "number": 2,
+                  "text": "その他学長が不適当と認めたもの",
+                  "subitems": [],
+                  "refs": []
+                }
+              ],
+              "refs": []
+            }
+          ],
+          "subordinate_rules": []
+        }
+      ]
+    },
+    {
+      "type": "chapter",
+      "number": {
+        "main": 11,
+        "branch": null
+      },
+      "title": "施設・設備の使用",
+      "children": [
+        {
+          "type": "article",
+          "number": {
+            "main": 22,
+            "branch": null
+          },
+          "title": "使用手続",
+          "paragraphs": [
+            {
+              "number": 1,
+              "text": "学生が、本学の施設（場所）・設備を使用しようとするときは、所定の様式により、７日前までに集会施設（場所）借用許可願を提出し、その許可を受けなければならない。",
+              "items": [],
+              "refs": []
+            },
+            {
+              "number": 2,
+              "text": "前項の許可を受けた場合には、次の各号に掲げる事項を守らなければならない。",
+              "items": [
+                {
+                  "number": 1,
+                  "text": "許可を受けた使用場所、期間又は時間を厳守すること。",
+                  "subitems": [],
+                  "refs": []
+                },
+                {
+                  "number": 2,
+                  "text": "許可を受けた場所及び周辺の静穏な秩序を乱さないこと。",
+                  "subitems": [],
+                  "refs": []
+                },
+                {
+                  "number": 3,
+                  "text": "施設・設備を汚染し、又は損傷しないこと。",
+                  "subitems": [],
+                  "refs": []
+                },
+                {
+                  "number": 4,
+                  "text": "その他施設・設備の管理上必要な事項については、学長の指示に従うこと。",
+                  "subitems": [],
+                  "refs": []
+                }
+              ],
+              "refs": []
+            }
+          ],
+          "subordinate_rules": []
+        },
+        {
+          "type": "article",
+          "number": {
+            "main": 23,
+            "branch": null
+          },
+          "title": "使用目的の不適格条件",
+          "paragraphs": [
+            {
+              "number": 1,
+              "text": "次の各号の一に該当するときは、本学の施設・設備を使用することを許可しない。",
+              "items": [
+                {
+                  "number": 1,
+                  "text": "営利を目的とするもの（福利厚生のためのものを除く。）",
+                  "subitems": [],
+                  "refs": []
+                },
+                {
+                  "number": 2,
+                  "text": "違法又は不当な行為を行うもの",
+                  "subitems": [],
+                  "refs": []
+                },
+                {
+                  "number": 3,
+                  "text": "その他学長が不適格と認めるもの",
+                  "subitems": [],
+                  "refs": []
+                }
+              ],
+              "refs": []
+            }
+          ],
+          "subordinate_rules": []
+        },
+        {
+          "type": "article",
+          "number": {
+            "main": 24,
+            "branch": null
+          },
+          "title": "許可の取消し等",
+          "paragraphs": [
+            {
+              "number": 1,
+              "text": "学長は、次の各号の一に該当するときは、必要な是正措置を命じ、又は使用の許可を取り消すことができる。",
+              "items": [
+                {
+                  "number": 1,
+                  "text": "使用条件に違反したとき。",
+                  "subitems": [],
+                  "refs": []
+                },
+                {
+                  "number": 2,
+                  "text": "使用願に虚偽の記載があったとき。",
+                  "subitems": [],
+                  "refs": []
+                },
+                {
+                  "number": 3,
+                  "text": "本学において当該施設・設備を使用する必要が生じたとき。",
+                  "subitems": [],
+                  "refs": []
+                }
+              ],
+              "refs": []
+            }
+          ],
+          "subordinate_rules": []
+        },
+        {
+          "type": "article",
+          "number": {
+            "main": 25,
+            "branch": null
+          },
+          "title": "損害賠償",
+          "paragraphs": [
+            {
+              "number": 1,
+              "text": "施設・設備を使用する者は、当該施設・設備を汚染し、又は損傷した場合は、当該損害額に相当する金額を賠償するものとする。",
+              "items": [],
+              "refs": []
+            }
+          ],
+          "subordinate_rules": []
+        }
+      ]
+    },
+    {
+      "type": "chapter",
+      "number": {
+        "main": 12,
+        "branch": null
+      },
+      "title": "印刷物",
+      "children": [
+        {
+          "type": "article",
+          "number": {
+            "main": 26,
+            "branch": null
+          },
+          "title": "印刷物",
+          "paragraphs": [
+            {
+              "number": 1,
+              "text": "学生が、学内で新聞、雑誌、その他の印刷物を発行し、又は頒布しようとするときは、責任者を定め、所定の様式により、印刷物発行（頒布）承認願をあらかじめ提出し、学長の承認を得なければならない。",
+              "items": [],
+              "refs": []
+            },
+            {
+              "number": 2,
+              "text": "印刷物等が、当初の趣旨に反すると認められるときは、学長は許可承認を取り消し、印刷物等の発行又は頒布の中止及び回収を命ずることができる。",
+              "items": [],
+              "refs": []
+            }
+          ],
+          "subordinate_rules": []
+        }
+      ]
+    },
+    {
+      "type": "chapter",
+      "number": {
+        "main": 13,
+        "branch": null
+      },
+      "title": "雑則",
+      "children": [
+        {
+          "type": "article",
+          "number": {
+            "main": 27,
+            "branch": null
+          },
+          "title": "所定様式",
+          "paragraphs": [
+            {
+              "number": 1,
+              "text": "この準則に基づく所定の様式は、全学教育機構長が別に定める。",
+              "items": [],
+              "refs": []
+            }
+          ],
+          "subordinate_rules": []
+        },
+        {
+          "type": "article",
+          "number": {
+            "main": 28,
+            "branch": null
+          },
+          "title": "準用",
+          "paragraphs": [
+            {
+              "number": 1,
+              "text": "この準則は、研究生、特別研究学生、科目等履修生及び特別聴講学生について準用する。",
+              "items": [],
+              "refs": []
+            }
+          ],
+          "subordinate_rules": []
+        }
+      ]
+    }
+  ],
+  "supplementary_provisions": [
+    {
+      "ordinal": 1,
+      "heading_raw": "附  則",
+      "amendment": null,
+      "promulgated": null,
+      "effective": {
+        "kind": "date",
+        "era": "heisei",
+        "year": 16,
+        "month": 4,
+        "day": 1,
+        "iso": "2004-04-01"
+      },
+      "text": "この準則は、平成16年４月１日から施行する。",
+      "references_tables": []
+    },
+    {
+      "ordinal": 2,
+      "heading_raw": "附  則（平成18年７月12日規則第17号）",
+      "amendment": {
+        "number": 17,
+        "year": null,
+        "raw": "規則第17号"
+      },
+      "promulgated": {
+        "era": "heisei",
+        "year": 18,
+        "month": 7,
+        "day": 12,
+        "iso": "2006-07-12"
+      },
+      "effective": {
+        "kind": "date",
+        "era": "heisei",
+        "year": 18,
+        "month": 7,
+        "day": 12,
+        "iso": "2006-07-12"
+      },
+      "text": "この準則は、平成18年７月12日から施行し、平成18年４月１日から適用する。",
+      "references_tables": []
+    },
+    {
+      "ordinal": 3,
+      "heading_raw": "附  則（平成20年３月26日規則第127号）",
+      "amendment": {
+        "number": 127,
+        "year": null,
+        "raw": "規則第127号"
+      },
+      "promulgated": {
+        "era": "heisei",
+        "year": 20,
+        "month": 3,
+        "day": 26,
+        "iso": "2008-03-26"
+      },
+      "effective": {
+        "kind": "date",
+        "era": "heisei",
+        "year": 20,
+        "month": 4,
+        "day": 1,
+        "iso": "2008-04-01"
+      },
+      "text": "この準則は、平成20年４月１日から施行する。",
+      "references_tables": []
+    },
+    {
+      "ordinal": 4,
+      "heading_raw": "附  則（平成28年３月30日規則第155号）",
+      "amendment": {
+        "number": 155,
+        "year": null,
+        "raw": "規則第155号"
+      },
+      "promulgated": {
+        "era": "heisei",
+        "year": 28,
+        "month": 3,
+        "day": 30,
+        "iso": "2016-03-30"
+      },
+      "effective": {
+        "kind": "date",
+        "era": "heisei",
+        "year": 28,
+        "month": 4,
+        "day": 1,
+        "iso": "2016-04-01"
+      },
+      "text": "この規則は、平成28年４月１日から施行する。",
+      "references_tables": []
+    },
+    {
+      "ordinal": 5,
+      "heading_raw": "附  則（平成31年４月26日規則第15号）",
+      "amendment": {
+        "number": 15,
+        "year": null,
+        "raw": "規則第15号"
+      },
+      "promulgated": {
+        "era": "heisei",
+        "year": 31,
+        "month": 4,
+        "day": 26,
+        "iso": "2019-04-26"
+      },
+      "effective": {
+        "kind": "date",
+        "era": "reiwa",
+        "year": 1,
+        "month": 5,
+        "day": 1,
+        "iso": "2019-05-01"
+      },
+      "text": "この規則は、令和元年５月１日から施行する。",
+      "references_tables": []
+    },
+    {
+      "ordinal": 6,
+      "heading_raw": "附  則（令和２年１月27日規則第54号）",
+      "amendment": {
+        "number": 54,
+        "year": null,
+        "raw": "規則第54号"
+      },
+      "promulgated": {
+        "era": "reiwa",
+        "year": 2,
+        "month": 1,
+        "day": 27,
+        "iso": "2020-01-27"
+      },
+      "effective": {
+        "kind": "date",
+        "era": "reiwa",
+        "year": 2,
+        "month": 4,
+        "day": 1,
+        "iso": "2020-04-01"
+      },
+      "text": "この規則は、令和２年４月１日から施行する。",
+      "references_tables": []
+    },
+    {
+      "ordinal": 7,
+      "heading_raw": "附  則（令和２年９月17日規則第９号）",
+      "amendment": {
+        "number": 9,
+        "year": null,
+        "raw": "規則第９号"
+      },
+      "promulgated": {
+        "era": "reiwa",
+        "year": 2,
+        "month": 9,
+        "day": 17,
+        "iso": "2020-09-17"
+      },
+      "effective": {
+        "kind": "date",
+        "era": "reiwa",
+        "year": 2,
+        "month": 9,
+        "day": 17,
+        "iso": "2020-09-17"
+      },
+      "text": "この規則は、令和２年９月17日から施行し、令和３年度入学生から適用する。",
+      "references_tables": []
+    },
+    {
+      "ordinal": 8,
+      "heading_raw": "附  則（令和８年１月28日規則第59号）",
+      "amendment": {
+        "number": 59,
+        "year": null,
+        "raw": "規則第59号"
+      },
+      "promulgated": {
+        "era": "reiwa",
+        "year": 8,
+        "month": 1,
+        "day": 28,
+        "iso": "2026-01-28"
+      },
+      "effective": {
+        "kind": "date",
+        "era": "reiwa",
+        "year": 8,
+        "month": 1,
+        "day": 28,
+        "iso": "2026-01-28"
+      },
+      "text": "この規則は、令和８年１月28日から施行する。",
+      "references_tables": []
+    }
+  ],
+  "appendices": [],
+  "authorities": []
+}

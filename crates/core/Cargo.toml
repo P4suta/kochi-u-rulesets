@@ -1,0 +1,31 @@
+# Pure, platform-independent core: PDF text/coordinate extraction, structure
+# parsing (章/節/条/…), 附則/別表, dates, Markdown rendering, search index and
+# reference graph builders. Compiles cleanly to wasm32 (pdf-extract is pure Rust,
+# no native C deps) — it holds none of the network/FS/CLI code, which lives in cli.
+[package]
+name = "kochi-university-regulations-core"
+version.workspace = true
+edition.workspace = true
+
+[lib]
+# The crate (import) name shared by cli, wasm, and tests: `use
+# kochi_university_regulations::…`.
+name = "kochi_university_regulations"
+path = "src/lib.rs"
+
+[dependencies]
+anyhow.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+regex.workspace = true
+pdf-extract.workspace = true
+
+# lopdf → rand → getrandom needs its JS backend to build for the browser. Only
+# pulled in on wasm; native builds are untouched. Backend is selected via the
+# `getrandom_backend="wasm_js"` cfg in `.cargo/config.toml` (wasm32-scoped).
+[target.'cfg(target_arch = "wasm32")'.dependencies]
+getrandom = { version = "0.4", features = ["wasm_js"] }
+
+[dev-dependencies]
+serde_json.workspace = true
+insta = { version = "1.43.2", features = ["json", "glob"] }

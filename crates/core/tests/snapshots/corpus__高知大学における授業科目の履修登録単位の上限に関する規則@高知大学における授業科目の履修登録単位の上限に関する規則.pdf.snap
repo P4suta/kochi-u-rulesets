@@ -1,0 +1,361 @@
+---
+source: crates/core/tests/corpus.rs
+expression: doc
+input_file: sources/高知大学における授業科目の履修登録単位の上限に関する規則.pdf
+---
+{
+  "title": "高知大学における授業科目の履修登録単位の上限に関する規則",
+  "enacted": {
+    "date": {
+      "era": "heisei",
+      "year": 16,
+      "month": 4,
+      "day": 1,
+      "iso": "2004-04-01"
+    },
+    "rule_number": {
+      "number": 134,
+      "year": null,
+      "raw": "規則第134号"
+    },
+    "raw": "平成16年４月１日 規則第134号"
+  },
+  "last_amended": {
+    "date": {
+      "era": "reiwa",
+      "year": 7,
+      "month": 5,
+      "day": 9,
+      "iso": "2025-05-09"
+    },
+    "rule_number": {
+      "number": 13,
+      "year": null,
+      "raw": "規則第13号"
+    },
+    "raw": "最終改正  令和７年５月９日規則第13号"
+  },
+  "full_amendment_note": null,
+  "body": [
+    {
+      "type": "article",
+      "number": {
+        "main": 1,
+        "branch": null
+      },
+      "title": "趣旨",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "この規則は、高知大学学則第47条第４項の規定に基づき、高知大学（以下「本学」という｡）において１年間又は１学期間に履修登録できる単位数の上限に関し必要な事項を定める。",
+          "items": [],
+          "refs": []
+        }
+      ],
+      "subordinate_rules": []
+    },
+    {
+      "type": "article",
+      "number": {
+        "main": 2,
+        "branch": null
+      },
+      "title": "対象科目",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "学生の履修登録の上限単位数の対象となる授業科目（以下「対象科目」という。）は、本学及び他大学等で卒業の要件として履修する授業科目とする。ただし、集中講義として開講する授業科目は、原則として、対象科目とはしない。",
+          "items": [],
+          "refs": []
+        }
+      ],
+      "subordinate_rules": []
+    },
+    {
+      "type": "article",
+      "number": {
+        "main": 3,
+        "branch": null
+      },
+      "title": "履修登録上限単位数",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "学生の対象科目の履修登録は、１年次から３年次までにおいて１学期間に22単位を上限とする。ただし、複数学期にわたって開講される授業科目の単位数の取扱いは、当該科目の単位数を開講される学期数で除した数とする。",
+          "items": [],
+          "refs": []
+        }
+      ],
+      "subordinate_rules": []
+    },
+    {
+      "type": "article",
+      "number": {
+        "main": 4,
+        "branch": null
+      },
+      "title": "履修登録単位数の特例",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "前条の規定にかかわらず、次条により成績優秀者として認定された学生については、当該学期の終了毎に本人の申請に基づき、翌学期に履修登録上限単位数を超えて授業科目を履修登録することができる。",
+          "items": [],
+          "refs": []
+        },
+        {
+          "number": 2,
+          "text": "前条の規定にかかわらず、第３年次編入学生については、履修登録上限を超えて履修登録することができる。",
+          "items": [],
+          "refs": []
+        }
+      ],
+      "subordinate_rules": []
+    },
+    {
+      "type": "article",
+      "number": {
+        "main": 5,
+        "branch": null
+      },
+      "title": "成績優秀者",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "成績優秀者とは、各学期終了時において次の各号に掲げる要件をいずれも満たしているとして、学部教授会において、認定された者をいう。",
+          "items": [
+            {
+              "number": 1,
+              "text": "過去１年間において、第２条に定める対象科目を32単位以上修得していること。ただし、当該学期が本学に入学して最初の学期であった者については当該学期終了時に対象科目を16単位以上修得していることとし、過去１年間に休学、留学その他のやむを得ない事由によって通常の履修を行うことができない期間があったと学部教授会が認める者については過去１年間において対象科目を16単位以上修得していることとする。",
+              "subitems": [],
+              "refs": []
+            },
+            {
+              "number": 2,
+              "text": "過去１年間において成績評価された対象科目のＧＰＡが、3.0以上であること。",
+              "subitems": [],
+              "refs": []
+            }
+          ],
+          "refs": []
+        },
+        {
+          "number": 2,
+          "text": "学部教授会は、各学期終了時に成績優秀者を認定し、該当者に通知するものとする。",
+          "items": [],
+          "refs": []
+        }
+      ],
+      "subordinate_rules": []
+    },
+    {
+      "type": "article",
+      "number": {
+        "main": 6,
+        "branch": null
+      },
+      "title": "履修指導",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "成績優秀者が、履修登録上限単位数を超えて授業科目を履修するにあたっては、各学部において、履修授業科目、単位数等適切な履修指導を行うものとする。",
+          "items": [],
+          "refs": []
+        }
+      ],
+      "subordinate_rules": []
+    },
+    {
+      "type": "article",
+      "number": {
+        "main": 7,
+        "branch": null
+      },
+      "title": "雑則",
+      "paragraphs": [
+        {
+          "number": 1,
+          "text": "この規則に定めるもののほか、授業科目の履修登録の上限に関し必要な事項は、学部において定める。",
+          "items": [],
+          "refs": []
+        }
+      ],
+      "subordinate_rules": []
+    }
+  ],
+  "supplementary_provisions": [
+    {
+      "ordinal": 1,
+      "heading_raw": "附  則",
+      "amendment": null,
+      "promulgated": null,
+      "effective": {
+        "kind": "date",
+        "era": "heisei",
+        "year": 16,
+        "month": 4,
+        "day": 1,
+        "iso": "2004-04-01"
+      },
+      "text": "この規則は、平成16年４月１日から施行する。ただし、医学部の学生を除く。",
+      "references_tables": []
+    },
+    {
+      "ordinal": 2,
+      "heading_raw": "附  則（平成17年10月11日規則第537号）",
+      "amendment": {
+        "number": 537,
+        "year": null,
+        "raw": "規則第537号"
+      },
+      "promulgated": {
+        "era": "heisei",
+        "year": 17,
+        "month": 10,
+        "day": 11,
+        "iso": "2005-10-11"
+      },
+      "effective": {
+        "kind": "date",
+        "era": "heisei",
+        "year": 18,
+        "month": 4,
+        "day": 1,
+        "iso": "2006-04-01"
+      },
+      "text": "この規則は､平成18年４月１日から施行する。",
+      "references_tables": []
+    },
+    {
+      "ordinal": 3,
+      "heading_raw": "附  則（平成20年３月26日規則第127号）",
+      "amendment": {
+        "number": 127,
+        "year": null,
+        "raw": "規則第127号"
+      },
+      "promulgated": {
+        "era": "heisei",
+        "year": 20,
+        "month": 3,
+        "day": 26,
+        "iso": "2008-03-26"
+      },
+      "effective": {
+        "kind": "date",
+        "era": "heisei",
+        "year": 20,
+        "month": 4,
+        "day": 1,
+        "iso": "2008-04-01"
+      },
+      "text": "この規則は、平成20年４月１日から施行する。",
+      "references_tables": []
+    },
+    {
+      "ordinal": 4,
+      "heading_raw": "附  則（平成25年１月23日規則第60号）",
+      "amendment": {
+        "number": 60,
+        "year": null,
+        "raw": "規則第60号"
+      },
+      "promulgated": {
+        "era": "heisei",
+        "year": 25,
+        "month": 1,
+        "day": 23,
+        "iso": "2013-01-23"
+      },
+      "effective": {
+        "kind": "date",
+        "era": "heisei",
+        "year": 25,
+        "month": 1,
+        "day": 23,
+        "iso": "2013-01-23"
+      },
+      "text": "この規則は、平成25年１月23日から施行する。",
+      "references_tables": []
+    },
+    {
+      "ordinal": 5,
+      "heading_raw": "附  則（平成27年３月25日規則第156号）",
+      "amendment": {
+        "number": 156,
+        "year": null,
+        "raw": "規則第156号"
+      },
+      "promulgated": {
+        "era": "heisei",
+        "year": 27,
+        "month": 3,
+        "day": 25,
+        "iso": "2015-03-25"
+      },
+      "effective": {
+        "kind": "date",
+        "era": "heisei",
+        "year": 27,
+        "month": 4,
+        "day": 1,
+        "iso": "2015-04-01"
+      },
+      "text": "１  この規則は、平成27年４月１日から施行する。\n２  この規則の施行日以前に在学し、引き続きこの規則の施行日に在学する者については、\n改正後の高知大学における授業科目の履修登録単位の上限に関する規則にかかわらず、\nなお従前の例による。",
+      "references_tables": []
+    },
+    {
+      "ordinal": 6,
+      "heading_raw": "附  則（平成29年５月22日規則第７号）",
+      "amendment": {
+        "number": 7,
+        "year": null,
+        "raw": "規則第７号"
+      },
+      "promulgated": {
+        "era": "heisei",
+        "year": 29,
+        "month": 5,
+        "day": 22,
+        "iso": "2017-05-22"
+      },
+      "effective": {
+        "kind": "date",
+        "era": "heisei",
+        "year": 29,
+        "month": 5,
+        "day": 22,
+        "iso": "2017-05-22"
+      },
+      "text": "この規則は、平成29年５月22日から施行する。",
+      "references_tables": []
+    },
+    {
+      "ordinal": 7,
+      "heading_raw": "附  則（令和７年５月９日規則第13号）",
+      "amendment": {
+        "number": 13,
+        "year": null,
+        "raw": "規則第13号"
+      },
+      "promulgated": {
+        "era": "reiwa",
+        "year": 7,
+        "month": 5,
+        "day": 9,
+        "iso": "2025-05-09"
+      },
+      "effective": {
+        "kind": "date",
+        "era": "reiwa",
+        "year": 7,
+        "month": 5,
+        "day": 9,
+        "iso": "2025-05-09"
+      },
+      "text": "この規則は、令和７年５月９日から施行する。",
+      "references_tables": []
+    }
+  ],
+  "appendices": [],
+  "authorities": []
+}

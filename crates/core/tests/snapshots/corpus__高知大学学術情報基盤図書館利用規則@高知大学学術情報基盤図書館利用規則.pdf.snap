@@ -1,0 +1,777 @@
+---
+source: crates/core/tests/corpus.rs
+expression: doc
+input_file: sources/高知大学学術情報基盤図書館利用規則.pdf
+---
+{
+  "title": "高知大学学術情報基盤図書館利用規則",
+  "enacted": {
+    "date": {
+      "era": "heisei",
+      "year": 28,
+      "month": 3,
+      "day": 9,
+      "iso": "2016-03-09"
+    },
+    "rule_number": {
+      "number": 109,
+      "year": null,
+      "raw": "規則第 109 号"
+    },
+    "raw": "平成 28 年３月９日 規則第 109 号"
+  },
+  "last_amended": {
+    "date": {
+      "era": "reiwa",
+      "year": 1,
+      "month": 9,
+      "day": 13,
+      "iso": "2019-09-13"
+    },
+    "rule_number": {
+      "number": 32,
+      "year": null,
+      "raw": "規則第32号"
+    },
+    "raw": "最終改正  令和元年９月13日規則第32号"
+  },
+  "full_amendment_note": null,
+  "body": [
+    {
+      "type": "chapter",
+      "number": {
+        "main": 1,
+        "branch": null
+      },
+      "title": "総則",
+      "children": [
+        {
+          "type": "article",
+          "number": {
+            "main": 1,
+            "branch": null
+          },
+          "title": "趣旨",
+          "paragraphs": [
+            {
+              "number": 1,
+              "text": "この規則は、高知大学学術情報基盤図書館規則第12条の規定に基づき、高知大学学術情報基盤図書館（以下「図書館」という｡）の利用に関し、必要な事項を定めるものとする。",
+              "items": [],
+              "refs": []
+            }
+          ],
+          "subordinate_rules": []
+        },
+        {
+          "type": "article",
+          "number": {
+            "main": 2,
+            "branch": null
+          },
+          "title": "利用者",
+          "paragraphs": [
+            {
+              "number": 1,
+              "text": "図書館を利用することができる者（以下「利用者」という。）は、次のとおりとする。",
+              "items": [
+                {
+                  "number": 1,
+                  "text": "本学の教職員及び学生",
+                  "subitems": [],
+                  "refs": []
+                },
+                {
+                  "number": 2,
+                  "text": "愛媛大学大学院連合農学研究科（以下「連合農学研究科」という。）の学生",
+                  "subitems": [],
+                  "refs": []
+                },
+                {
+                  "number": 3,
+                  "text": "本学の名誉教授",
+                  "subitems": [],
+                  "refs": []
+                },
+                {
+                  "number": 4,
+                  "text": "図書館の利用を申し出た一般市民等（以下「一般利用者」という。）",
+                  "subitems": [],
+                  "refs": []
+                }
+              ],
+              "refs": []
+            },
+            {
+              "number": 2,
+              "text": "前項第４号に掲げる者の利用は、図書館資料の利用に限る。",
+              "items": [],
+              "refs": []
+            }
+          ],
+          "subordinate_rules": []
+        },
+        {
+          "type": "article",
+          "number": {
+            "main": 3,
+            "branch": null
+          },
+          "title": "図書館利用証",
+          "paragraphs": [
+            {
+              "number": 1,
+              "text": "利用者は、図書館の利用に際し、所定の手続を経て、図書館利用証（以下「利用証」という。）の交付を受けるものとする。",
+              "items": [],
+              "refs": []
+            },
+            {
+              "number": 2,
+              "text": "前条第１項第１号又は第２号に掲げる者については、それぞれ学生証又は職員証をもって利用証とみなすものとする。",
+              "items": [],
+              "refs": []
+            },
+            {
+              "number": 3,
+              "text": "利用証は、他人に貸与し、又は譲渡してはならない。",
+              "items": [],
+              "refs": []
+            },
+            {
+              "number": 4,
+              "text": "利用証は、常に携帯し、図書館職員から提示を求められたときは、これに応じなければならない。",
+              "items": [],
+              "refs": []
+            }
+          ],
+          "subordinate_rules": []
+        },
+        {
+          "type": "article",
+          "number": {
+            "main": 4,
+            "branch": null
+          },
+          "title": "休館日",
+          "paragraphs": [
+            {
+              "number": 1,
+              "text": "休館日は、次のとおりとする。",
+              "items": [
+                {
+                  "number": 1,
+                  "text": "中央館",
+                  "subitems": [
+                    {
+                      "label": "イ",
+                      "text": "国民の祝日に関する法律（昭和23年法律第178号）に規定する休日",
+                      "refs": []
+                    },
+                    {
+                      "label": "ロ",
+                      "text": "12月28日から翌年の１月４日まで",
+                      "refs": []
+                    },
+                    {
+                      "label": "ハ",
+                      "text": "その他館長が特に必要と認めた日",
+                      "refs": []
+                    }
+                  ],
+                  "refs": []
+                },
+                {
+                  "number": 2,
+                  "text": "医学部分館",
+                  "subitems": [
+                    {
+                      "label": "イ",
+                      "text": "国民の祝日に関する法律（昭和23年法律第178号）に規定する休日",
+                      "refs": []
+                    },
+                    {
+                      "label": "ロ",
+                      "text": "12月28日から翌年の１月４日まで",
+                      "refs": []
+                    },
+                    {
+                      "label": "ハ",
+                      "text": "日曜日",
+                      "refs": []
+                    },
+                    {
+                      "label": "ニ",
+                      "text": "その他館長又は分館長（以下「館長等」という。）が特に必要と認めた日",
+                      "refs": []
+                    }
+                  ],
+                  "refs": []
+                },
+                {
+                  "number": 3,
+                  "text": "物部分館",
+                  "subitems": [
+                    {
+                      "label": "イ",
+                      "text": "国民の祝日に関する法律（昭和23年法律第178号）に規定する休日",
+                      "refs": []
+                    },
+                    {
+                      "label": "ロ",
+                      "text": "12月28日から翌年の１月４日まで",
+                      "refs": []
+                    },
+                    {
+                      "label": "ハ",
+                      "text": "夏季及び学年末休業期間中の土曜日及び日曜日",
+                      "refs": []
+                    },
+                    {
+                      "label": "ニ",
+                      "text": "その他館長等が特に必要と認めた日",
+                      "refs": []
+                    }
+                  ],
+                  "refs": []
+                }
+              ],
+              "refs": []
+            },
+            {
+              "number": 2,
+              "text": "前項の規定にかかわらず、館長等が必要と認めるときは、休館日であっても開館することができる。",
+              "items": [],
+              "refs": []
+            }
+          ],
+          "subordinate_rules": []
+        },
+        {
+          "type": "article",
+          "number": {
+            "main": 5,
+            "branch": null
+          },
+          "title": "開館時間",
+          "paragraphs": [
+            {
+              "number": 1,
+              "text": "開館日における利用時間は、原則として次のとおりとする。曜      日  利     用     時     間中央館  医学部分館  物部分館月曜日～金曜日  午前８時30分～午後９時午前９時～午後８時午前８時30分～午後８時土曜日  午前９時～午後９時午前９時～午後４時30分午前10時～午後６時日曜日  午前９時～午後９時午前10時～午後６時",
+              "items": [],
+              "refs": []
+            },
+            {
+              "number": 2,
+              "text": "前項の規定にかかわらず、医学部分館においては、所定の手続を経た者については、開館時間外においても利用することができる。時間外利用に関し必要な事項は、医学部分館長が別に定める。",
+              "items": [],
+              "refs": []
+            },
+            {
+              "number": 3,
+              "text": "第１項の規定にかかわらず、館長等が必要と認めたときは、開館時間を変更することができる。",
+              "items": [],
+              "refs": []
+            }
+          ],
+          "subordinate_rules": []
+        },
+        {
+          "type": "article",
+          "number": {
+            "main": 6,
+            "branch": null
+          },
+          "title": "損害賠償",
+          "paragraphs": [
+            {
+              "number": 1,
+              "text": "利用者が施設、設備及び備品を故意又は過失により、滅失又はき損した場合は、本学の指示に従って速やかに修理し、あるいは本学の認定した額を賠償しなければならない。",
+              "items": [],
+              "refs": []
+            }
+          ],
+          "subordinate_rules": []
+        },
+        {
+          "type": "article",
+          "number": {
+            "main": 7,
+            "branch": null
+          },
+          "title": "利用の取消し等",
+          "paragraphs": [
+            {
+              "number": 1,
+              "text": "利用者がこの規則に違反し、又は図書館の運営に重大な支障を与えたときは、館長等は、その利用の承認を取消し又はその利用を停止することができる。",
+              "items": [],
+              "refs": []
+            }
+          ],
+          "subordinate_rules": []
+        },
+        {
+          "type": "article",
+          "number": {
+            "main": 8,
+            "branch": null
+          },
+          "title": "経費の負担",
+          "paragraphs": [
+            {
+              "number": 1,
+              "text": "利用者は、当該利用に係る必要な経費を、館長が別に定めるところにより、負担しなければならない。",
+              "items": [],
+              "refs": []
+            },
+            {
+              "number": 2,
+              "text": "前項の規定にかかわらず、館長等が特に必要と認めたときは、利用に係る経費を免除することができる。",
+              "items": [],
+              "refs": []
+            }
+          ],
+          "subordinate_rules": []
+        }
+      ]
+    },
+    {
+      "type": "chapter",
+      "number": {
+        "main": 2,
+        "branch": null
+      },
+      "title": "図書館資料の利用",
+      "children": [
+        {
+          "type": "article",
+          "number": {
+            "main": 9,
+            "branch": null
+          },
+          "title": "図書館資料",
+          "paragraphs": [
+            {
+              "number": 1,
+              "text": "この規則において、図書館資料とは、図書館が収集、整理、保存及び運用する教育研究に必要な図書・学術雑誌、視聴覚資料その他の学術情報資料をいう。",
+              "items": [],
+              "refs": []
+            }
+          ],
+          "subordinate_rules": []
+        },
+        {
+          "type": "article",
+          "number": {
+            "main": 10,
+            "branch": null
+          },
+          "title": "館内閲覧",
+          "paragraphs": [
+            {
+              "number": 1,
+              "text": "館内における図書館資料の閲覧は、必ず所定の閲覧室で行い、閲覧者は閉館時間までに図書館資料を所定の場所に返却しなければならない。なお、試験期間中において閲覧室等が非常に混雑している場合等、教育研究に支障をきたすおそれがある場合には、館長等は、閲覧利用を制限することができる。",
+              "items": [],
+              "refs": []
+            }
+          ],
+          "subordinate_rules": []
+        },
+        {
+          "type": "article",
+          "number": {
+            "main": 11,
+            "branch": null
+          },
+          "title": "閲覧の制限",
+          "paragraphs": [
+            {
+              "number": 1,
+              "text": "次の各号に掲げる場合においては、閲覧を制限することができる。",
+              "items": [
+                {
+                  "number": 1,
+                  "text": "図書に独立行政法人等の保有する情報の公開に関する法律（平成13年法律第140号。以下｢情報公開法｣という。）第５条第１号、第２号及び第４号イに掲げる情報（個人情報に係る部分等）が記録されていると認められる場合における、当該情報が記録されている部分",
+                  "subitems": [],
+                  "refs": []
+                },
+                {
+                  "number": 2,
+                  "text": "図書の全部又は一部を一定の期間、公にしないことを条件に個人又は情報公開法第５条第２号に規定する法人等から寄贈又は寄託を受けている場合における、当該期間が経過するまでの間",
+                  "subitems": [],
+                  "refs": []
+                },
+                {
+                  "number": 3,
+                  "text": "図書の原本を利用させることにより当該原本の破損若しくはその汚損を生じるおそれがある場合又は図書館において当該原本が現に使用されている場合",
+                  "subitems": [],
+                  "refs": []
+                }
+              ],
+              "refs": []
+            }
+          ],
+          "subordinate_rules": []
+        },
+        {
+          "type": "article",
+          "number": {
+            "main": 12,
+            "branch": null
+          },
+          "title": "個人情報の漏えい防止",
+          "paragraphs": [
+            {
+              "number": 1,
+              "text": "図書館資料に記録されている個人情報（生存する個人に関する情報であって、当該情報に含まれる氏名、生年月日その他の記述等により特定の個人を識別することができるもの（他の情報と照合することができ、それにより特定の個人を識別することができることとなるものを含む。）をいう。）については、国立大学法人高知大学の保有する個人情報の適切な管理に関する規則（平成16年規則第435号）の規定に基づき、その漏えい防止のための措置を講ずるものとする。",
+              "items": [],
+              "refs": []
+            }
+          ],
+          "subordinate_rules": []
+        },
+        {
+          "type": "article",
+          "number": {
+            "main": 13,
+            "branch": null
+          },
+          "title": "館外貸出し",
+          "paragraphs": [
+            {
+              "number": 1,
+              "text": "利用者は、利用証を提出し、手続を経た後、図書館資料の館外貸出しを受けることができる。",
+              "items": [],
+              "refs": []
+            },
+            {
+              "number": 2,
+              "text": "図書の館外貸出しの冊数及び期間は、次のとおりとする。貸出冊数  貸出期間中央館・物部分館所蔵資料  医学部分館所蔵資料本学の教員及び本学の名誉教授  10冊まで  30日以内  14日以内本学の職員及び学生、連合農学研究科の学生  ７冊まで  21日以内  14日以内一般利用者  ５冊まで  14日以内  14日以内",
+              "items": [],
+              "refs": []
+            },
+            {
+              "number": 3,
+              "text": "前項の規定にかかわらず、館長等が必要と認めた場合は、図書の貸出期間を変更することができる。",
+              "items": [],
+              "refs": []
+            },
+            {
+              "number": 4,
+              "text": "夏季休業日、冬季休業日又は学年末休業日においては、第２項の規定にかかわらず、本学学生及び連合農学研究科の学生は、長期に貸出しを受けることができる。",
+              "items": [],
+              "refs": []
+            },
+            {
+              "number": 5,
+              "text": "利用者は、貸出しを受けた図書を、転貸してはならない。",
+              "items": [],
+              "refs": []
+            },
+            {
+              "number": 6,
+              "text": "利用者は、貸出しを受けた図書を、貸出し期間中であっても館長等が返却を求めたときは、直ちに返却しなければならない。",
+              "items": [],
+              "refs": []
+            },
+            {
+              "number": 7,
+              "text": "第１項の規定にかかわらず、次の各号に掲げる図書館資料の貸出しは行わない。ただし、館長等の許可が得られた場合は、この限りではない。",
+              "items": [
+                {
+                  "number": 1,
+                  "text": "参考図書",
+                  "subitems": [],
+                  "refs": []
+                },
+                {
+                  "number": 2,
+                  "text": "貴重図書",
+                  "subitems": [],
+                  "refs": []
+                },
+                {
+                  "number": 3,
+                  "text": "視聴覚資料",
+                  "subitems": [],
+                  "refs": []
+                },
+                {
+                  "number": 4,
+                  "text": "その他館長等の指定した図書館資料",
+                  "subitems": [],
+                  "refs": []
+                }
+              ],
+              "refs": []
+            },
+            {
+              "number": 8,
+              "text": "館長等は、貸出期間を超過しても貸出資料を返却しない利用者については、早急に返却するよう氏名を館内等に掲示し督促する。また、貸出期間を超過した利用者については、一定期間貸出しを停止するものとする。",
+              "items": [],
+              "refs": []
+            }
+          ],
+          "subordinate_rules": []
+        },
+        {
+          "type": "article",
+          "number": {
+            "main": 14,
+            "branch": null
+          },
+          "title": "研究室等備付資料",
+          "paragraphs": [
+            {
+              "number": 1,
+              "text": "この規則において、研究室等備付資料とは、図書館資料のうち研究室等で常備する資料をいう。",
+              "items": [],
+              "refs": []
+            },
+            {
+              "number": 2,
+              "text": "研究室等の責任者は、研究室等備付資料に対して他に利用希望があるときは、支障のない限りにおいて、他の利用者の利用に供するものとする。",
+              "items": [],
+              "refs": []
+            },
+            {
+              "number": 3,
+              "text": "研究室等の責任者は、退職又は転任等によって本学の教職員としての身分を失うときは、研究室等備付資料を返却、又は新たに当該研究室等の責任者となる者に、その保管の責任を引き継ぐものとする。",
+              "items": [],
+              "refs": []
+            },
+            {
+              "number": 4,
+              "text": "研究室等の責任者は、館長等が必要と認めるときは、研究室等備付資料の調査又は一時返却に応じなければならない。",
+              "items": [],
+              "refs": []
+            }
+          ],
+          "subordinate_rules": []
+        },
+        {
+          "type": "article",
+          "number": {
+            "main": 15,
+            "branch": null
+          },
+          "title": "文献複写",
+          "paragraphs": [
+            {
+              "number": 1,
+              "text": "利用者は、教育研究又は学習の用に供することを目的とする場合に限り、図書館資料の複写（マイクロ資料や電子資料からの印刷を含む。）を依頼することができる。",
+              "items": [],
+              "refs": []
+            },
+            {
+              "number": 2,
+              "text": "前項の複写に関して必要な事項は、館長が別に定める。",
+              "items": [],
+              "refs": []
+            }
+          ],
+          "subordinate_rules": []
+        },
+        {
+          "type": "article",
+          "number": {
+            "main": 16,
+            "branch": null
+          },
+          "title": "参考調査",
+          "paragraphs": [
+            {
+              "number": 1,
+              "text": "利用者は、教育研究又は学習のための文献調査及び情報の提供を依頼することができる。",
+              "items": [],
+              "refs": []
+            }
+          ],
+          "subordinate_rules": []
+        },
+        {
+          "type": "article",
+          "number": {
+            "main": 17,
+            "branch": null
+          },
+          "title": "相互協力",
+          "paragraphs": [
+            {
+              "number": 1,
+              "text": "利用者（一般利用者を除く。）は、教育研究又は学習のために必要なときは、他大学又はその他の機関の図書館及び図書の利用について斡旋を依頼することができる。",
+              "items": [],
+              "refs": []
+            },
+            {
+              "number": 2,
+              "text": "前項の規定により他大学又はその他の機関の図書館及び図書の利用を希望する者は、他大学又はその他の機関の図書館の利用条件を遵守しなければならない。",
+              "items": [],
+              "refs": []
+            },
+            {
+              "number": 3,
+              "text": "他大学又はその他の機関から図書の利用について依頼があったときは、学内の利用に支障のない範囲でこれに応じることができる。",
+              "items": [],
+              "refs": []
+            }
+          ],
+          "subordinate_rules": []
+        }
+      ]
+    },
+    {
+      "type": "chapter",
+      "number": {
+        "main": 3,
+        "branch": null
+      },
+      "title": "情報システム設備の利用",
+      "children": [
+        {
+          "type": "article",
+          "number": {
+            "main": 18,
+            "branch": null
+          },
+          "title": "利用の承認",
+          "paragraphs": [
+            {
+              "number": 1,
+              "text": "情報システム設備を利用しようとする者は、必要に応じて、所定の申請書を館長に提出し、その承認を受けなければならない。",
+              "items": [],
+              "refs": []
+            },
+            {
+              "number": 2,
+              "text": "前項の承認をしたときは、申請者に通知するものとする。",
+              "items": [],
+              "refs": []
+            },
+            {
+              "number": 3,
+              "text": "個々の設備の利用については、館長が別に定める。",
+              "items": [],
+              "refs": []
+            }
+          ],
+          "subordinate_rules": []
+        },
+        {
+          "type": "article",
+          "number": {
+            "main": 19,
+            "branch": null
+          },
+          "title": "利用の制限",
+          "paragraphs": [
+            {
+              "number": 1,
+              "text": "利用者は、情報システム設備を目的以外のために利用、又は他人に使用させてはならない。",
+              "items": [],
+              "refs": []
+            }
+          ],
+          "subordinate_rules": []
+        }
+      ]
+    },
+    {
+      "type": "chapter",
+      "number": {
+        "main": 4,
+        "branch": null
+      },
+      "title": "その他",
+      "children": [
+        {
+          "type": "article",
+          "number": {
+            "main": 20,
+            "branch": null
+          },
+          "title": "雑則",
+          "paragraphs": [
+            {
+              "number": 1,
+              "text": "この規則に定めるもののほか、図書館の利用に関し必要な事項は、館長が別に定める。",
+              "items": [],
+              "refs": []
+            }
+          ],
+          "subordinate_rules": []
+        }
+      ]
+    }
+  ],
+  "supplementary_provisions": [
+    {
+      "ordinal": 1,
+      "heading_raw": "附  則",
+      "amendment": null,
+      "promulgated": null,
+      "effective": {
+        "kind": "date",
+        "era": "heisei",
+        "year": 28,
+        "month": 4,
+        "day": 1,
+        "iso": "2016-04-01"
+      },
+      "text": "１  この規則は、平成28年４月１日から施行する。\n２  この規則施行の際現に図書館の施設、設備等の利用の許可を受けている者は、この規\n則により利用の許可を受けた者とみなす。",
+      "references_tables": []
+    },
+    {
+      "ordinal": 2,
+      "heading_raw": "附  則（平成 30 年２月 15 日規則第 51 号）",
+      "amendment": {
+        "number": 51,
+        "year": null,
+        "raw": "規則第 51 号"
+      },
+      "promulgated": {
+        "era": "heisei",
+        "year": 30,
+        "month": 2,
+        "day": 15,
+        "iso": "2018-02-15"
+      },
+      "effective": {
+        "kind": "date",
+        "era": "heisei",
+        "year": 30,
+        "month": 3,
+        "day": 26,
+        "iso": "2018-03-26"
+      },
+      "text": "１  この規則は、平成 30 年３月 26 日から施行する。\n２  この規則施行の際現に行われている図書の館外貸出しについては、改正後の高知大学\n学術情報基盤図書館利用規則の規定にかかわらず、なお従前の例による。",
+      "references_tables": []
+    },
+    {
+      "ordinal": 3,
+      "heading_raw": "附  則（令和元年９月 13 日規則第 32 号）",
+      "amendment": {
+        "number": 32,
+        "year": null,
+        "raw": "規則第 32 号"
+      },
+      "promulgated": {
+        "era": "reiwa",
+        "year": 1,
+        "month": 9,
+        "day": 13,
+        "iso": "2019-09-13"
+      },
+      "effective": {
+        "kind": "date",
+        "era": "reiwa",
+        "year": 1,
+        "month": 9,
+        "day": 13,
+        "iso": "2019-09-13"
+      },
+      "text": "この規則は、令和元年９月 13 日から施行する。",
+      "references_tables": []
+    }
+  ],
+  "appendices": [],
+  "authorities": []
+}

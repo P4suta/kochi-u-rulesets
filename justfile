@@ -4,15 +4,32 @@ set shell := ["bash", "-cu"]
 default:
     @just --list --unsorted
 
-# === Build / run ===
+# === Sync / build ===
 
-# 高知大学学則.pdf → data.json
-run:
-    cargo run --release -q -- 高知大学学則.pdf -o data.json
+# Mirror the live 規則集 index into sources/ and update manifest.json.
+sync:
+    cargo run -p kochi-university-regulations --release -q -- sync
+
+# Every ruleset PDF in sources/ → web/public/{docs/<code>.json, ...} + search/graph/site.
+build:
+    cargo run -p kochi-university-regulations --release -q -- build sources
+
+# Full local refresh: pull the latest PDFs, then regenerate site data.
+update: sync build
 
 # Dump raw per-page extracted text (debugging / regenerating test fixtures).
-dump-raw DIR="raw-dump":
-    cargo run -q -- 高知大学学則.pdf --dump-raw {{DIR}}
+dump-raw PDF="sources/高知大学学則.pdf" DIR="raw-dump":
+    cargo run -p kochi-university-regulations -q -- build {{PDF}} --dump-raw {{DIR}}
+
+# === Web / WASM ===
+
+# Build the browser wasm module (live parser + search engine) into web/src/wasm.
+wasm:
+    wasm-pack build crates/wasm --target web --out-dir ../../web/src/wasm
+
+# Serve the built site locally (requires a JS toolchain in web/).
+serve:
+    cd web && (bun run dev || npm run dev)
 
 # === Test ===
 
