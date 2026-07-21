@@ -3,6 +3,15 @@
 #
 # Hooks mirror CI so failures surface locally, not in Actions.
 
+commit-msg:
+  commands:
+    committed:
+      # Conventional Commits feed release-please's version + CHANGELOG derivation.
+      # {1} = the commit-message file git hands the commit-msg hook. Do not bypass
+      # with --no-verify.
+      run: committed --commit-file {1}
+      fail_text: "Commit message is not a valid Conventional Commit (see committed.toml)"
+
 pre-commit:
   parallel: true
   commands:
