@@ -1,5 +1,7 @@
 import type { Hit } from '../types'
 
+const DEFAULT_SEARCH_LIMIT: number = 60
+
 /** A worker reply: `id` echoes the request; `ok` gates `result` vs `error`. */
 type WorkerReply =
 	| { id: number; ok: true; result: unknown }
@@ -46,7 +48,7 @@ export class Engine {
 	}
 
 	/** Ranked folding full-text search; returns up to `limit` article hits. */
-	search(query: string, limit = 60): Promise<Hit[]> {
+	search(query: string, limit = DEFAULT_SEARCH_LIMIT): Promise<Hit[]> {
 		return this.send({ type: 'search', query, limit }) as Promise<Hit[]>
 	}
 

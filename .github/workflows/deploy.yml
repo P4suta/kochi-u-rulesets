@@ -40,7 +40,7 @@ jobs:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
 
       # rust-toolchain.toml pins the channel and the wasm32-unknown-unknown target.
-      - uses: actions-rust-lang/setup-rust-toolchain@166cdcfd11aee3cb47222f9ddb555ce30ddb9659 # v1
+      - uses: actions-rust-lang/setup-rust-toolchain@ecabd13d1c56bd1345c230e542e9144811ad706f # v2
 
       # Native build → structured data under web/public/ (docs, search.idx,
       # graph.json, site.json), keyed by the stable `code` identifier.
@@ -58,6 +58,8 @@ jobs:
         run: wasm-pack build crates/wasm --target web --out-dir ../../web/src/wasm
 
       - uses: pnpm/action-setup@b906affcce14559ad1aafd4ab0e942779e9f58b1 # v4
+        with:
+          package_json_file: web/package.json
 
       - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
         with:
