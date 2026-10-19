@@ -7,7 +7,6 @@ use kochi_university_regulations::model::Document;
 use kochi_university_regulations::{extract, graph, markdown, references, search};
 use serde::Deserialize;
 
-mod commit;
 mod sync;
 
 /// Parse 高知大学 ruleset PDFs into structured JSON + human-readable Markdown,
@@ -25,8 +24,6 @@ enum Command {
     Sync(sync::SyncArgs),
     /// Parse `sources/*.pdf` into the static-site data set under `<out-dir>`.
     Build(BuildArgs),
-    /// Commit changed paths to the current branch (signed, via the GitHub API; CI only).
-    Commit(commit::CommitArgs),
 }
 
 #[derive(clap::Args)]
@@ -65,7 +62,6 @@ fn main() -> anyhow::Result<()> {
     match Cli::parse().command {
         Command::Sync(args) => sync::run(args),
         Command::Build(args) => build(args),
-        Command::Commit(args) => commit::run(args),
     }
 }
 
@@ -307,25 +303,24 @@ mod tests {
     }
 
     #[test]
-    fn subcommands_parse() {
-        assert!(Cli::try_parse_from(["kochi-university-regulations", "sync"]).is_ok());
-        assert!(Cli::try_parse_from(["kochi-university-regulations", "build", "sources"]).is_ok());
+    fn direct_commit_is_not_a_cli_operation() {
         assert!(
             Cli::try_parse_from([
                 "kochi-university-regulations",
                 "commit",
                 "--path",
-                "out",
+                "sources",
                 "--message",
-                "m",
+                "chore: sync rulesets",
             ])
-            .is_ok()
+            .is_err()
         );
-        // `commit` requires at least one --path.
-        assert!(
-            Cli::try_parse_from(["kochi-university-regulations", "commit", "--message", "m"])
-                .is_err()
-        );
+    }
+
+    #[test]
+    fn subcommands_parse() {
+        assert!(Cli::try_parse_from(["kochi-university-regulations", "sync"]).is_ok());
+        assert!(Cli::try_parse_from(["kochi-university-regulations", "build", "sources"]).is_ok());
         assert!(Cli::try_parse_from(["kochi-university-regulations"]).is_err());
         assert!(Cli::try_parse_from(["kochi-university-regulations", "bogus"]).is_err());
     }

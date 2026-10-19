@@ -1,7 +1,5 @@
-# Native CLI: syncs the university's 規則集 index, parses `sources/*.pdf` into
-# structured JSON/MD + search index + reference graph (build-time preprocessing),
-# and commits changes via the GitHub API. Owns the wasm-incompatible deps
-# (reqwest, scraper, clap) so `crates/core` stays wasm-pure.
+# Native CLI: mirrors the regulation index and generates structured site data.
+# Network and filesystem effects stay here so `crates/core` remains portable.
 [package]
 name = "kochi-university-regulations"
 version.workspace = true
@@ -17,6 +15,5 @@ anyhow.workspace = true
 serde.workspace = true
 serde_json.workspace = true
 clap = { version = "4.6.1", features = ["derive"] }
-base64 = "0.23.0"
 reqwest = { version = "0.13.0", default-features = false, features = ["blocking", "json", "rustls"] }
 scraper = "0.27.0"

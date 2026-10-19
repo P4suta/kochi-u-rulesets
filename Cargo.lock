@@ -1021,7 +1021,6 @@ name = "kochi-university-regulations"
 version = "0.1.0"
 dependencies = [
  "anyhow",
- "base64 0.23.1",
  "clap",
  "kochi-university-regulations-core",
  "reqwest",
