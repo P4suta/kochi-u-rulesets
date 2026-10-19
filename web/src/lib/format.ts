@@ -50,14 +50,15 @@ export function effectiveLabel(e: Effective): string {
 }
 
 const KANJI_DIGITS = ['〇', '一', '二', '三', '四', '五', '六', '七', '八', '九']
+const DECIMAL_RADIX: number = 10
 
 /** Render 1..=99 as a 号-style kanji numeral ("一", "十", "二十一"). Beyond 99 it
  *  falls back to the plain number — no 号 in this corpus reaches that. */
 export function kanjiNumeral(n: number): string {
 	if (n <= 0 || n >= 100) return String(n)
-	if (n < 10) return KANJI_DIGITS[n]
-	const tens = Math.floor(n / 10)
-	const ones = n % 10
+	if (n < DECIMAL_RADIX) return KANJI_DIGITS[n]
+	const tens = Math.floor(n / DECIMAL_RADIX)
+	const ones = n % DECIMAL_RADIX
 	const tensPart = tens === 1 ? '十' : `${KANJI_DIGITS[tens]}十`
 	return ones === 0 ? tensPart : `${tensPart}${KANJI_DIGITS[ones]}`
 }
