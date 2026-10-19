@@ -5,6 +5,8 @@ use crate::model::{
     Appendix, AppendixKind, Article, BodyNode, Document, Paragraph, SupplProvision,
 };
 
+const ROOT_BODY_HEADING_LEVEL: usize = 2;
+
 /// Renders a `Document` as a human-readable Markdown document, mirroring the
 /// original reading order. The body is walked recursively, so a 章-less
 /// regulation renders its articles at the top heading level with no empty
@@ -65,12 +67,11 @@ fn render_node(out: &mut String, node: &BodyNode, depth: usize) {
             title,
             children,
         } => {
-            let _ = writeln!(
-                out,
-                "\n{} {}　{title}",
-                "#".repeat(depth + 2),
+            out.push_str(&format!(
+                "\n{} {}　{title}\n",
+                "#".repeat(depth + ROOT_BODY_HEADING_LEVEL),
                 number.labeled('章')
-            );
+            ));
             for child in children {
                 render_node(out, child, depth + 1);
             }
@@ -80,17 +81,16 @@ fn render_node(out: &mut String, node: &BodyNode, depth: usize) {
             title,
             children,
         } => {
-            let _ = writeln!(
-                out,
-                "\n{} {}　{title}",
-                "#".repeat(depth + 2),
+            out.push_str(&format!(
+                "\n{} {}　{title}\n",
+                "#".repeat(depth + ROOT_BODY_HEADING_LEVEL),
                 number.labeled('節')
-            );
+            ));
             for child in children {
                 render_node(out, child, depth + 1);
             }
         }
-        BodyNode::Article(article) => render_article(out, article, depth + 2),
+        BodyNode::Article(article) => render_article(out, article, depth + ROOT_BODY_HEADING_LEVEL),
     }
 }
 

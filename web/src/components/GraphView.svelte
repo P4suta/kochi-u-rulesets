@@ -38,7 +38,7 @@
 		const n = nodes.length
 		if (n === 0) return new Map()
 
-		const idx = new Map(nodes.map((nd, i) => [nd.code, i]))
+		const idx = new Map(nodes.map((graphNode, i) => [graphNode.code, i]))
 		const pos: Pt[] = nodes.map((_, i) => {
 			const a = (2 * Math.PI * i) / n
 			return { x: Math.cos(a) * 240, y: Math.sin(a) * 240 }
@@ -124,8 +124,8 @@
 		const offY = (TH - bh * scale) / 2
 
 		return new Map(
-			nodes.map((nd, i) => [
-				nd.code,
+			nodes.map((graphNode, i) => [
+				graphNode.code,
 				{ x: offX + (pos[i].x - minX) * scale, y: offY + (pos[i].y - minY) * scale },
 			]),
 		)
@@ -287,31 +287,31 @@
 				{/each}
 
 				<!-- Nodes -->
-				{#each graph.nodes as nd (nd.code)}
-					{@const p = layout.get(nd.code)}
+				{#each graph.nodes as graphNode (graphNode.code)}
+					{@const p = layout.get(graphNode.code)}
 					{#if p}
-						{@const r = nodeRadius(nd.code)}
-						{@const dim = nodeDim(nd.code)}
-						{@const isHub = hovered === nd.code}
+						{@const r = nodeRadius(graphNode.code)}
+						{@const dim = nodeDim(graphNode.code)}
+						{@const isHub = hovered === graphNode.code}
 						<g
 							role="button"
 							tabindex="0"
-							aria-label={`${nd.name} を開く`}
+							aria-label={`${graphNode.name} を開く`}
 							class="graph-node"
 							style="opacity: {dim ? 0.22 : 1}; transition: opacity 0.2s;"
-							onclick={() => open(nd.code)}
-							onkeydown={(ev) => onNodeKey(ev, nd.code)}
-							onmouseenter={() => (hovered = nd.code)}
+							onclick={() => open(graphNode.code)}
+							onkeydown={(ev) => onNodeKey(ev, graphNode.code)}
+							onmouseenter={() => (hovered = graphNode.code)}
 							onmouseleave={() => (hovered = null)}
-							onfocus={() => (hovered = nd.code)}
+							onfocus={() => (hovered = graphNode.code)}
 							onblur={() => (hovered = null)}
 						>
-							<title>{nd.name}（{nd.code}）</title>
+							<title>{graphNode.name}（{graphNode.code}）</title>
 							<circle
 								cx={p.x}
 								cy={p.y}
 								r={r}
-								style="fill: var(--color-{(degree.get(nd.code) ?? 0) > 0
+								style="fill: var(--color-{(degree.get(graphNode.code) ?? 0) > 0
 									? 'accent'
 									: 'fill-strong'}); stroke: var(--color-{isHub
 									? 'accent'
@@ -323,7 +323,7 @@
 								text-anchor="middle"
 								style="fill: var(--color-ink-2); font-size: 12px; pointer-events: none;"
 							>
-								{shortLabel(nd.name)}
+								{shortLabel(graphNode.name)}
 							</text>
 						</g>
 					{/if}
