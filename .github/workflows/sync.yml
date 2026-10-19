@@ -1,10 +1,6 @@
 name: Sync rulesets
 
-# Mirror the 高知大学 規則集 index weekly: pull the latest PDFs into sources/ and
-# refresh manifest.json, landing any change on main as a signed Verified commit.
-# The commit diff (manifest.json = structural changes; the insta snapshots that
-# CI regenerates on a parse drift = content changes) is the "what changed" report.
-# Generated site data is NOT committed — deploy.yml regenerates it from sources/.
+# Mirror the regulation index into a signed draft pull request.
 
 on:
   schedule:
@@ -13,12 +9,16 @@ on:
   workflow_dispatch:
     inputs:
       dry-run:
-        description: Sync only, without committing
+        description: Sync without creating or updating a pull request
         type: boolean
         default: false
 
 permissions:
-  contents: write   # land sources/ + manifest.json on main via the GitHub API
+  contents: read
+
+defaults:
+  run:
+    shell: bash
 
 concurrency:
   group: sync
@@ -28,8 +28,16 @@ jobs:
   sync:
     runs-on: ubuntu-latest
     timeout-minutes: 20
+    permissions:
+      contents: write
+      pull-requests: write
+    outputs:
+      operation: ${{ steps.proposal.outputs.pull-request-operation }}
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          ref: main
+          persist-credentials: false
       - uses: actions-rust-lang/setup-rust-toolchain@ecabd13d1c56bd1345c230e542e9144811ad706f # v2
 
       - name: Build
@@ -38,19 +46,46 @@ jobs:
       - name: Sync index → sources/ + manifest.json
         run: ./target/release/kochi-university-regulations sync
 
-      - name: Commit if changed
+      - name: Propose changed sources
+        id: proposal
         if: ${{ !inputs.dry-run }}
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          ./target/release/kochi-university-regulations commit \
-            --path sources --path manifest.json \
-            --message "chore: sync rulesets ($(date -u +%Y-%m-%d))"
+        uses: peter-evans/create-pull-request@5f6978faf089d4d20b00c7766989d076bb2fc7f1 # v8.1.1
+        with:
+          add-paths: |
+            manifest.json
+            sources/*.pdf
+          branch: automation/ruleset-sync
+          base: main
+          sign-commits: true
+          delete-branch: true
+          draft: always-true
+          commit-message: 'chore(data): sync rulesets'
+          title: 'chore(data): sync rulesets'
+          body: |
+            Mirror the university's regulation index into the PDF sources and manifest.
+            Review the source changes and any changed parser snapshots before merging.
 
-      # A GITHUB_TOKEN push does not trigger other workflows, so kick the deploy
-      # explicitly to republish the site from the freshly synced sources.
-      - name: Trigger site deploy
-        if: ${{ !inputs.dry-run }}
+            @coderabbitai ignore
+
+      - name: Verify proposal signature
+        if: ${{ steps.proposal.outputs.pull-request-number != '' }}
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: gh workflow run deploy.yml --ref main
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+          PROPOSAL_HEAD: ${{ steps.proposal.outputs.pull-request-head-sha }}
+        run: test "$(gh api "repos/$GH_REPO/commits/$PROPOSAL_HEAD" --jq '.commit.verification.verified')" = true
+
+  verify:
+    needs: sync
+    if: ${{ needs.sync.outputs.operation == 'created' || needs.sync.outputs.operation == 'updated' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      actions: write
+      contents: read
+    steps:
+      - name: Dispatch required checks for the proposal
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        run: gh workflow run required.yml --repo "$GH_REPO" --ref automation/ruleset-sync

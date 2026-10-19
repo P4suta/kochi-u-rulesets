@@ -38,6 +38,16 @@ Run the `Deploy site` workflow manually after configuring the repository's GitHu
 The workflow checks Pages setup before building the native CLI, WebAssembly module, and frontend.
 It uploads the browser bundle and deploys through the `github-pages` environment.
 
+## Scheduled source updates
+
+`Sync rulesets` mirrors the university index weekly and proposes changed PDFs and the manifest in one signed draft pull request.
+Its dry-run input fetches sources without updating a branch or pull request.
+The repository must allow GitHub Actions to create pull requests while keeping read-only default token permissions.
+The workflow verifies the bot commit and explicitly dispatches the required checks for the proposal branch.
+Review changed source content and parser snapshots before marking a proposal ready.
+Site deployment remains a separate manual operation.
+The [sync decision](docs/adr/signed-ruleset-pull-requests.md) records the permission and signing boundaries.
+
 ## Commit / PR rules
 
 - [Conventional Commits](https://www.conventionalcommits.org/) (`feat:` / `fix:` /

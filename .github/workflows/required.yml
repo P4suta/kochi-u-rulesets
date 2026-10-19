@@ -4,21 +4,29 @@ name: required
 on:
   pull_request:
   merge_group:
+  workflow_dispatch:
 
 permissions:
   contents: read
+
+env:
+  CARGO_BUILD_JOBS: '2'
 
 jobs:
   required:
     name: required
     runs-on: ubuntu-latest
-    timeout-minutes: 5
+    timeout-minutes: 15
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
         with:
           persist-credentials: false
       - uses: actions-rust-lang/setup-rust-toolchain@ecabd13d1c56bd1345c230e542e9144811ad706f # v2
-        with:
-          cache: false
       - name: Validate the locked dependency features
         run: cargo metadata --locked --all-features --format-version 1 > /dev/null
+      - name: Check formatting
+        run: cargo fmt --all -- --check
+      - name: Lint native targets
+        run: cargo clippy --locked --all-targets -- -D warnings
+      - name: Test native targets and regulation fixtures
+        run: cargo test --locked

@@ -8,6 +8,8 @@ import type { Hit } from '../types'
 import { Engine } from './engine'
 import { parseHash } from './router.svelte'
 
+const SEARCH_DEBOUNCE_MS: number = 200
+
 class SearchStore {
 	query = $state('')
 	results = $state<Hit[]>([])
@@ -77,7 +79,7 @@ class SearchStore {
 					this.error = '検索に失敗しました。時間をおいて再度お試しください。'
 					this.loading = false
 				})
-		}, 200)
+		}, SEARCH_DEBOUNCE_MS)
 	}
 }
 
