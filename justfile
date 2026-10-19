@@ -33,6 +33,10 @@ serve:
 
 # === Test ===
 
+# Validate the locked workspace dependency features before compilation.
+deps:
+    cargo metadata --locked --all-features --format-version 1 > /dev/null
+
 test:
     cargo test
 
@@ -48,7 +52,7 @@ lint:
     typos
 
 # CI-equivalent checks (matches lefthook pre-push).
-check: lint test
+check: deps lint test
 
 # === Setup ===
 
