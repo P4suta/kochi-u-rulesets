@@ -65,7 +65,7 @@ class SearchStore {
 		this.loading = true
 		this.timer = setTimeout(() => {
 			this.engine
-				.search(trimmed, 60)
+				.search(trimmed)
 				.then((hits) => {
 					if (seq !== this.seq) return
 					this.results = hits
