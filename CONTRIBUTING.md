@@ -32,6 +32,12 @@ just test     # cargo test
 just check    # lint + test (matches the lefthook pre-push hook)
 ```
 
+## Site deployment
+
+Run the `Deploy site` workflow manually after configuring the repository's GitHub Pages site.
+The workflow checks Pages setup before building the native CLI, WebAssembly module, and frontend.
+It uploads the browser bundle and deploys through the `github-pages` environment.
+
 ## Commit / PR rules
 
 - [Conventional Commits](https://www.conventionalcommits.org/) (`feat:` / `fix:` /
