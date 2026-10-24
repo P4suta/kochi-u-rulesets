@@ -1,0 +1,8 @@
+name = "Kochi University Regulations"
+summary = "Extract Kochi University academic regulations as JSON"
+install = """git clone https://github.com/P4suta/kochi-u-rulesets.git
+cd kochi-u-rulesets
+cargo install --path crates/cli"""
+usage = "kochi-university-regulations build --strict"
+documentation_index = true
+license = "unlicensed"
