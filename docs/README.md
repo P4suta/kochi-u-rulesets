@@ -4,7 +4,7 @@ Kochi University Regulations mirrors the university's regulation index, parses i
 
 The Rust workspace separates the native synchronization and build commands in `crates/cli`, the parsing and search implementation in `crates/core`, and the browser WebAssembly interface in `crates/wasm`.
 
-The Svelte frontend presents the generated regulation catalogue with text search, amendment timelines, reference graphs, and browser-side parsing of a selected PDF.
+The Svelte frontend presents the generated regulation catalogue with text search, amendment timelines, and reference graphs.
 
 The official source is the [Kochi University regulations page](https://www.kochi-u.ac.jp/education-support/regulations/).
 
@@ -47,7 +47,7 @@ Its `dry-run` input fetches source data without creating or updating a pull requ
 
 ## Run the browser app
 
-Run `just wasm` after generating the data to build the parser and search WebAssembly module under `web/src/wasm/`.
+Run `just wasm` after generating the data to build the search WebAssembly module under `web/src/wasm/`.
 
 The contributor guide documents the separate `wasm-pack` setup required by that recipe.
 
