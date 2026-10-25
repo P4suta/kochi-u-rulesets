@@ -28,13 +28,16 @@ The `--strict` flag returns a failure when any input fails to parse or match the
 
 The build command writes generated files, so inspect its output before committing changes.
 
-## Synchronize source PDFs
+## Synchronize source documents
 
 Run `just sync` to fetch the university index, download listed PDFs, and update `manifest.json` by each regulation's numeric code.
 
 The synchronization command aborts before modifying files when it extracts fewer than 20 index entries.
 
-It preserves an existing PDF when that PDF cannot be downloaded, and removes a prior PDF when its regulation disappears or is renamed in the university index.
+The command removes prior files for regulations missing from the university index.
+If a download request fails, the command skips the entry without removing its old path.
+For a renamed regulation, the command downloads the new file first.
+It removes the old path only after the new download succeeds.
 
 Review all PDF and manifest changes before accepting an automated or manual synchronization.
 

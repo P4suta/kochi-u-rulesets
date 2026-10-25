@@ -19,5 +19,3 @@ kochi-university-regulations build --strict
 ## Documentation
 
 [Read the documentation](docs/README.md).
-
-
