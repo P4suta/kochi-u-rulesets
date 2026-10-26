@@ -7,7 +7,12 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: read # Check out the source.
+  pull-requests: read # Select frontend checks from changed paths.
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 
 env:
   CARGO_BUILD_JOBS: '2'
@@ -21,6 +26,17 @@ jobs:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
         with:
           persist-credentials: false
+      - uses: dorny/paths-filter@ceb8a2b8f2d89434be7ff52d3de7ec3738c5cc9d # v4.0.3
+        id: changes
+        with:
+          base: ${{ github.event.merge_group.base_sha || github.event.repository.default_branch }}
+          filters: .github/filters/ci.yml
+      - name: Validate the frontend selection
+        env:
+          FRONTEND_SELECTED: ${{ steps.changes.outputs.frontend }}
+        run: >-
+          jq -en --arg selected "$FRONTEND_SELECTED"
+          '$selected == "true" or $selected == "false"'
       - uses: actions-rust-lang/setup-rust-toolchain@ecabd13d1c56bd1345c230e542e9144811ad706f # v2
       - name: Validate the locked dependency features
         run: cargo metadata --locked --all-features --format-version 1 > /dev/null
@@ -30,3 +46,32 @@ jobs:
         run: cargo clippy --locked --all-targets -- -D warnings
       - name: Test native targets and regulation fixtures
         run: cargo test --locked
+      - uses: jdx/mise-action@8418fedb1110381a0d3ba51a7a415d7c1b884550 # v5.2.2
+        if: steps.changes.outputs.frontend == 'true' || github.event_name == 'workflow_dispatch'
+        with:
+          version: v2026.10.17
+          sha256: fe6dd17e68e09682b31d2e7bb7bb755d22636ac1af5d94621e300f2ca9e9fe8a
+          install_args: node pnpm just
+          cache: false
+      - name: Install wasm-pack
+        if: steps.changes.outputs.frontend == 'true' || github.event_name == 'workflow_dispatch'
+        uses: taiki-e/install-action@a4d3f3f761dcd95cce1b72cb61cb6d1963438177 # v2
+        with:
+          tool: wasm-pack@0.15.0
+      - name: Build the WebAssembly module
+        if: steps.changes.outputs.frontend == 'true' || github.event_name == 'workflow_dispatch'
+        run: just wasm
+      - name: Install frontend dependencies
+        if: steps.changes.outputs.frontend == 'true' || github.event_name == 'workflow_dispatch'
+        working-directory: web
+        run: pnpm install --frozen-lockfile
+      - name: Check the frontend
+        if: steps.changes.outputs.frontend == 'true' || github.event_name == 'workflow_dispatch'
+        working-directory: web
+        run: pnpm run check
+      - name: Build the frontend
+        if: steps.changes.outputs.frontend == 'true' || github.event_name == 'workflow_dispatch'
+        working-directory: web
+        env:
+          GITHUB_PAGES: 'true'
+        run: pnpm run build

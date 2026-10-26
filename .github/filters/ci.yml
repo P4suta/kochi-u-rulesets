@@ -1,0 +1,13 @@
+frontend:
+  - '.mise.toml'
+  - '.cargo/**'
+  - 'justfile'
+  - 'rust-toolchain.toml'
+  - 'Cargo.toml'
+  - 'Cargo.lock'
+  - 'crates/core/**'
+  - 'crates/wasm/**'
+  - 'web/**'
+  - '.github/workflows/deploy.yml'
+  - '.github/workflows/required.yml'
+  - '.github/filters/ci.yml'
