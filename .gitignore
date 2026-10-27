@@ -17,6 +17,7 @@ web/public/graph.json
 web/src/wasm/
 web/dist/
 web/node_modules/
+web/.svelte-check/
 
 # OS
 .DS_Store
