@@ -46,11 +46,11 @@ jobs:
         run: cargo clippy --locked --all-targets -- -D warnings
       - name: Test native targets and regulation fixtures
         run: cargo test --locked
-      - uses: jdx/mise-action@82a612c5ab8bcda7cc5db6b7e81a8e7584c3dc6e # v5.2.3
+      - uses: jdx/mise-action@6be3c7ed4c21d4f76b208d351d95aac273ebb76d # v5.2.4
         if: steps.changes.outputs.frontend == 'true' || github.event_name == 'workflow_dispatch'
         with:
-          version: v2026.10.17
-          sha256: fe6dd17e68e09682b31d2e7bb7bb755d22636ac1af5d94621e300f2ca9e9fe8a
+          version: v2026.10.23
+          sha256: a6ac620e73fb58cefbdfef8fb154856fbd8ae08d75ae88103e4b81daef3a836e
           install_args: node pnpm just
           cache: false
       - name: Install wasm-pack
