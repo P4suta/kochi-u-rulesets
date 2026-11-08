@@ -31,7 +31,7 @@ jobs:
       - uses: actions/configure-pages@45bfe0192ca1faeb007ade9deae92b16b8254a0d # v6
 
       # rust-toolchain.toml pins the channel and the wasm32-unknown-unknown target.
-      - uses: actions-rust-lang/setup-rust-toolchain@ecabd13d1c56bd1345c230e542e9144811ad706f # v2
+      - uses: actions-rust-lang/setup-rust-toolchain@a188e68d0fd2bd36ad51dccb2b07ba6e75105f30 # v2
 
       # Native build → structured data under web/public/ (docs, search.idx,
       # graph.json, site.json), keyed by the stable `code` identifier.
