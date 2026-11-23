@@ -12,8 +12,6 @@ crate-type = ["cdylib", "rlib"]
 
 [dependencies]
 kochi-university-regulations-core.workspace = true
-serde.workspace = true
-serde_json.workspace = true
 wasm-bindgen = "0.2"
 serde-wasm-bindgen = "0.6"
 console_error_panic_hook = "0.1"

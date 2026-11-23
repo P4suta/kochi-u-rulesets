@@ -16,7 +16,6 @@ path = "src/lib.rs"
 [dependencies]
 anyhow.workspace = true
 serde.workspace = true
-serde_json.workspace = true
 regex.workspace = true
 pdf-extract.workspace = true
 
